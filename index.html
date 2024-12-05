@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Справочник по всем вопросам</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- scss/base/menu.scss -->
+
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title">Справочник по всем вопросам</h1>
+
+				<div class="header__menu menu">
+					<div class="menu__icon icon-menu"><span></span></div>
+					<nav class="menu__body">
+						<ul class="menu__list">
+
+							<li class="menu__item"><a href="sborka/html/html-menu.html" class="menu__link">HTML</a></li>
+
+							<li class="menu__item"><a href="sborka/css/css-menu.html" class="menu__link">CSS</a></li>
+
+							<li class="menu__item"><a href="sborka/scss/scss-menu.html" class="menu__link">SCSS</a></li>
+
+							<li class="menu__item"><a href="sborka/flex/flex-menu.html" class="menu__link">FLEX</a></li>
+
+							<li class="menu__item"><a href="sborka/grid/grid-menu.html" class="menu__link">GRID</a></li>
+
+							<li class="menu__item"><a href="sborka/wp/wp-menu.html" class="menu__link">WordPress</a></li>
+
+							<li class="menu__item"><a href="sborka/js/js-menu.html" class="menu__link">JavaScript</a></li>
+
+							<li class="menu__item"><a href="sborka/fls/fls-menu.html" class="menu__link">Чертоги Фрилансера</a></li>
+
+							<li class="menu__item"><a href="sborka/modules/modules-menu.html" class="menu__link">Модули "Чертоги
+									Фрилансера"</a></li>
+
+							<li class="menu__item"><a href="sborka/gulp/gulps-menu.html" class="menu__link">Сборка GULP</a></li>
+
+							<li class="menu__item"><a href="sborka/ready/ready-menu.html" class="menu__link">Готовые решения</a></li>
+
+							<li class="menu__item"><a href="sborka/code/code-menu.html" class="menu__link">Редакторы кода</a>
+							</li>
+							<li class="menu__item"><a href="sborka/all/keyword.html" class="menu__link">Горячие клавиши VS Code</a>
+							</li>
+
+							<li class="menu__item"><a href="sborka/all/snippet.html" class="menu__link">Сниппеты VS Code</a></li>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+	</div>
+	<script src="js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

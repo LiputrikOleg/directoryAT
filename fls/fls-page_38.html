@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Страница 38</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <main class="page">
+            <div class="page__container">
+
+                <h1 class="page__title">Цветовая кодировка кода</h1>
+
+                <!-- Оглавление  -->
+
+                <div data-spollers class="spollers">
+                    <details class="spollers__item">
+                        <summary class="spollers__title spollers__title--bg">Оглавление</summary>
+                        <div class="spollers__body spollers__body--menu">
+                            <a href="#h-items_1" class="con-menu">Основные возможности</a>
+                            <a href="#h-items_2" class="con-menu">Подключение функционала</a>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Ссылки  -->
+                <div data-spollers class="spollers">
+                    <details class="spollers__item">
+                        <summary class="spollers__title spollers__title--bg">Основные помощники</summary>
+                        <div class="spollers__body spollers__body--menu">
+
+                            <div class="page__block--list">
+                                <ul class="page__block--list-arhive">
+                                    <li><i class="fa-solid fa-up-right-from-square"></i>
+                                        <a class="link" href="https://highlightjs.org" target="_blank" title="Основа">Источник</a>
+                                    </li>
+
+                                    <li><i class="fa-solid fa-up-right-from-square"></i><a class="link" href="https://highlightjs.org/usage/" target="_blank" title="Документация на русском">Варианты
+                                            подключения</a>
+                                    </li>
+
+                                    <li><i class="fa-solid fa-up-right-from-square"></i><a class="link" href="https://highlightjs.org/static/demo/" target="_blank" title="Основы работы с JavaScript">Просмотр
+                                            - выбор цветовых
+                                            схем</a>
+                                    </li>
+
+                                    <li><i class="fa-solid fa-up-right-from-square"></i><a class="link" href="https://highlightjs.org/download/" target="_blank" title="Современный учебник JavaScript">
+                                            Подключение, выбор языков
+                                            программирования,
+                                            скачивание</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Контейнер  со статьями -->
+                <div class="page__content">
+
+                    <!--! Статья 1 -->
+                    <h2 class="page__subtitle" id="h-items_1">Основные возможности</h2>
+                    <div class="page__content--items">
+                        <p>Красиво раскрашивает выводимый в тегах <span class="green">&lt;pre&gt;&lt;code&gt;....&lt;/code&gt;&lt;/pre&gt;</span>
+                            код.</p>
+                    </div>
+
+                    <!--! Статья 2 -->
+                    <h2 class="page__subtitle" id="h-items_2">Подключение функционала</h2>
+                    <div class="page__content--items">
+                        <p>Из скаченного архива используем только папку <span class="green">styles</span> </p>
+
+                        <p>Из неё выбираем необходимый файл CSS и копируем его либо в файл <span class="green">src/scss/libs/highlight/dark.scss</span>, либо в <span class="green">src/scss/libs/highlight/light.scss/</span>, в зависимости от темы.</p>
+                        <p><span class="green">[HTML]</span> В нужном месте документа в тег <span class="green">&lt;pre&gt;&lt;code&gt;....&lt;/code&gt;&lt;/pre&gt;</span> вставляем код HTMl, CSS,
+                            JAVASCRIPT, PHP</p>
+                        <p><span class="green">[JS]</span> В файле <span class="green">src/html/_js.htm</span> дописываем:</p>
+                        <pre><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;hljs.highlightAll();&lt;/script&gt;</code></pre><br>
+                        <p>Тем самым подключаем JS-файл из интернета и инициализируем его</p>
+
+                        <p><span class="green">[SCSS]</span> в файле <span class="green">src/scss/
+                                style.scss</span> расскоментируем необходимую строку:</p>
+                        <pre><code>// Цветовая схема кода
+// &#64;import "libs/highlight/dark.scss";
+// &#64;import "libs/highlight/light.scss";
+    </code></pre>
+                    </div>
+
+
+
+                    <h2 class="page__subtitle">Подключение без интернета</h2>
+                    <div class="page__content--items">
+                        <p>Открываем <a class="link" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js">скрипт </a>.</p>
+                        <p>В папке <span class="green">src/js/files</span> создаем файл <span class="gray">highlight.js</span>.</p>
+                        <p>В него помещаем содержимое выше указанного скрипта. Просто содержимое, без всяких тегов <span class="green">&lt;script&gt; &lt;/script&gt;</span></p>
+                        <p>Перед содержимом скрипта прописываем:</p>
+                        <pre class="pre"><code class="js">import { flsHighlight } from "./highlight.js";</code></pre>
+                        <p>Точно такую же запись прописываем в файле <span class="green">src/js/files/script.js</span></p>
+                        <p class="warning">Возможно нужно будет просто раскомментировать данную строку</p>
+                        <pre class="pre"><code class="js">// Подключение подсветки кода
+import { flsHighlight } from "./highlight.js";</code></pre>
+                        <p>Возвращаемся в файл <span class="green">src/js/files/highlight.js</span> и после кода скрипта инициируем
+                            скрипт</p>
+                        <pre class="pre"><code class="js">hljs.highlightAll();</code></pre>
+                        <p>без всяких тегов <span class="green">&lt;script&gt; &lt;/script&gt;</span></p>
+
+                    </div>
+
+                    <div class="page__footer">
+
+                        <div class="page__footer_left">
+
+                            <p>Предыдущий пост: <br>
+                                <a href="fls-page_37.html" class="link">&lt;= Модуль “До/После”</a>
+                            </p>
+                        </div>
+
+                        <div class="page__footer_right">
+
+                            <p>Следующий пост: <br>
+                                <a class="link" href="fls-page_40.html">Подключение дополнительных модулей (Эксперимент) =></a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="page__hr">
+                </div>
+
+                <div class="return">
+                    <div class="return__container">
+
+                        <p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+                        <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="footer__container">
+
+                        <!-- Кнопка вверх -->
+                        <!-- https://itchief.ru/javascript/btn-up -->
+                        <div class="btn-up btn-up_hide"></div>
+
+
+                    </div>
+
+                </footer>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+    <!-- ! Кнопка "Вверх" -->
+    <script>
+        const btnUp = {
+            el: document.querySelector('.btn-up'),
+            scrolling: false,
+            show() {
+                if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.remove('btn-up_hide');
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            hide() {
+                if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.add('btn-up_hide');
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            addEventListener() {
+                // при прокрутке окна (window)
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop;
+                    if (this.scrolling && scrollY > 0) {
+                        return;
+                    }
+                    this.scrolling = false;
+                    // если пользователь прокрутил страницу более чем на 150px
+                    if (scrollY > 150) {
+                        // сделаем кнопку .btn-up видимой
+                        this.show();
+                    } else {
+                        // иначе скроем кнопку .btn-up
+                        this.hide();
+                    }
+                });
+                // при нажатии на кнопку .btn-up
+                document.querySelector('.btn-up').onclick = () => {
+                    this.scrolling = true;
+                    this.hide();
+                    // переместиться в верхнюю часть страницы
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        btnUp.addEventListener();
+
+    </script>
+</body>
+
+</html>

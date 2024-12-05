@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Flex Page 4</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">H
+			<div class="flex__container">
+				<h1 class="page__title">Песочница</h1>
+
+				<div class="page__content--items">
+					<div class="flex-items">
+						<span class="fls__green">flex-direction:</span>
+						<input class="input_flex" type="radio" name="direction" id="row" checked><label class="label_flex"
+							for="row">row</label>
+						<input class="input_flex" type="radio" name="direction" id="row-reverse"><label class="label_flex"
+							for="row-reverse">row-reverse</label>
+						<input class="input_flex" type="radio" name="direction" id="column"><label class="label_flex"
+							for="column">column</label>
+						<input class="input_flex" type="radio" name="direction" id="column-reverse"><label class="label_flex"
+							for="column-reverse">column-reverse</label>
+						<br>
+						<span class="fls__green">flex-wrap:</span>
+						<input class="input_flex" type="radio" name="flex" id="nowrap" checked><label class="label_flex"
+							for="nowrap">nowrap</label>
+						<input class="input_flex" type="radio" name="flex" id="wrap"><label class="label_flex"
+							for="wrap">wrap</label>
+						<input class="input_flex" type="radio" name="flex" id="wrap-reverse"><label class="label_flex"
+							for="wrap-reverse">wrap-reverse</label>
+						<br>
+						<span class="fls__green">justify-content:</span>
+						<input class="input_flex" type="radio" name="justify" id="flex-start" checked><label class="label_flex"
+							for="flex-start">flex-start</label>
+						<input class="input_flex" type="radio" name="justify" id="flex-end"><label class="label_flex"
+							for="flex-end">flex-end</label>
+						<input class="input_flex" type="radio" name="justify" id="center"><label class="label_flex"
+							for="center">center</label>
+						<input class="input_flex" type="radio" name="justify" id="space-between"><label class="label_flex"
+							for="space-between">space-between</label>
+						<input class="input_flex" type="radio" name="justify" id="space-around"><label class="label_flex"
+							for="space-around">space-around</label>
+						<input class="input_flex" type="radio" name="justify" id="space-evenly"><label class="label_flex"
+							for="space-evenly">space-evenly</label>
+						<br>
+						<span class="fls__green">align-items:</span>
+						<input class="input_flex" type="radio" name="align-items" id="align-items-stretch" checked><label
+							class="label_flex" for="align-items-stretch">stretch</label>
+						<input class="input_flex" type="radio" name="align-items" id="align-items-flex-start"><label
+							class="label_flex" for="align-items-flex-start">flex-start</label>
+						<input class="input_flex" type="radio" name="align-items" id="align-items-flex-end"><label
+							class="label_flex" for="align-items-flex-end">flex-end</label>
+						<input class="input_flex" type="radio" name="align-items" id="align-items-center"><label class="label_flex"
+							for="align-items-center">center</label>
+						<input class="input_flex" type="radio" name="align-items" id="align-items-baseline"><label
+							class="label_flex" for="align-items-baseline">baseline</label>
+						<br>
+						<span class="fls__green">align-content:</span>
+						<input class="input_flex" type="radio" name="align-content" id="align-content-stretch" checked><label
+							class="label_flex" for="align-content-stretch">stretch</label>
+						<input class="input_flex" type="radio" name="align-content" id="align-content-flex-start"><label
+							class="label_flex" for="align-content-flex-start">flex-start</label>
+						<input class="input_flex" type="radio" name="align-content" id="align-content-flex-end"><label
+							class="label_flex" for="align-content-flex-end">flex-end</label>
+						<input class="input_flex" type="radio" name="align-content" id="align-content-center"><label
+							class="label_flex" for="align-content-center">center</label>
+						<input class="input_flex" type="radio" name="align-content" id="align-content-space-between"><label
+							class="label_flex" for="align-content-space-between">space-between</label>
+						<input class="input_flex" type="radio" name="align-content" id="align-content-space-around"><label
+							class="label_flex" for="align-content-space-around">space-around</label>
+						<input class="input_flex" type="radio" name="align-content" id="align-content-space-evenly"><label
+							class="label_flex" for="align-content-space-evenly">space-evenly</label>
+						<br>
+						<span class="fls__green">align-self</span> (для блока 8)<span class="fls__green">:</span>
+						<input class="input_flex" type="radio" name="align-self" id="align-self-auto" checked><label
+							class="label_flex" for="align-self-auto">auto</label>
+						<input class="input_flex" type="radio" name="align-self" id="align-self-stretch"><label class="label_flex"
+							for="align-self-stretch">stretch</label>
+						<input class="input_flex" type="radio" name="align-self" id="align-self-flex-start"><label
+							class="label_flex" for="align-self-flex-start">flex-start</label>
+						<input class="input_flex" type="radio" name="align-self" id="align-self-flex-end"><label class="label_flex"
+							for="align-self-flex-end">flex-end</label>
+						<input class="input_flex" type="radio" name="align-self" id="align-self-center"><label class="label_flex"
+							for="align-self-center">center</label>
+						<input class="input_flex" type="radio" name="align-self" id="align-self-baseline"><label class="label_flex"
+							for="align-self-baseline">baseline</label>
+						<br>
+						<span class="fls__green">order</span>
+						<input class="input_flex" type="radio" name="order" id="order1" checked><label class="label_flex"
+							for="order1">123456...</label>
+						<input class="input_flex" type="radio" name="order" id="order2"><label class="label_flex"
+							for="order2">674328...</label>
+						<input class="input_flex" type="radio" name="order" id="order3"><label class="label_flex"
+							for="order3">159...</label>
+						<input class="input_flex" type="radio" name="order" id="order4"><label class="label_flex" for="order4">12 8
+							10...</label>
+						<br>
+						<span class="fls__green">flex-grow:</span>
+						<input class="input_flex" type="radio" name="flex-grow" id="flex-grow-one" checked><label class="label_flex"
+							for="flex-grow-one">0 0 0 0</label>
+						<input class="input_flex" type="radio" name="flex-grow" id="flex-grow-two"><label class="label_flex"
+							for="flex-grow-two">1 0 0 0</label>
+						<input class="input_flex" type="radio" name="flex-grow" id="flex-grow-three"><label class="label_flex"
+							for="flex-grow-three">1 2 0 0</label>
+						<input class="input_flex" type="radio" name="flex-grow" id="flex-grow-four"><label class="label_flex"
+							for="flex-grow-four">1 1 1 1</label>
+						<input class="input_flex" type="radio" name="flex-grow" id="flex-grow-five"><label class="label_flex"
+							for="flex-grow-five">1 1 3 1</label>
+						<br>
+						<span class="fls__green">flex-shrink:</span>
+						<input class="input_flex" type="radio" name="flex-shrink" id="flex-shrink-one" checked><label
+							class="label_flex" for="flex-shrink-one">1 1 1 1</label>
+						<input class="input_flex" type="radio" name="flex-shrink" id="flex-shrink-two"><label class="label_flex"
+							for="flex-shrink-two">0 1 1 1</label>
+						<input class="input_flex" type="radio" name="flex-shrink" id="flex-shrink-three"><label class="label_flex"
+							for="flex-shrink-three">2 1 1 1</label>
+						<input class="input_flex" type="radio" name="flex-shrink" id="flex-shrink-four"><label class="label_flex"
+							for="flex-shrink-four">3 2 1 1</label>
+						<input class="input_flex" type="radio" name="flex-shrink" id="flex-shrink-five"><label class="label_flex"
+							for="flex-shrink-five">4 1 1 1 </label>
+						<br>
+						<span class="fls__green">flex-basis:</span>
+						<input class="input_flex" type="radio" name="flex-basis" id="flex-basis-one" checked><label
+							class="label_flex" for="flex-basis-one">auto auto auto auto </label>
+						<input class="input_flex" type="radio" name="flex-basis" id="flex-basis-two"><label class="label_flex"
+							for="flex-basis-two">50% auto auto auto </label>
+						<input class="input_flex" type="radio" name="flex-basis" id="flex-basis-three"><label class="label_flex"
+							for="flex-basis-three">50% 50% auto auto</label>
+						<input class="input_flex" type="radio" name="flex-basis" id="flex-basis-four"><label class="label_flex"
+							for="flex-basis-four">50% 50% 50px 100px</label>
+						<br><br>
+						<div class="flex">
+							<div class="flex-itm item1">1</div>
+							<div class="flex-itm item2">2</div>
+							<div class="flex-itm item3">3</div>
+							<div class="flex-itm item4">4</div>
+							<div class="flex-itm item5">5</div>
+							<div class="flex-itm item6">6</div>
+							<div class="flex-itm item7">7</div>
+							<div class="flex-itm item8">8</div>
+							<div class="flex-itm item9">9</div>
+							<div class="flex-itm item10">10</div>
+							<div class="flex-itm item11">11</div>
+							<div class="flex-itm item12">12</div>
+						</div>
+					</div>
+				</div>
+
+				<br>
+
+
+			</div> <!-- flex__container -->
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../flex/flex-menu.html" class="link">К меню " FLEX "</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

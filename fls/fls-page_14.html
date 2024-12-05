@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 14</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+				<!--  -->
+				<h1 class="page__title">Модуль &#171;Табы&#187;</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Основные возможности</a>
+							<a href="#h-items_2" class="con-menu">Подключение функционала</a>
+							<a href="#h-items_3" class="con-menu">Использование функционала</a>
+							<a href="#h-items_4" class="con-menu">Расположение и дополнительные данные</a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+					<!--! Статья 0 -->
+
+					<div class="page__content--items">
+						<p>Табы &#8212; это заголовки и соответствующие им блоки. Как правило, по умолчанию открыт только
+							один блок остальные скрыты. При клике на заголовок показывается соответствующий ему блок.</p>
+					</div>
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Основные возможности</h2>
+					<div class="page__content--items">
+
+						<div class="page__block--list">
+							<ol>
+								<li>Использование множества блоков с табами</li>
+								<li>Открытие нужного таба по хешу</li>
+								<li>Превращение табов в спойлеры на указанной ширине экрана (удобно для адаптива)</li>
+								<li>Возможность анимированного открытия табов</li>
+								<li>Семантика</li>
+							</ol>
+						</div>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Подключение функционала</h2>
+					<div class="page__content--items">
+
+						<p><span class="green"> [HTML]</span> В нужном месте вызвать сниппет<span class="green">
+								tabs</span> (классы можно заменить на нужные). Либо
+							вручную создать структуру с соответствующими дата-атрибутами. Обратите внимание, что добавление
+							класса <span class="green"> _tab-active</span> для заголовка таба сделает таб активным (открытым) </p>
+						<p><em>Пример блока с тремя табами:</em></p>
+						<pre><code>&lt;div data-tabs class="tabs"&gt;
+  &lt;nav data-tabs-titles class="tabs__navigation"&gt;
+    &lt;button type="button" class="tabs__title _tab-active"&gt;Таб №1&lt;/button&gt;
+    &lt;button type="button" class="tabs__title"&gt;Таб №2&lt;/button&gt;
+    &lt;button type="button" class="tabs__title"&gt;Таб №3&lt;/button&gt;
+  &lt;/nav&gt;
+  &lt;div data-tabs-body class="tabs__content"&gt;
+    &lt;div class="tabs__body"&gt;
+      Содержимое первого таба
+    &lt;/div&gt;
+    &lt;div class="tabs__body"&gt;
+    Содержимое второго таба
+    &lt;/div&gt;
+    &lt;div class="tabs__body"&gt;
+    Содержимое третьего таба
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><br>
+
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">flsFunctions.tabs();</span>
+						</p>
+						<p><span class="green">[SCSS]</span> (не обязательно)
+							Если вы хотите
+							сразу посмотреть на работу табов и оставили классы предложенные сниппетом, вы можете
+							раскомментировать строку <span class="green">@import &#171;base/tabs&#187;;</span> в файле
+							<span class="green">src/scss/base.scss</span> — это подключит базовые стили, их можно отредактировать под
+							свои нужды.
+						</p>
+
+					</div>
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Использование функционала</h2>
+					<div class="page__content--items">
+
+						<h4 class="gray">Превращение табов в спойлеры</h4>
+						<p>Для того, чтобы табы превращались в спойлеры, необходимо для элемента с атрибутом
+							<span class="green">data-tabs</span> указать значение ширины экрана ниже которой произойдет превращение:
+						</p>
+						<pre><code>&lt;div data-tabs="768" class="tabs"&gt;
+...
+&lt;/div&gt;</code></pre><br>
+						<p>В момент превращения, к объекту с атрибутом <span class="green">data-tabs</span> добавится класс
+							<span class="green">_tab-spoller</span>, по которому можно изменить стили для нового представления
+							табов-спойлеров.
+						</p>
+						<h4 class="gray">Открытие нужного таба по хешу</h4>
+						<p>Если есть необходимость открывать конкретный таб в конкретном блоке табов при открытии страницы
+							по хешу, необходимо, для элемента с атрибутом <span class="green"> data-tabs</span>, добавить атрибут
+							<span class="green">data-tabs-hash</span>:
+						</p>
+						<pre><code>&lt;div data-tabs data-tabs-hash class="tabs"&gt;
+...
+&lt;/div&gt;</code></pre><br>
+						<p>Теперь, при клике на заголовки табов, к адресу страницы будет добавляться хеш вида: <span
+								class="green">#tab-0-1</span>,
+							где 0 &#8212; это идентификатор блока с табами, а 1 &#8212; идентификатор таба в этом блоке.</p>
+						<p>Соответсвенно, перейдя на страницу с хешем <span class="green">#tab-0-1</span> откроется второй таб в
+							первом
+							блоке с
+							табами. При <span class="green">#tab-2-0</span> откроется первый таб в третьем блоке с табами и т.д. </p>
+
+						<h4 class="gray">Анимация при открытии таба</h4>
+						<p>Для того, чтобы табы открывались плавно, необходимо объекту с атрибутом
+							<span class="green">data-tabs</span>, добавить атрибут <span class="green">data-tabs-animate</span>, а
+							в качестве
+							значения указать количество миллисекунд за которые откроется таб (по умолчанию 500).
+						</p>
+						<pre><code>&lt;div data-tabs data-tabs-animate="1000" class="tabs"&gt;
+...
+&lt;/div&gt;</code></pre>
+
+					</div>
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+						<p>Функционал находится в <span class="green">js/files/functions.js</span>. Название функции<span
+								class="green">
+								tabs()</span></p>
+
+						<p><a href="../modules/tab.html" class="link" target="_blank">Результат</a> модуля по
+							умолчанию.</p>
+
+
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_13.html" class="link">&lt;= Модуль «Показать ещё»</a>
+						</p>
+
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_15.html">Модуль «Спойлеры» =></a>
+						</p>
+
+					</div>
+
+				</div>
+				<hr class="page__hr">
+
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

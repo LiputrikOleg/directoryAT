@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 21</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class=" page__title">Модуль кастомизации элемента SELECT</h1>
+
+
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение модуля</a>
+							<a href="#h-items_2" class="con-menu">Настройки и функционал модуля</a>
+							<a href="#h-items_3" class="con-menu">Пример селекта с некоторыми атрибутами</a>
+							<a href="#h-items_4" class="con-menu">Классы которые формируются модулем</a>
+							<a href="#h-items_5" class="con-menu">События</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 0 -->
+
+					<div class="page__content--items">
+						<p>Модуль позволяет как угодно стилизовать стандартный элемент форы SELECT и его пункты OPTION, а
+							также реализует дополнительные возможности.</p>
+					</div>
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение модуля</h2>
+					<div class="page__content--items">
+						<p><span class="green">[HTML]</span> В нужном месте вызвать сниппет
+							<span class="green">sel</span>, отредактировать HTML-код селекта под свои
+							нужды
+						</p>
+						<p><span class="green">[SCSS]</span> Раскомментировать строку <span class="green">@import
+								&#171;select&#187;;</span> в файле <span class="green">src/scss/base/forms/forms.scss</span> &#8212;
+							это подключит базовые стили селекта, отредактировать под свои нужды</p>
+						<bp><span class="green">[JS]</span>
+							Раскомментировать строку <span class="green">import &#8216;./libs/select.js&#8217;</span> в файле
+							<span class="green">js/app.js</span>
+							</p>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Настройки и функционал модуля</h2>
+					<div class="page__content--items">
+						<p>Для подключения того или иного функционала модуля используются различные HTML-атрибуты</p>
+
+						<h4 class="gray">Атрибуты для тега &lt;SELECT&gt;:</h4>
+
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">data-class-modif=имя класса</span> &#8212; модификатор к конкретному селекту. В
+									итоге
+									получится select select_имя класса</li>
+								<li><span class="green">multiple</span> &#8212; мультивыбор</li>
+								<li><span class="green">disabled</span> &#8212; недоступен </li>
+								<li><span class="green">data-tags</span> &#8212; режим тегов (только для multiple), позволяет вставлять
+									выбранные значения в виде тегов с крестиком для удаления. Также есть возможность выводить эти
+									теги в любом указанном месте, указав селектор блока в качестве значения атрибута</li>
+								<li><span class="green">data-scroll</span> &#8212; включит прокрутку для выпадающего списка,
+									дополнительно
+									можно подключить кастомный скролл simplebar в js/app.js. Указанное число для атрибута
+									ограничит высоту контейнера выпадающего списка</li>
+								<li><span class="green">data-checkbox</span> (в работе) &#8212; стилизация элементов по checkbox (только
+									для multiple)</li>
+								<li><span class="green">data-show-selected</span> &#8212; отключает скрытие выбранного элемента</li>
+								<li><span class="green">data-search</span> &#8212; позволяет искать по выпадающему списку</li>
+								<li><span class="green">data-speed</span> &#8212; позволяет указать скорость открытия/закрытия списка в
+									миллисекундах, по умолчанию 150</li>
+								<li><span class="green">data-open</span> &#8212; селект открыт сразу</li>
+								<li><span class="green">data-submit</span> &#8212; отправляет форму при изменении селекта</li>
+								<li><span class="green">data-pseudo-label=заголовок</span> &#8212; добавляет псевдоэлемент к заголовку
+									селекта с указанным текстом, а также класс <span class="green">_select-pseudo-label</span></li>
+							</ol>
+						</div>
+
+						<h4 class="gray">Атрибуты для тега &lt;OPTION&gt;:</h4>
+
+
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">data-class=имя класса</span> &#8212; добавляет класс</li>
+								<li><span class="green">data-asset=путь к картинке или текст</span> &#8212; добавляет в элемент списка
+									структуру двух колонок с указанными данными</li>
+								<li><span class="green">data-href=адрес ссылки</span> &#8212; добавляет ссылку в элемент списка</li>
+								<li><span class="green">data-href-blank</span> &#8212; откроет ссылку в новом окне</li>
+							</ol>
+						</div>
+
+
+						<h4 class="gray">Атрибуты для для плейсхолдера (плейсхолдер &#8212; это &lt;OPTION&gt; с пустым value)
+						</h4>
+
+
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">data-label</span> &#8212; добавляет label к селекту </li>
+								<li><span class="green">data-show</span> &#8212; показывает плейсхолдер в списке (только для единичного
+									выбора)</li>
+							</ol>
+						</div>
+
+
+
+						<h3 class="page__subtitle"> Атрибуты для прочих элементов</h3>
+
+
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">data-one-select</span> &#8212; селекты внутри объекта с этим атрибутом будут
+									открываться только по одному. То есть при открытии селекта другой открытый селект
+									закрывается.</li>
+							</ol>
+						</div>
+
+					</div>
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Пример селекта с некоторыми атрибутами</h2>
+					<div class="page__content--items">
+						<pre><code>&lt;select data-submit data-scroll name="form&#91;]" class="form"&gt;
+  &lt;option value="" selected&gt;Плейсхолдер&lt;/option&gt;
+  &lt;option value="2"&gt;Пункт&lt;/option&gt;
+  &lt;option data-href="about.html" value="3"&gt;Пункт ссылка&lt;/option&gt;
+  &lt;option value="4"&gt;Пункт&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+					</div>
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Классы которые формируются модулем</h2>
+					<div class="page__content--items">
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">select</span> &#8212; Главный блок</li>
+								<li><span class="green">select__body</span> &#8212; Тело селекта</li>
+								<li><span class="green">select__title</span> &#8212; Заголовок</li>
+								<li><span class="green">select__value</span> &#8212; Значение в заголовке</li>
+								<li><span class="green">select__label</span> &#8212; Лейбл</li>
+								<li><span class="green">select__input</span> &#8212; Поле ввода</li>
+								<li><span class="green">select__text</span> &#8212; Оболочка текстовых данных</li>
+								<li><span class="green">select__link</span> &#8212; Ссылка в элементе</li>
+								<li><span class="green">select__options</span> &#8212; Выпадающий список</li>
+								<li><span class="green">select__scroll</span> &#8212; Оболочка при скролле</li>
+								<li><span class="green">select__option</span> &#8212; Пункт</li>
+								<li><span class="green">select__content</span> &#8212; Оболочка контента в заголовке</li>
+								<li><span class="green">select__row</span> &#8212; Ряд</li>
+								<li><span class="green">select__asset</span> &#8212; Дополнительные данные</li>
+								<li><span class="green">_select-disabled</span> &#8212; Запрещен</li>
+								<li><span class="green">_select-tag</span> &#8212; Класс тега</li>
+								<li><span class="green">_select-open</span> &#8212; Список открыт</li>
+								<li><span class="green">_select-active</span> &#8212; Список выбран</li>
+								<li><span class="green">_select-focus</span> &#8212; Список в фокусе</li>
+								<li><span class="green">_select-multiple</span> &#8212; Мультивыбор</li>
+								<li><span class="green">_select-checkbox</span> &#8212; Стиль чекбокса</li>
+								<li><span class="green">_select-selected</span> &#8212; Выбранный пункт</li>
+								<li><span class="green">_select-pseudo-label</span> &#8212; Псевдолейбл для заголовка селекта</li>
+							</ol>
+						</div>
+					</div>
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">События</h2>
+					<div class="page__content--items">
+						<p>После каждого выбора элементы селекта срабатывает событие <span class="green">selectCallback</span>, его
+							можно отловить в любой части кода:</p>
+						<pre><code>
+document.addEventListener("selectCallback", function (e) {
+// Селект 
+const currentSelect = e.detail.select;
+});
+      </code></pre><br>
+					</div>
+
+					<!--! Статья 6 -->
+					<h2 class="page__subtitle" id="h-items_6">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+						<p>Класс <span class="green">SelectConstructor </span>находится в файле<span class="green">
+								js/libs/select.js</span>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_20.html" class="link">&lt;= Работа с формами</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_22.html">Модуль " Галерея " =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

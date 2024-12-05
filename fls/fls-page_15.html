@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Страница 15</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <main class="page">
+            <div class="page__container">
+
+                <h1 class="page__title ">Модуль &#171;Спойлеры&#187;</h1>
+
+                <!-- Оглавление  -->
+
+                <div data-spollers class="spollers">
+                    <details class="spollers__item">
+                        <summary class="spollers__title spollers__title--bg">Оглавление</summary>
+                        <div class="spollers__body spollers__body--menu">
+                            <a href="#h-items_1" class="con-menu">Основные возможности</a>
+                            <a href="#h-items_2" class="con-menu">Подключение функционала</a>
+                            <a href="#h-items_3" class="con-menu">Использование функционала</a>
+                            <a href="#h-items_4" class="con-menu">Расположение и дополнительные данные</a>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Контейнер  со статьями -->
+                <div class="page__content">
+
+
+                    <!--! Статья 10-->
+
+                    <div class="page__content--items">
+                        <p>Спойлер – это заглавие, при нажатии на которое под ним развертывается определенный контент.
+                        </p>
+                    </div>
+                    <!--! Статья 1 -->
+                    <h2 class="page__subtitle" id="h-items_1">Основные возможности</h2>
+                    <div class="page__content--items">
+
+                        <div class="page__block--list">
+                            <ol>
+                                <li>Использование множества блоков со спойлерами</li>
+                                <li>Выключение/включение функционала на определенной ширине экрана</li>
+                                <li>Функция &#171;аккордеон&#187;, когда в блоке может быть открыт только один спойлер
+                                </li>
+                                <li>Возможность закрытия по клику за пределами спойлера</li>
+                                <li>Возможность анимированного открытия</li>
+                                <li>Семантика и доступность</li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                    <!--! Статья 2 -->
+                    <h2 class="page__subtitle" id="h-items_2">Подключение функционала</h2>
+                    <div class="page__content--items">
+
+                        <p><span class="green">[HTML]</span> В нужном месте вызвать снипет <span
+                                class="green">spollers</span>
+                            (классы можно заменить нужными).
+                            Или вручную создать структуру с соответствующими дата-атрибутами. Обратите внимание, что
+                            добавление
+                            атрибута
+                            <span class="green">data-open</span> для элемента <span class="green">details</span> сделает
+                            спойлер
+                            активным (открытым).
+                        </p>
+
+                        <p><em>Пример блока с двумя спойлерами:</em></p>
+
+                        <pre><code>&lt;div data-spollers class="spollers">
+  &lt;details class="spollers__item">
+    &lt;summary class="spollers__title">
+      Заголовок спойлера №1
+    &lt;/summary>
+    &lt;div class="spollers__body">Контент спойлера №1&lt;/div>
+  &lt;/details>
+  &lt;details class="spollers__item">
+    &lt;summary class="spollers__title">
+      Заголовок спойлера №2
+    &lt;/summary>
+    &lt;div class="spollers__body">Контент спойлера №2&lt;/div>
+  &lt;/details>
+&lt;/div></code></pre>
+
+                        <p><span class="green">[JS]</span>&nbsp;В файле&nbsp;<span
+                                class="green">js/app.js</span>&nbsp;раскомментировать
+                            строку&nbsp;<span class="green">flsFunctions.spollers();</span></p>
+                        <p><span class="green">[SCSS]</span>&nbsp;(не обязательно) Если вы
+                            хотите сразу посмотреть на работу спойлеров и оставили классы, предложенные снипетом, вы
+                            можете
+                            раскомментировать
+                            строку&nbsp;<span class="green">@import «base/spollers»;&nbsp;</span>в файле&nbsp;<span
+                                class="green">src/scss/base.scss</span>&nbsp;это
+                            подключит базовые стили, которые можно отредактировать под свои потребности.</p>
+
+                        <blockquote class="blockquote"><cite>Убрать <span class="green">стандартный маркер</span>
+                                элемента summary
+                                можно
+                                с помощью
+                                css-параметра <span class="green">list-style: none;</span></cite></blockquote>
+
+                        <p>В момент инициализации (включения) функционала спойлера контент будет скрыт, а к элементу с
+                            атрибутом
+                            <span class="green">data-spollers</span> будет добавлен класс <span
+                                class="green">_spoller-init</span>
+                        </p>
+
+                    </div>
+
+                    <!--! Статья 3 -->
+                    <h2 class="page__subtitle" id="h-items_3">Использование функционала</h2>
+                    <div class="page__content--items">
+
+                        <h3 class="gray">Выключение/включение функционала на определенной ширине экрана</h3>
+
+                        <p>Для того чтобы отключить/включить функционал спойлера на определенной ширине экрана,
+                            необходимо для
+                            атрибута
+                            <span class="green">data-spollers</span> через запятую указать нужную ширину экрана и тип:
+                        </p>
+
+                        <div class="page__block--list">
+                            <ul>
+                                <li><span class="green">max</span>&nbsp;(по умолчанию) — функционал включится на ширину
+                                    меньше указанной
+                                </li>
+                                <li><span class="green">min</span>&nbsp;— функционал включится на ширине больше
+                                    указанной</li>
+                            </ul>
+                        </div>
+
+                        <pre><code>&lt;div data-spollers="768,min" class="spollers">
+...
+&lt;/div></code></pre><br>
+
+                        <h3 class="gray">Включение режима “аккордеон”</h3>
+
+                        <p>Для того чтобы включить режим аккордеон, необходимо для элемента с атрибутом <span
+                                class="green">data-spollers</span>
+                            добавить атрибут <span class="green">data-one-spoller</span></p>
+
+                        <pre><code>&lt;div data-spollers data-one-spoller class="spollers">
+...
+&lt;/div></code></pre>
+
+                        <p>Теперь при открытии спойлера другой открытый спойлер в блоке будет закрываться.</p>
+
+                        <h3 class="gray">Управление скоростью анимации</h3>
+
+                        <p>Для того чтобы управлять временем анимации открытия/закрытия спойлера, необходимо для
+                            элемента с
+                            атрибутом
+                            <span class="green">data-spollers</span> добавить атрибут <span
+                                class="green">data-spollers-speed</span> ,
+                            а в качестве значения указать
+                            время анимации в миллисекундах (по умолчанию 500).
+                        </p>
+
+                        <pre><code>&lt;div data-spollers data-spollers-speed="1000" class="spollers">
+...
+&lt;/div></code></pre><br>
+
+                        <h3 class="gray">Закрытие при клике вне спойлера</h3>
+
+                        <p>Если необходимо закрывать спойлер(ы) при клике вне блока (“на пустом месте”), следует
+                            добавить нужному
+                            заголовку(кам) атрибут <span class="green">data-spoller-close</span></p>
+
+                        <pre><code>&lt;div data-spollers class="spollers">
+  &lt;details class="spollers__item">
+    &lt;summary data-spoller-close class="spollers__title">Заголовок спойлера&lt;/summary>
+    &lt;div class="spollers__body">Контент спойлера&lt;/div>
+  &lt;/details>
+&lt;/div></code></pre>
+
+                        <h3 class="gray">Прокрутка к заголовку</h3>
+
+                        <p>Если необходимо прокрутить скролл до заголовка открытого спойлера, следует добавить нужному
+                            элементу (тег
+                            details)
+                            атрибут <span class="green">data-spoller-scroll</span></p>
+
+                        <pre><code>&lt;div data-spollers class="spollers">
+  &lt;details data-spoller-scroll class="spollers__item">
+    &lt;summary class="spollers__title">Заголовок спойлера&lt;/summary>
+    &lt;div class="spollers__body">Контент спойлера&lt;/div>
+  &lt;/details>
+&lt;/div></code></pre><br>
+
+                        <p>Есть возможность более тонких настроек. Например, если нужно чтобы скролл учел шапку сайта
+                            (когда она
+                            фиксирована),
+                            то следует добавить атрибут <span class="green">data-spoller-scroll-noheader</span> .</p>
+
+                        <p>Также, в самом атрибуте <span class="green">data-spoller-scroll</span> можно дописать
+                            числовое значение,
+                            которое будет учтено
+                            при скроле:</p>
+
+                        <pre><code>&lt;div data-spollers class="spollers">
+  &lt;details data-spoller-scroll="20" data-spoller-scroll-noheader class="spollers__item">
+    &lt;summary class="spollers__title">Заголовок спойлера&lt;/summary>
+    &lt;div class="spollers__body">Контент спойлера&lt;/div>
+  &lt;/details>
+&lt;/div></code></pre>
+
+                    </div>
+
+                    <!--! Статья 4-->
+                    <h2 class="page__subtitle" id="h-items_4">Расположение и дополнительные данные</h2>
+                    <div class="page__content--items">
+                        <p>Функционал находится в <span class="green">js/files/functions.js</span> . Название функции
+                            <span class="green">spollers()</span>
+                        </p>
+
+                        <h4 class="gray">Дополнительные материалы</h4>
+
+                        <figure
+                            class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+                            <div class="wp-block-embed__wrapper">
+                                <iframe
+                                    title="Спойлер и аккордеон на HTML CSS и JavaScript, с возможностью включения на определенной ширине экрана"
+                                    width="500" height="281"
+                                    src="https://www.youtube.com/embed/0fg9bZcL1RM?feature=oembed" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </figure>
+                        <p><a href="fls-spollers.html" class="link ">Текстовый вариант видео</a></p>
+
+                        <p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+                        <div class="page__block-video">
+                            <video width="500" height="281" src="../../video/fls/spoller.mp4" controls=""
+                                preload="metadata" poster="../../video/html/poster.jpg" width="100%">
+
+                            </video>
+                        </div>
+
+                        <p><a href="../modules/spollers.html" class="link" target="_blank">Результат</a> модуля по
+                            умолчанию.</p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="page__footer">
+
+                    <div class="page__footer_left">
+
+                        <p>Предыдущий пост: <br>
+                            <a href="fls-page_14.html" class="link">&lt;= Модуль «Табы»</a>
+                        </p>
+                    </div>
+
+                    <div class="page__footer_right">
+
+                        <p>Следующий пост: <br>
+                            <a class="link" href="fls-page_16.html">Модуль «Ленивая подгрузка» (Lazy Loading) =></a>
+                        </p>
+                    </div>
+                </div>
+                <hr class="page__hr">
+
+            </div>
+
+            <div class="return">
+                <div class="return__container">
+
+                    <p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+                    <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer__container">
+
+                    <!-- Кнопка вверх -->
+                    <!-- https://itchief.ru/javascript/btn-up -->
+                    <div class="btn-up btn-up_hide"></div>
+
+
+                </div>
+
+            </footer>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+    <!-- ! Кнопка "Вверх" -->
+    <script>
+        const btnUp = {
+            el: document.querySelector('.btn-up'),
+            scrolling: false,
+            show() {
+                if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.remove('btn-up_hide');
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            hide() {
+                if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.add('btn-up_hide');
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            addEventListener() {
+                // при прокрутке окна (window)
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop;
+                    if (this.scrolling && scrollY > 0) {
+                        return;
+                    }
+                    this.scrolling = false;
+                    // если пользователь прокрутил страницу более чем на 150px
+                    if (scrollY > 150) {
+                        // сделаем кнопку .btn-up видимой
+                        this.show();
+                    } else {
+                        // иначе скроем кнопку .btn-up
+                        this.hide();
+                    }
+                });
+                // при нажатии на кнопку .btn-up
+                document.querySelector('.btn-up').onclick = () => {
+                    this.scrolling = true;
+                    this.hide();
+                    // переместиться в верхнюю часть страницы
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        btnUp.addEventListener();
+
+    </script>
+</body>
+
+</html>

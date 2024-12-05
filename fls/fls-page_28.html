@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 28</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль анимации цифрового счетчика</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение модуля</a>
+							<a href="#h-items_2" class="con-menu">Дополнительные возможности</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение модуля</h2>
+					<div class="page__content--items">
+						<p><span class="green">[HTML]</span> Пишем HTML-структуру счетчика(ов) и добавляем атрибут <span
+								class="green">data-digits-counter</span>
+							к каждому из них. В середине тега-счетчика должно быть только число:</p>
+						<pre><code>&lt;div class="counters"&gt;
+    &lt;div data-digits-counter class="counters__item"&gt;1500&lt;/div&gt;
+    &lt;div data-digits-counter class="counters__item"&gt;500&lt;/div&gt;
+    &lt;div data-digits-counter class="counters__item"&gt;800&lt;/div&gt;
+  &lt;/div&gt;</code></pre><br>
+						<p><span class="green">[JS] </span> И файле <span class="green">js/app.js</span> раскоментировать строку
+							<span class="green">flsScroll.digitsCounter();</span>
+						</p>
+						<p><span class="green">(!)</span> Модуль нуждается в подключении <a href="fls-page_12.html" class="link"
+								target="_blank">модуля
+								наблюдателя.</a> Следовательно нужно подключить его и добавить атрибут <span
+								class="green">data-watch</span>
+							родительскому
+							элементу со счетчиками.</p>
+						<pre><code>&lt;div data-watch class="counters"&gt;
+  &lt;div data-digits-counter class="counters__item"&gt;1500&lt;/div&gt;
+  &lt;div data-digits-counter class="counters__item"&gt;500&lt;/div&gt;
+  &lt;div data-digits-counter class="counters__item"&gt;800&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Дополнительные возможности</h2>
+					<div class="page__content--items">
+						<h4 class="gray">Измененние скорости</h4>
+						<p>Для изменения скорости анимации небходимо добавить атрибут <span class="green">data-digits-counter-speed
+							</span> к элементу счетчика и указать скорость в миллисекундах (1000 по умолчанию).</p>
+						<pre><code>&lt;div data-watch class="counters"&gt;
+  &lt;div data-digits-counter data-digits-counter-speed="4500" class="counters__item"&gt;1500&lt;/div&gt;
+  &lt;div data-digits-counter class="counters__item"&gt;500&lt;/div&gt;
+  &lt;div data-digits-counter class="counters__item"&gt;800&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<h4 class="gray">Форматирование</h4>
+						<p>Существует возможность форматирования вывода цифр, отделяя тысячи сотри тысяч и т.д. Для этого нужно
+							добавить атрибут
+							<span class="green">data-digits-counter-format </span>к элементу счетчика. Для настройки разграничителя
+							можно добавить символ в качестве значения
+							атрибута (по умолчанию пробел)
+						</p>
+						<pre class=""><code class="html">&lt;div data-watch class="counters"&gt;
+  &lt;div data-digits-counter class="counters__item"&gt;1500&lt;/div&gt;
+  &lt;div data-digits-counter class="counters__item"&gt;50000&lt;/div&gt;
+  &lt;div data-digits-counter data-digits-counter-format="." class="counters__item"&gt;8000&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_27.html" class="link">&lt;= Модуль поэкранной прокрутки страницы
+								(FullPage)</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_29.html">В разработке Параллакс-эффект при скролле
+								страницы =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

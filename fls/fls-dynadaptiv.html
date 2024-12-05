@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Динамический адаптив</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Динамический Адаптив</h1>
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Динамический адаптив</a>
+							<a href="#h-items_2" class="con-menu">Применение</a>
+							<a href="#h-items_3" class="con-menu">Параметры</a>
+							<a href="#h-items_4" class="con-menu">JavaScript</a>
+							<a href="#h-items_5" class="con-menu">Примеры</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Динамический адаптив (Dynamic Adapt)</h2>
+					<div class="page__content--items">
+						<p>Это JS функция для комфортной адаптивной верстки.</p>
+						<p> Позволяет "перебрасывать" объекты DOM в зависимости от потребностей.</p>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Применение</h2>
+					<div class="page__content--items">
+						<p> Для перемещаемого объекта пишем HTML атрибут - <span class="green">`data-da` </span>и указываем
+							параметры.
+						</p>
+
+						<pre class="pre"><code class="">data-da = "куда,когда,какой"`</code></pre>
+					</div>
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Параметры</h2>
+					<div class="page__content--items">
+
+						<table class="table-all">
+							<caption></caption>
+							<thead>
+								<tr>
+									<th>Параметр</th>
+									<th>Описание</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="green">`куда (имя класса)` <br> | обязательно |</span></td>
+									<td>Класс блока, в который нужно будет "перебросить" текущий объект. Если класс не
+										уникален, объект
+										перебросится в первый элемент с этим классом.</td>
+								</tr>
+								<tr>
+									<td><span class="green">`когда` | 767 |</span></td>
+									<td>Брейкпоинт, при котором перемещается объект.</td>
+								</tr>
+								<tr>
+									<td><span class="green">`какой` | last |</span></td>
+									<td>Позиция на которую нужно переместить объект внутри родителя <span class="green">`куда`</span>.
+										Кроме цифр можно
+										указать слова <span class="green">`first`</span> (в начало блока) или <span
+											class="green">`last`</span>
+										(в конец блока)</td>
+								</tr>
+							</tbody>
+						</table>
+						<p></p>
+						<div class="warning">
+							<p>По умолчанию, если <span class="green">'data-da'</span> задан, <span class="green">`куда (имя
+									класса)`</span> указан, а параметры <span class="green">`когда`</span> и <span
+									class="green">`какой`</span>
+								не
+								указаны - Объект переместится в блок с указанным классом при ширине
+								экрана
+								767px и займет последнее место ( станет самым нижним в блоке).
+						</div>
+						<div class="warning">
+							Порядок ( позиция ) следования объектов в "принимаемом блоке" 0, 1, 2, 3... и это надо учитывать при
+							указании <span class="green">`какой`</span>
+						</div>
+
+					</div>
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">JavaScript</h2>
+					<div class="page__content--items">
+
+						<p>Функционал скрипта для работы расположен <span class="gray">"src ==> js ==> libs ==>
+								dynamic_adapt.js"</span></p>
+						<p>В javaScript создан объект класса DynamicAdapt ( В самом конце ) с параметром "min" или "max"</p>
+
+						<p>Тип срабатывания брейкпоинта:</p>
+
+						<pre class=""><code class="">max - Desktop First  равносильно  @media (max-width: Npx)
+min - Mobile First  равносильно   @media (min-width: Npx)</code></pre><br>
+						<pre class=""><code class="javascript">const da = new DynamicAdapt("max");
+    da.init();</code></pre>
+
+					</div>
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Примеры</h2>
+					<div class="page__content--items">
+
+						<section class="dynadaptiv__section">
+							<h2 class="dynadaptiv__title_h2">Я Город</h2>
+							<div class="dynadaptiv__blocks dynadaptiv__blocks-city">
+								<div data-da=".dynadaptiv__column-garden" class="dynadaptiv__block dynadaptiv__block-1">Я Коля</div>
+								<div data-da=".dynadaptiv__column-garden, 992, 1" class="dynadaptiv__block dynadaptiv__block-2 click">Я
+									Аня</div>
+								<div class="dynadaptiv__block dynadaptiv__block-item dynadaptiv__block-3">Я Ваня</div>
+							</div>
+						</section>
+
+						<section class="dynadaptiv__section">
+							<h2 class="dynadaptiv__title_h2">Я бабушка</h2>
+
+							<div class="dynadaptiv__row">
+								<div class="dynadaptiv__column dynadaptiv__column-garden">
+									<h3 class="dynadaptiv__title_h3">Я огород</h3>
+									<div data-da=".dynadaptiv__column-river, 480, 1" class="dynadaptiv__block dynadaptiv__block-2">Я
+										Лоцы</div>
+								</div>
+
+								<div class="dynadaptiv__column dynadaptiv__column-river">
+									<h3 class="dynadaptiv__title_h3">Я речка</h3>
+									<div data-da=".dynadaptiv__blocks-city, 650, 0" class="dynadaptiv__block dynadaptiv__block-3">Я Оля
+									</div>
+
+								</div>
+							</div>
+						</section>
+						<p>Упрощенный HTML ( Классы оформления опущены )</p>
+						<pre class="pre"><code class="html">&lt;section class="section"&gt;
+&lt;h2&gt;Я Город&lt;/h2&gt;
+&lt;div class="blocks-city"&gt;
+  &lt;div data-da=".column-garden"&gt;Я Коля&lt;/div&gt;
+  &lt;div data-da=".column-garden, 992, 1"&gt;Я Аня&lt;/div&gt;
+  &lt;div&gt;Я Ваня&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section"&gt;
+&lt;h2&gt;Я бабушка&lt;/h2&gt;
+
+&lt;div class="row"&gt;
+  
+  &lt;div class="column-garden"&gt;
+  &lt;h3&gt;Я огород&lt;/h3&gt;
+  &lt;div data-da=".column-river, 480, 1"&gt;Я Лоцы&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="column-river"&gt;
+    &lt;h3&gt;Я речка&lt;/h3&gt;
+    &lt;div data-da=".blocks-city, 650, 0"&gt;Я Оля&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+						<div class="page__block--list">
+							<p>Описание действий</p>
+							<ol>
+								<li>При ширине 992рх Аня переместится в огород на первую позицию ( "Я огород" - позиция 0 )</li>
+								<li>При ширине 767рх Коля переместится в конец огорода ( По умолчанию ) </li>
+								<li>При ширине 650рх Оля переместится в город на нулевую позицию</li>
+								<li>При ширине 480рх Лоцы переместится на речку на первую позицию ( "Я речка" - позиция 0 )</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>
+							<a href="fls-page_9.html" class="link" target="_blank">Вернуться к статье</a>
+						</p>
+					</div>
+
+
+				</div>
+				<hr class="page__hr">
+			</div>
+
+	</div>
+
+	<div class="return">
+		<div class="return__container">
+
+			<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+			<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="footer__container">
+
+			<!-- Кнопка вверх -->
+			<!-- https://itchief.ru/javascript/btn-up -->
+			<div class="btn-up btn-up_hide"></div>
+
+
+		</div>
+
+	</footer>
+	</main>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

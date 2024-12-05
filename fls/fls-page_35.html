@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 35</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль “звездный рейтинг”</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение</a>
+							<a href="#h-items_2" class="con-menu">Использование функционала</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение</h2>
+					<div class="page__content--items">
+						<p>Модуль «звездный рейтинг» позволяет выводить и получать оценку в виде строки изображений.</p>
+
+						<p><span class="green">[HTML]</span> в нужном месте вызвать сниппет <span class="green">rating</span> . Или
+							вручную создать структуру с
+							соответствующими
+							дата-атрибутами.</p>
+
+						<p><span class="green">[JS]</span> в файле<span class="green"> js/app.JS</span> прокомментировать строку
+							<span class="green">flsForms.form
+								Rating()</span>;<br><span class="green">[SCSS]</span> раскомментировать строку <span
+								class="green">@import
+								“rating”</span>; в
+							файле<span class="green"> src/scss/base/forms/forms.scss</span> это подключит базовые стили, их можно
+							отредактировать под свои
+							нужды.
+						</p>
+
+						<pre><code class="html">&lt;div class="rating rating_set"&gt;
+  &lt;div class="rating__body"&gt;
+    &lt;div class="rating__active"&gt;&lt;/div&gt;
+      &lt;div class="rating__items"&gt;
+        &lt;input type="radio" class="rating__item" value="1" name="rating"&gt;
+        &lt;input type="radio" class="rating__item" value="2" name="rating"&gt;
+        &lt;input type="radio" class="rating__item" value="3" name="rating"&gt;
+        &lt;input type="radio" class="rating__item" value="4" name="rating"&gt;
+        &lt;input type="radio" class="rating__item" value="5" name="rating"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;div class="rating__value"&gt;3.6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Использование функционала</h2>
+					<div class="page__content--items">
+						<div class="page__block--list">
+							<ul>
+								<li>По умолчанию значение дата атрибута <span class="green">data-rating</span> указано <span
+										class="green">set</span>, что включает
+									возможность получать оценку от пользователя. Если оставить атрибут пустым, модуль будет только
+									выводить
+									оценку.
+								</li>
+								<li>Оценку, которую будет отображать модуль, можно указать в трибуте <span
+										class="green">data-rating-value</span></li>
+								<li>Размер рейтинга, количество &#171;звездочек&#187; , можно изменять с помощью атрибута
+									<span class="green">data-rating-size</span>
+								</li>
+								<li>Если добавить атрибут <span class="green">data-rating-title</span>, то цифровая оценка будет
+									выводиться в
+									атрибут
+									<span class="green">title</span> рейтинга
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_34.html" class="link">&lt;= Палитра цветов</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_36.html">Модуль адаптивных изображений «IBG» =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

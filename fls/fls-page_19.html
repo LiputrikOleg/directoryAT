@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 19</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+
+				<h1 class="page__title">Работа с шаблонизатором PUG </h1>
+
+				<div class="page__content">
+					<div class="page__content--items">
+						<p>Для того чтобы работать с
+							<span class="green">PUG </span>
+							достаточно просто создать в корне папки
+							<span class="green">src</span> файлы
+							<span class="green">.pug </span> например
+							<span class="green">index.pug</span>.Сборка сама переключится на работу c
+							<span class="green">.pug</span> файлами вместо
+							<span class="green">.html</span> файлов.
+						</p>
+						<p class="warning">Внимание! Добавлять подключение
+							<span class="green">app.js</span> и
+							<span class="green">style.min.css</span> в файлы .PUG <span class="green">не
+								нужно</span> , это
+							делается автоматически.
+						</p>
+					</div>
+				</div>
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_18.html" class="link">&lt;= Работа с SVG-спрайтами</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_20.html">Работа с формами =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 13</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль &#171;Показать ещё&#187;</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение функционала</a>
+							<a href="#h-items_2" class="con-menu">Использование функционала</a>
+							<a href="#h-items_3" class="con-menu">Включение функционала на определенной ширине экрана</a>
+							<a href="#h-items_4" class="con-menu">Расположение и дополнительные данные</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 0 -->
+
+					<div class="page__content--items">
+						<p>Модуль &#171;Показать ещё&#187; позволяет изначально скрыть часть текста или элементов списка
+							показывая только указанную высоту либо количество элементов. Есть возможность включать
+							функционал на определенной ширине экрана (брейкпоинте).</p>
+
+					</div>
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+					<div class="page__content--items">
+
+						<p><span class="green">[HTML]</span> В нужном месте вызватьсниппет
+							<span class="green">showmore</span> (классы заменить на нужные). Либо
+							вручную создать структуру, где для оболочки добавлен атрибут <span class="green">data-showmore</span>, для
+							дочернего элемента <span class="green">data-showmore-content</span> и для кнопки
+							<span class="green">data-showmore-button</span>. Кнопку изначально нужно скрыть добавив атрибут
+							<span class="green">hidden</span> и добавить два тега <span class="green">&lt;span&gt;</span> с текстом
+							показа и
+							скрытия контента:
+						</p>
+						<pre><code>&lt;div data-showmore class="block"&gt;
+  &lt;div data-showmore-content class="block__content"&gt;&lt;/div&gt;
+  &lt;button hidden data-showmore-button type="button" class="block__more"&gt;
+    &lt;span&gt;Показать еще&lt;/span&gt;
+    &lt;span&gt;Скрыть&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre><br>
+
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">flsFunctions.showMore();</span>
+						</p>
+						<p><span class="green">[SCSS]</span> Раскомментировать
+							строку
+							<span class="green">@import &#171;base/showmore&#187;;</span> в файле <span
+								class="green">src/scss/base.scss</span>
+							— это подключит базовые стили, отредактировать под свои нужды
+						</p>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Использование функционала</h2>
+					<div class="page__content--items">
+
+						<p>В элемент с атрибутом <span class="green">data-showmore-content</span> добавляем текст и прочий контент,
+							либо, если это список (UL/OL) элементы списка (LI). </p>
+						<p>В зависимости от того, какой контент используется (текст или элементы списка) указываем значение
+							для атрибута <span class="green">data-showmore</span>:</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">size</span> &#8212; ограничение по высоте блока (<em>по умолчанию</em>)</li>
+								<li><span class="green">items</span> &#8212; ограничение количества выводимых элементов списка</li>
+							</ul>
+						</div>
+
+						<pre><code>&lt;div data-showmore="items" class="block"&gt;
+  &lt;ul data-showmore-content class="block__content"&gt;
+    &lt;li&gt;Пункт №1&lt;/li&gt;
+    &lt;li&gt;Пункт №2&lt;/li&gt;
+    &lt;li&gt;Пункт №3&lt;/li&gt;
+    &lt;li&gt;Пункт №4&lt;/li&gt;
+    &lt;li&gt;Пункт №5&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button hidden data-showmore-button type="button" class="block__more"&gt;
+    &lt;span&gt;Показать еще&lt;/span&gt;
+    &lt;span&gt;Скыть&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre><br>
+
+						<p>В зависимости от того, какой тип выбран, указываем значение для атрибута <span class="green">
+								<span class="green">data-showmore-content</span> </span>: </p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">Высота блока в пикселях</span> (<em>число без px, по умолчанию 150</em> )</li>
+								<li><span class="green">Количество выводимых элементов списка</span> (<em>число, по умолчанию 3</em> )
+								</li>
+							</ul>
+						</div>
+
+						<pre><code>&lt;div data-showmore class="block"&gt;
+  &lt;div data-showmore-content="200" class="block__content"&gt;
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis explicabo 
+    voluptates magni culpa, perferendis vel quam consequuntur possimus, 
+    vero placeat quo enim obcaecati quas, veritatis magnam non. Architecto, 
+    porro voluptatum?
+  &lt;/div&gt;
+  &lt;button hidden data-showmore-button type="button" class="block__more"&gt;
+    &lt;span&gt;Показать еще&lt;/span&gt;
+    &lt;span&gt;Скыть&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre><br>
+
+						<p>Если контента будет меньше чем указанное ограничение, кнопка &#171;Показать ещё&#187; <span
+								class="green">не
+								будет показана</span>. В противном случае, контент ограничится по высоте либо по количеству
+							элементов и при клике на кнопку будет показан полностью, также, к элементу с атрибутом
+							<span class="green">data-showmore</span> добавится класс <span class="green">_showmore-active</span>
+							(первый спан в
+							кнопке будет скрыт а второй показан). Повторный клик вернет ограничение.
+						</p>
+
+						<p>Есть возможность управлять скоростью разворачивания контента, для этого следует указать значение
+							атрибуту <span class="green">data-showmore-button</span> в миллисекундах (по умолчанию 500):</p>
+
+						<pre><code>&lt;div data-showmore class="block"&gt;
+    &lt;div data-showmore-content="200" class="block__content"&gt;
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis explicabo 
+      voluptates magni culpa, perferendis vel quam consequuntur possimus, 
+      vero placeat quo enim obcaecati quas, veritatis magnam non. Architecto, 
+      porro voluptatum?
+    &lt;/div&gt;
+    &lt;button hidden data-showmore-button="1000" type="button" class="block__more"&gt;
+      &lt;span&gt;Показать еще&lt;/span&gt;
+      &lt;span&gt;Скыть&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+
+					</div>
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Включение функционала на определенной ширине экрана</h2>
+					<div class="page__content--items">
+
+						<p>Для того чтобы использовать функционал на определенной ширине экрана, к объекту с атрибутом
+							<span class="green">data-showmore</span> добавляем атрибут <span class="green">data-showmore-media</span>
+							где, через
+							запятую, указываем нужную ширину, а также тип:
+						</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">max</span> (по умолчанию) &#8212; функционал включится на ширине меньшей чем
+									указанная </li>
+								<li><span class="green">min</span> &#8212; функционал включится на ширине большей чем указанная</li>
+							</ul>
+						</div>
+
+						<pre><code>&lt;div data-showmore data-showmore-media="768,min" class="block"&gt;
+  &lt;div data-showmore-content="200" class="block__content"&gt;
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis explicabo 
+    voluptates magni culpa, perferendis vel quam consequuntur possimus, 
+    vero placeat quo enim obcaecati quas, veritatis magnam non. Architecto, 
+    porro voluptatum?
+  &lt;/div&gt;
+  &lt;button hidden data-showmore-button="1000" type="button" class="block__more"&gt;
+    &lt;span&gt;Показать еще&lt;/span&gt;
+    &lt;span&gt;Скыть&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+					</div>
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+
+						<p>Функционал находится в <span class="green">js/files/functions.js</span>. Название функции<span
+								class="green">
+								showMore()</span></p>
+
+						<p><a href="../modules/showmore.html" class="link" target="_blank">Результат</a> модуля по
+							умолчанию.</p>
+
+
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_12.html" class="link">&lt;= Модуль «Наблюдатель» за появлением элементов при
+								прокрутке страницы (скролле)</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_14.html">Модуль «Табы» =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Горячие клавиши VS Code</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Горячие сочетания клавиш</h1>
+
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+
+
+					<div class="page__content--items keyword">
+
+						<p><a href="https://nikomedvedev.ru/other/vscodeshortcuts/hotkeys.html" class="link" target="_blank">Горячие
+								клавиши Visual Studio
+								Code</a></p>
+						<div class="page__block--list">
+							<ul>
+								<li>Запуск терминала (строка состояния) - <kbd><kbd>ctrl</kbd> + <kbd>J</kbd></kbd> </li>
+								<li>Запуск терминала (строка состояния) - <kbd><kbd>ctrl</kbd> + <kbd>`</kbd></kbd> </li>
+								<br>
+								<li>Поиск кода по номеру строки - <kbd><kbd>ctrl</kbd> + <kbd>G</kbd></kbd> </li>
+								<br>
+								<li>Перемещение выделеного фрагмента на одну строку вверх или вниз - <kbd><kbd>ctrl</kbd> + <kbd>&UpArrow;</kbd></kbd> или <kbd><kbd>ctrl</kbd> + <kbd>&DownArrow;</kbd></kbd></li>
+								<br>
+								<li>Множественный курсор - <kbd><kbd>ctrl</kbd> + <kbd>клик</kbd></kbd></li>
+								<li>Множественный курсор для выделенного слова - все вхождения - <kbd><kbd>ctrl</kbd> + <kbd>F2</kbd></kbd></li>
+								<br>
+								<li>Дублирование строки или выделения ниже - <kbd><kbd>shift</kbd> + <kbd>alt</kbd> +
+										<kbd>&DownArrow;</kbd></kbd></li>
+								<li>Дублирование строки или выделения выше - <kbd><kbd>shift</kbd> + <kbd>alt</kbd> +
+										<kbd>&UpArrow;</kbd></kbd></li>
+								<br>
+								<li>BEM создание элемента - <kbd><kbd>alt</kbd> + <kbd>B</kbd></kbd> &nbsp;<kbd>E</kbd> </li>
+								<li>BEM создание элемента + модификатора - <kbd><kbd>alt</kbd> + <kbd>B</kbd></kbd>&nbsp;
+									<kbd>M</kbd>
+								</li>
+								<br>
+								<li>Стили для CSS - <kbd><kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>1</kbd></kbd></li>
+								<li>Стили для SCSS - <kbd><kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>2</kbd></kbd></li>
+								<li>Стили для SCSS с комментариями - <kbd><kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>3</kbd></kbd>
+								</li>
+								<br>
+								<li>Переводчик с выбором языка - <kbd><kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>Y</kbd></kbd></li>
+								<li>Переводчик русско-английский - <kbd><kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>T</kbd></kbd>
+								</li>
+								<br>
+								<li>Увеличение шрифта редактора - <kbd><kbd>ctrl</kbd> + <kbd>+</kbd></kbd> </li>
+								<li>Уменьшение шрифта редактора - <kbd><kbd>ctrl</kbd> + <kbd>-</kbd></kbd> </li>
+								<p>или</p>
+								<li>Изменение шрифта редактора- <kbd><kbd>ctrl</kbd> + <kbd>колесико мыши</kbd></kbd> </li>
+								<br>	
+								<li>Выделить строку - <kbd><kbd>ctrl</kbd> + <kbd>L</kbd></kbd> - повторное нажатие комбинации выделяет строку ниже</li>
+								<li>Обернуть тегом - <kbd><kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>A</kbd></kbd></li>
+								<br>
+								<li>Переход между вкладками - <kbd><kbd>ctrl</kbd> + <kbd>Z</kbd></kbd></li>
+								<br>
+								
+								<li>Просмотреть картинку - <kbd><kbd>ctrl</kbd> + <kbd>левая кнопка мыши</kbd></kbd> - клик по ссылке
+									img</li>
+									<br>
+								<li>JS - замена переменных или констант - выделить -> <kbd>F2</kbd> - новое имя (замена по всему коду, где используется переменная) </li>
+								<li>Js - просмотреть, где используется переменная - выделить -> <kbd>F12</kbd></li>
+							</ul>
+						</div>
+					</div> <!-- page__content--items 1-->
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

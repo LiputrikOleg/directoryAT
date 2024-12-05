@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 4</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Работа со шрифтами. Локальные и иконочные шрифты. Подключение из
+					Google Fonts</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Как ЧФ обрабатывает шрифты?</a>
+							<a href="#h-items_2" class="con-menu">Как подключить локальные файлы шрифтов</a>
+							<a href="#h-items_3" class="con-menu">Как подключить локальные файлы иконочных шрифтов</a>
+							<a href="#h-items_4" class="con-menu">Подлючение FontAwesome</a>
+							<a href="#h-items_5" class="con-menu">Как подключить шрифты из Google Fonts</a>
+						</div>
+					</details>
+				</div>
+
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Как ЧФ обрабатывает шрифты?</h2>
+					<div class="page__content--items">
+
+						<p>В стартовом шаблоне &#171;Чертоги Фрилансера&#187; v3.0.0 (далее ЧФ) весь процесс подключения
+							локальных и иконочных шрифтов максимально автоматизирован. Исходные файлы шрифтов конвертируются
+							с современные форматы .WOFF и .WOFF2, а также производится запись подключения шрифтов в файл
+							стилей, включая значение <span class="green">font-weight</span> на основе имени файла.</p>
+
+						<p>При запуске шаблона в любом режиме, ЧФ проверит, есть ли файлы шрифтов в форматах .TTF и/или
+							.OTF в папке <span class="green">src/fonts</span>. </p>
+						<div class="page__block--list">
+							<p>Далее происходит три этапа конвертации:</p>
+							<ol class="">
+								<li>Файлы .OTF (если они есть) конвертируются в .TTF и сохраняются в папке с исходниками
+									<span class="green">src/fonts</span>.
+								</li>
+								<li>Файлы .TTF конвертируются в .WOFF и записываются в папку с результатом <span
+										class="green">(dist/fonts)</span></li>
+								<li>Файлы .TTF конвертируются в .WOFF2 и записываются в папку с результатом <span
+										class="green">(dist/fonts)</span></li>
+							</ol>
+						</div>
+						<p>После конвертации ЧФ проверит наличие файла стилей <span class="green">scss/fonts/fonts.scss</span> и,
+							если
+							его
+							нет, запишет в него конструкции <span class="green">@font-face </span>для всех файлов, включая значение
+							<span class="green">font-weight</span> основанное на имени файла.
+						</p>
+
+						<blockquote class="warning">
+							<p>Если файл <span class="green">scss/fonts/fonts.scss</span> уже существует, данные не перезапишутся. Это
+								сделано для
+								того, что если нам придется внести изменения в файл <span class="green">scss/fonts/fonts.scss</span>
+								после
+								работы ЧФ,
+								эти изменения не затерлись.</p>
+						</blockquote>
+
+						<p>В каких случаях нам потребуется внести изменения в файл<span class="green"> scss/fonts/fonts.scss </span>
+							в ручную? Дело в том, что значение <span class="green">font-weight</span> основывается на имени файла
+							шрифта, то
+							есть если файлы называется <span class="green">Roboto-bold</span>, то значение <span
+								class="green">font-weight</span> будет 700. Но если файл будет
+							назван без отделения начертания, например RobotoBold, то адекватное определение не удастся и
+							будет записано значение по умолчанию (400). И вот в этих случаях нам необходимо отредактировать
+							файл указав адекватные значения.</p>
+						<blockquote class="warning">
+							<p>Если мы хотим перезаписать данные в файле <span class="green">scss/fonts/fonts.scss</span>, нам следует
+								его удалить и перезапустить систему, или запустить команду <span class="gray">npm run fonts</span>
+								(система сама удалит файл и создаст новый)</p>
+						</blockquote>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Как подключить локальные файлы шрифтов</h2>
+					<div class="page__content--items">
+
+						<div class="page__block--list">
+
+							<ol>
+								<li>Скачать или получить от дизайнера/заказчика файлы шрифтов в формате .TTF и/или .OTF и
+									положить их в папку <span class="green">src/fonts</span></li>
+								<li>Раскомментировать подключение файла <span class="green">fonts.scss</span> строка (<span
+										class="green">
+										fonts/fonts</span>) в файле <span class="green">scss/style.scss</span></li>
+								<li>Указать семейство шрифта по умолчанию в переменной <span class="green">$fontFamily</span> в файле
+									<span class="green">scss/style.scss</span>
+								</li>
+								<li>Запустить ЧФ в любом режиме</li>
+							</ol>
+						</div>
+
+						<p class="warning">При необходимости, вы можете отредактировать созданный и заполненный файл
+							<span class="green">scss/fonts/fonts.scss</span><br>При необходимости пересоздать данные в файле стилей
+							<span class="green">scss/fonts/fonts.scss</span> полностью, следует его удалить и перезапустить систему,
+							или запустить команду <code class="gray">npm run fonts</code> (система сама удалит файл и создаст новый)
+						</p>
+
+
+					</div>
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Как подключить локальные файлы иконочных шрифтов</h2>
+					<div class="page__content--items">
+
+						<div class="page__block--list">
+							<ol>
+								<li>Тем или иным способом создать файл иконочного шрифта в формате .TTF
+									и/или .OTF и положить его в папку <span class="green">src/fonts</span> (идет работа над автоматизацией
+									этого процесса)</li>
+
+								<li>Отредактировать файл <span class="green">scss/fonts/<span class="green">icons</span>.scss
+									</span>внеся
+									классы
+									для иконок, а также убедится в том что имя шрифта (<span class="green">font-family</span>) для
+									SCSS-шаблона
+									<span class="green">%ic
+										{}</span> совпадает с тем что указан в файле <span class="green">scss/fonts/fonts.scss</span>
+								</li>
+								<li>Раскомментировать подключение файла <span class="green">icons.scss</span> (<span
+										class="green">строка
+										fonts/icons</span>) в файле <span class="green">scss/style.scss</span></li>
+								<li>Запустить ЧФ в любом режиме</li>
+							</ol>
+						</div>
+
+					</div>
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Подлючение FontAwesome (переработанное 27.03.24)</h2>
+					<div class="page__content--items">
+
+						<p>Сайт <a class="link" target="_blank" href="https://fontawesome.com">fontawesome.com</a></p>
+						<p>Скачиваем по <a class="link" target="_blank" href="https://fontawesome.com/download">ссылке </a></p>
+						<p>Выбираем 5 или 6 версии.</p>
+						<p>Кнопка <span class="green">"Free for Web"</span> - качаем архив, распаковываем </p>
+
+						<div class="page__block--list">
+							<p style="font-size: 20px;" class="red">Папка SCSS:</p>
+							<ol class="">
+								<li> В папке <span class="green">src/scss/fonts</span> создаем папку <span
+										class="green">fontsAwesome</span>
+								</li>
+								<li>Если нужны все иконки копируем в неё файл <span class="green">all.css</span></li>
+								<li>Если нужны иконки какой либо категории, то 2 файла:
+									<ul>
+										<li> 2.1 Файл категории и <span class="green">fontawesome.css</span></li>
+										или
+										<li>2.2 Их минимизированные версии</li>
+									</ul>
+								</li>
+								Также копируем папку <span class="green">"webfonts"</span> в эту же папку.
+								</li>
+								<li>Подключаем файл <span class="green">all.css</span> в файле <span class="green">style.scss</span>
+									вместо заготовки
+									<pre class=""><code class="css">// Подключить если есть файл иконочного шрифта
+    // @import "fonts/icons";
+    @import "fonts/fontsAwesome/all.css";</code></pre>
+								</li>
+								<li>В папке <span class="green">js/files</span> создаем папку <span class="green">fontAwesome</span> и
+									копируем в неё из архива файл <span class="green">all.js</span></li>
+								<li>Подключаем его в : <span class="green">js/app.js</span></li>
+								<li>
+									<pre class=""><code class="css">/* Подключаем файлы  Font Awesome */
+    import "./files/fontsAwesome/all.js";
+    //</code></pre>
+								</li>
+							</ol>
+
+							<p class="warning">Как работать с иконочным шрифтом смотри в разделе <a href="../html/html-page_8.html"
+									class="link" target="_blank">
+									HTML => Font Awesome - Установка и
+									подключение
+								</a></p>
+						</div>
+
+						<iframe width="500" height="281" src="https://www.youtube.com/embed/QYwI3LRCnRE"
+							title="Иконочный шрифт. Подключение Font Awesome. Создание иконочного шрифта из SVG файлов."
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe>
+
+						<p><a href="fls-iconfonts.html" class="link ">Текстовый вариант видео</a></p>
+
+
+						<p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+						<div class="page__block-video">
+							<video width="500" height="281" src="../../video/fls/fontAwesome.mp4" controls="" preload="metadata"
+								poster="../../video/html/poster.jpg" width="100%">
+
+							</video>
+						</div>
+
+						<!--! Статья 5 -->
+						<h2 class="page__subtitle" id="h-items_5">Как подключить шрифты из Google Fonts</h2>
+						<div class="page__content--items">
+
+							<p>Самый простой способ &#8212; это воспользоваться плагином для VS Code <a
+									href="https://marketplace.visualstudio.com/items?itemName=lior-chamla.google-fonts" target="_blank"
+									class="link">Google Fonts</a></p>
+							<div class="page__block--list">
+								<ol>
+									<li>Нажимаем F1 и ищем плагин Google Fonts</li>
+									<li>Если хотим подключить шрифт отдельным тегом link в HTML файл, выбираем <span class="green">Google
+											Fonts:
+											insert &lt;link&gt;</span></li>
+									<li>Если хотим подключить шрифт в файл стилей (обычно это <span class="green">scss/style.scss</span>),
+										выбираем <span class="green">Google Fonts: insert CSS @import</span></li>
+									<li>Из появившегося списка выбираем нужный шрифт, можно воспользоваться поиском</li>
+									<li>После вставки строки подключения следует отредактировать строку оставив только нужные
+										начертания шрифта</li>
+									<li>Также следует добавить к строке подключения флаг <span class="green">&amp;display=swap</span></li>
+								</ol>
+
+							</div>
+							<p><em>Пример подключения шрифта Montserrat</em>:</p>
+							<pre><code>@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,800&amp;display=swap);</code></pre>
+							<p>Шрифты подключенные из Google Fonts не должны попадать в папку с результатом (dist), они
+								подгружаются с сервера Google. </p>
+							<p>Также, стоит отметить, что получить строку для подключения шрифта вы можете и без плагина на
+								сайте <a class="link" href="https://fonts.google.com/" target="_blank">Google
+									Fonts</a>.</p>
+
+
+						</div>
+
+					</div>
+
+
+					<div class="page__footer">
+
+						<div class="page__footer_left">
+
+							<p>Предыдущий пост: <br>
+								<a href="fls-page_3.html" class="link">&lt;= Архитектура шаблона. Файлы и папки</a>
+							</p>
+						</div>
+
+						<div class="page__footer_right">
+
+							<p>Следующий пост: <br>
+								<a class="link" href="fls-page_5.html"> STYLE.SCSS — настройка адаптивной сетки, шрифтов, подключение
+									дочерних файлов =></a>
+							</p>
+						</div>
+					</div>
+
+					<hr class="page__hr">
+				</div>
+
+				<div class="return">
+					<div class="return__container">
+
+						<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+						<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="footer__container">
+
+						<!-- Кнопка вверх -->
+						<!-- https://itchief.ru/javascript/btn-up -->
+						<div class="btn-up btn-up_hide"></div>
+
+
+					</div>
+
+				</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

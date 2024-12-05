@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Редактор кода VS Code</title>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <!-- <style>body{opacity: 0;}</style> -->
+  <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <main class="page">
+      <div class="page__container">
+
+        <h1 class="page__title">Редактор кода VS Code</h1>
+
+
+
+        <div data-spollers class="spollers">
+          <details class="spollers__item">
+            <summary class="spollers__title spollers__title--bg">Оглавление</summary>
+            <div class="spollers__body spollers__body--menu">
+              <a href="#h-items_1" class="con-menu">Полное удаление</a>
+              <a href="#h-items_2" class="con-menu">Установка</a>
+              <a href="#h-items_3" class="con-menu">Запуск на слабом ПК</a>
+              <a href="#h-items_4" class="con-menu">Руссификация</a>
+              <a href="#h-items_5" class="con-menu">Экран приветствия</a>
+              <a href="#h-items_6" class="con-menu">Строка состояния</a>
+              <a href="#h-items_7" class="con-menu">Панель действий</a>
+              <a href="#h-items_8" class="con-menu">Область редактора</a>
+              <a href="#h-items_9" class="con-menu">Параметры и настройки программы</a>
+              <a href="#h-items_10" class="con-menu">Установка цветовой схемы и пакета иконок</a>
+              <a href="#h-items_11" class="con-menu">Настройка сниппетов</a>
+              <a href="#h-items_12" class="con-menu">Установка и настройка плагинов</a>
+              <a href="#h-items_13" class="con-menu">Связь проекта с GitHub</a>
+            </div>
+          </details>
+        </div>
+
+        <!-- Ссылки  -->
+
+        <div data-spollers class="spollers">
+          <details class="spollers__item">
+            <summary class="spollers__title spollers__title--bg">Основные помощники</summary>
+            <div class="spollers__body spollers__body--menu">
+
+              <div class="page__block--list">
+                <ul class="page__block--list-arhive">
+                  <li>
+                    <i class="fa-solid fa-video"></i>
+                    <a class="link" href="../../video/code/VS Code setting.mp4" target="_blank"
+                      title="VS Code установка, настройка">VS Code установка, настройка</a>
+                  </li>
+
+                  <li><i class="fa-solid fa-up-right-from-square"></i> <a class="link"
+                      href=" https://code.visualstudio.com/" target="_blank" title="Официальный сайт">Официальный
+                      сайт</a>
+                  </li>
+
+                  <li><i class="fa-solid fa-up-right-from-square"></i><a class="link" href="https://vscodethemes.com"
+                      target="_blank" title="Цветовые схемы">Цветовые схемы</a>
+                  </li>
+
+                  <li><i class="fa-solid fa-up-right-from-square"></i><a class="link" href="" target="_blank" title="">
+                    </a></li>
+
+                </ul>
+              </div>
+
+            </div>
+          </details>
+        </div>
+
+        <!-- Контейнер  со статьями -->
+        <div class="page__content">
+
+          <!--! Статья 1 -->
+          <h2 class="page__subtitle" id="h-items_1">Полное удаление</h2>
+          <div class="page__content--items">
+
+            <p>Если ты уже пользуешься VS Code, но решил начать с чистого листа, то я покажу, как удалить
+              программу
+              полностью, включая все настройки и плагины. Кроме того, что программу нужно удалить из
+              панели управления
+              Windows, нужно еще перейти на Диск C > Пользователи > Твое имя пользователя и здесь удалить
+              папку .vscode
+            </p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-1.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Далее скрытая папка AppData, далее переходим в папку Roaming и здесь нужно удалить папку Code
+            </p>
+          </div>
+
+          <!--! Статья 2 -->
+          <h2 class="page__subtitle" id="h-items_2">Установка</h2>
+          <div class="page__content--items">
+
+            <p>Отлично, теперь мы можем установить программу. Переходим на сайт <a href="https://code.visualstudio.com/"
+                class="link" target="_blank">code.visualstudio.com</a> , секция Download. Здесь есть версия под Mac,
+              Linux. Меня интересует Windows. Нажимаем и скачиваем себе на ПК. Кстати, сайт программы
+              очень полезный,
+              поэтому советую его изучить</p>
+            <p>Программа скачана, запускаем инсталлятор и следуем инструкциям: принимаем, добавляем все
+              галочки, далее,
+              ждем пока программа установится на наш ПК.</p>
+
+          </div>
+
+          <!--! Статья 3 -->
+          <h2 class="page__subtitle" id="h-items_3">Запуск на слабом ПК</h2>
+          <div class="page__content--items">
+
+            <p>
+              Когда программа установлена, можем ее запустить. Но запустится она не на каждом компьютере.
+              Дело в том,
+              что
+              программа достаточно ресурсоемкая. Поэтому на слабой машине можно получить такой результат:
+              вместо
+              интерфейса программы черный экран, а процессор потеет на все 100%. Но выход есть —
+              необходимо открыть
+              контекстное меню ярлыка программы - свойства и дописать в пути к файлу вот такой флаг: <span
+                class="green">--disable-gpu</span>
+            </p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-2.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+          </div>
+
+          <!--! Статья 4 -->
+          <h2 class="page__subtitle" id="h-items_4">Руссификация</h2>
+          <div class="page__content--items">
+
+            <p>Программа запущена и мы можем приступить к знакомству с ней. А чтобы знакомится было проще, я
+              установлю <span class="gray">Russian Language Pack for Visual Studio Code</span>
+              русский язык. Для этого я щелкаю на иконку расширений, В поле поиска начинаю писать russian,
+              пока не увижу
+              пакет <span class="gray">Russian Language Pack for Visual Studio Code.</span></p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-3.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Жму на кнопочку <span class="green">Install</span>. Далее программа попросит перезапуститься,
+              делаем это.
+              Отлично, теперь будет
+              намного понятней. Но, если ты владеешь английским, то переходить на русский совсем не
+              обязательно.</p>
+
+          </div>
+
+          <!--! Статья 5 -->
+          <h2 class="page__subtitle" id="h-items_5">Экран приветствия</h2>
+          <div class="page__content--items">
+            <p>Первое, что мы видим — это экран приветствия. Здесь есть пункт, с помощью которого мы можем
+              импортировать
+              все настройки, клавиши из уже установленных редакторов, например Vim, Sublime, Atom и
+              другие.
+            </p>
+            <p>Это значительно ускорит и облегчит переход с одного редактора в другой. Но сегодня мы все
+              будем делать с
+              нуля. Далее здесь есть другие полезные ссылки — Общие сведения об интерфейсе, а также список
+              сочетаний
+              клавиш в очень удобном виде и многое другое.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-4.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Советую изучить этот экран, а когда он будет уже не нужен при каждом запуске программы,
+              необходимо снять
+              вот эту галочку. Позже ты всегда сможешь вызвать его из меню <span class="gray">Справка >
+                Приветствие.</span></p>
+          </div>
+
+          <!--! Статья 6 -->
+          <h2 class="page__subtitle" id="h-items_6">Строка состояния</h2>
+          <div class="page__content--items">
+
+            <p>Строка состояния расположена в нижней части окна и отображает информацию о файле, который вы
+              редактируете, и открытом
+              рабочем пространстве.</p>
+            <h5 class="green">Проблемы</h5>
+            <p>В левой части цифры возле иконок будут отображать количество ошибок и предупреждений, которые
+              возникли в
+              ходе выполнения кода.</p>
+            <p>Чтобы открыть панель, нужно щелкнуть на эти иконки либо зажать <kbd>Ctrl+Shift+М</kbd>, здесь
+              нам будет
+              выводиться
+              сам текст сообщений о проблемах.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-7.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>В панели можно отфильтровать эти сообщения, свернуть их, развернуть всю панель на весь экран
+              или закрыть
+              ее.</p>
+            <!--  -->
+            <h5 class="green">Консоль отладки</h5>
+
+            <p>Помимо вкладки вывода проблем в этой панели у нас еще есть Консоль отладки кода, к ней мы еще
+              вернемся.
+            </p>
+            <!--  -->
+            <h5 class="green">Выходные данные</h5>
+            <p>Журнал вывода работы всех программ и систем редактора. Здесь также можно отфильтровать этот
+              журнал,
+              очистить его, заблокировать скролл сообщений, развернуть панель или закрыть ее.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-8.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <!--  -->
+            <h5 class="green">Терминал</h5>
+            <p>Последняя вкладка в этой панели — встроенный терминал. Вызвать его можно зажав
+              <kbd>Ctrl+`</kbd>.
+            </p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-9.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>В Панели управления можно еще добавить терминалов, разделить окно на несколько частей,
+              удалить окно
+              терминала, переключаться между окнами терминала, а также выбрать оболочку по умолчанию.</p>
+            <p>Например, у меня установлен<span class="gray"> GitBash</span>. Выбрав его, добавляем новое
+              окно
+              терминала, у меня откроется именно
+              этот интерфейс.Традиционно здесь можно развернуть панель на весь экран и закрыть ее.</p>
+            <!--  -->
+            <h5 class="green">Уведомления</h5>
+            <p>Справа в строке состояния мы видим уведомления, сейчас их нет. Также есть возможность
+              отправить твит с
+              отзывом о программе.</p>
+            <p>Также в панели состояния будут появляться множество других элементов.</p>
+            <!--  -->
+            <h5 class="green">Контекстное меню</h5>
+            <p>Также мы можем вызвать контекстное меню и убрать с этой строки то, чем мы не пользуемся.
+              Например, твит с
+              отзывом, чтобы освободить место.</p>
+            <p>Также в этом же контекстном меню можем скрыть эту строку полностью.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-10.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+          </div>
+
+          <!--! Статья 7 -->
+          <h2 class="page__subtitle" id="h-items_7">Панель действий</h2>
+          <div class="page__content--items">
+
+            <p>По умолчанию в левой части редактора расположилась панель действий с 6 элементами:</p>
+            <div class="page__block--list">
+              <ol>
+                <li>Проводник, он же встроенный файл менеджер; <a href="#fm" class="link">&rang;&rang;&rang;&rang;</a>
+                </li>
+                <li>Поиск; <a href="#sub" class="link"> &rang;&rang;&rang;&rang;</a></li>
+                <li>Система управления контролем версий; <a href="#sys" class="link">&rang;&rang;&rang;&rang;</a></li>
+                <li>Запуск и отладка приложений; <a href="#otl" class="link">&rang;&rang;&rang;&rang;</a></li>
+                <li>Расширения; <a href="#rass" class="link">&rang;&rang;&rang;&rang;</a></li>
+                <li>Внизу шестеренка, кликнув на которую мы увидим меню основных настроек программы. <a href="#set"
+                    class="link"> &rang;&rang;&rang;&rang;</a></li>
+              </ol>
+            </div>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-11.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <!--  -->
+            <h4 class="gray" id="fm">Проводник</h4>
+            <p>Начнем с Проводника, открыть его можно кликнув на иконку либо зажав <kbd>Ctrl+Shift+E</kbd>.
+            </p>
+            <p>Очень удобно, что при наведении на иконку редактор подсказывает нам сочетание клавиш.</p>
+            <p>Тут мы видим 3 основные вкладки:</p>
+            <div class="page__block--list">
+              <ol>
+                <li>Открытые редакторы — здесь будет список открытых для редактирования файлов.</li>
+                <li>Вкладка с папками, проектами. Сейчас у нас нет открытых папок.</li>
+                <li>Структура, — сейчас тут ничего нет, о ней - ниже.</li>
+              </ol>
+            </div>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-12.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Окно Приветствия мы можем уже закрыть. Когда все окна закрыты, то редактор выводит такую
+              заглушку, где
+              показывает сочетания клавиш для основных действий:</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-13.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Давай добавим в редакторе пустую папку нашего будущего проекта. Для этого нужно кликнуть
+              Открыть папку
+              либо просто перетащить ее в это поле.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-14.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Сейчас у нас появилась пустая папка <span class="green">hello_vscode</span>, а также
+              некоторые элементы
+              управления:</p>
+            <div class="page__block--list">
+              <ul class="modules__li--ul">
+                <li>Создать файл</li>
+                <li>Создать папку</li>
+                <li>Обноить все файлы и папки</li>
+                <li>Свернуть все в проводнике</li>
+                <li>Троеточие, оно же констексное меню</li>
+              </ul>
+            </div>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-15.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Дополнительной полезной возможностью проводника будет его Контекстное меню, где мы можем
+              отобразить или
+              скрыть любую вкладку.</p>
+            <p> Во вкладке структура мы увидим, что появилась такая древовидная
+              структура нашего документа</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-20.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Теперь, я уберу структуру и уберу открытые редакторы </p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-21.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>В итоге у меня останется только папка с проектом.</p>
+
+
+            <p>Давай создадим некоторые файлы, которые нам нужны для проекта. Нажимаем Создать файл, пишем
+              например
+              <span class="green">Index.html</span>. Далее мы можем создать папку <span class="green">css
+              </span>и в ней
+              создать файл <span class="green">style.css</span>. Очень удобно пользоваться
+              этим встроенным файл менеджером.
+            </p>
+            <p>Также для создания файлов и папок можно пользоваться контекстным меню (не троеточее, а клик
+              правой
+              кнопкой мыши по полю папок). Помимо этого здесь есть еще
+              интересные функции, например показать папку в проводнике Windows.</p>
+            <p>Теперь мы можем перейти в <span class="green">Index.html</span> и написать туда что-то
+              интересное,
+              например “Hello VC Code”.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-16.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <hr class="page__hr">
+
+            <!--  -->
+            <h4 class="gray" id="sub">Поиск</h4>
+            <p>Поиск (<kbd>Ctrl+Shift+F</kbd>) — штука нужная. Пишем слово hello, которое мы указывали в
+              нашем html
+              файле. Поиск его сразу же нашел, подсветил, показал в каком файле. Тут же можно заменить это
+              слово на
+              какое-то другое.</p>
+            <p class="warning">В данном случае поиск идет по всем, всем, всем файлам проекта и замена
+              проводится также
+              во всех файлах сразу. Нужно выбирать в каких файлах менять, в каких нет. </p><br>
+            <p>Проще перейти в окно редактора и нажав <kbd>Ctrl+Shift+F</kbd> &#8212; "найти" или
+              <kbd>Ctrl+Shift+H</kbd> &#8212;" найти и заменить" сделать нужное действие в пределах
+              данного файла.
+            </p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-22.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Здесь удобно нам все это показывает, нажав здесь на иконку слово будет заменено.</p>
+
+            <hr class="page__hr">
+
+            <!--  -->
+            <h4 class="gray" id="sys">Система управления контролем версий</h4>
+            <p>Открыть вкладку можно кликнув на иконку либо зажав <kbd>Ctrl+Shift+G</kbd>. Для тех, кто уже
+              знаком с
+              системами контроля версий, например Git, тот оценит эту возможность. Немного позже я покажу
+              как связать
+              свой локальный проект с репозиторием на GitHub.</p>
+
+            <hr class="page__hr">
+
+            <!--  -->
+            <h4 class="gray" id="otl">Запуск и отладка</h4>
+            <p>Следующий элемент панели действий — это Запуск и отладка. Этот инструмент как самостоятельно
+              так и с
+              помощью сторонних плагинов позволяет нам анализировать выполнение того или иного
+              программного кода.</p>
+
+            <p>Например, у нас есть некий javascript код, и для того, чтобы запустить отладку, мы можем
+              нажать на кнопку
+              здесь либо нажать <kbd>F5</kbd>.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-23.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Результат отладки будет выведен в нижней панели, также можно устанавливать так называемые
+              точки останова
+              кода и перемещаться между ними, что очень удобно.</p>
+
+            <hr class="page__hr">
+            <!--  -->
+            <h4 class="gray" id="rass">Расширения</h4>
+            <p>Тут у нас целый склад расширений и плагинов для нашего редактора. Мы уже использовали эту
+              вкладку для
+              установки языкового пакета. Кликаем на иконку либо зажав сочетание клавиш
+              <kbd>Ctrl+Shift+X</kbd> мы
+              увидим поле поиска расширений и три дополнительных вкладки:
+            </p>
+            <div class="page__block--list">
+              <ul class="modules__li--ul">
+                <li>Включено — выводятся все установленные расширения;</li>
+                <li>Рекомендуемые;</li>
+                <li>Расширения, которые установлены, но отключены.</li>
+              </ul>
+            </div>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-24.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Во вкладке с нашими установленными расширениями у нас есть быстрый к ним доступ, мы можем
+              посмотреть,
+              почитать какую-то информацию, горячие клавиши, узнать все подробности об этом расширении.
+              Также, его можно
+              удалить здесь же, нажав на кнопку Удалить. К расширениям мы еще вернемся и установим самые
+              лучшие и
+              полезные из них.</p>
+
+            <hr class="page__hr">
+
+            <!--  -->
+            <h4 class="gray" id="set">Настройки</h4>
+            <p>На панели действий у нас остался еще один элемент — шестеренка — меню основных настроек.
+              Здесь мы можем
+              вызвать палитру команд кликнув тут или <kbd>Ctrl+Shift+P</kbd>. Откроется такой блок, где мы
+              можем найти и
+              выполнить любую команду редактора или установленных плагинов.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-25.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Далее сочетания клавиш. Здесь мы можем настроить свои сочетания клавиш командам либо изменить
+              к
+              существующим. К ним мы еще вернемся. Пользовательские фрагменты кода, так называемые
+              сниппеты — маленькие
+              сокращения которые будут вызывать нужный нам фрагмент кода. Сегодня мы научимся их
+              настраивать. Тут же
+              можно настроить цветовую тему программы, значки для файлов и многое другое.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-27.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Заканчивая с Панелью действий, стоит отметить, что можно быстро вызвать последнюю открытую
+              вкладку
+              сочетанием <kbd>Ctrl+B</kbd>. Также скрыв контекстное меню можно скрыть ненужный элемент.
+              Например, Запуск
+              и Отладка я скрою. В этом же контекстном меню можно скрыть всю панель действий целиком.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-28.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+          </div>
+
+          <!--! Статья 8 -->
+          <h2 class="page__subtitle" id="h-items_8">Область редактора</h2>
+          <div class="page__content--items">
+
+            <p>Мы видим вкладки с открытыми файлами. Их можно перетаскивать, закрывать. Если файл не
+              сохранен, то место
+              крестика здесь будет отображаться большая жирная точка. Далее сверху иконка разделения окна.
+              Есть открытый
+              активный файл, нажимаем на иконку и он продублируется сбоку</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-29.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Здесь есть дополнительное меню для управления всеми файлами.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-30.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Ниже мы видим строку навигации — хлебный крошки, где мы можем удобно перемещаться по
+              структуре документа,
+              а также между другими файлами.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-31.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Общая область кода — мы видим сам код открытого файла, а справа мини-карту, которая позволяет
+              удобно
+              перемещаться по длинному файлу. В области кода слева есть небольшое пространство, для
+              установки точек
+              остановок для отладки кода, есть нумерация строк.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-32.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Далее мы видим стрелочки, они появляются при наведении, с их помощью можно свернуть целый
+              блок кода. В
+              этом редакторе эта функция работает с памятью. Я могу файл закрыть, даже закрыть всю
+              программу, а когда
+              открою вновь, то свернутый ранее блок останется свернутым.</p>
+
+            <p>Как я уже показывал, окно редактора можно разделить на несколько частей, это удобно при
+              работе с разными
+              файлами. Для того, чтобы посмотреть разные варианты, нужно перейти в <span class="gray">Вид
+                > Макет
+                редактора.</span> Здесь есть
+              куча вариантов, например две строки и мы можем какой-то файл переместить сюда и работать
+              так. Также есть
+              вариант Сетка 2х2. То есть, можно работать одновременно с 4 файлами.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-33.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Также можно быстро оформить нужное положение файлов, просто перетаскивая их. Я сразу
+              сформировал себе
+              нужный макет для работы. Также есть возможность настроить вид всей области редактора.
+              Откроем <span class="gray">Меню > Вид > Внешний вид</span>.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-34.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Снизу есть возможность регулировать масштаб всей программы. Не путайте с размерами шрифта.
+              Удобно
+              пользоваться сочетаниями клавиш. Например, для увеличения элементов я нажимаю<kbd>
+                Сtrl+</kbd>, для
+              уменьшения —
+              <kbd>Ctrl-</kbd>, для сброса настроек — <kbd>Ctrl+0</kbd>.
+            </p>
+            <p>Размер шрифта в окне редактора изменяем сочетанием <kbd>Ctrl + колесо мыши</kbd> <span class="red">Если
+                включен
+                <a href="#mouse" class="link"> Mouse Wheel Zoom</a> в параметрах.</span></p>
+            <p>Можно перемещать панель действий слева направо и тогда она окажется с другой стороны. Можно
+              указывать
+              положение панели нашей строки состояния. Нажав, мы увидим, что панель откроется уже не снизу
+              как раньше, а
+              сбоку. Тоесть, есть возможность настроить практически все.</p>
+            <p>Также в этом блоке можно скрывать или показывать разные элементы. Ранее я говорил, что мы
+              можем скрыть
+              всю строку уведомлений, скрыть полностью панель действий. В этом блоке мы можем все это
+              вернуть на место.
+            </p>
+
+            <h5 class="green">Режим экрана</h5>
+            <p>Сверху есть полноэкранный режим при нажатии на <kbd>F11</kbd>. Скроется верхнее меню, кнопки
+              управления
+              окном
+              программы.</p>
+            <p>Выравнивание по центру макета. Область кода выстроится по центру, можно регулировать ширину.
+              Это для
+              того, чтобы лучше концентрироваться на коде.</p>
+            <p>Есть замечательный режим <span class="gray">Zen</span>. Он скрывает все элементы, даже
+              вкладки с файлами,
+              мы концентрируемся только
+              на одном единственном файле, на одном коде. Решаем сложную задачу, которая требует
+              максимальной
+              концентрации.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-35.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Чтобы выйти из него, нажимаю<span class="gray"> Escape</span>.</p>
+
+            <h5 class="green">Перенос текста</h5>
+
+            <p>Далее в самом меню Вид мы можем включить или выключить перенос текста, это можно сделать
+              зажав <kbd>Alt +
+                Z.</kbd> Что это значит? Например, у нас есть очень длинный текст, который не помещается
+              в область кода
+              и появляется горизонтальная прокрутка. Если это кажется неудобным, можно нажать <kbd>Alt + Z
+              </kbd>весь
+              наш текст перенесется, чтобы поместиться в область кода.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-36.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Есть возможность скрыть или показать мини-карту, элементы управления, то есть хлебные крошки.
+              Если он
+              кажется ненужным. Здесь можно отобразить непечатаемые пробелы и печатаемые символы и
+              отрисовать
+              управляющие символы, которые могут быть в тексте скопированы с источника.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-37.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+          </div>
+
+          <!--! Статья 9 -->
+          <h2 class="page__subtitle" id="h-items_9">Параметры и настройки программы</h2>
+          <div class="page__content--items">
+
+            <h4 class="gray">Параметры</h4>
+            <p>Дополнительно настроить комфорт работу с кодом и в целом с редактором можно в Параметрах
+              программы. Для
+              этого переходим в <span class="gray">Управление (шестеренка) > Параметры</span> или зажимаем
+              <kbd>Ctrl +
+                ,</kbd>
+            </p>
+            <p>Параметры можно настроить как глобально, так и для конкретного проекта. Настроек здесь очень
+              много. Мы
+              пройдемся по основным.</p>
+
+            <hr class="page__hr">
+
+            <h5 class="gray">Автосохранение</h5>
+            <p>Первая полезная опция — автосохранение файла</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-41.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Здесь можно поменять значение на одно из трех:</p>
+            <div class="page__block--list">
+              <ol>
+                <li><span class="green">afterDelay</span> — файл будет сохраняться после некоторой
+                  задержки, которую
+                  можно настроить сразу здесь
+                  ниже. При выборе этой опции при редактировании файла он сразу будет сохраняться,
+                  жирная точка даже не
+                  будет появляться.
+                </li>
+                <li><span class="green">onfocusChange</span> — файл будет сохранен, когда мы перейдем на
+                  другой файл
+                </li>
+                <li><span class="green">onWindowChange</span> — когда мы перейдем совсем на другую
+                  программу, тогда файл
+                  будет сохранен автоматически.</li>
+              </ol>
+            </div>
+
+            <hr class="page__hr">
+
+            <h5 class="gray">Отображение кода</h5>
+            <div class="page__block--list">
+              <ul class="modules__li--ul">
+                <li><span class="green">Font Size</span> &#8212; Размер шрифта</li>
+                <li><span class="green">Font Family</span>&#8212; Семейство шрифтов</li>
+                <li><span class="green">Tab Size</span> &#8212; Табуляция</li>
+                <li><span class="green">Insert Spaces</span>&#8212; По умолчании установлена галочка, то
+                  есть будут
+                  выводиться
+                  именно пробелы. Я хочу, чтобы у меня выводились значки табуляции, поэтому галочку
+                  уберу.
+
+                  <p>Для того, чтобы преобразовать существующий файл с пробелами, можно обратиться к
+                    строке состояния
+                    нажать 4 пробела и указать опцию Преобразовать отступ в шаги табуляции. Таким
+                    образом мы можем
+                    преобразовать уже открытые файлы.</p>
+                  <div class="page__block--pic">
+                    <details>
+                      <summary><i class="fa-regular fa-image"></i> </summary>
+                      <picture>
+                        <div class="page__block--pic">
+                          <img src="../../img/code/img-42.png" class="img-links" alt="images">
+                        </div>
+                      </picture>
+                    </details>
+                  </div>
+                </li>
+
+                <li><span class="green">Detect Indentation</span> &#8212; Каким образом определять
+                  вставку символов для
+                  новых открытых файлов отвечает опция. Я галочку уберу, потому что хочу, чтобы для
+                  всех файлов работали
+                  именно мои настроенные параметры.
+                  <div class="page__block--pic">
+                    <details>
+                      <summary><i class="fa-regular fa-image"></i> </summary>
+                      <picture>
+                        <div class="page__block--pic">
+                          <img src="../../img/code/img-43.png" class="img-links" alt="images">
+                        </div>
+                      </picture>
+                    </details>
+                  </div>
+                </li>
+
+                <li><span class="green">Hover Enabled</span> &#8212; Скрыть подсказки
+                  <p>при наведении на элемент в коде всплывают подсказки, часто это может раздражать.
+                    Чтобы подсказки
+                    убрать, существует параметр Hover Enabled. Галочку можно снять и подсказки
+                    пропадут.</p>
+                  <div class="page__block--pic">
+                    <details>
+                      <summary><i class="fa-regular fa-image"></i> </summary>
+                      <picture>
+                        <div class="page__block--pic">
+                          <img src="../../img/code/img-44.png" class="img-links" alt="images">
+                        </div>
+                      </picture>
+                    </details>
+                  </div>
+                  <p class="warning">Но, вместе с этим пропадут функции, которые могут быль полезными.
+                    Например, в файле стили у нас есть цвет синий. Он подсвечивается сразу. Если
+                    Hover у нас включен,
+                    тогда при наведении на цвет выпадает такая штука:</p>
+                  <div class="page__block--pic">
+                    <details>
+                      <summary><i class="fa-regular fa-image"></i> </summary>
+                      <picture>
+                        <div class="page__block--pic">
+                          <img src="../../img/code/img-45.png" class="img-links" alt="images">
+                        </div>
+                      </picture>
+                    </details>
+                  </div>
+                  <p> Если галочку Hover Enabled уберем, то эта функция тоже пропадает.</p>
+
+                </li>
+
+                <li><span class="green">Color Decorators</span> &#8212; Вывод квадратиков цвета перед
+                  кодом цвета (Css)
+                  <p></p>
+                  <div class="page__block--pic">
+                    <details>
+                      <summary><i class="fa-regular fa-image"></i> </summary>
+                      <picture>
+                        <div class="page__block--pic">
+                          <img src="../../img/code/img-46.png" class="img-links" alt="images">
+                        </div>
+                      </picture>
+                    </details>
+                  </div>
+                </li>
+
+                <li><span class="green" id="mouse">Mouse Wheel Zoom </span> &#8212; поставив галочку, мы
+                  сможем в
+                  редакторе
+                  изменить
+                  размер шрифта зажав<br> <kbd>Ctrl и покрутив колесико мыши</kbd>.
+                  <p></p>
+                  <div class="page__block--pic">
+                    <details>
+                      <summary><i class="fa-regular fa-image"></i> </summary>
+                      <picture>
+                        <div class="page__block--pic">
+                          <img src="../../img/code/img-47.png" class="img-links" alt="images">
+                        </div>
+                      </picture>
+                    </details>
+                  </div>
+                </li>
+
+                <li><span class="green">Close Empty Groups</span> &#8212; управляет тем, будет ли
+                  закрываться группа при
+                  закрытии последней вкладки в ней. Редактор можно делить на части. По умолчанию при
+                  закрытии в
+                  последней
+                  вкладки, вся вкладка закроется. Иногда это неудобно, поэтому я эту галочку снимаю. И
+                  теперь при
+                  закрытии
+                  последней вкладки группа у меня все равно останется.
+
+                  <div class="page__block--pic">
+                    <details>
+                      <summary><i class="fa-regular fa-image"></i> </summary>
+                      <picture>
+                        <div class="page__block--pic">
+                          <img src="../../img/code/img-48.png" class="img-links" alt="images">
+                        </div>
+                      </picture>
+                    </details>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+            <hr class="page__hr">
+            <h5 class="gray">Форматирование</h5>
+            <p>Следующая группа настроек отвечает за форматирование, которое уже встроено в редакторе VC
+              Code. Что
+              такое форматирование? Например, мы пишем структуру, в ней еще одну структуру, но по какой-то
+              причине
+              съехала табуляция. При зажатии <kbd>Shift + Alt + F</kbd> у нас все выстроится как надо</p>
+            <p>Вернемся к нашим настройкам. Здесь мы можем поставить три галочки:</p>
+
+            <div class="page__block--list">
+              <ol>
+                <li><span class="green">Format On Paste</span> &#8212; форматирование будет произведено
+                  автоматически
+                  при вставке кода.</li>
+                <li><span class="green">Format On Save </span> &#8212; форматирование будет произведено
+                  в момент
+                  сохранения файла.</li>
+                <li><span class="green">Format On Type</span> &#8212; форматирование будет
+                  автоматическим, то есть мы
+                  будем печатать и
+                  будет сразу все форматироваться.</li>
+              </ol>
+            </div>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-49.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <br>
+            <p class="warning">Для быстрого доступа ко всему, что мы настроили, зажимаем
+              <kbd>Ctrl+Shift+P</kbd> и в
+              строке поиска пишем <span class="green">Settings</span>, пока не увидим <span class="green">Settings
+                (JSON)</span>. Нажимаем и перед нами появятся наши настройки, их тут же можно менять.
+            </p>
+            <br>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-50.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+
+            <hr class="page__hr">
+
+            <h5 class="gray">Отключение предварительного просмотра</h5>
+
+            <p>Есть ли какая-нибудь неприятная особенность, которую вы замечали при использовании VS Code?
+              Одна из моих любимых — когда вы открываете файл и сразу же открываете другой файл, не
+              редактируя первый, то первый закрывается.</p>
+            <p>Чтобы все открытые файлы оставались на поле делаем так: переходим в параметры ( <span
+                class="gray">Управление =&gt; Параметры</span>) или <kbd>Ctrl + ,</kbd></p>
+            <p>В строке поиcка забиваем <span class="green">Enable Preview</span> и снимаем галочку</p>
+            <details>
+              <summary><i class="fa-regular fa-image"></i> </summary>
+              <picture>
+                <div class="page__block--pic">
+                  <img src="../../img/code/img-75.png" class="img-links" alt="images">
+                </div>
+              </picture>
+            </details>
+
+
+          </div>
+
+          <!--! Статья 10 -->
+          <h2 class="page__subtitle" id="h-items_10">Установка цветовой схемы и пакета иконок</h2>
+          <div class="page__content--items">
+
+            <p>Сразу хочется сказать пару слов о подсветке синтаксиса — это такая способность редактора
+              распознавать код
+              и раскрашивать отдельные его элементы. Когда мы открыли файл и начали в нем работать, внизу
+              в строке
+              состояния помимо прочих новых элементов появился элемент <span class="green">html</span>.
+              Это означает,
+              что редактор узнал язык и
+              соответствующим образом его подсветил. Кликнув на этот элемент, мы увидим большой список
+              подсветок для
+              различных языков.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-17.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Этот список не может включать в себя абсолютно все. Например, если мы работаем с файлом <span
+                class="green">.kit</span>. Давайте
+              создадим <span class="green">index.kit</span> и скопируем туда наш код. Мы увидим, что
+              подсветки никакой
+              нет, а вместо элемента <span class="green">html</span>
+              мы видим надпись простой текст. Что делать в этом случае? Нам нужно кликнуть на простой
+              текст и тут у нас
+              есть выбор — вместо автоматического обнаружения мы можем попробовать поискать дополнения для
+              подсветки
+              синтаксиса именно для файлов <span class="green">.kit</span>.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-18.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Если это ничего не дает, то мы можем настроить сопоставления. Кликаем сюда и выбираем язык
+              сопоставления
+              для файлов <span class="green">.kit</span>. В моем случае это <span class="green">html</span>.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-19.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Теперь все файлы <span class="green">.kit</span> программа будет распознавать как <span
+                class="green">html</span> файл и соответствующим образом подсвечивать.
+              Вернемся к нашему настоящему <span class="green">html</span> файлу. Сохраним все, что мы тут
+              отредактировали. Результат работы можно
+              увидеть открыв этот файл в браузере.</p>
+
+
+            <hr class="page__hr">
+            <!--  -->
+            <h4 class="gray">Цветовая схема</h4>
+
+            <p>Выбрать одну из установленных тем мы можем перейдя в <span class="gray">Управление
+                (шестеренка) > Темы >
+                Цветовая тема</span>. Видим список и
+              стрелками на клавиатуре можем перемещаться между темами, подбирая себе нужную тему. Есть как
+              темные, так и
+              светлые варианты.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-38.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Если ни одна из этих тем не подходит, мы можем установить свою. Для этого я возвращаюсь к
+              вкладке
+              Расширения, в поле поиска пишу название своей темы — <span class="gray">SpaceOceanKit</span>. Нахожу,
+              нажимаю <span class="green">Install</span>. Далее у меня
+              есть выбор какую тему мне выбрать и я выбираю именно ее.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-39.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>Теперь у меня весь редактор и в том числе код будет выглядеть по другому. Я установил свою
+              тему, ты
+              можешь установить любую другую.</p>
+            <p>Сочетание цветов очень важное при длительной работе с кодом, это влияет на восприятие,
+              усталость и
+              здоровье твоих глаз. Так что тщательно подбери себе тему и не забывай делать перерывы.</p>
+
+            <hr class="page__hr">
+            <!--  -->
+            <h4 class="gray">Иконки</h4>
+
+            <p>Также мы можем изменить вид иконок для файлов в нашем проводнике. Для этого переходим в <span
+                class="gray">Управление (шестеренка) > Темы > Темы значков файлов</span>
+              значков файлов, здесь мы можем отключить значки совсем либо выбрать из списка.</p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-40.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <p>
+              Также установить дополнительные пакеты значков. Например, <span class="gray">Matherial Icon
+                Theme</span>.
+            </p>
+
+          </div>
+
+          <!--! Статья 11 -->
+          <h2 class="page__subtitle" id="h-items_11">Настройка сниппетов</h2>
+          <div class="page__content--items">
+            <p>Cоздаем свои сокращения-сниппеты для быстрого вызова того иного куска кода.
+              Переходим в <span class="gray">Управление > Фрагменты </span>. Здесь есть выбор:</p>
+            </p>
+            <div class="page__block--list">
+              <ol>
+                <li>Создать сниппеты для конкретного языка;</li>
+                <li>Создать сниппеты для всех языков, но для конкретного проекта;</li>
+                <li>Создать глобальные сниппеты для всех языков и для всех проектов.</li>
+              </ol>
+            </div>
+            <p>Создадим глобальные, здесь нужно ввести имя списка сниппетов.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-51.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+
+            <p>В заготовке <span class="green">snippets.json</span> находится заготовка для JavaScript</p>
+            <pre class=""><code class="">"Print to console": {
+  "score": "javascript" ,         
+  "prefix": "log",
+  "body": [
+  "console.log('$1');",
+  "$2"
+  ],
+  "description": "Log output to console"
+}</code></pre>
+            <p>Надпись означает название самого сниппета. Параметр <span class="green">scope</span> —
+              указываем языки
+              для
+              которых этот сниппет будет применяться.
+              Это необязательный параметр, можно его убрать и сниппет будет применяться для всех языков.
+              <span class="green">prefix</span> — это сокращения, то
+              есть что мы будем набирать, чтобы вывелся нужный отрезок кода. В поле <span class="green">body</span> мы и
+              пишем наш кусок кода. Здесь будет
+              выводиться <span class="green">console.log</span> Ниже <span class="green">description</span>, здесь можем
+              указать описание.
+            </p>
+            <p>Можем проверить тот снипет, который был задан изначально в качестве примера. Переходим в файл
+              js,
+              набираем
+              <span class="green">log</span> <kbd>Tab</kbd>.
+            </p>
+
+            <p> Здесь обращаю внимание, что курсор уже моргает в нужном месте, за это отвечают переменные $1
+              $2.
+              Изначально курсор будет
+              в положении $1. Если мы нажмем <kbd>Tab</kbd>, то курсор перескочит в $2. С помощью этих
+              переменных можно
+              настраивать
+              свой сниппет.
+            </p>
+            <p>Вариант ввода нового сниппета в <a href="../fls/fls-page_2.html#snippets" class="link"
+                target="_blank">"Чертогах
+                фрилансера"</a></p>
+
+
+          </div>
+
+          <!--! Статья 12 -->
+          <h2 class="page__subtitle" id="h-items_12">Установка и настройка плагинов</h2>
+          <div class="page__content--items">
+
+            <p>Зажимаем <kbd>Ctrl+Shift+X</kbd> и переходим во вкладку с расширениями.</p>
+
+            <h5 class="gray">Live Sass Compiler</h5>
+            <p>Идеальное для тех, кто работает с препроцессорами SASS/SCSS. Ищем наше дополнение и нажимаем
+              <span class="green">Install</span>.
+              Индикатор сверху
+              показывает, что идет установка, Отлично, расширение установлено. Получаем информационное
+              окошко, что все
+              окей.
+            </p>
+            <p>В строке состояния появляется кнопочка <span class="gray">Watch Sass</span>. И сейчас мы
+              будем этот
+              плагин
+              настраивать.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-52.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Создадим папку с нашими scss файлами, так ее и назовем. Внутри создадим <span
+                class="green">style.scss</span>.
+              Напишем код:</p>
+            <pre class=""><code class="css">body {
+    font-size: 20 px;
+
+  div {
+    font-size: 10 px;
+  }
+
+}</code></pre>
+            <p>У нас пока ничего происходить не будет, но мы можем включить кнопку<span class="gray"> Watch
+                Sass</span>
+              и
+              плагин начал следить за
+              нашими
+              scss\sass файлами. Рядом с ним автоматически скомпилировались два файла <span
+                class="green">style.css</span>
+              и <span class="green">style.css.map</span>.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-53.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Все отлично работает. Но, допустим, мы хотим, чтобы файлы создавались не рядом с файлом scss,
+              а в папке
+              css.</p>
+            <p>Удалим старые файлы и перейдем к настройкам. Зажимаем <kbd>Shift+Ctrl+P</kbd>, вызываем наш
+              <span class="gray">
+                Open User Settings
+                (JSON)
+              </span>. Можем
+              вставить следующую настройку, обязательно ставим запятую и вставляем две настройки.
+            </p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-54.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+
+            <pre class=""><code class="">"liveSassCompile.settings.generateMap": false,
+"liveSassCompile.settings.formats": [
+  {
+  "format": "expanded",
+  "autoprefix": "last 5 versions",
+  "extensionName": ".css",
+  "savePath": "css"
+  }
+],</code></pre>
+            <p>Я выключаю генерацию файла-карты, мап-файла. Следующие настройки для собственно самого
+              компилятора.
+              «format» — можно
+              указать, каким именно способом будет генерироваться scss файл — развернутый, ужат,
+              минифицирован и т.д.
+            </p>
+            <p>Смотрим, что будет происходить. Сохраняем настройки, что-то меняем и мы видим в журнале
+              вывода что-то
+              происходит,
+              заглядываем в папку css и видим, что там уже создайся наш <span class="green">style.css</span>. Теперь у
+              нас
+              все работает и выводится
+              туда, куда
+              нужно.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-55.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>По поводу файлов, которые мы будем включать в <span class="green">style.scss</span>. Мы
+              знаем, что файлы
+              в
+              scss можно импортировать
+              какие-то другие
+              файлы. Пишем, как обычно — <span class="green">@import «header.scss»</span></p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-56.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Сразу получаем ошибку, потому что такого файла не существует и все быстро исправляем. Так мы
+              бы обычно и
+              делали…</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-57.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Что происходит? Когда я сохраняю <span class="green">header.scss</span> у меня создается файл
+              <span class="green">header.css</span>. Но мне нужно, чтобы у меня
+              был один файл
+              <span class="green">style.css</span>, который включает в себя и <span class="green">header</span>, и
+              многие
+              другие файлы, которые я туда подключу. Удаляем <span class="green">header</span>,
+              это
+              неправильно. Чтобы этого не было, мне нужно переименовать файл <span class="green">header.scss</span>,
+              указать вначале имени
+              подчеркивание, а здесь
+              при подключении указать подчеркивание и вообще убрать расширение.
+            </p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-58.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Компилятор будет уже сам понимать, что с ним делать. В итоге, я сохраняю, у меня уже не
+              создается
+              отдельный
+              файл
+              <span class="green">header.css</span>, но стили его собраны в одном файле. Теперь работать
+              очень классно
+              :)
+            </p>
+
+            <p class="warning">Нечего толком не работает, надо пробывать на чистом редакторе, без добавок от
+              ЧФ</p>
+
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">Live Server</h5>
+
+            <p>В комплекте с плагином<span class="gray"> Live Css Compiler</span> сразу устанавливается
+              плагин <span class="gray">Live Server</span> — один из самых полезных плагинов,
+              который умеет создавать локальный сервер и автоматически обновляет нам страницу при
+              редактировании. Если
+              ты
+              не
+              пользуешься <span class="gray">Live Css Compile</span>r, то плагин <span class="gray">Live
+                Serve</span>r
+              нужно установить отдельно.
+            </p>
+            <p>В поиске набираем его название, у нас он уже есть, установлен автоматически вместе с<span class="gray">
+                Live Css Compiler</span>. Об этом говорит
+              кнопку в строке состояния <span class="gray">Go Live</span>. Мы работаем с нашими файлами,
+              когда мы хотим
+              увидеть результат, перейдя в <span class="green">index.html</span>
+              нажимаем на <span class="gray">Go Live</span> и у нас запускается Браузер.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">SCSS IntelliSense</h5>
+            <p>Покажу еще несколько интересных плагинов для препроцессора SaSS. Установим <span class="gray">SCSS
+                IntelliSense</span>, этот плагин
+              подсказывает
+              нам интересные штуки во время работы с scss, также удобно при работе именно с этим
+              синтаксисом.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">SCSS Formatter</h5>
+            <p>Форматирование можно отдельно установить для конкретного синтаксиса. Этот плагин форматирует
+              sсss файлы.
+              Также его можно
+              подстроить.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">Auto Complete Tag</h5>
+            <p>Мегаполезный плагин в который входят <span class="gray">Auto Rename Tag</span> и <span class="gray">Auto
+                Close Tab</span>. Несмотря на то, что VS Code умеет закрывать теги,
+              плагин<span class="gray"> Auto Close Tab</span> — умеет закрывать теги не только в html, но
+              и в многих
+              других языках. <span class="gray">Auto Rename Tag</span> — изменяет
+              закрывающий элемент автоматически, если переименовать открывающий. Например, мне нужно
+              изменить
+              открывающий
+              элемент на
+              span и мы видим, что закрывающий элемент изменит название автоматически.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">Bracket Pair Colorizer</h5>
+            <p>Он разукрашивает разными цветами наши скобочки, — квадратный, фигурные, любые. Разукрашивает
+              разными
+              цветами в
+              зависимости от вложенности. Более того, когда мы находимся внутри скобок, он еще соединяет
+              открывающую и
+              закрывающую
+              цветной вертикальной линией. Нам легко ориентироваться в коде, кроме того, он еще
+              мегапозитивный, с
+              классными цветами и
+              работать приятней.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">Indent Rainbow</h5>
+            <p>Он тоже разукрашивает код, но не скобки, а отступы, что невероятно полезно для тех, кто
+              работает в
+              синтаксисе SaSS или с
+              шаблонизатором pug, где отступы очень важны.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">Better Comments</h5>
+            <p>Плагин работает с комментариями. Обычные комментарии серые и невзрачные, но иногда нужно
+              оставить
+              пометки,
+              обратить
+              внимание и т.д. Когда плагин установлен, мы можем выделить комментарий, сделать чек-лист
+              заданий, задать
+              вопрос.</p>
+            <p>Ставим для чего-то очень важного — ! — текст окрашен в красный, для списка ToDO — оранжевый,
+              для вопроса
+              —
+              ?
+              —
+              синий, звездочка - * - зеленый</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-59.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Все цвета можно настроить, есть готовый код с настройками в информации, его можно перенести и
+              там
+              подправить цвета под
+              наши задачи.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">BEM Helper</h5>
+            <p>Это помощник при работе с методологией BEM. Он умеет вставлять сразу новый элемент по
+              методологии bem,
+              учитывая
+              родителя, учитывая блок. Может вставлять модификатор, помимо всего умеет формировать файл
+              стилей, будь-то
+              css или scss
+              файл на основе bem-разметки в html коде.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-60.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Попробуем. Нажимаем <kbd>Alt+B+E</kbd>, у нас вставился объект, учитывая класс родителя, клас
+              блока.</p>
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">eCSStractor</h5>
+            <p>Плагин, который помогает копировать классы из <span class="green">html</span> в <span
+                class="green">css\scss\sass</span>. Установим его и сразу создадим
+              сочетания клавиш,
+              чтобы делать все быстро. Переходим в <kbd>Управление > Сочетание клавиш,</kbd> ищем наш
+              плагин<span class="gray">
+                eCSStractor</span>, видим
+              несколько команд.
+              Меня интересует команда <span class="gray">eCSStractor Run (With BEM Nesting)</span>.</p>
+            <p>Нажимаем на команду, на плюсик, придумываем свободное сочетание <kbd>Ctrl+Alt+1</kbd>,
+              нажимаем
+              <kbd>Enter</kbd>, наши горячие
+              клавиши
+              присвоились.
+            </p>
+
+            <p class="warning">Доработать</p>
+            <!--  -->
+
+            <hr class="page__hr">
+            <h5 class="gray">CSS Navigation</h5>
+            <p>Отличный многофункциональный плагин, который связывает наши файлы стили с другими файлами.
+              Во-первых, он
+              будет
+              подсказывать нам об имеющихся классах наших файлов стилей.</p>
+            <p>Например, мы создадим класс <span class="green">red</span>. Когда мы пишем нашу разметку
+              <span class="green">html</span>, мы хотим здесь написать класс. Начинаем
+              писать<span class="green"> r</span> и у
+              нас сразу появляется подсказка, что такой класс есть и мы можем с ним работать.
+            </p>
+            <p>Этот плагин позволяет очень быстро перемещаться между разметкой и нашими файлами стилей.
+              Становимся в
+              классы, нажимаем
+              <kbd>F12 </kbd>и сразу перемещаемся в нужный файл стилей. При этом, абсолютно не важно,
+              открытый или
+              закрытый этот файл
+              стилей.
+            </p>
+            <p>Помимо этого, допустим, у нас есть какие-то медиа запросы, когда стиль используется несколько
+              раз в
+              разных
+              местах. В
+              таком случае когда мы нажимаем <kbd>F12</kbd> у нас появится окошко выпадающее, где мы можем
+              перемещаться
+              между
+              совпадениями
+              классов, тут же их менять и быстро работать со стилями, не выходя из html-файла.</p>
+            <p>Это же окошко можно вызвать сочетанием <kbd>Alt + F12</kbd></p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-61.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">Image Preview</h5>
+            <p>Позволяет быстро работать с изображениями в коде. Давайте я подключу картинку, после мы видим
+              на полях
+              появилась ее
+              маленькая иконка. Когда длинный html-код, много картинок, мы можем ориентироваться, видеть
+              что где у нас
+              подключено.<span class="green">
+                При
+                наведении на путь картинки
+              </span>у нас появляется информационное окно, где мы можем открыть файл картинку, видим
+              что это за
+              картинка, а также некоторая информация о картинке.</p>
+            <p>Здесь же можно перейти по ссылке (просмотреть картинку), кликнув текст снизу, либо зажав
+              <kbd>Ctrl</kbd>кликнуть левой кнопкой мыши по ссылке в коде.
+            </p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-62.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <!--  -->
+            <hr class="page__hr">
+            <h5 class="gray">Vscode Google Translate или Google Translate</h5>
+
+            <p class="warning">Требуется наличие интернета!</p>
+            <p>Позволяет переводить выделенный текст с одного языка на другой. Для его настройки переходим в
+              плагин,
+              ищем
+              команду
+              translate text.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-63.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Переходим в сочетания клавиш, вставляем команду, находим ее и задаем сочетание клавиш,
+              допустим
+              <kbd>Shift+Alt+T</kbd>.
+            </p>
+            <p>Возвращаемся в наш html файл, выделяем слово hello, зажимаем <kbd>Shift+Alt+T</kbd> и
+              получаем список
+              языков. Далее
+              выбираем язык,
+              на который нужно перевести и получаем перевод.</p>
+            <p>Если нам нужно переводить только с русского на английский, то можем зайти в <span class="gray">Параметры
+                >
+                Расширения</span>, найти
+              этот плагин,
+              указать основной язык, на который нужно переводить, например английский.</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-64.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            <p>Возвращаемся в сочетание клавиш, сбросить старое сочетание клавиш и добавляем это сочетание
+              клавиш на эту
+              команду
+              (Preffered). У нас есть русское слово, зажимаем <kbd>Shift+Alt+T</kbd> и сразу получаем
+              английское. Я этим
+              пользуюсь
+              постоянно и
+              поэтому рекомендую этот плагин.</p>
+            <p>Сочетание клавиш:</p>
+            <p><kbd>Shift+Alt+T</kbd> русско-английский</p>
+            <p><kbd>Shift+Alt+Y</kbd> выбор языка</p>
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-65.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+
+            <hr class="page__hr">
+
+            <!--  -->
+            <h5 class="gray">Settings Sync</h5>
+
+            <p class="warning">переделать</p>
+
+
+            <p>
+              Настройка программы под себя дело не быстрое и требует усилий, и чтобы каждый раз не
+              приходилось делать то
+              же
+              самое,
+              например при переустановке Windows, существует плагин Settings Sync.
+            </p>
+
+            Он помогает хранить все настройки, в частности на GitHub и при установке новой версии программы
+            мы получаем
+            все
+            настройки и плагины буквально за один клик.<br />
+            Я плагин установил, нужно залогиниться с помощью GitHub, все ОК, я получил об этом
+            сообщение.<br />
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-66.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            Далее плагин предлагает мне выбрать один из существующих ключей, он у меня уже был и мне
+            показывает, что я
+            его
+            обновлял
+            три дня назад. Если ты пользуешься плагином в первый раз, эта синяя кнопка для тебя.<br />
+            <br />
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-67.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            Нужно сохранить все то, что мы сегодня настроили. В информации о плагине есть сочетание
+            <kbd>Shift+Alt+U</kbd>.
+            <br />
+            <br />
+            Нажимаю. В строке состояния видим, что работает плагин и далее получаем вывод в журнал отчет,
+            что все
+            загружено, все
+            плагины, все хорошо.<br />
+            <br />
+            Ну а сейчас я полностью удалю программу и попробую получить все настройки заново.<br />
+            <br />
+            У меня чистая программа, теперь мне нужно установить плагин Settings Sync. Устанавливаю, далее
+            нужно
+            залогиниться с
+            помощью GitHub. Здесь я могу выбрать свой существующий ключ.<br />
+            <br />
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-68.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <br />
+            Я его выбираю. Мне нужно все мои настройки получить, смотрю, какое сочетание клавиш мне для
+            этого нужно —
+            <kbd>Shift+Alt+D</kbd>.<br />
+            <br />
+            Нажимаем, видим чтение удаленных данных, начинает что-то происходить. Спустя некоторое время я
+            вижу, что моя
+            программа
+            выглядит точно так же, как она выглядела после того, как мы ее сегодня настроили. Некоторые
+            плагины просят
+            перезапустить
+            программу, — позволяем. Отлично, вот у нас и русификатор, и все расширения, все как было и это
+            заняло пару
+            секунд.<br />
+            <br />
+            Плагинов существует большое количество и я рассказал только о части. Помни, каждое расширение
+            может влиять
+            на
+            производительность твоей программы.<br />
+            <br />
+            Вот общий (более широкий) список полезных плагинов:<br />
+            Auto Complete Tag (Auto Close Tag, Auto Rename Tag), Bracket Pair Colorizer, indent-rainbow,
+            Better
+            Comments,
+            Guides,
+            BEM Helper, CSS Navigation, eCSStractor for VSCode, Image preview, Live Sass Compiler, Live
+            Server, Project
+            Manager,
+            SCSS BEM Support, SCSS Formatter, SCSS IntelliSense, Vscode Google Translate, SVG, SVG Font
+            Previewer,
+            jQuery
+            Code
+            Snippets, JavaScript Snippet Pack, jsflowchart, no jQuery Snippets, ESLint, Code Runner,
+            Multiple clipboards
+            for VSCode,
+            WordPress Snippets, Live Pug Compiler, pug, Avocode, Google Fonts, GitLens — Git supercharged,
+            <br />
+            Settings Sync<br />
+            <br />
+          </div>
+
+
+          <!--! Статья 13 -->
+          <h2 class="page__subtitle" id="h-items_13">Связать с GITHub</h2>
+          <div class="page__content--items">
+
+            <p class="warning">Внимание! На ПК должен быть установлен <a href="https://git-scm.com/" class="link"
+                target="_blank">Git</a>.</p>
+
+
+            Переходим на вкладку Система управления версиями, нажимаем на +, инициируя локальный
+            репозиторий, выбираем
+            папку с нашим
+            проектом.
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-69.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            Тут мы видим изменения которые нам нужно применить. Жмем на +, чтобы применить сразу все
+            изменения.
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-70.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+            Нужно написать комит, жмем на галочку, пишем что-нибудь, нажимаем на Enter. Далее нужно создать
+            репозиторий
+            на
+            GitHub.Переходим по ссылке Создать новый репозиторий, пишем название, жмем кнопку Создать. Даже
+            нас
+            интересуют
+            эти две
+            команды
+
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-71.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            <code>git remote add origin https://github.com/FreelancerLifeStyle/hello_vscode.git<br />
+                            git push -u origin master<br />
+                        </code><br />
+            <br />
+            Копируем, переходим в редакторе и открываем терминал. Важно, чтобы мы находились внутри в папке
+            проекта.
+            Если
+            это не
+            так, нам нужно перейти в проводник, вызвать контекстное меню, указать пункт Открыть терминал.
+            Вставляем наши
+            две
+            команды, нажимаем Enter.<br />
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-72.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            Загрузки, готово. Теперь наш проект полностью связан с репозиторием Git. Если мы что-то начнем
+            менять, мы
+            увидим что
+            здесь у нас появится значок 1, то есть изменен 1 файл в системе версий, опять нужно применить
+            изменения,
+            написать комит.
+            Достаточно нажать <i>Меню &gt; Отправить</i> и наш проект загрузится на репозиторий. <br />
+            <br />
+            Войдя на GitHub, обновив страницу, мы увидим что все наши файлы и папки появились в репозитории
+            на
+            GitHub.<br />
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-73.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+            Дополнительно можно установить плагин <b>GitLens</b>, который существенно расширяет возможности
+            системы
+            управления
+            контролем версий.<br />
+            <br />
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-74.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <!--! Статья 10 -->
+          <h2 class=" page__subtitle" id="h-items_10">Связь проекта с GitHub</h2>
+          <div class="page__content--items">
+
+            <p></p>
+            <p></p>
+            <div class="page__block--pic">
+              <details>
+                <summary><i class="fa-regular fa-image"></i> </summary>
+                <picture>
+                  <div class="page__block--pic">
+                    <img src="../../img/code/img-51.png" class="img-links" alt="images">
+                  </div>
+                </picture>
+              </details>
+            </div>
+          </div>
+
+          <!--! Статья 11 -->
+          <h2 class="page__subtitle" id="h-items_11">Как менять сочетания клавиш?</h2>
+          <div class="page__content--items">
+
+            <p></p>
+            <p></p>
+            <div class="page__block--pic">
+              <img src="../../img/code/img-3.png" class="img-links" alt="images">
+            </div>
+          </div>
+
+          <!--! Статья 12 -->
+          <h2 class="page__subtitle" id="h-items_12">Медиа</h2>
+          <div class="page__content--items">
+
+            <p></p>
+            <p></p>
+            <div class="page__block--pic">
+              <img src="../../img/code/img-3.png" class="img-links" alt="images">
+            </div>
+          </div>
+
+
+          <div class="page__block-video">
+            <video width="500" height="281" src="../../video/code/VS Code setting.mp4" controls="" preload="metadata"
+              poster="../../video/html/poster.jpg" width="100%">
+
+            </video>
+          </div>
+
+
+
+        </div> <!-- page__content -->
+        <div class="return">
+          <div class="return__container">
+
+            <p><a href="../code/code-menu.html" class="link">К меню " Редакторы кода "</a></p>
+            <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+          </div>
+        </div>
+
+      </div> <!-- page__container -->
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+
+        <!-- Кнопка вверх -->
+        <!-- https://itchief.ru/javascript/btn-up -->
+        <div class="btn-up btn-up_hide"></div>
+
+
+      </div>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+  <!-- ! Кнопка "Вверх" -->
+  <script>
+    const btnUp = {
+      el: document.querySelector('.btn-up'),
+      scrolling: false,
+      show() {
+        if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+          this.el.classList.remove('btn-up_hide');
+          this.el.classList.add('btn-up_hiding');
+          window.setTimeout(() => {
+            this.el.classList.remove('btn-up_hiding');
+          }, 300);
+        }
+      },
+      hide() {
+        if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+          this.el.classList.add('btn-up_hiding');
+          window.setTimeout(() => {
+            this.el.classList.add('btn-up_hide');
+            this.el.classList.remove('btn-up_hiding');
+          }, 300);
+        }
+      },
+      addEventListener() {
+        // при прокрутке окна (window)
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          if (this.scrolling && scrollY > 0) {
+            return;
+          }
+          this.scrolling = false;
+          // если пользователь прокрутил страницу более чем на 150px
+          if (scrollY > 150) {
+            // сделаем кнопку .btn-up видимой
+            this.show();
+          } else {
+            // иначе скроем кнопку .btn-up
+            this.hide();
+          }
+        });
+        // при нажатии на кнопку .btn-up
+        document.querySelector('.btn-up').onclick = () => {
+          this.scrolling = true;
+          this.hide();
+          // переместиться в верхнюю часть страницы
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+
+    btnUp.addEventListener();
+
+  </script>
+</body>
+
+</html>

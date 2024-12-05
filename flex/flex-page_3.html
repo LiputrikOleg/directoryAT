@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Flex Page 3</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="flex__container">
+
+				<h1 class="page__title">Практические примеры</h1>
+
+				<p>Видеоурок <a class="link" target="_blank" href="https://youtu.be/8Gu40PFzOHI">тут</a></p>
+				<p>Все видеоуроки <a href="flex-page_1.html#flex-link" class="link" target="_blank">здесь</a></p>
+
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Горизонтальная структура</h2>
+					<div class="page__content--items">
+
+						<div data-spollers class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">
+									<p class="flex-block__desc">Примеры построения горизонтальной структуры flex-элементов (колонок).</p>
+								</summary>
+
+								<div class="spollers__body">
+
+									<div data-tabs class="tabs">
+										<nav data-tabs-titles class="tabs__navigation">
+											<button type="button" class="tabs__title _tab-active">Три колонки резиновые</button>
+											<button type="button" class="tabs__title">Черыре колонки в два ряда</button>
+											<button type="button" class="tabs__title">Три колонки Одна большая</button>
+											<button type="button" class="tabs__title">Четыре колонки резина + отступы (10px)</button>
+											<button type="button" class="tabs__title">Две колонки сайдбар (200px)</button>
+										</nav>
+
+										<div data-tabs-body class="tabs__content">
+
+
+											<!-- Первый таб -->
+											<div class="tabs__body">
+
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row" style="display: flex;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1" style="flex: 0 1 33.333%;">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2" style="flex: 0 1 33.333%;">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_3" style="flex: 0 1 33.333%;">
+															<!--  content  -->
+															<div class="flex-block__content">3</div>
+														</div>
+													</div>
+												</div>
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+  &lt;!--  flex-container  --&gt;
+  &lt;div class="flex-block__row" style="display: flex;"&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_1"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_2"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_3"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+.block{
+
+}
+
+/* flex-контейнер */
+.flex-block__row{
+
+border: 10px solid #ece89d;
+ ---------------
+| display:flex; |
+ ---------------
+}
+
+/* flex-элемент */
+.flex-block__element{
+
+border: 5px solid #5e5373;
+---------------------
+| flex: 0 1 33.333%; |
+ --------------------
+}
+
+/* flex-элемент №1 */
+.flex-block__element_1{
+
+}
+
+/* flex-элемент №2 */
+.flex-block__element_2{
+
+}
+
+/* flex-элемент №3 */
+.flex-block__element_3{
+
+}
+
+/* контент */
+.flex-block__content{
+
+background-color: #18b5a4;
+/* плюс прочие стили для текста, отступы */
+}</code></pre>
+														</div>
+													</details>
+												</div>
+
+											</div>
+
+
+
+											<!-- Второй таб -->
+											<div class="tabs__body">
+
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row" style="display: flex; flex-wrap: wrap;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1" style="flex: 0 1 50%;">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2" style="flex: 0 1 50%;">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_3" style="flex: 0 1 50%;">
+															<!--  content  -->
+															<div class="flex-block__content">3</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_4" style="flex: 0 1 50%;">
+															<!--  content  -->
+															<div class="flex-block__content">4</div>
+														</div>
+													</div>
+												</div>
+
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+  &lt;!--  flex-container  --&gt;
+  &lt;div class="flex-block__row" style="display: flex;"&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_1"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_2"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_3"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_4"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+.block{
+
+}
+
+/* flex-контейнер */
+.flex-block__row{
+
+border: 10px solid #ece89d;
+ ------------------
+| display:flex;    |
+| flex-wrap: wrap; |
+ ------------------
+}
+
+/* flex-элемент */
+.flex-block__element{
+
+border: 5px solid #5e5373;
+-----------------
+| flex: 0 1 50%; |
+ ----------------
+}
+
+/* flex-элемент №1 */
+.flex-block__element_1{
+
+}
+
+/* flex-элемент №2 */
+.flex-block__element_2{
+
+}
+
+/* flex-элемент №3 */
+.flex-block__element_3{
+
+}
+
+/* контент */
+.flex-block__content{
+
+background-color: #18b5a4;
+/* плюс прочие стили для текста, отступы */
+}</code></pre>
+														</div>
+													</details>
+												</div>
+
+											</div>
+
+
+
+											<!-- Третий таб -->
+											<div class="tabs__body">
+
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row" style="display: flex; flex-wrap: wrap;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1" style="flex: 0 1 100%;">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2" style="flex: 0 1 50%;">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_3" style="flex: 0 1 50%;">
+															<!--  content  -->
+															<div class="flex-block__content">3</div>
+														</div>
+													</div>
+												</div>
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+  &lt;!--  flex-container  --&gt;
+  &lt;div class="flex-block__row" style="display: flex;"&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_1"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_2"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_3"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+.block{
+
+}
+
+/* flex-контейнер */
+.flex-block__row{
+
+border: 10px solid #ece89d;
+ ------------------
+| display:flex;    |
+| flex-wrap: wrap; |
+ ------------------
+}
+
+/* flex-элемент */
+.flex-block__element{
+
+border: 5px solid #5e5373;
+
+}
+
+/* flex-элемент №1 */
+.flex-block__element_1{
+ 
+ --------------------
+| flex: 0 1 100%%;   |
+ --------------------
+}
+
+/* flex-элемент №2 */
+.flex-block__element_2{
+ 
+ --------------------
+| flex: 0 1 50%;     |
+ --------------------
+}
+
+/* flex-элемент №3 */
+.flex-block__element_3{
+
+ --------------------
+| flex: 0 1 50%;     |
+ --------------------
+}
+
+/* контент */
+.flex-block__content{
+
+background-color: #18b5a4;
+/* плюс прочие стили для текста, отступы */
+}</code></pre>
+														</div>
+													</details>
+												</div>
+
+											</div>
+
+
+											<!-- Четвертый таб -->
+											<div class="tabs__body">
+
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row" style="display: flex;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1" style="flex: 0 1 25%; margin: 0 5px;">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2" style="flex: 0 1 25%;  margin: 0 5px;">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_3" style="flex: 0 1 25%; margin: 0 5px;">
+															<!--  content  -->
+															<div class="flex-block__content">3</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_4" style="flex: 0 1 25%; margin: 0 5px;">
+															<!--  content  -->
+															<div class="flex-block__content">4</div>
+														</div>
+													</div>
+												</div>
+
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+  &lt;!--  flex-container  --&gt;
+  &lt;div class="flex-block__row" style="display: flex;"&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_1"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_2"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_3"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_4"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+.block{
+
+}
+
+/* flex-контейнер */
+.flex-block__row{
+
+border: 10px solid #ece89d;
+ ------------------
+| display:flex;    |
+ ------------------
+}
+
+/* flex-элемент */
+.flex-block__element{
+
+border: 5px solid #5e5373;
+------------------
+| margin: 0 5px;  |
+| flex: 0 1 25%;  |
+ -----------------
+}
+
+/* flex-элемент №1 */
+.flex-block__element_1{
+
+}
+
+/* flex-элемент №2 */
+.flex-block__element_2{
+
+}
+
+/* flex-элемент №3 */
+.flex-block__element_3{
+
+}
+
+/* контент */
+.flex-block__content{
+
+background-color: #18b5a4;
+/* плюс прочие стили для текста, отступы */
+}</code></pre>
+														</div>
+													</details>
+												</div>
+
+											</div>
+
+
+
+											<!-- Пятый таб -->
+											<div class="tabs__body">
+
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row" style="display: flex;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1" style="flex: 0 0 200px; ">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2" style="flex: 1 1 auto; ">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+
+													</div>
+												</div>
+
+
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+  &lt;!--  flex-container  --&gt;
+  &lt;div class="flex-block__row" style="display: flex;"&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_1"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  flex-element  --&gt;
+    &lt;div class="flex-block__element block__element_2"&gt;
+      &lt;!--  content  --&gt;
+      &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+    &lt;/div&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+
+
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+.block{
+
+}
+
+/* flex-контейнер */
+.flex-block__row{
+
+border: 10px solid #ece89d;
+ ------------------
+| display:flex;    |
+ ------------------
+}
+
+/* flex-элемент */
+.flex-block__element{
+
+border: 5px solid #5e5373;
+
+}
+
+/* flex-элемент №1 */
+.flex-block__element_1{
+
+   -----------------
+  | flex: 0 0 200px; |
+   -----------------
+}
+
+/* flex-элемент №2 */
+.flex-block__element_2{
+
+   -----------------
+  | flex: 1 1 auto; |
+   -----------------
+}
+
+/* контент */
+.flex-block__content{
+
+background-color: #18b5a4;
+/* плюс прочие стили для текста, отступы */
+}</code></pre>
+														</div>
+													</details>
+												</div>
+
+											</div>
+
+
+										</div>
+									</div>
+
+
+
+
+
+								</div>
+							</details>
+						</div>
+
+					</div>
+
+					<h2 class="page__subtitle">Вертикальная структура</h2>
+
+					<div class="page__content--items">
+						<div data-spollers class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">
+									<p class="flex-block__desc">Примеры построения вертикальной структуры flex-элементов (ряды).</p>
+								</summary>
+								<div class="spollers__body">
+									<div data-tabs class="tabs">
+										<nav data-tabs-titles class="tabs__navigation">
+											<button type="button" class="tabs__title _tab-active">Три ряда второй элемент боьшой</button>
+											<button type="button" class="tabs__title">Три ряда по центру</button>
+											<button type="button" class="tabs__title">Три ряда раскиданы</button>
+										</nav>
+										<div data-tabs-body class="tabs__content">
+											<!-- Первый таб -->
+											<div class="tabs__body">
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row" style="display: flex; flex-direction: column; height: 400px;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2" style="flex: 1 1 auto; height: 100px;">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_3">
+															<!--  content  -->
+															<div class="flex-block__content">3</div>
+														</div>
+													</div>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+           &lt;!--  flex-container  --&gt;
+           &lt;div class="flex-block__row" style="display: flex;"&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_1"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_2"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_3"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;3&lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/div&gt;
+         &lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+         .block{
+         
+         }
+         
+         /* flex-контейнер */
+         .flex-block__row{
+         
+         border: 10px solid #ece89d;
+          ---------------=--------
+         | display:flex;           |
+         | flex-direction: column; |
+         | height: 400px;          |
+          ------------------------
+         }
+         
+         /* flex-элемент */
+         .flex-block__element{
+         
+         border: 5px solid #5e5373;
+         
+         }
+         
+         /* flex-элемент №1 */
+         .flex-block__element_1{
+         
+         }
+         
+         /* flex-элемент №2 */
+         .flex-block__element_2{
+         
+          ------------------
+         | flex: 1 1 auto; |
+          -----------------
+         }
+         
+         /* flex-элемент №3 */
+         .flex-block__element_3{
+         
+         }
+         
+         /* контент */
+         .flex-block__content{
+         
+         background-color: #18b5a4;
+         /* плюс прочие стили для текста, отступы */
+         }</code></pre>
+														</div>
+													</details>
+												</div>
+											</div>
+											<!-- Второй таб -->
+											<div class="tabs__body">
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row"
+														style="display: flex; flex-direction: column; height: 400px; align-items: center;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_3">
+															<!--  content  -->
+															<div class="flex-block__content">3</div>
+														</div>
+													</div>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+           &lt;!--  flex-container  --&gt;
+           &lt;div class="flex-block__row" style="display: flex;"&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_1"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_2"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_3"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;3&lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/div&gt;
+         &lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+         .block{
+         
+         }
+         
+         /* flex-контейнер */
+         .flex-block__row{
+         
+         border: 10px solid #ece89d;
+          ---------------=--------
+         | display:flex;           |
+         | flex-direction: column; |
+         | height: 400px;          |
+         | align-items: center;    |
+          ------------------------
+         }
+         
+         /* flex-элемент */
+         .flex-block__element{
+         
+         border: 5px solid #5e5373;
+         
+         }
+         
+         /* flex-элемент №1 */
+         .flex-block__element_1{
+         
+         }
+         
+         /* flex-элемент №2 */
+         .flex-block__element_2{
+         
+         }
+         
+         /* flex-элемент №3 */
+         .flex-block__element_3{
+         
+         }
+         
+         /* контент */
+         .flex-block__content{
+         
+         background-color: #18b5a4;
+         /* плюс прочие стили для текста, отступы */
+         }</code></pre>
+														</div>
+													</details>
+												</div>
+											</div>
+											<!-- Третий таб -->
+											<div class="tabs__body">
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row"
+														style="display: flex; flex-direction: column; height: 400px; justify-content: space-between;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_2">
+															<!--  content  -->
+															<div class="flex-block__content">2</div>
+														</div>
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_3">
+															<!--  content  -->
+															<div class="flex-block__content">3</div>
+														</div>
+													</div>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+           &lt;!--  flex-container  --&gt;
+           &lt;div class="flex-block__row" style="display: flex;"&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_1"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_2"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;2&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_3"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;3&lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/div&gt;
+         &lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+         .block{
+         
+         }
+         
+         /* flex-контейнер */
+         .flex-block__row{
+         
+         border: 10px solid #ece89d;
+          ---------------=-----------------       
+         | display:flex;                   |
+         | flex-direction: column;         |
+         | height: 400px;                  |
+         | justify-content: space-between; |
+          ---------------------------------
+         }
+         
+         /* flex-элемент */
+         .flex-block__element{
+         
+         border: 5px solid #5e5373;
+         
+         }
+         
+         /* flex-элемент №1 */
+         .flex-block__element_1{
+         
+         }
+         
+         /* flex-элемент №2 */
+         .flex-block__element_2{
+         
+         }
+         
+         /* flex-элемент №3 */
+         .flex-block__element_3{
+         
+         }
+         
+         /* контент */
+         .flex-block__content{
+         
+         background-color: #18b5a4;
+         /* плюс прочие стили для текста, отступы */
+         }</code></pre>
+														</div>
+													</details>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</details>
+						</div>
+					</div>
+
+
+					<h2 class="page__subtitle">По центру</h2>
+
+					<div class="page__content--items">
+						<div data-spollers class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">
+									<p class="flex-block__desc">Центируем блок.</p>
+								</summary>
+								<div class="spollers__body">
+									<div data-tabs class="tabs">
+										<nav data-tabs-titles class="tabs__navigation">
+											<button type="button" class="tabs__title _tab-active">Пример №1</button>
+										</nav>
+										<div data-tabs-body class="tabs__content">
+											<!-- Первый таб -->
+											<div class="tabs__body">
+												<!--  parent -->
+												<div class="flex-block">
+													<!--  flex-container  -->
+													<div class="flex-block__row"
+														style="display: flex; flex-direction: column;  align-items: center; height: 300px;        justify-content: center;">
+														<!--  flex-element  -->
+														<div class="flex-block__element block__element_1">
+															<!--  content  -->
+															<div class="flex-block__content">1</div>
+														</div>
+													</div>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">HTML</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="html"> &lt;div class="flex-block"&gt;
+           &lt;!--  flex-container  --&gt;
+           &lt;div class="flex-block__row" style="display: flex;"&gt;
+             &lt;!--  flex-element  --&gt;
+             &lt;div class="flex-block__element block__element_1"&gt;
+         &lt;!--  content  --&gt;
+         &lt;div class="flex-block__content"&gt;1&lt;/div&gt;
+             &lt;/div&gt;
+           &lt;/div&gt;
+         &lt;/div&gt;</code></pre>
+														</div>
+													</details>
+												</div>
+												<div data-spollers class="spollers spollers__small">
+													<details class="spollers__item">
+														<summary class="spollers__title">CSS</summary>
+														<div class="spollers__body">
+															<pre class=""><code class="css">/* родитель */
+         .block{
+         
+         }
+         
+         /* flex-контейнер */
+         .flex-block__row{
+         
+         border: 10px solid #ece89d;
+          ---------------=----------      
+         | display:flex;            |
+         | align-items:center;      |
+         | height: 300px;           |
+         | justify-content: center; |
+          --------------------------
+         }
+         
+         /* flex-элемент */
+         .flex-block__element{
+         
+         border: 5px solid #5e5373;
+         
+         }
+         
+         
+         /* контент */
+         .flex-block__content{
+         
+         background-color: #18b5a4;
+         /* плюс прочие стили для текста, отступы */
+         }</code></pre>
+														</div>
+													</details>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</details>
+						</div>
+					</div>
+
+				</div>
+
+			</div> <!-- flex__container -->
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../flex/flex-menu.html" class="link">К меню " FLEX "</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 6</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Background & Color</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#c-items_1" class="con-menu">background-color</a>
+							<a href="#c-items_2" class="con-menu">background-image</a>
+							<a href="#c-items_3" class="con-menu">background-size</a>
+							<a href="#c-items_4" class="con-menu">background-repeat</a>
+							<a href="#c-items_5" class="con-menu">background-attachment</a>
+							<a href="#c-items_6" class="con-menu">background-position</a>
+							<a href="#c-items_7" class="con-menu">background-origin</a>
+							<a href="#c-items_8" class="con-menu">background-clip</a>
+							<a href="#c-items_9" class="con-menu">Примеры</a>
+						</div>
+					</details>
+				</div>
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Полезные ссылки</summary>
+						<div class="spollers__body spollers__body--link">
+
+							<p>Подбор цветов -
+								<a href="http://www.flatuicolorpicker.com" class="link" target="_blank">www.flatuicolorpicker.com</a>
+							</p>
+
+							<p>Фон - Паттерны - <a href="https://www.toptal.com/designers/subtlepatterns/" class="link"
+									target="_blank">www.toptal.com</a></p>
+
+							<p>Фон - Паттерны - <a href="http://ava7patterns.com" class="link" target="_blank">ava7patterns.com</a>
+							</p>
+
+							<p>Прозрачные текстуры - <a href="https://www.transparenttextures.com/" class="link"
+									target="_blank">transparenttextures.com</a></p>
+
+							<p>Бесшовные текстуры и фоны - <a href="http://www.render911.ru/categories.php" class="link"
+									target="_blank">render911.ru</a></p>
+
+							<p>Галлерея паттернов на базе градиента - <a href="https://projects.verou.me/css3patterns/" class="link"
+									target="_blank">projects.verou.me/css3patterns</a></p>
+
+							<p>Таблицы цветов - <a href="../css/css-color.html" class="link" target="_blank">c-color.html</a></p>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1">background-color</h2>
+
+					<div class="page__content--items">
+
+						<pre class="pre"><code class="css">.bg {background-color: #ff0021 ;}
+.bg {background-color: rgba(125,17,45,0.1) ;}
+.bg {background-color: hsla(50,40%,30%,0.5) ;}</code></pre>
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="c-items_2">background-image</h2>
+
+					<div class="page__content--items">
+
+						<pre class="pre"><code class="css">.bg {background-image: none};
+.bg {background-image: url(http://site.ru/rose.png);}
+.bg {background-image: url(tl.png), url(tr.png);}
+.bg {background-image: linear-gradient(white, gray);}
+.bg {background-image: repeating-radial-gradient(circle closest-side at 20px 30px, red, yellow, green 100%, yellow 150%, red 200%);}
+.bg {background-image: image("sprites.svg#xywh=40,0,20,20");} </code></pre>
+
+					</div> <!-- page__content--items 2-->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="c-items_3">background-size</h2>
+
+					<div class="page__content--items">
+
+						<p> Так же, мы уже можем задавать множественные фоновые изображения</p>
+						<p><code class="green"> background-size</code> -позволяет управлять размерами фоновых изображений</p>
+
+						<h4 class="gray">Значения:</h4>
+
+						<div class="page__block--list">
+							<ul>
+								<li><code class="green">auto </code> - по-умолчанию. Применяется автоматически, как и должна работать
+									нормально картинка. При
+									этом сохраняются все пропорции.</li>
+								<li><code class="green">cover</code> - растягивает картинку по по большей стороне блока, с соблюдением
+									пропорций.
+								<li> <code class="green">contain</code> - задает размер для картинки такой, чтобы она полностью
+									поместилась в
+									блоке.</li>
+								<li><code class="green">проценты</code> - задаем размер в процентах.</li>
+								<li><code class="green">точные значения</code> - задает размеры в px, em, cm и т.д</li>
+							</ul>
+						</div>
+
+						<div class="warning">
+							<p> <span class="red">Важно:</span>
+								Когда задается размер картинки, независимо от значений (пиксели, проценты и т. д.), сначала указывается
+								ширина,
+								а затем - высота.</p>
+						</div>
+
+						<div class="bg__flex">
+
+							<div class="bg__flex--item">
+								<div class="bg bg1"></div>
+								<h5> background-size: auto;</h5>
+							</div>
+
+							<div class="bg__flex--item">
+								<div class="bg bg2"></div>
+								<h5> background-size: cover;</h5>
+							</div class="bg_flex--item">
+
+							<div class="bg__flex--item">
+								<div class="bg bg3"></div>
+								<h5> background-size: contain;</h5>
+							</div>
+
+							<div class="bg__flex--item">
+								<div class="bg bg4"></div>
+								<h5> background-size: 30%;</h5>
+							</div>
+
+							<div class="bg__flex--item">
+								<div class="bg bg5"></div>
+								<h5> background-size: 200px 300px;</h5>
+							</div>
+						</div>
+
+					</div>
+				</div> <!-- page__content--items 3-->
+
+
+				<!--! Статья 4 -->
+				<h2 class="page__subtitle" id="c-items_4">background-repeat</h2>
+
+				<div class="page__content--items">
+
+					<p>Свойство<code class="green"> background-repeat</code> определяет, как фоновые изображения укладываются в
+						области фона после того, как для них установлены размеры и позиционирование. Если значение свойства имеет
+						два
+						ключевых слова, первое используется для горизонтального направления, второе — для вертикального.</p>
+
+					<h4 class="gray">Значения:</h4>
+
+					<div class="page__block--list">
+						<ul>
+							<li><code class="green">repeat-x</code> - Изображение повторяется в горизонтальном направлении</li>
+							<li><code class="green">repeat-y</code> - Изображение повторяется в вертикальном направлении</li>
+							<li><code class="green">repeat</code> - Изображение повторяется в обоих направлениях так часто, чтобы
+								покрыть
+								область
+								отрисовки фона. Если изображение не помещается, оно обрезается. Значение по умолчанию.</li>
+							<li><code class="green">space</code> - Изображение повторяется столько раз, сколько оно помещается в
+								области
+								фона, не
+								обрезаясь, изображения расположены на равном расстоянии друг от друга. Первое и последнее изображения
+								касаются краев области. Если область рисования фона больше, чем область позиционирования фона, шаблон
+								повторяется, чтобы заполнить область рисования фона. Если недостаточно места для двух копий изображения,
+								то
+								размещается только одно изображение, а свойство <code
+									class="green">background-position </code>определяет
+								его положение.</li>
+							<li><code class="green">round</code> - Изображение повторяется так часто, чтобы заполнить область фона,
+								масштабируясь и не
+								обрезаясь.</li>
+							<li><code class="green"> no-repeat</code> - Изображение размещается один раз и не повторяется.</li>
+						</ul>
+					</div>
+					<div class="bg__flex">
+						<div class="bg__flex--item">
+							<div class="bg bg6"></div>
+							<h5> background-repeat: repeat-x;</h5>
+						</div>
+
+						<div class="bg__flex--item">
+							<div class="bg bg7"></div>
+							<h5> background-repeat: repeat-y;</h5>
+						</div>
+
+						<div class="bg__flex--item">
+							<div class="bg bg8"></div>
+							<h5> background-repeat: repeat;</h5>
+						</div>
+
+						<div class="bg__flex--item">
+							<div class="bg bg9"></div>
+							<h5> background-repeat: spase;</h5>
+						</div>
+
+						<div class="bg__flex--item">
+							<div class="bg bg10"></div>
+							<h5> background-repeat: round;</h5>
+						</div>
+
+						<div class="bg__flex--item">
+							<div class="bg bg11"></div>
+							<h5> background-repeat: no-repeat;</h5>
+						</div>
+					</div>
+
+
+				</div> <!-- page__content--items 4-->
+
+
+				<!--! Статья 5 -->
+				<h2 class="page__subtitle" id="c-items_5">background-attachment</h2>
+
+				<div class="page__content--items">
+
+					<p>Свойство <code class="green">background-attachment</code> указывает, является ли фоновое изображение
+						фиксированными относительно области просмотра или прокручивается вместе с элементом или его содержимым.</p>
+
+					<h4 class="gray">Значения:</h4>
+
+					<div class="page__block--list">
+						<ul>
+							<li><code class="green">scroll</code> - Фоновое изображение прокручивается вместе с текстом и другим
+								содержимым.
+								Значение по
+								умолчанию.</li>
+							<li><code class="green">fixed</code> - Предотвращает перемещение, фиксирует фоновое изображение на заднем
+								плане.
+							</li>
+							<li><code class="green">local</code> - Фоновое изображение прокручивается вместе с содержимым элемента.
+							</li>
+
+						</ul>
+
+					</div>
+
+					<div class="bg__flex">
+						<div class="bg bg12">
+							<h5 style="color: red;"> background-attachment: scroll;</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro soluta quam doloremque quo magnam
+								ducimus
+								velit sit laborum atque libero.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aperiam ipsam cupiditate a, ex esse,
+								dolorum
+								quidem odio iste id?</p>
+							<p>Distinctio aut nemo illo similique rem ratione assumenda labore omnis maiores, error laborum dolores
+								magnam
+								aliquam in iure optio voluptates.</p>
+							<p>Ut laudantium hic quae reiciendis dolorem corrupti, esse quasi illum alias doloribus in. Veritatis vel,
+								voluptatem illum quos officia consequatur!</p>
+							<p>Nulla officiis officia, placeat, impedit vero illo itaque sequi? Reprehenderit aliquam id possimus
+								neque
+								voluptatem a, dicta rerum officiis magni.</p>
+							<p>Corrupti alias aspernatur, perspiciatis qui tempora consequuntur nisi dolorum soluta, reprehenderit,
+								magni
+								illum eveniet aperiam laboriosam earum expedita! Molestias, consequatur.</p>
+						</div>
+						<div class="bg bg13">
+							<h5 style="color: red;"> background-attachment: fixed;</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis repellendus id, voluptas aliquam
+								iure
+								illo tempore maxime cum facere, dolor?</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque eius obcaecati excepturi saepe
+								minima
+								sed temporibus ducimus vero corporis.</p>
+							<p>Sapiente vel commodi suscipit nihil aliquam quod facere. Rem distinctio nulla, excepturi consequuntur,
+								facilis nesciunt delectus fuga neque praesentium perferendis.</p>
+							<p>Expedita, nihil dignissimos aliquam optio possimus amet ea quibusdam. Consequatur debitis enim quod
+								consectetur dolorem adipisci voluptates? Quae, molestiae, minima.</p>
+							<p>Maxime sint quo sequi sunt animi assumenda ipsa, at, debitis repellendus nostrum a in nam cupiditate
+								voluptatem illo ducimus placeat!</p>
+							<p>Itaque, laborum ipsa sit quo eos, quas alias dolorem officia assumenda id magni soluta placeat quisquam
+								consequuntur, obcaecati dolorum ut.</p>
+						</div>
+						<div class="bg bg14">
+							<h5 style="color: red;"> background-attachment: local;</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum voluptates expedita tempore provident
+								minus
+								quod sed ipsum quisquam, voluptate a.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero rerum, harum facilis. Cupiditate
+								tempora
+								quis libero earum vero iste. Tempora!</p>
+							<p>Eius sit nulla, distinctio vel saepe dolor beatae, deleniti blanditiis ea qui minima aliquid, dolorum
+								iste?
+								Voluptatem aut, a recusandae!</p>
+							<p>Quia commodi quaerat expedita dignissimos, optio enim vitae porro eaque consectetur ut dolore
+								accusamus,
+								a
+								aspernatur quas quo ullam possimus!</p>
+							<p>Provident voluptatibus exercitationem et odio ab accusantium officia dolorem voluptatum assumenda,
+								quisquam
+								laborum quas, alias saepe labore similique rem veritatis.</p>
+							<p>Amet aspernatur quidem earum inventore ipsam, repudiandae quae alias veniam iure non consequuntur nulla
+								officiis suscipit illum ea, autem porro?</p>
+						</div>
+					</div>
+
+
+				</div> <!-- page__content--items 5-->
+
+
+				<!--! Статья 6 -->
+				<h2 class="page__subtitle" id="c-items_6">background-position</h2>
+
+				<div class="page__content--items">
+
+					<p>Если для элемента заданы фоновые изображения, свойство <code class="green">background-position</code>
+						указывает их начальное положение (после любого изменения размера) в соответствующей области расположения
+						фона.
+					</p>
+
+					<h4 class="gray">Значения:</h4>
+
+					<div class="page__block--list">
+						<ul>
+							<li><code class="green"> % </code> - Горизонтальное смещение вычисляется по формуле ширина области
+								расположения фона — ширина фонового изображения. Вертикальное смещение по формуле высота области
+								расположения фона - высота фонового изображения, где размер изображения — это размер, заданный свойством
+								<code class="green">background-size</code>. Значение по умолчанию <code class="green">0% 0%</code>.
+							</li>
+							<li><code class="green">длина</code> - Значение длины дает фиксированную длину в качестве смещения.</li>
+							<li><code class="green">left</code> - Вычисляет до 0% для горизонтальной позиции, если задано одно или два
+								значения, в противном случае смещение происходит относительно левого края.
+							</li>
+							<li><code class="green">center</code> - Вычисляет в <code class="green">left 50%</code> для
+								горизонтального
+								положения, если
+								не указано иное горизонтальное положение, или как <code class="green">top 50%</code> для вертикального
+								положения, если оно
+								задано.
+							</li>
+							<li><code class="green">right</code> - Вычисляет в <code class="green">100%</code> для горизонтального
+								положения, если
+								задано одно или два значения, в противном случае смещение происходит относительно правого края.</li>
+							<li><code class="green">top</code> - Вычисляет в <code class="green">0%</code> для вертикальной позиции,
+								если
+								задано одно
+								или два значения, в противном случае смещение происходит относительно верхнего края.
+							</li>
+							<li><code class="green">bottom</code> - Вычисляет в 100% для вертикальной позиции, если задано одно или
+								два
+								значения, в противном случае смещение происходит относительно нижнего края.</li>
+						</ul>
+					</div>
+
+					<h4 class="gray">Синтаксис</h4>
+
+					<pre class="pre"><code class="css"> {background-position: top;
+  background-position: bottom;
+  background-position: left;
+  background-position: right;
+  background-position: center;
+  background-position: 25% 75%;
+  background-position: 0 0;
+  background-position: 1cm 2cm;
+  background-position: 10ch 8em;
+  background-position: 0 0, center;
+  background-position: bottom 10px right 20px;
+  background-position: right 3em bottom 10px;
+  background-position: bottom 10px right;
+  background-position: top right 10px;
+}</code></pre>
+					<p>Если указано только одно значение, второе значение считается <code class="green">center</code>. Если заданы
+						два
+						значения в
+						единицах длины или <code class="green"> class="green"%,</code> то первое значения представляет
+						горизонтальную
+						позицию, второе
+						—
+						вертикальную. Значения в единицах длины или <code class="green">%</code> представляют смещение верхнего
+						левого
+						угла фонового
+						изображения от верхнего левого угла области расположения фона.</p>
+					<p>Пара ключевых слов может быть переупорядочена, в то время как комбинация ключевого слова и длины или
+						процента
+						не может. Например, center <code class="green">left</code> — допустимое значение, а <code
+							class="green">50%</code>
+						<code class="green">left</code> — нет.
+					</p>
+					<p>Если заданы три или четыре значения в единицах длины или<code class="green"> %</code>, то перед каждым
+						значением должно
+						стоять ключевое слово, которое указывает, от какого края дается смещение. Если даны три значения,
+						недостающее
+						смещение считается равным нулю.</p>
+					<p>Положительные значения смещают внутрь от края области расположения фона. Отрицательные значения смещают
+						наружу
+						от края области расположения фона.</p>
+
+				</div> <!-- page__content--items 6-->
+
+
+				<!--! Статья 7 -->
+				<h2 class="page__subtitle" id="c-items_7">background-origin</h2>
+
+				<div class="page__content--items">
+
+					<p><code class="green">background-origin</code> - позиционирует фоновые картинки относительно границ и
+						отступов
+						блока.</p>
+
+					<h4 class="gray">Значения:</h4>
+
+					<div class="page__block--list">
+						<ul>
+							<li><code class="green">padding-box</code> - по-умолчанию.Фоновая картинка позиционируется относительно
+								внутренних
+								полей.</li>
+							<li><code class="green"> border-box</code> - фоновая картинка позиционируется относительно границы.</li>
+							<li><code class="green"> content-box</code> - фоновая картинка позиционируется относительно рабочей
+								области.
+							</li>
+						</ul>
+					</div>
+
+					<p>Если для элемента установлено<code class="green"> background-attachment:</code> <code
+							class="green">fixed</code>,
+						свойство не будет иметь эффекта.</p>
+
+				</div> <!-- page__content--items 7-->
+
+
+				<!--! Статья 8 -->
+				<h2 class="page__subtitle" id="c-items_8">background-clip</h2>
+
+				<div class="page__content--items">
+
+					<p>Задает правила обработки фона ЦЕЛИКОМ ( даже цвета ). И если что-то выходит за рамки - оно обрезается.
+						Значения
+						такие же, как и у - <code class="green">background-origin</code>. Определяет область рисования фона. Фон
+						всегда
+						рисуется под рамкой элемента, если таковая имеется.</p>
+					<p>Если для элемента заданы <br><code class="green">background-clip:</code> <code
+							class="green">padding-box;</code><br> <code class="green">background-origin:</code> <code
+							class="green">border-box;</code><br> <code class="green">background-position:</code> <code
+							class="green">top left;</code><br> и элемент имеет ненулевую рамку, тогда верхняя и левая части фонового
+						изображения будет обрезаны.</p>
+
+					<div class="bg__flex">
+						<div class="bg__clip bg15">
+							<h5> background-clip: border-box;</h5>
+						</div>
+						<div class="bg__clip bg16">
+							<h5> background-clip: padding-box;</h5>
+						</div>
+						<div class="bg__clip bg17">
+							<h5> background-clip: content-box;</h5>
+						</div>
+					</div>
+
+				</div> <!-- page__content--items 8-->
+
+
+				<!--! Статья 9 -->
+				<h2 class="page__subtitle" id="c-items_9">Примеры</h2>
+
+				<div class="page__content--items">
+
+					<div class="bgtest"></div>
+
+					<pre class="pre"><code class="html"> &lt;div class="bgtest"&gt;&lt;/div&gt;</code></pre>
+					<pre class="pre"><code class="css">.bgtest { height: 300px;
+margin: 30px;
+/*Граница вокруг блока*/
+ border: 10px dotted #ccc;
+/*Между границей и фоновой заливкой*/
+padding: 20px;
+/*Фон*/
+background-color: #efefef;
+/*Картинки разброшенные по центру и разным углам*/
+background: url(../../images/background/web.png) no-repeat center center,
+url(../../images/background/color.png) no-repeat left top,
+url(../../images/background/checkbox.png) no-repeat right bottom;
+/* Управляем размерами картинок, в оригинале размеры такие:  web - 160x120, color и checkbox - 300x300. <br> Мы задаем для первой - она в центре, размер - auto, поэтому она свои первоначальные размеры не изменяет. <br> Для второй - слева, задаем ширину в 200рх, пропорционально изменяется и высота <br> Для третьей  - 100рх, следовательно она уменьшается с 300х300 до 100х100.*/
+background-size: auto, 200px, 100px;
+/*картинки позиционирутся относительно рабочей области, т.е. в пределах серого фона*/
+background-origin: content-box;
+/*аналогично*/
+background-clip: content-box;}</code></pre>
+					<hr>
+					<div class="bgdom"></div>
+					<p>В этом примере практически тот же самое, за исключением того, что фоновых картинок больше и игра с их
+						размерами.
+						Если задавать один размер - ширину, то высота измениться пропорционально, если же присутствуют 2 размера, то
+						картинка изменится соответственно их, даже если при этом измениться внешний вид ( пропорция). Причем для
+						фоновой
+						заливки это будет смотреться нормально ( фон в центре), то для картинки нет (слева вверху)</p>
+					<pre class="pre"><code class="html"> &lt;div class="bgdom"&gt;&lt;/div&gt;</code></pre>
+					<pre class="pre"><code class="css"> .bgdom {width: 150px;
+height:150px;
+border: 35px dashed #E44D24;
+border-radius:30px;
+padding: 25px;
+margin-left: 30px;
+background: url(../images/bg.png) no-repeat center center,
+url(../images/star_full.png) no-repeat top left,
+url(../images/warning.png) no-repeat bottom left,
+url(../images/star_full.png) no-repeat bottom right,
+url(../images/warning.png) no-repeat top right;
+background-size:50px 30px,35px 75px,75px 75px,75px,75px 75px;
+background-color: #E4C600;}</code></pre>
+
+				</div> <!-- page__content--items 9-->
+
+
+
+			</div> <!-- page__content -->
+
+
+	</div> <!-- page__container -->
+
+	</main>
+	<div class="return">
+		<div class="return__container">
+
+			<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+			<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="footer__container">
+
+			<!-- Кнопка вверх -->
+			<!-- https://itchief.ru/javascript/btn-up -->
+			<div class="btn-up btn-up_hide"></div>
+
+
+		</div>
+
+	</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

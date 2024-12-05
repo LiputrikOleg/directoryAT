@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 12</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Модуль &#171;Наблюдатель&#187; за появлением элементов при прокрутке страницы (скролле)
+				</h1>
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение модуля</a>
+							<a href="#h-items_3" class="con-menu">Дополнительные настройки</a>
+							<a href="#h-items_4" class="con-menu">События</a>
+							<a href="#h-items_5" class="con-menu">Расположение и дополнительные данные</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+					<div class="page__content--items">
+						<p>Модуль &#171;Наблюдатель&#187; можно использовать для решения самых разных задач: анимация элементов при
+							скролле,
+							подсветка активного пункта меню (используется в модуле &#171;Прокрутка к нужному блоку&#187;) и многих
+							других.
+						</p>
+						<p>Суть работы наблюдателя заключается в добавлении класса <span class="green">_watcher-view</span> элементу
+							в
+							момент его
+							появлении в вьюпорте (экране) при скролле а также при открытии страницы. И, соответственно, убран при
+							уходе
+							объекта из вьюпорта.</p>
+					</div>
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение модуля</h2>
+					<div class="page__content--items">
+
+						<p><span class="green">[HTML]</span> Для объекта, за которым нужно установить наблюдение, следует добавить
+							атрибут
+							<span class="green">data-watch</span>
+						</p>
+						<pre><code>&lt;div data-watch class="block"&gt;
+...
+&lt;/div&gt;</code></pre><br>
+
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">import
+								&#8216;./libs/watcher.js&#8217;</span>
+						</p>
+
+
+					</div>
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Дополнительные настройки</h2>
+					<div class="page__content--items">
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">data-watch-root=&#8217;селектор&#8217;</span> &#8212; селектор родителя внутри
+									которого
+									наблюдать за
+									объектом. По умолчанию &lt;body&gt;</li>
+								<li><span class="green">data-watch-margin=&#8217;значение&#8217; </span>&#8212; отступ от родителя.
+									Указываем
+									значение в PX
+									или в %</li>
+								<li><span class="green">data-watch-threshold=&#8217;значение&#8217;</span> &#8212; процент показа
+									объекта
+									для
+									срабатывания.
+									Где 1 = 100% показ объекта. Указываем только целые или десятичные числа, по умолчанию 0. Может
+									содержать
+									массив
+									значений через запятую.</li>
+								<li><span class="green">data-watch-once</span> &#8212; наблюдать только один раз. То есть класс к
+									объекту
+									добавится только
+									один раз и не будет убран при уходе объекта из вьюпорта.</li>
+							</ul>
+						</div>
+
+						<p><em>Пример &#8212; класс добавится только один раз, при появлении объекта на 50% его высоты:</em></p>
+
+						<pre><code>&lt;div data-watch-threshold="0.5" data-watch-once data-watch class="block"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+					</div>
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">События</h2>
+					<div class="page__content--items">
+
+						<p>После каждом срабатывании наблюдателя, возникает событие <span class="green">watcherCallback</span>, его
+							можно
+							отловить в
+							любой части кода:</p>
+						<pre class=""><code>document.addEventListener("watcherCallback", function (e) {
+  // Полная информация от наблюдателя
+  const entry = e.detail.entry;
+  // Наблюдаемый объект
+  const targetElement = entry.target;
+});</code></pre>
+
+					</div>
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+
+						<p>Функционал находится в файле<span class="green"> js/libs/watcher.js.</span> Название класса <span
+								class="green">ScrollWatcher</span>. Модуль построен на основе <a
+								href="https://developer.mozilla.org/ru/docs/Web/API/Intersection_Observer_API" class="link"
+								target="_blank">Intersection Observer
+								API</a>.
+						</p>
+
+						<p>Модуль снабжен системой FLS и будет сообщать о своих действиях в консоль браузера</p>
+
+					</div>
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_11.html" class="link">&lt;= Модуль добавления классов к шапке при прокрутке
+								страницы</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_13.html">Модуль «Показать ещё» =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

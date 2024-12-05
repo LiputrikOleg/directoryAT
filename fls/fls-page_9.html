@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 9</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль &#171;Динамический адаптив&#187;</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение функционала</a>
+							<a href="#h-items_2" class="con-menu">Использование функционала</a>
+							<a href="#h-items_3" class="con-menu">Расположение и дополнительные данные</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 0 -->
+
+					<div class="page__content--items">
+						<p>Во время работы над адаптивом сайта, нам то и дело приходится изменять внешний вид объекта. В
+							некоторых случаях нам необходимо изменить порядок элементов, когда при определенном разрешении
+							экрана некоторый блок должен находится в совершенно другом месте структуры. Особенно часто это
+							требуется при адаптации шапки сайта когда необходимо перенести блок с контактами в меню-бургер.
+						</p>
+						<p>Функционал динамического адаптива перемещает необходимый блок (на определенном разрешении) в
+							другой блок. Перемещение отображается в разметке HTML. </p>
+					</div>
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+					<div class="page__content--items">
+						<p>[JS] В файле <span class="green">js/app.js</span> раскомментировать строку </p>
+						<pre class=""><code class="">import "./libs/dynamic_adapt.js";</code></pre>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Использование функционала</h2>
+					<div class="page__content--items">
+
+						<p>[HTML] В блок который нужно переместить добавляем атрибут <span class="green">data-da</span> со
+							значениями
+							атрибута указанными ниже</span>:</p>
+
+
+						<div class="page__block--pic">
+							<picture>
+								<source srcset="../../img/fls-img/10.webp" type="image/webp"><img src="../../img/fls-img/10.jpg"
+									class="img-links" alt="Адаптив">
+							</picture>
+						</div>
+
+
+					</div>
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+
+						<p>Функционал находится в <span class="green">js/libs/dynamic_adapt.js</span>. Название функции
+							<span class="green">DynamicAdapt(type)</span>.
+						</p>
+						<p>У модуля есть ограничения, например, если перекидывать несколько объектов одновременно в один и
+							тот же блок, может возникнуть путаница с порядком блоков.</p>
+
+
+						<figure class="">
+							<div class="">
+								<iframe loading="lazy" title="Динамический адаптив // Быстрая адаптация сложных объектов на JavaScript"
+									width="500" height="281" src="https://www.youtube.com/embed/QKuMr575vlQ?feature=oembed"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+							</div>
+						</figure><br>
+						<p> <a href="fls-dynadaptiv.html" class="link" target="_blank">Текстовый вариант видео</a></p>
+
+						<p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+						<div class="page__block-video">
+							<video width="500" height="281" src="../../video/fls/dinadaptiv.mp4" controls="" preload="metadata"
+								poster="../../video/html/poster.jpg" width="100%">
+
+							</video>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_8.html" class="link">&lt;= Модуль «Popup». Всплывающие (модальные) окна</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_10.html">Модуль «Прокрутка к нужному блоку». Плавная навигация
+								по странице. =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

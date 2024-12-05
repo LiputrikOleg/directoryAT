@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 2</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Установка и запуск шаблона. Подготовка к работе</h1>
+
+
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Установка шаблона</a>
+							<a href="#h-items_2" class="con-menu">Запуск шаблона и режимы работы</a>
+							<a href="#h-items_3" class="con-menu">Подготовка редактора к комфортной работе с шаблоном</a>
+							<a href="#h-items_4" class="con-menu">Дополнительные материалы</a>
+
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Установка шаблона</h2>
+					<div class="page__content--items">
+
+						<p>Первым делом следует разархивировать zip-архив в вашу папку проекта. Следите за тем, чтобы сама
+							папка и её родительские папки не содержали в названии кириллицу, пробелы, символы # и !</p>
+
+						<div class="page__block--pic">
+
+							<figure>
+								<picture>
+									<source srcset="../../img/fls-img/01.webp" type="image/webp"><img src="../../img/fls-img/01.png"
+										alt="Image" class="img-links">
+								</picture>
+								<figcaption>Содержимое архива в папке проекта</figcaption>
+							</figure>
+
+						</div>
+
+						<p>Если вы до этого момента не пользовались сборщиками GULP, WEBPACK и пакетным менеджером NPM,
+							следует <a class="link" href="https://nodejs.org" target="_blank">скачать и
+								установить Node.js</a>. Качайте версию рекомендованную для большинства.</p>
+
+						<p>Далее, открываем терминал в этой папке проекта. Терминал может быть встроен или открыт отдельно
+							от редактора. Рекомендую использовать терминал <a class="link" href="https://git-scm.com/downloads"
+								data-type="URL" data-id="https://git-scm.com/downloads" target="_blank">GIT Bash</a>.</p>
+
+						<p>Если вы до этого момента не пользовались сборщиком GULP введите в терминал команду
+							<code class="gray">npm i gulp-cli -g</code> это установит GULP в систему глобально.
+						</p>
+						<p>После завершения установки GULP введите команду <code class="gray">npm i</code></p>
+
+						<blockquote class="warning">
+							<p>В процессе установки в терминале могут возникать сообщение с пометкой WARN на желтом фоне.
+								Эти сообщения можно игнорировать. Но, если вы получаете сообщение ERR! красным цветом &#8212;
+								это критическая ошибка и её нужно исправлять.</p>
+						</blockquote>
+
+
+						<div class="page__block--pic">
+							<figure>
+								<picture>
+									<source srcset="../../img/fls-img/02.webp" type="image/webp"><img src="../../img/fls-img/02.png"
+										alt="Image" class="img-links">
+								</picture>
+								<figcaption>Предупреждения можно игнорировать</figcaption>
+							</figure>
+						</div>
+
+						<div class="page__block--pic">
+							<figure>
+								<picture>
+									<source srcset="../../img/fls-img/02.webp" type="image/webp"><img src="../../img/fls-img/02.png"
+										alt="Image" class="img-links">
+								</picture>
+								<figcaption>Ошибка зависимостей</figcaption>
+							</figure>
+						</div>
+
+						<p>Часто может возникнуть ошибка зависимостей устанавливаемых пакетов (плагинов), и в NPM выше 7й
+							версии это приводит к критической ошибке и остановке инсталляции.</p>
+						<p>Чтобы решить проблему выполните команду <code class="gray">npm i --legacy-peer-deps</code>,
+							это запустит процесс установки игнорируя подобные несовместимости.</p>
+
+						<blockquote class="warning">
+							<p>Помните &#8212; версии NodeJS и Python в вашей системе должны быть свежих версий.</p>
+						</blockquote>
+
+						<p>После успешной установки, у вас появится папка <span class="green">node_modules</span> и файл <span
+								class="green">package-lock.json</span> </p>
+
+						<div class="page__block--pic">
+							<figure>
+								<picture>
+									<source srcset="../../img/fls-img/02.webp" type="image/webp"><img src="../../img/fls-img/02.png"
+										alt="Image" class="img-links">
+								</picture>
+								<figcaption>Установка завершена</figcaption>
+							</figure>
+						</div>
+
+						<p>Подробнее про <a class="link" href="fls-page_3.html" target="_blank"> архитектуру
+								папок
+								и файлов</a> ЧФ мы поговорим в
+							следующей главе, а пока продолжаем подготовку к работе</p>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Запуск шаблона и режимы работы</h2>
+					<div class="page__content--items">
+						<p>Шаблон &#171;Чертоги Фрилансера&#187; может выполнять несколько сценариев:</p>
+
+						<div class="page__block--list">
+
+							<ol>
+								<li>Режим разработчика. Команда запуска <code class="gray">npm run dev</code></li>
+								<li>Режим продакшена. Команда запуска <code class="gray">npm run build</code></li>
+								<li>Режим продакшена и отправка результата на сервер по FTP. Команда запуска
+									<code class="gray">npm run deploy</code>
+								</li>
+								<li>Режим продакшена и создание ZIP-архива с результатом. Команда запуска
+									<code class="gray">npm run zip</code>
+								</li>
+								<li>Режим продакшена без создания WEBP изображений и действий связанных с этим форматом. Команда
+									запуска <code class="gray">npm run devbuild</code></li>
+							</ol>
+							<p>Дополнительные команды:</p>
+							<ol>
+								<li>Ручное создание SVG спрайта. Команда запуска <code class="gray">npm run sprite</code>
+								</li>
+								<li>Конвертация шрифтов с принудительной перезаписью файла стилей. Команда запуска
+									<code class="gray">npm run fonts</code>
+								</li>
+							</ol>
+						</div>
+						<h3 class="gray">Режим разработчика</h3>
+						<p>В режиме разработчика выполняются только необходимые для процесса разработки задачи:</p>
+						<div class="page__block--list">
+
+							<ol>
+								<li>Конвертация шрифтов и запись в файл стилей</li>
+								<li>Конвертация SCSS файлов в CSS файлы, переименование псевдонимов</li>
+								<li>Сборка HTML файлов, переименование псевдонимов</li>
+								<li>При использовании PUG, файлы преобразовываются в HTML, переименовываются псевдонимы</li>
+								<li>Собираются JS файлы</li>
+								<li>Запускается локальный сервер, открывается браузер с индексной страницей. </li>
+								<li>Запускается наблюдатель за изменением фалов. При каждом изменении файла браузер обновляет
+									страницу (кроме страницы-содержания)</li>
+								<li>Копируются файлы из указанной папки</li>
+								<li>HTML CSS JS файлы результата не записываются на диск, это увеличивает скорость работы.</li>
+							</ol>
+						</div>
+						<p> Если у вас слабый ПК (мало ОЗУ) или шаблон со временем начинает тормозить, откройте файл <span
+								class="green">
+								config/webpack.dev.js</span> и раскомментируйте блок:</p>
+						<pre class=""><code class="js">devMiddleware: {
+writeToDisk: true,
+},</code></pre><br>
+						<p> Параметр включит создание папки dist в режиме разработчика, что повышает скорость работы сборки на
+							слабых ПК.
+						</p>
+
+
+						<h3 class="gray"> Режим продакшена</h3>
+						<p> В режиме продакшена выполняется финализация проекта, а именно:</p>
+						<div class="page__block--list">
+							<ol>
+								<li>Конвертация шрифтов и запись в файл стилей</li>
+								<li>Конвертация изображений в WEBP формат. Сжатие и оптимизация JPG PNG SVG картинок</li>
+								<li>Конвертация SCSS файлов в CSS файлы, переименование псевдонимов, группировка медиа-запросов,
+									добавляются вендорные префиксы для обеспечения кроссбраузерности, обрабатывается подключение
+									WEBP изображений, производится сжатие и оптимизация конечного файла (также создается несжатая
+									копия)</li>
+								<li>Сборка HTML файлов, переименование псевдонимов, обрабатывается подключение WEBP изображений
+								</li>
+								<li>При использовании PUG, файлы преобразовываются в HTML, переименовываются псевдонимы,
+									обрабатывается подключение WEBP изображений</li>
+								<li>Собираются JS файлы, производится сжатие и оптимизация конечного файла. В результат попадает
+									только используемый код. Итогом задачи будет создание двух файлов: сжатого app.min.js
+									(подключен к HTML) и не сжатого app.js для дальнейшего редактирования другими специалистами.
+								</li>
+								<li>Копируются файлы из указанной папки</li>
+								<li>Все файлы с результатом записываются на диск (обычно в папку dist), локальный сервер не
+									запускается</li>
+							</ol>
+						</div>
+
+						<blockquote class="warning">
+							<p>Итак, давайте же запустим наш шаблон в режиме разработчика, для этого в терминале выполняем
+								команду <code class="gray">npm-run-dev</code></p>
+						</blockquote>
+
+						<p>После запуска система выполнет все задачи режима разработчика описанные выше. Результатом работы
+							должна стать открытая в браузере страница содержания. </p>
+
+						<blockquote class="warning">
+							<p>Внимание, страница содержания не обновляется автоматически при её редактировании</p>
+						</blockquote>
+
+						<div class="page__block--pic">
+							<figure class="wp-block-image size-large">
+								<picture>
+									<source srcset="../../img/fls-img/05.webp" type="image/webp"><img src="../../img/fls-img/05.png"
+										alt="Image" class="img-links">
+								</picture>
+								<figcaption>Старт выполнения команды</figcaption>
+							</figure>
+						</div>
+
+						<div class="page__block--pic">
+							<figure class="wp-block-image size-large">
+								<picture>
+									<source srcset="../../img/fls-img/06.webp" type="image/webp"><img src="../../img/fls-img/06.png"
+										alt="Image" class="img-links">
+								</picture>
+								<figcaption>Команда успешно выполнена</figcaption>
+							</figure>
+						</div>
+
+
+
+
+						<h3 class="gray"> Возможные ошибка и их решения</h3>
+						<p>Если браузер не запустился, а в терминале видны ошибки (ERR!) убедитесь что:</p>
+						<div class="page__block--list">
+							<ol>
+								<li>У вас установлен Node.js и Python последней версии</li>
+								<li>Терминал открыт с правами администратора</li>
+								<li>В названиях папок на всем пути к проекту нет символа # или !</li>
+								<li>Папки и файлы должны быть названы латиницей без пробелов</li>
+								<li>Тег img и его содержимое должны быть записаны в одну строку без переносов</li>
+								<li class="warning">Расширения изображений должны быть указаны маленькими буквами, иначе будут проблемы
+									при конвертации в webp. И их может не быть ВООБЩЕ при создании архива и далее.</li>
+								<li>В атрибуте src должен быть указан путь к существующей картинке без пробелов</li>
+							</ol>
+
+							<blockquote class="warning">
+								<p>При ошибке связанной с node-sass запустите команду
+									<code class="gray">npm rebuild node-sass</code>
+								</p>
+							</blockquote>
+
+							<blockquote class="warning">
+								<p>При ошибке связанной с Python запустите
+									команду <code class="gray">npm install -g windows-build-tools</code>
+								</p>
+							</blockquote>
+							<blockquote class="warning">
+								<p>При ошибке Error [ERR_UNSUPPORTED_ESM_URL_SCHEME]:</p>
+							</blockquote>
+							<ul>
+								<li>Качаем версию 14.15.1 (https://nodejs.org/dist/v14.15.1/), в Zip архиве.</li>
+								<li>Заходим в папку с установленным NodeJS, распаковываем содержимое архива в папку, с заменой файлов.
+								</li>
+								<li>Далее идем сюда <span class="gray">
+										«Панель управления» => «Система» => «Дополнительные параметры системы» =>
+										«Дополнительно» => «Переменные среды»
+									</span></li>
+								<li>В Системных переменных «Создать» переменную с именем ‘NODE_SKIP_PLATFORM_CHECK’ и присваиваем ей
+									значение
+									‘1’.
+								</li>
+								<li>Перезапускаем систему, и запускаем шаблон согласно инструкции</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<h2 class="page__subtitle" id="h-items_3">Подготовка редактора к комфортной работе с шаблоном</h2>
+
+					<div class="page__content--items">
+
+						<blockquote class="warning">
+							<p>Для того чтобы наслаждаться возможностями шаблона ЧФ по полной, нам следует произвести
+								некоторые настройки редактора. В качестве примера представлен редактор VS Code</p>
+						</blockquote>
+
+						<h3 class="gray"> Настройка псевдонимов</h3>
+
+						<p>В главе <a class="link" href="fls-page_3.html" target="_blank">Архитектура
+								шаблона.
+								Файлы и папки</a> вы узнаете что различные части
+							HTML/PUG SCSS файлов находятся на разных уровнях вложенности, что создает определенные
+							неудобства при подключении, например картинок, в процессе разработки.</p>
+
+						<p>Неудобства мы не любим поэтому настроим, так называемые, псевдонимы (алиасы) путей к папкам. Для
+							этого нам нужно установить плагин <a class="link"
+								href="https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete"
+								target="_blank">Path
+								Autocomplete</a>. После установки открываем настройки редактора
+							(settings.json), для этого жмем F1 в редакторе и в строке поиска пишем Open Settings и жмем на
+							ссылку Open Settings (JSON).</p>
+
+						<p>В этот файл нужно аккуратно вставить следующий код:</p>
+
+						<pre><code>
+"path-autocomplete.pathMappings": {
+"@img": "${folder}/simg", // alias for images
+"@scss": "${folder}/src/scss", // alias for scss
+"@js": "${folder}/src/js", // alias for js
+}</code></pre><br>
+						<p>Очень важно соблюдать синтаксис JSON, обращайте внимания на запятые:</p>
+
+						<div class="page__block--pic">
+							<figure>
+								<picture>
+									<source srcset="../../img/fls-img/08.webp" type="image/webp"><img src="../../img/fls-img/08.png"
+										alt="image" class="img-links">
+								</picture>
+								<figcaption>Правильная вставка кода</figcaption>
+							</figure>
+						</div>
+
+						<p>После этого вы смело можете использовать псевдонимы при подключении файлов, например:</p>
+
+						<pre><code>&lt;img src="@img/fls-imgcover.jpg" alt="Картинка"&gt;</code></pre>
+						<br>
+						<p>Редактор распознает псевдоним и выведет список файлов в указанной папке, а во время сборки
+							система сама поменяет псевдоним на нужный путь!</p>
+
+						<div class="page__block">
+							<h3 class="gray" id="snippets">Настройка сниппетов</h3>
+							<p><a href="snippet.html" class="link" target="_blank">Сниппеты</a> &#8212; это короткие коды которые
+								могут
+								вызывать готовые
+								заготовки кода любого объема.
+								Это колоссально повышает скорость разработки. </p>
+							<p>Конечно же, я использовал эту супер возможность в своих чертогах. То есть, построение, например,
+								правильной HTML структуры для того или иного JS модуля я добавил в сниппеты.</p>
+							<p>Чтобы добавить набор сниппетов из шаблона к себе в редактор выполняем следующие действия:</p>
+							<div class="page__block--list">
+								<ol>
+									<li>Открываем файл <span class="green">snnipets.txt</span> из архива ЧФ и копируем все содержимое</li>
+									<li>В редакторе VS Code переходим в настройки (шестеренка)<span class="gray">
+											-&gt; User Snippets -&gt;New Global
+											Snippets File
+										</span> пишем название, например fls, и заменяем содержимое на скопированное из
+										snnipets.txt</li>
+									<li>При обновлении шаблона и сниппетов создавать новый файл не нужно, следует открыть
+										существующий и обновить содержимое</li>
+								</ol>
+							</div>
+						</div>
+						<p>ВЫ МОЖЕТЕ СОЗДАВАТЬ И ДОБАВЛЯТЬ СВОИ СНИППЕТЫ, ПОМОЖЕТ В ЭТОМ СЕРВИС: <a
+								href="https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode" class="link"
+								target="_blank">https://snippet-generator.app</a></p>
+						<p>Отлично, сниппеты ЧФ на борту! В этой документации, а также в коде шаблона вы часто будите
+							встречать подсказки с указанием сниппета. </p>
+
+					</div>
+
+					<h2 class="page__subtitle" id="h-items_4">Дополнительные материалы</h2>
+
+					<div class="page__content--items">
+						<p>Для лучшего понимания установки Node.JS, GIT Bash, GULP, настройки псевдонимов посмотрите это
+							видео:</p>
+
+						<figure>
+							<div class="">
+								<iframe loading="lazy"
+									title="GULP 2022 установка настройка плагины. Подробный курс по настройке галпа для быстрой сборки проекта"
+									width="500" height="281" src="https://www.youtube.com/embed/jU88mLuLWlk?feature=oembed"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+							</div>
+						</figure>
+
+						<p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+						<div class="page__block-video">
+							<video width="500" height="281" src="../../video/fls/gulp2022.mp4" controls="" preload="metadata"
+								poster="../../video/html/poster.jpg" width="100%">
+
+							</video>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div> <!--  page__content-->
+
+
+			<div class="page__footer">
+
+				<div class="page__footer_left">
+
+					<p>Предыдущий пост: <br>
+						<a href="fls-page_1.html" class="link">&lt;= Для чего нужны «Чертоги Фрилансера» v3?
+							Презентация шаблона
+							и его возможностей</a>
+					</p>
+				</div>
+
+				<div class="page__footer_right">
+
+					<p>Следующий пост: <br>
+						<a class="link" href="fls-page_3.html"> Архитектура шаблона. Файлы и папки =></a>
+					</p>
+				</div>
+			</div>
+
+			<hr class="page__hr">
+
+	</div>
+
+	<div class="return">
+		<div class="return__container">
+
+			<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+			<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="footer__container">
+
+			<!-- Кнопка вверх -->
+			<!-- https://itchief.ru/javascript/btn-up -->
+			<div class="btn-up btn-up_hide"></div>
+
+
+		</div>
+
+	</footer>
+	</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

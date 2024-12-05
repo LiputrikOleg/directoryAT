@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 3</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Градиенты</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#c-items_1" class="con-menu">Линейный градиент</a>
+							<a href="#c-items_2" class="con-menu">Радиальный градиент</a>
+							<a href="#c-items_3" class="con-menu">Глюкофор</a>
+
+
+						</div>
+					</details>
+				</div>
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Полезные ссылки</summary>
+						<div class="spollers__body spollers__body--link">
+
+							<p>Генератор градиента -
+								<a href="http://www.colorzilla.com/gradient-editor/" class="link" target="_blank">www.colorzilla.com</a>
+							</p>
+
+							<p>Создание градиентов -
+								<a href="https://uigradients.com/" class="link" target="_blank">uigradients.com</a>
+							</p>
+
+							<p>Градиенты -
+								<a href="https://webgradients.com/" class="link" target="_blank">webgradients.com</a>
+							</p>
+
+							<p>Галлерея паттернов на базе градиента -
+								<a href="https://projects.verou.me/css3patterns/" class="link"
+									target="_blank">projects.verou.me/css3patterns/</a>
+							</p>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1">Линейный градиент</h2>
+
+					<div class="page__content--items">
+
+						<p>
+							Градиент задается через свойство <code class="green">background (background-image)</code> и он является
+							картинкой, которую генерирует браузер согласно коду.
+							<code class="green">linear-gradient-</code> задает линейный градиент.
+						</p>
+
+						<h4 class="gray">Обычный градиент:</h4>
+						<pre class="pre"><code class="css">.grad{
+height: 100px;
+border: 1px solid #ccc;
+background-image: linear-gradient(#fff, #000);
+}</code></pre>
+						<div class="grad"></div>
+
+						<hr class="page__hr">
+
+						<h4 class="gray"> Градиент с наклоном:</h4>
+						<pre class="pre"><code class="css">.grad2{
+height: 100px;
+border: 1px solid #ccc;
+background-image: linear-gradient(45deg, #fff, #000);}</code></pre>
+
+						<div class="grad2"></div>
+						<hr class="page__hr">
+
+						<h4 class="gray">Градиент с контролируемым переходом:</h4>
+						<pre class="pre"><code class="css">.grad3{
+height: 100px;
+border: 1px solid #ccc;
+background-image: linear-gradient(45deg, #f00 0%, #f00 33%,#0f0 33%,#0f0 66%,#00f 66%,#00f 100%);}
+/*Равнозначная запись
+background-image: linear-gradient(45deg, #f00 33%,#0f0 33%,#0f0 66%,#00f 66%);*/</code></pre>
+						<div class="grad3"></div>
+
+						<hr class="page__hr">
+
+						<h4 class="gray"> Контролируем размеры, повторения и местоположения:</h4>
+						<pre class="pre"><code class="css">.grad4{
+height: 100px;
+background-color: #ddd;
+background-image: linear-gradient(45deg, #f00 33%,#0f0 33%,#0f0 66%,#00f 66%);
+-webkit-background-size:50px 50px;
+background-size:50px 50px;
+background-position:125px 25px;
+background-repeat: no-repeat;}</code></pre>
+						<div class="grad4"></div>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Прозрачность и треугольность:</h4>
+						<pre class="pre"><code class="css">.grad5{
+height: 100px;
+background-color: #444;
+background-image: linear-gradient(135deg, #eee, #ccc 47%, #333 47%, transparent 50%);
+-webkit-background-size:50px 50px;
+background-size:50px 50px;
+background-repeat: no-repeat;}</code></pre>
+
+						<div class="grad5"></div>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Прозрачность и ромбики</h4>
+						<pre class="pre"><code class="css"> .grad6{
+height: 100px;
+background:
+linear-gradient(135deg, #eee, #ccc 25%,transparent 25%) 25px 25px,
+linear-gradient(225deg, #eee, #ccc 25%,transparent 25%) -25px 25px,
+linear-gradient(315deg, #eee, #ccc 25%,transparent 25%) -25px -25px,
+linear-gradient(45deg, #eee, #ccc 25%,transparent 25%) 25px -25px;
+background-color: #444;
+-webkit-background-size:50px 50px;
+background-size:50px 50px;
+background-repeat: repeat-x;}</code></pre>
+						<div class="grad6"></div>
+						<hr class="page__hr">
+
+						<h4 class="gray">Кинопленка</h4>
+						<pre class="pre"><code class="css">.grad7 {
+height: 100px;
+width: 610px;
+border-top: 3px solid #000;
+border-bottom: 3px solid #000;
+background: linear-gradient(90deg, #000 35%, #fff 65%),
+linear-gradient(90deg, #f00 20%, #D3804A 20%, #D3804A 40%, #FFDD00 40%, #FFDD00 60%, #0f0 60%, #0f0 80%, #00f 80%),
+linear-gradient(90deg, #000 35%, #fff 65%);
+background-size: 20px 10px, 610px 80px, 20px 10px;
+background-position: 0 0, 0 10px, 0 90px;
+background-repeat: repeat-x, no-repeat, repeat-x;
+}</code></pre>
+						<div class="grad7"></div>
+						<pre class="pre"><code class="css">.grad8 {
+height: 100px;
+width: 610px;
+border-top: 3px solid #000;
+border-bottom: 3px solid #000;
+background: linear-gradient(90deg, #000 35%, #fff 65%),
+linear-gradient(#f00, #FF7A7A 50%, #f00),
+linear-gradient(#D3804A, #D3B39D 50%, #D3804A),
+linear-gradient(#FFDD00, #FFEC71 50%, #FFDD00),
+linear-gradient(#0f0, #88FF88 50%, #0f0),
+linear-gradient(#00f, #7474FF 50%, #00f),
+linear-gradient(90deg, #000 35%, #fff 65%);
+background-size: 20px 10px,
+122px 80px,
+122px 80px,
+122px 80px,
+122px 80px,
+122px 80px,
+20px 10px;
+background-position: 0 0,
+0 10px,
+122px 10px,
+244px 10px,
+366px 10px,
+488px 10px,
+0 90px;
+background-repeat: repeat-x,
+no-repeat,
+no-repeat,
+no-repeat,
+no-repeat,
+no-repeat,
+repeat-x;
+}
+</code></pre>
+						<div class="grad8"></div>
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="c-items_2">Радиальный градиент</h2>
+
+					<div class="page__content--items">
+
+						<p>В CSS3 мы можем задавать и радиальные градиенты. Делается это также, как и с линейными.
+
+							<code class="green"> radial-gradient </code>- он задает радиальный градиент.
+						</p>
+						<pre class="pre"><code class="css">.rgrad1 {
+height: 100px;
+border: 1px solid #333;
+background: radial-gradient(#fff, #444);}</code></pre>
+						<div class="rgrad1"></div>
+						<pre class="pre"><code class="css">.rgrad2 {	
+height: 100px;
+width: 100px;
+border: 1px solid #333;
+background: radial-gradient( #fff, #444);} </code></pre>
+						<div class="rgrad2"></div>
+						<br>
+						<p class="warning"><span class="red">Важно:</span> Радиальный градиент в идеале имеет форму круга.
+						</p>
+						<p>В зависимости от формы блока (прямоугольник или квадрат) радиальный градиент может быть эллиптическим или
+							круглым. По умолчанию он растягивается на весь блок. Но мы можем влиять на этот параметр</p>
+						<p>Для прямоугольного блока мы можем задать <code class="green"> background:
+								radial-gradient( circle #fff, #444);</code> и получить круглый градиент.
+						</p>
+						<p> По умолчанию устанавливается <code class="green"> background:
+								radial-gradient( ellipse #fff, #444);</code>
+						</p>
+						<p class="warning"><span class="red">Важно:</span> В квадратном блоке всегда получается круглый
+							градиент.</p>
+
+						<hr class="page__hr">
+						<h4 class="gray"> Позиционирование градиента.</h4>
+						<p>Начальную точку градиента можно задавать в любом месте элемента, для этого вначале указывается её позиция
+							<code class="green">background: radial-gradient( at top left #fff, #444);</code>
+						</p>
+
+						<p>Позиция точки пишется аналогично значениям свойства <code class="green">background-position </code>с
+							помощью
+							ключевых слов или доступных единиц измерения вроде пикселов или процентов; ниже приведены возможные
+							сочетания.
+						</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><code class="green">at top left = at left top = at 0% 0%</code> - в левом верхнем углу</li>
+								<li><code class="green">at top = at top center = at center top = at 50% 0%</code> - по центру вверху
+								</li>
+								<li><code class="green">at right top = at top right = at 100% 0%</code> - в правом верхнем углу</li>
+								<li><code class="green">at left = at left center = at center left = at 0% 50%</code> - по левому краю и
+									по
+									центру</li>
+								<li><code class="green">at center = at center center = at 50% 50%</code> - по центру - это значение по
+									умолчанию
+								</li>
+								<li><code class="green">at right = at right center = at center right = at 100% 50%</code> - по правому
+									краю
+									и по
+									центру</li>
+								<li><code class="green">at bottom left = at left bottom = at 0% 100%</code> - в левом нижнем углу</li>
+								<li><code class="green">at bottom = at bottom center = at center bottom = at 50% 100%</code> - по центру
+									внизу
+								</li>
+								<li><code class="green">at bottom right = at right bottom = at 100% 100%</code>- в правом нижнем углу
+								</li>
+							</ul>
+						</div>
+
+						<p class="warning"><span class="red">Важно:</span> Позиционирование начальной точки градиента. НЕ
+							ПУТАТЬ
+							с позиционированием, которое мы применяли
+							для линейных градиентов.</p>
+						<p><code class="green">background-position:</code> изменяет положение картинки. Его мы также можем применять
+							и
+							для радиального градиента.</p>
+						<hr class="page__hr">
+
+						<h4 class="gray">Начальная точка градиента слева вверху:</h4>
+						<pre class="pre"><code class="css">.rgrad {
+height: 100px;
+border: 1px solid #333;
+background: radial-gradient(at left top,#fff, #444);}</code></pre>
+						<div class="rgrad"></div>
+
+
+						<p>Наряду с типом градиента можно задавать и его размер, который зависит от применяемых ключевых слов.
+							Размер
+							пишется через пробел после типа градиента (<code class="green">circle </code>или <code
+								class="green">ellipse</code>).</p>
+						<p>В табл. 1 перечислены возможные значения размера с их описанием и результатом для белого и чёрного цвета.
+							Код и
+							вид дан для кругового и эллиптического градиента.</p>
+
+						<table class="gr-table">
+							<caption>Табл. 1. Ключевые слова для изменения размера градиента</caption>
+							<tbody>
+								<tr>
+									<th>Значение</th>
+									<th>Код</th>
+									<th>Описание</th>
+									<th>Вид</th>
+								</tr>
+								<tr>
+									<td class="green">closest-side</td>
+									<td>
+										<p>background: radial-gradient(circle closest-side at 30px 20px, #fff, #000);</p>
+										<p>background: radial-gradient(ellipse closest-side at 30px 20px, #fff, #000);</p>
+									</td>
+									<td>Форма градиента совпадает с ближайшей к нему стороной блока.</td>
+									<td>
+										<div class="closest-side"></div>
+										<div class="closest-side_2"></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="green">closest-corner</td>
+									<td>
+										<p>background: radial-gradient(circle closest-corner at 30px 20px, #fff, #000);</p>
+										<p>background: radial-gradient(ellipse closest-corner at 30px 20px, #fff, #000);</p>
+									</td>
+									<td>Форма градиента вычисляется на основании информации о расстоянии до ближайшего угла блока.</td>
+									<td>
+										<div class="closest-corner"></div>
+										<div class="closest-corner_2"></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="green">farthest-side</td>
+									<td>
+										<p>background: radial-gradient(circle farthest-side at 30px 20px, #fff, #000);</p>
+										<p>background: radial-gradient(ellipse farthest-side at 30px 20px, #fff, #000);</p>
+									</td>
+									<td>Градиент распространяется до дальней стороны блока.</td>
+									<td>
+										<div class="farthest-side"></div>
+										<div class="farthest-side_2"></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="green">farthest-corner</td>
+									<td>
+										<p>background: radial-gradient(circle farthest-corner at 30px 20px, #fff, #000);</p>
+										<p>background: radial-gradient(ellipse farthest-corner at 30px 20px, #fff, #000);</p>
+									</td>
+									<td>Форма градиента вычисляется на основании информации о расстоянии до дальнего угла блока,</td>
+									<td>
+										<div class="farthest-corner"></div>
+										<div class="farthest-corner_2"></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<hr class="page__hr">
+
+						<h4 class="gray"> Размножаемся и растем:</h4>
+						<pre class="pre"><code class="css">.rgrad5 {
+height: 100px;
+border: 1px solid #333;
+background: radial-gradient(#333, #222 21%, #eee 23%, transparent 25%)0 0,
+radial-gradient(#ccc, #666 21%, #eee 23%, transparent 25%)25px 0,
+radial-gradient(#ccc, #666 21%, #eee 23%, transparent 25%)0 25px,
+radial-gradient(#ccc, #666 21%, #eee 23%, transparent 25%)0 -25px,
+radial-gradient(#ccc, #666 21%, #eee 23%, transparent 25%)-25px 0;
+-webkit-background-size: 100px 100px;
+background-size: 100px 100px;
+background-color: #444;}</code></pre>
+						<div class="rgrad3"></div>
+
+					</div> <!-- page__content--items 2-->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="c-items_3">Глюкофор</h2>
+
+					<div class="page__content--items">
+
+						<p>В CSS3 можно задавать полупрозрачные цвета. При помощи свойств задания цвета RGBA и HSLA</p>
+
+						<p><b>Варианты задания:</b></p>
+						<code class="green">hsla(0, 100%, 40%,0.9) <br><br>
+							rgba(255,114,0,0.6) ,</code><br><br>
+						<p>где прозрачность может изменяться от 0 до 1.</p>
+						<pre class="pre"><code class="css"> .svet{
+height: 470px;
+width: 150px;
+border: 7px solid #777;
+border-radius: 80px;
+background:
+radial-gradient(hsla(0, 100%, 50%,0.9) 5px, hsla(0, 100%, 20%,0.6) 44px, hsla(0, 0%, 47%,0.9) 45px,
+hsla(0, 0%, 47%,0.9) 48px, transparent 49px)center top no-repeat,
+radial-gradient(rgba(255,114,0,0.9) 5px, rgba(216,50,0,0.6) 44px, hsla(0, 0%, 47%,0.9) 45px,
+hsla(0, 0%, 47%,0.9) 48px, transparent 49px)center no-repeat,
+radial-gradient(rgba(66,165,0,0.9) 5px, rgba(7,119,0,0.6) 44px, hsla(0, 0%, 47%,0.9) 45px,
+hsla(0, 0%, 47%,0.9) 48px, transparent 49px)center bottom no-repeat,
+linear-gradient(45deg,transparent 5px, #555 5px, #555 6px, transparent 6px),
+linear-gradient(135deg,transparent 5px, #333 5px, #333 6px, transparent 6px);
+-webkit-background-size:200px 200px,200px 200px,200px 200px, 14px 14px, 14px 14px;
+background-size:200px 200px,200px 200px, 200px 200px, 14px 14px,14px 14px;
+background-color: #444;}</code></pre>
+						<div class="svet"></div>
+						<p>А чтобы он "переключался добавили еще маленько кода"</p>
+						<pre class="pre"><code class="css">.svet:hover {
+background:
+radial-gradient(hsla(0, 100%, 50%, 1) 5px, hsla(0, 100%, 20%, 0.9) 44px, hsla(0, 0%, 47%, 0.9) 45px,
+  hsla(0, 0%, 47%, 0.9) 48px, transparent 49px)center top no-repeat,
+radial-gradient(rgba(255, 114, 0, 1) 5px, rgba(216, 50, 0, 0.9) 44px, hsla(0, 0%, 47%, 0.9) 45px,
+  hsla(0, 0%, 47%, 0.9) 48px, transparent 49px)center no-repeat,
+radial-gradient(rgba(66, 165, 0, 1) 5px, rgba(7, 119, 0, 0.9) 44px, hsla(0, 0%, 47%, 0.9) 45px,
+  hsla(0, 0%, 47%, 0.9) 48px, transparent 49px)center bottom no-repeat,
+linear-gradient(45deg, transparent 5px, #555 5px, #555 6px, transparent 6px),
+linear-gradient(135deg, transparent 5px, #333 5px, #333 6px, transparent 6px);
+-webkit-background-size: 200px 200px, 200px 200px, 200px 200px, 14px 14px, 14px 14px;
+background-size: 200px 200px, 200px 200px, 200px 200px, 14px 14px, 14px 14px;
+background-color: #444;
+}</code></pre>
+
+
+					</div> <!-- page__content--items 3-->
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 23</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль анимации (параллакс) объектов при движении мыши</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение функционала</a>
+							<a href="#h-items_2" class="con-menu">Дополнительные настройки</a>
+							<a href="#h-items_3" class="con-menu">Расположение и дополнительные данные</a>
+						</div>
+					</details>
+				</div>
+				<div class="page__content">
+					<div class="page__content--items">
+						<p>Шикарный модуль для создания интерактивной анимации на вашей странице. Различные объекты могут плавно
+							передвигаться
+							реагируя на перемещения курсора мыши.</p>
+					</div>
+
+
+					<h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+
+					<div class="page__content--items">
+						<p><span class="green">[HTML]</span> К объекту, который следует анимировать, необходимо добавить атрибут
+							<span class="green">data-prlx-mouse</span>
+						</p>
+						<pre><code>&lt;img src="img/cover.jpg" data-prlx-mouse alt="Картинка"&gt;</code></pre><br>
+						<p><span class="green">[JS]</span> В файле<span class="green">js/app.js </span> раскомментировать строку
+							<span class="green">import
+								‘./libs/parallax-mouse.js’</span>
+						</p>
+					</div>
+
+					<h2 class="page__subtitle" id="h-items_2">Дополнительные настройки</h2>
+
+					<div class="page__content--items">
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">data-prlx-cx=коэффициент_х</span> (значение по умолчанию 100) — управление
+									процентом
+									сдвига по оси X
+								</li>
+								<li><span class="green">data-prlx-cy=коэффициент_y</span> (значение по умолчанию 100) — управление
+									процентом
+									сдвига по оси Y
+								</li>
+								<li><span class="green">data-prlx-a=скорость анимации</span> (значение по умолчанию 50) — управление
+									скоростью анимации</li>
+								<li><span class="green">data-prlx-dxr</span> — движение в противоположном направлении по оси X</li>
+								<li><span class="green">data-prlx-dxy</span> — движение в противоположном направлении по оси Y</li>
+							</ol>
+						</div>
+					</div>
+
+					<h2 class="page__subtitle" id="h-items_3">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+						<p>Функционал находится в <span class="green">js/libs/parallax-mouse.js.</span></p>
+						<iframe width="500" height="281" src="https://www.youtube.com/embed/uyBCzC7TIZg"
+							title="Параллакс эффект при движении мыши и скролле сайта. Без библиотек и дополнений. HTML CSS JavaScript."
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe>
+
+						<!-- 
+											<p>Параллакс Эффект При Движении Мыши И Скролле Сайта. Без Библиотек И Дополнений. Html Css Javascript.</p> -->
+						<p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+						<div class="page__block-video">
+							<video width="500" height="281" src="../../video/fls/parallax.mp4" controls="" preload="metadata"
+								poster="../../video/html/poster.jpg" width="100%">
+
+							</video>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page__footer">
+
+				<div class="page__footer_left">
+
+					<p>Предыдущий пост: <br>
+						<a href="fls-page_22.html" class="link">&lt;= Модуль " Галерея "</a>
+					</p>
+				</div>
+
+				<div class="page__footer_right">
+
+					<p>Следующий пост: <br>
+						<a class="link" href="fls-page_24.html">Модуль «Календарь» (js-datepicker) =></a>
+					</p>
+				</div>
+			</div>
+			<hr class="page__hr">
+	</div>
+
+	<div class="return">
+		<div class="return__container">
+
+			<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+			<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="footer__container">
+
+			<!-- Кнопка вверх -->
+			<!-- https://itchief.ru/javascript/btn-up -->
+			<div class="btn-up btn-up_hide"></div>
+
+
+		</div>
+
+	</footer>
+	</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

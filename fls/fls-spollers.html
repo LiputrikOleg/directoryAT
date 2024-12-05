@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>spollers</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Спойлеры</h1>
+
+				<div class="page__content">
+					<div class="page__content--items">
+
+
+						<p class="warning">Старая версия отличается от новой. Старый HTML-код работает со старым Javascript.</p>
+
+						<!-- Начало -->
+						<div data-spollers class="spollers">
+							<details class="spollers__item spollers-bg">
+								<summary class="spollers__title">Начало</summary>
+								<div class="spollers__body">
+									<h3 class="gray">HTML</h3>
+									<p>Сниппет : spollers</p>
+									<pre class=""><code class="html">&lt;div data-spollers class="spollers"&gt;
+  &lt;details class="spollers__item"&gt;
+    &lt;summary class="spollers__title"&gt;Заголовок спойлера&lt;/summary&gt;
+    &lt;div class="spollers__body"&gt;Контент спойлера&lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+								</div>
+							</details>
+						</div> <!-- spollers    Начало-->
+
+						<!-- Описание -->
+
+						<div data-spollers class="spollers">
+							<details class="spollers__item spollers-bg">
+								<summary class="spollers__title">Описание</summary>
+								<div class="spollers__body">
+									<h3 class="gray">Основные атрибуты споллера</h3>
+									<div class="help__info">
+										<p>Для родителя слойлеров пишем атрибут <span class="green">data-spollers</span></p>
+										<p>Если нужно включать\выключать работу спойлеров на разных размерах экранов
+											пишем параметры ширины и типа брейкпоинта.</p>
+										<p>Например:</p>
+										<p><span class="green">data-spollers="992,max"</span> - спойлеры будут работать только на экранах
+											меньше или
+											равно <span class="green">992px</span></p>
+										<p><span class="green">data-spollers="768,min"</span> - спойлеры будут работать только на экранах
+											больше или
+											равно <span class="green">768px</span></p>
+									</div>
+								</div>
+							</details>
+						</div> <!-- spollers    Описание -->
+
+						<!-- Оформление -->
+
+						<div data-spollers class="spollers">
+							<details class="spollers__item spollers-bg">
+								<summary class="spollers__title">Оформление</summary>
+								<div class="spollers__body">
+									<h3 class="gray">Базовые стили</h3>
+									<div class="spollers-code__item">
+										<pre class=""><code class="css">// Блок со спойлерами
+.spollers {
+  // display: grid;
+  // gap: 15px;
+}
+
+// Спойлер
+.spollers__item {
+  font-size: toRem(20);
+  margin-bottom: 30px;
+}
+
+.spollers__body {
+  padding: 1.25rem;
+  border-radius: 0.3125rem;
+  border: 1px solid #eee;
+}</code></pre>
+									</div>
+								</div>
+							</details>
+						</div> <!-- spollers    Оформление -->
+
+						<p class="page__warning">Декоративные штучки типа : крестики, уголки - перевертыши, стрелочки и др. появятся
+							только
+							тогда, когда у класса родителя появится технический класс <span class="green">_spoller-init</span>
+						</p>
+
+						<!-- Оформление декоративное 1 -->
+
+						<div data-spollers class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">Оформление декоративное 1</summary>
+								<div class="spollers__body">
+									<h3 class="gray">Плюсы - минусы</h3>
+									<div class="spollers-code__content">
+
+										<div class="spollers-code__item spollers-bg">
+											<div class="spollers-code__title">scss</div>
+											<pre class=""><code class="css">// Заголовок спойлера
+.spollers__title {
+  width: 100%;
+  cursor: default;
+  text-align: left;
+  border: 1px solid #eee;
+  padding: toRem(10) toRem(15);
+  border-radius: toRem(5);
+  position: relative;
+  list-style: none;
+
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+  }
+  ._spoller-init & {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: toRem(12);
+      height: toRem(1);
+      transition: all 0.3s ease 0s;
+      width: toRem(10);
+      background-color: #000;
+    }
+    &::before {
+      transform: rotate(40deg);
+      right: toRem(7);
+    }
+    &::after {
+      transform: rotate(-40deg);
+    }
+  }
+  &._spoller-active {
+    &::before {
+      transform: rotate(-40deg);
+    }
+    &::after {
+      transform: rotate(40deg);
+    }
+  }
+}  
+  </code></pre>
+										</div>
+
+										<div class="spollers-code__item spollers-bg">
+											<div class="spollers-code__title">css</div>
+											<pre class=""><code class="css">// Заголовок спойлера 
+.spollers__title {
+  width: 100%;
+  cursor: default;
+  text-align: left;
+  border: 1px solid #eee;
+  padding: .625rem .9375rem;
+  border-radius: .3125rem;
+  position: relative;
+  list-style: none
+}
+.spollers__title::-webkit-details-marker,
+.spollers__title::marker {
+  display: none
+}
+._spoller-init .spollers__title {
+  position: relative;
+  width: 100%;
+  text-align: left
+}
+._spoller-init .spollers__title::after,
+._spoller-init .spollers__title::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: .75rem;
+  height: .0625rem;
+  transition: all .3s ease 0s;
+  width: .625rem;
+  background-color: #000
+}
+._spoller-init .spollers__title::before {
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  right: .4375rem
+}
+._spoller-init .spollers__title::after {
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg)
+}
+.spollers__title._spoller-active::before {
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg)
+}
+.spollers__title._spoller-active::after {
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg)
+}</code></pre>
+										</div>
+
+									</div>
+								</div>
+							</details>
+						</div> <!-- spollers    Оформление декоративное 1-->
+
+						<!-- Оформление декоративное 2 -->
+						<div data-spollers class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">Оформление декоративное 2</summary>
+								<div class="spollers__body">
+									<h3 class="gray">Уголки - перевертыши</h3>
+									<div class="spollers-code__content">
+
+										<div class="spollers-code__item spollers-bg">
+											<div class="spollers-code__title">scss</div>
+											<pre class=""><code class="css">// Заголовок спойлера
+.spollers__title {
+  width: 100%;
+  cursor: default;
+  text-align: left;
+  border: 1px solid #eee;
+  padding: toRem(10) toRem(15);
+  border-radius: toRem(5);
+  position: relative;
+  list-style: none;
+
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  ._spoller-init & {
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      background-color: #fff;
+      height: 2px;
+      width: 15px;
+      transition: transform 0.5s ease 0s;
+    }
+
+    &::before {
+      transform: translate(-75%, -50%) rotate(40deg);
+    }
+
+    &::after {
+      transform: translate(0, -50%) rotate(-40deg);
+    }
+
+    &._spoller-active {
+      &::before {
+        transform: translateX(-75%) rotate(-40deg);
+      }
+
+      &::after {
+        transform: rotate(40deg);
+      }
+    }
+  }
+}
+                  </code></pre>
+										</div>
+
+										<div class="spollers-code__item spollers-bg">
+											<div class="spollers-code__title">css</div>
+											<pre class=""><code class="css">// Заголовок спойлера
+.spollers__title {
+  width: 100%;
+  cursor: default;
+  text-align: left;
+  border: 1px solid #eee;
+  padding: .625rem .9375rem;
+  border-radius: .3125rem;
+  position: relative;
+  list-style: none
+}
+.spollers__title::-webkit-details-marker,
+.spollers__title::marker {
+  display: none
+}
+._spoller-init .spollers__title {
+  cursor: pointer
+}
+._spoller-init .spollers__title::after,
+._spoller-init .spollers__title::before {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  background-color: #fff;
+  height: 2px;
+  width: 15px;
+  transition: -webkit-transform .5s ease 0s;
+  transition: transform .5s ease 0s;
+  transition: transform .5s ease 0s,-webkit-transform .5s ease 0s
+}
+._spoller-init .spollers__title::before {
+  -webkit-transform: translate(-75%,-50%) rotate(40deg);
+  transform: translate(-75%,-50%) rotate(40deg)
+}
+._spoller-init .spollers__title::after {
+  -webkit-transform: translate(0,-50%) rotate(-40deg);
+  transform: translate(0,-50%) rotate(-40deg)
+}
+._spoller-init .spollers__title._spoller-active::before {
+  -webkit-transform: translateX(-75%) rotate(-40deg);
+  transform: translateX(-75%) rotate(-40deg)
+}
+._spoller-init .spollers__title._spoller-active::after {
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg)
+}</code></pre>
+										</div>
+
+									</div>
+								</div>
+							</details>
+						</div> <!-- spollers    Оформление декоративное 2-->
+
+						<p class="page__warning">Споллеры с различным поведением при изменении ширины экрана</p>
+
+						<div data-spollers="650,min" class="spollers">
+							<details class="spollers__item spollers-bg1">
+								<summary class="spollers__title">Спойлер работает на экранах &gt;= 650px</summary>
+								<div class="spollers__body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas hic
+									numquam
+									magni.
+									Nulla, laborum illo enim
+									qui eum architecto soluta,
+									quos provident natus nobis a et aspernatur, labore fuga aliquam!</div>
+							</details>
+						</div>
+
+						<div data-spollers="800,max" class="spollers">
+							<details class="spollers__item spollers-bg2">
+								<summary class="spollers__title">Спойлер #1 работает на экранах &lt;= 800px</summary>
+								<div class="spollers__body"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas hic
+									numquam
+									magni.
+									Nulla, laborum illo enim
+									qui eum architecto
+									soluta, quos provident natus nobis a et aspernatur, labore fuga aliquam!</div>
+							</details>
+						</div>
+
+						<p>В видео в основном рассказ о Javascript, о споллере немного в начале и чуть в конце.</p>
+
+					</div>
+
+					<div class="page__footer">
+
+						<div class="page__footer_left">
+
+							<p>
+								<a href="fls-page_15.html" class="link" target="_blank">Вернуться к статье</a>
+							</p>
+						</div>
+
+
+					</div>
+					<hr class="page__hr">
+				</div>
+			</div> <!--  page__container-->
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

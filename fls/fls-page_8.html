@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Страница 8</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <main class="page">
+            <div class="name__container">
+
+                <h1 class="page__title">Модуль &#171;Popup&#187;. Всплывающие (модальные) окна</h1>
+
+
+                <!-- Оглавление  -->
+
+                <div data-spollers class="spollers">
+                    <details class="spollers__item">
+                        <summary class="spollers__title spollers__title--bg">Оглавление</summary>
+                        <div class="spollers__body spollers__body--menu">
+                            <a href="#h-items_1" class="con-menu">Подключение функционала</a>
+                            <a href="#h-items_2" class="con-menu">Использование функционала</a>
+                            <a href="#h-items_3" class="con-menu">Открытие YouTube видео в попапе</a>
+                            <a href="#h-items_4" class="con-menu">Открытие попапа по хешу</a>
+                            <a href="#h-items_5" class="con-menu">События</a>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Контейнер  со статьями -->
+                <div class="page__content">
+
+                    <div class="page__content--items">
+                        <p>Данный функционал добавляет возможность использовать всплывающие окна. Работа модуля
+                            заключается
+                            в следующем: пользователь нажимает на указанный элемент (по умолчанию это атрибут с
+                            указанным
+                            селектором <span class="green">data-popup=<em>&#8216;selector</em>&#8216;</span>).
+                            При этом к тегу <span class="green">body
+                            </span>добавляется класс &nbsp;<span class="green">popup-show</span>. Также
+                            блокируется прокрутка страницы (можно отключить), фокусировка элементов
+                            &#171;перелетает&#187;
+                            на popup, с запоминанием предыдущего сфокусированного элемента на странице. Закрытие popup
+                            происходит при клике на кнопку закрытия (по умолчанию элемент с атрибутом
+                            <span class="green">data-close</span>), по клику на &#171;пустом месте&#187; (не на popup),
+                            по нажатию
+                            кнопки <span class="green">ESC</span>.
+                    </div>
+
+                    <!--! Статья 1 -->
+                    <h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+                    <div class="page__content--items">
+                        <div class="page__block--list">
+                            <ol>
+                                <li><span class="green">[HTML]</span> <span class="warning">Именно .html в ЧФ, а не .htm
+                                        (папка
+                                        html)<br>
+                                    </span> Подключить файл <span class="green">_popup.htm</span> после
+                                    оболочки
+                                    <span class="green">wrapper</span>, страницы <span
+                                        class="green">@@include(‘html/_popup.htm’,{})</span> , или использовать
+                                    снипет <span class="green">pop</span>
+                                </li>
+                                <li><span class="green">[SCSS]</span> Подключить файл <span
+                                        class="green">scss/base/popup.scss</span>: -
+                                    в
+                                    файле
+                                    <span class="green">scss/base.scss</span> &#8212;
+                                    раскомментировать сроку <span class="green">@import &#8216;base/popup&#8217;;</span>
+                                </li>
+                                <li><span class="green">[JS]</span> Подключить файл <span
+                                        class="green">js/libs/popup.js</span> в файле
+                                    <span class="green">js/app.js</span> &#8212;
+                                    раскомментировать строку <span class="green">import
+                                        &#8216;./libs/popup.js&#8217;</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+                    <!--! Статья 2 -->
+                    <h2 class="page__subtitle" id="h-items_2">Использование функционала</h2>
+                    <div class="page__content--items">
+
+                        <p>Для того, чтобы вызвать попап, необходимо на странице ввести объект с дата-атрибутом, в
+                            котором
+                            указан селектор (класс или id) всплывающего окна, на которое ссылаемся:</p>
+                        <pre><code>&lt;a href="#" data-popup="#popup" class="link"&gt;Я открываю попап&lt;/a&gt;</code></pre>
+                        <br>
+
+                        <p>Далее открыть файл <span class="green">html/_popup.htm</span>, раскомментировать HTML-код
+                            подготовки
+                            попапа, указать селектор (id или класс) по которому вызывается попап, изменить код под свои
+                            нужды.</p>
+                        <p><em>В примере попап вызывается по id popup</em>:</p>
+                        <pre><code>&lt;div id="popup" aria-hidden="true" class="popup"&gt;
+        &lt;div class="popup__wrapper"&gt;
+          &lt;div class="popup__content"&gt;
+            &lt;button data-close type="button" class="popup__close"&gt;Закрыть&lt;/button&gt;
+            &lt;div class="popup__text"&gt;
+      
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+
+                    </div>
+                    <!--! Статья 3 -->
+                    <h2 class="page__subtitle" id="h-items_3" id="открытие-youtube-видео-в-попапе">Открытие YouTube
+                        видео в попапе
+                    </h2>
+                    <div class="page__content--items">
+
+                        <p>Для того чтобы открыть видеоролик в попапе, следует добавить к кнопке, которая вызывает
+                            попап, атрибут
+                            <span class="green">data-popup-youtube</span>, а в качестве значения указать код ролика.
+                            Также следует
+                            указать
+                            атрибут
+                            <span class="green">data-popup-youtube-place</span> для объекта в котором хотим вывести
+                            ролик (если
+                            атрибут
+                            <span class="green">data-popup-youtube-place </span>не будет указан, ролик автоматически
+                            появится в
+                            объекте с
+                            классом
+                            <span class="green">popup__text</span>):
+                        </p>
+
+                        <pre
+                            class=""><code>&lt;button type="button" data-popup="#video" data-popup-youtube="6S5Zw2WuyFE">Видео&lt;/button></code></pre>
+                        <pre class=""><code> &lt;div id="video" aria-hidden="true" class="popup">
+        &lt;div class="popup__wrapper">
+          &lt;div class="popup__content">
+            &lt;button data-close type="button" class="popup__close">Закрыть&lt;/button>
+            &lt;div data-youtube-place class="popup__text">
+      
+            &lt;/div>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div></code></pre><br>
+                        <p>Стили попапа можно писать и изменять в файле <span class="green">scss/base/popup.scss</span>
+                        </p>
+
+                    </div>
+
+
+                    <!--! Статья 4 -->
+                    <h2 class="page__subtitle" id="h-items_4">Открытие попапа по хешу</h2>
+                    <div class="page__content--items">
+
+                        <p>Для того чтобы открыть попап при открытии страницы, добавляем к адресу хеш с именем селектора
+                            попапа</p>
+                        <pre><code>https:&#47;&#47;template.fls.guru/index.html&#35popup</code></pre>
+
+                        <h2 class="page__subtitle">Методы и события</h2>
+                        <h4 class="page__subtitle_h3">Методы</h4>
+                        <p>Работать с попапом из любого места можно импортировав переменную <span
+                                class="green">flsModules</span>:
+                        </p>
+                        <pre><code>import { flsModules } from "./modules.js";</code></pre><br>
+                        <p>Далее обратится к классу <span class="green">popup</span> и работать с методом, например
+                            <span class="green">open()</span>
+                        </p>
+
+                        <pre><code>flsModules.popup.open('#popup')</code></pre><br>
+
+                        <p>где <span class="green">#popup</span> селектор попапа</p>
+                        <p class="warning">Внимание! После создания билда проекта ( Режим build ) константа <span
+                                class="green">flsModules</span> меняется на
+                            <span class="green">modules_flsModules</span>. Т.е. запрос будет <span
+                                class="green">modules_flsModules.popup.open('#popup');</span>
+                        </p>
+
+                    </div>
+
+                    <!--! Статья 4 -->
+                    <h2 class="page__subtitle" id="h-items_5">События</h2>
+                    <div class="page__content--items">
+
+                        <p>В классе попапов существуют ряд событий:</p>
+
+                        <div class="page__block--list">
+
+                            <ol>
+                                <li><span class="green">beforePopupOpen</span> &#8212; сработает перед открытием попапа
+                                </li>
+                                <li><span class="green">afterPopupOpen</span> &#8212; сработает после открытия попапа
+                                </li>
+                                <li><span class="green">beforePopupClose</span> &#8212; сработает перед закрытием попапа
+                                </li>
+                                <li><span class="green">afterPopupClose</span> &#8212; сработает после закрытия попапа
+                                </li>
+                            </ol>
+                        </div>
+                        <p>Чтобы работать с событием вешаем прослушку на document</p>
+                        <pre><code>document.addEventListener("afterPopupOpen", function (e) {
+    // Попап
+    const currentPopup = e.detail.popup;
+    });</code></pre>
+
+
+                        <figure>
+                            <div class="">
+                                <iframe loading="lazy" width="500" height="281"
+                                    src="https://www.youtube.com/embed/qoO1ZNi1LyI"
+                                    title="Модальные окна (попапы) на HTML CSS JavaScript. Всплывающие окна. Как это сделать?"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </figure>
+
+                        <p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+                        <div class="page__block-video">
+                            <video width="500" height="281" src="../../video/fls/popup.mp4" controls=""
+                                preload="metadata" poster="../../video/html/poster.jpg" width="100%">
+
+                            </video>
+                        </div>
+
+                        <p><a href="../modules/popup/index.html" class="link" target="_blank">Результат</a> видео.</p>
+                        <p><a href="../modules/popup.html" class="link" target="_blank">Результат</a> модуля по
+                            умолчанию.</p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="page__footer">
+
+                    <div class="page__footer_left">
+
+                        <p>Предыдущий пост: <br>
+                            <a href="fls-page_7.html" class="link">&lt;= Модуль меню «бургер»»</a>
+                        </p>
+                    </div>
+
+                    <div class="page__footer_right">
+
+                        <p>Следующий пост: <br>
+                            <a class="link" href="fls-page_9.html">Модуль «Динамический адаптив» =></a>
+                        </p>
+                    </div>
+                </div>
+                <hr class="page__hr">
+
+            </div>
+
+            <div class="return">
+                <div class="return__container">
+
+                    <p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+                    <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer__container">
+
+                    <!-- Кнопка вверх -->
+                    <!-- https://itchief.ru/javascript/btn-up -->
+                    <div class="btn-up btn-up_hide"></div>
+
+
+                </div>
+
+            </footer>
+        </main>
+    </div>
+    <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+    <!-- ! Кнопка "Вверх" -->
+    <script>
+        const btnUp = {
+            el: document.querySelector('.btn-up'),
+            scrolling: false,
+            show() {
+                if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.remove('btn-up_hide');
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            hide() {
+                if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.add('btn-up_hide');
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            addEventListener() {
+                // при прокрутке окна (window)
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop;
+                    if (this.scrolling && scrollY > 0) {
+                        return;
+                    }
+                    this.scrolling = false;
+                    // если пользователь прокрутил страницу более чем на 150px
+                    if (scrollY > 150) {
+                        // сделаем кнопку .btn-up видимой
+                        this.show();
+                    } else {
+                        // иначе скроем кнопку .btn-up
+                        this.hide();
+                    }
+                });
+                // при нажатии на кнопку .btn-up
+                document.querySelector('.btn-up').onclick = () => {
+                    this.scrolling = true;
+                    this.hide();
+                    // переместиться в верхнюю часть страницы
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        btnUp.addEventListener();
+
+    </script>
+</body>
+
+</html>

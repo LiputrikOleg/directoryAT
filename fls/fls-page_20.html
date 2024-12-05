@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 20</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Работа с формами и элементами форм</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Работа с полями форм</a>
+							<a href="#h-items_2" class="con-menu">Валидация элементов форм</a>
+							<a href="#h-items_3" class="con-menu">Отправка форм</a>
+							<a href="#h-items_4" class="con-menu">События</a>
+							<a href="#h-items_5" class="con-menu">Расположение и дополнительные данные</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+					<!--! Статья 0 -->
+
+					<div class="page__content--items">
+						<blockquote class="warning">
+							<p>В этом документе описан общий функционал работы с полями, плейсхолдерами, валидацией, вариантами
+								отправки
+								форм и
+								т.д. В отдельных разделах будет описан функционал конкретных элементов форм, таких как:</p>
+						</blockquote>
+
+						<div class="page__block--list">
+							<ol>
+								<li>Отправка писем на почту (PHPMailer)</li>
+								<li>Кастомизация элемента SELECT</li>
+								<li>Кастомизация (стилизация) элементов CHECKBOX и RADIO</li>
+								<li>Модуль &#171;Маски&#187; для полей ввода</li>
+								<li>Модуль &#171;Звездный рейтинг&#187;</li>
+								<li>Модуль &#171;Колличество&#187;</li>
+								<li>Модуль &#171;Range&#187; (ползунок)</li>
+							</ol>
+						</div>
+					</div>
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Работа с полями форм</h2>
+					<div class="page__content--items">
+						<p>Работа с полями форм подразумевает под собой следующий функционал:</p>
+
+						<div class="page__block--list">
+							<ol>
+								<li>Скрытие <span class="green">placeholder</span> при фокусе</li>
+								<li>Добавление классов полю и его родителю при фокусе</li>
+								<li>Функционал &#171;Показать пароль&#187; для полей с типом password</li>
+								<li>Возможность моментальной валидации поля при потере фокуса</li>
+							</ol>
+						</div>
+
+						<p>Для того чтобы подключить общий функционал для работы с полями форм необходимо расскоментировать функцию
+							<span class="green">flsForms.formFieldsInit({&#8230;})</span> в файле <span
+								class="green">js/app.js</span>:
+						</p>
+
+						<pre><code>flsForms.formFieldsInit({
+viewPass: false, 
+});</code></pre><br>
+
+						<p>Передавать функции можно следующие параметры:</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">viewPass</span> &#8212; позволяет включить функционал &#171;Показать
+									пароль&#187; .
+									true &#8212;
+									включено, false &#8212; выключено (по умолчанию).</li>
+								<li class="dop"><span class="green">autoHeight</span> — позволяет включить функционал «Автовысота» для
+									textarea
+									. true —
+									включено, false — выключено (по умолчанию).</li>
+							</ul>
+						</div>
+
+						<h4 class="gray">Работа с атрибутом placeholder</h4>
+
+						<p>По умолчанию, после подключения <span class="green">flsForms.formFieldsInit({&#8230;})</span>, значение
+							добавленного полю
+							HTML-атрибута <span class="green">placeholder</span> скопируется в созданный скриптом атрибут
+							<span class="green">data-placeholder</span>, что позволит скрывать плейсхолдер при фокусе на поле. Если
+							нам
+							нужно отключить
+							скрытие для конкретного поля, ему следует добавить атрибут <span
+								class="green">data-placeholder-nohide</span>
+						</p>
+
+						<h4 class="gray">Добавление классов</h4>
+
+						<p> По умолчанию, после подключения <span class="green">flsForms.formFieldsInit({&#8230;})</span>, при
+							возникновении фокуса, к
+							полю а также к его непосредственному родительскому элементу, добавится класс <span
+								class="green">_form-focus</span>.
+							Если нам
+							нужно отключить добавление классов для конкретного поля, ему следует добавить атрибут
+							<span class="green">data-no-focus-classes</span>
+						</p>
+
+						<h4 class="gray">Валидация поля при потере фокуса</h4>
+
+						<p>Для того чтобы скрипт начал вызывать функционал валидации поля в
+							момент
+							потери
+							им фокуса, следует добавить полю атрибут <span class="green">data-validate</span>. </p>
+
+						<p>Стоит добавить, что функционал работы с полями форм также удалит ошибку добавленную к полю валидатором
+							при
+							получении им фокуса. Подробнее о функционале валидации полей смотри далее в этом документе.</p>
+
+						<h4 class="gray"> Функционал &#171;Показать пароль&#187;</h4>
+						<p>Функционал &#171;Показать пароль&#187;, позволяет отображать зашифрованное значение поля с типом password
+							при
+							клике
+							на объект с классом содержащим строку <span class="green">&#171;__viewpass&#187;</span> который находится
+							вместе
+							с полем в одном родителе:
+						</p>
+
+						<pre><code>&lt;form class="form" action="#"&gt;
+  &lt;div class="form__line"&gt;
+    &lt;input autocomplete="off" type="password" name="form&#91;]" value="123456"&gt;
+    &lt;button class="form__viewpass" type="button"&gt;Показать пароль&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="button"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;</code></pre><br>
+
+						<p>В момент клика на объект с классом содержащим строку<span class="green"> &#171;__viewpass&#187;</span> в
+							нему
+							добавляется класс
+							<span class="green">_viewpass-active</span>, а тип поля ввода меняется на <span class="green">text</span>.
+							Повторное нажатие выполнит
+							обратные действия.
+						</p>
+						<p>Напомню, для того чтобы включить функционал &#171;Показать пароль&#187; следует указать <span
+								class="green">true</span> для параметра
+							<span class="green">viewPass</span>
+							при подключении функционала в файле <span class="green">js/app.js</span>.
+						</p>
+
+						<h4 class="gray">Функционал «Автовысота» для textarea</h4>
+						<p>Функционал «Автовысота» позволяет элементу textarea автоматически подстраиваться по высоте под вводимый
+							текст
+						</p>
+						<p>Для включения необходимо назначить <span class="green">true</span> для параметра <span
+								class="green">autoHeight</span>,а также
+							добавить атрибут
+							<span class="green">data-autoheight</span> элементe(ам) textarea.
+						</p>
+
+						<pre><code>&lt;textarea name="message" data-autoheight&gt;&lt;/textarea&gt;</code></pre><br>
+						<p>Дополнительно можно указать следующие параметры:</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">data-autoheight-min=’число’</span> — минимальная (стартовая) высота textarea
+								</li>
+								<li><span class="green">data-autoheight-max=’число’</span> — максимальная высота textarea</li>
+							</ul>
+						</div>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Валидация элементов форм</h2>
+					<div class="page__content--items">
+						<p class="">Для включения функционала следует раскомментировать функцию <span
+								class="green">flsForms.formSubmit();
+							</span>
+							и/или <span class="green"> flsForms.formFieldsInit({…}) </span> в файле <span class="green">
+								js/app.js</span>
+						</p>
+
+						<p>Для того чтобы элемент формы начал проходить валидацию, ему следует добавить атрибут
+							<span class="green">data-required</span>. Теперь при отправке формы (если включена валидация), а также
+							если
+							элементу добавлен
+							атрибут <span class="green">data-validate</span>, он будет проверяться на предмет заполениния.
+						</p>
+						<p class="dop warning"> При добавленном атрибуте <span class="green">data-validate</span> валидация будет
+							происходить мгновенно
+							при потере полем фокуса.</p>
+						<p>Для того чтобы включить особые правила валидации поля, атрибуту следует добавить одно из значений: </p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">email</span> &#8212; включит валидацию на ввод корретного E-mail</li>
+								<li>идет работа над новыми пресетами</li>
+							</ul>
+						</div>
+
+						<p><em>Пример:</em></p>
+						<pre><code>&lt;input data-required="email" type="text" name="form&#91;]"&gt;</code></pre><br>
+
+						<p>Если элемент заполнен не верно, к нему, а также к его родителю добавится класс <span
+								class="green">_form-error</span>. Если
+							мы хотим дополнительно вывести произвольный текст ошибки, нам следует указать его в атрибуте
+							<span class="green">data-error</span> и добавить к полю:
+						</p>
+
+						<pre><code>&lt;input data-error="Введен не верный E-mail" data-required="email" type="text" name="form&#91;]"&gt;</code></pre>
+						<br>
+
+						<p>Теперь, при возникновении ошибки валидации, под элементом добавится объект с классом <span
+								class="green">form__error</span>
+							содержащий ваш текст ошибки.</p>
+
+						<p>Напомню, что функционал работы с полями удалит классы ошибок и объект с классом <span
+								class="green">form__error</span> при
+							получении полем фокуса.</p>
+						<p class="dop">Для отключения валидации элементов конкретной формы, ей следует добавить атрибут
+							<span class="green">data-no-validate</span>
+						</p>
+
+					</div>
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Отправка форм</h2>
+					<div class="page__content--items">
+						<p>Для включения функционала следует расскоментировать функцию <span
+								class="green">flsForms.formSubmit();</span>
+							в файле
+							<span class="green">js/app.js</span>
+						</p>
+
+						<h4 class="gray">Валидация элементов формы</h4>
+
+						<p>По умолчанию, при отправке формы, поля отмеченные
+							<span class="green">data-required/data-required=&#8217;&#8230;&#8217;</span> будут проходить валидацию.
+							Для
+							отключения
+							валидации элементов конкретной формы, ей следует добавить атрибут <span
+								class="green">data-no-validate</span>
+						</p>
+
+						<h4 class="gray">Режимы отправки формы</h4>
+
+						<p>В ЧФ существует несколько режимов контроля отправки форм:</p>
+
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">Стандартная HTML отправка формы</span> (по умолчанию) &#8212; если валидация
+									пройдена
+									(была включена),
+									форма отправится на указанный в атрибуте action адрес (с переходом страницы), методом указанным в
+									атрибуте
+									method.
+								</li>
+								<li><span class="green">AJAX отправка формы</span> &#8212; если валидация пройдена (была включена),
+									форма
+									отправится AJAX
+									запросом на указанный в атрибуте action адрес, методом указанным в атрибуте method. Страница не
+									перезагрузится,
+									все элементы формы вернутся к исходных значениям (очистка формы).</li>
+								<li><span class="green">Режим имитации отправки формы</span> &#8212; если валидация пройдена (была
+									включена),
+									форма никуда не
+									отправится, страница не перезагрузится, все элементы формы вернутся к исходных значениям (очистка
+									формы).
+									Используется для демонстрации работы дополнительных возможностей форм, таких как, например, показ
+									попапа об
+									успешной отправке.</li>
+							</ol>
+						</div>
+
+						<blockquote class="warning">
+							<p>Для включения режима <span class="green">AJAX отправки </span>достаточно добавить форме атрибут <span
+									class="green">data-ajax</span>,
+								а если нужен режим <span class="green">имитации отправки</span> добавляем атрибут <span
+									class="green">data-dev</span>.</p>
+						</blockquote>
+
+						<pre><code>&lt;form data-ajax class="form" method="POST" action="sendmail.php"&gt;
+...
+&lt;/form&gt;</code></pre><br>
+
+						<h4 class="gray">Прокрутка к элементу с ошибкой</h4>
+
+						<p>Бывает, что форма очень большая и, при возникновении ошибки валидации, хорошо бы показать элемент с
+							ошибкой
+							пользователю. Для этих целей есть функционал &#171;прокрутка к элементу с ошибкой&#187;. Для включения,
+							достаточно
+							добавить форме атрибут <span class="green">data-goto-error</span></p>
+
+						<pre><code>&lt;form data-goto-error class="form" action="#"&gt;
+...
+&lt;/form&gt;</code></pre><br>
+
+						<h4 class="gray">Показ попапа после отправки формы</h4>
+
+						<p>Если необходимо, после отправки формы, показать попап добавляем к форме атрибут <span
+								class="green">data-popup-message</span> и в качестве
+							значения указываем селектор попапа</p>
+
+						<blockquote class="warning">
+							<p>Только для режимов <span class="green">data-ajax</span> или <span class="green">data-dev</span>. <a
+									href="funkcional-popup.html" target="_blank" class="link">Функционал попапов</a> также должен быть
+								подключен
+							</p>
+						</blockquote>
+
+						<pre><code>&lt;form data-dev data-popup-message="#form-message" class="form" action="#"&gt;
+...
+&lt;/form&gt;</code></pre>
+					</div>
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">События</h2>
+					<div class="page__content--items">
+						<p>После каждой отправки формы срабатывает событие <span class="green">formSent</span>, его можно отловить в
+							любой части кода:
+						</p>
+
+						<pre><code>document.addEventListener("formSent", function (e) {
+// Форма
+const currentForm= e.detail.form;
+});</code></pre>
+					</div>
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+						<p>Функции <span class="green">formFieldsInit()</span>, <span class="green">formSubmit()</span> а также
+							объект <span class="green">formValidate
+							</span>находятся в файле<span class="green"> js/files/forms/form.js</span></p>
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_19.html" class="link">&lt;= Работа с шаблонизатором PUG</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_21.html">Модуль кастомизации элемента SELECT =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

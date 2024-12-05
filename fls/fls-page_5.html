@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 5</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">STYLE.SCSS &#8212; настройка адаптивной сетки, шрифтов, подключение
+					дочерних файлов</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Настройка семейства, размера и цвета шрифта по умолчанию</a>
+							<a href="#h-items_2" class="con-menu">Настройка адаптивной сетки</a>
+							<a href="#h-items_3" class="con-menu">Настройка брейкпоинтов</a>
+							<a href="#h-items_4" class="con-menu">Настройка типа адаптива (поведения ограничивающего контейнера)</a>
+							<a href="#h-items_5" class="con-menu">Подключение дополнительных файлов стилей</a>
+							<a href="#h-items_6" class="con-menu">Селекторы и стили</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Настройка семейства, размера и цвета шрифта по умолчанию</h2>
+					<div class="page__content--items">
+
+						<p>Файл <span class="green">scss/style.scss</span> является основным файлом стилей в <a class=" link"
+								href="https://www.patreon.com/posts/startovyi-v3-59380989" target="_blank">стартовом шаблоне
+								&#171;Чертоги Фрилансера&#187; v3.0.0</a>. (далее ЧФ).
+							Обычно, стили проекта тут не пишут, файл выполняет роль материнского файла куда подключаются
+							отдельные файлы страниц, модулей и т.д.</p>
+						<p>Тут же подключаются шрифты и расположены основные переменные для настройки семейства и размера
+							шрифта по умолчанию, цветов, адаптивной сетки, корректной работы миксинов и так далее&#8230;</p>
+
+						<blockquote class="warning">
+							<p>Для того чтобы работать со шрифтами, сперва нужно их подключить. Все действия подробно
+								описаны в <a class="link" href="fls-page_4.html" target="_blank">этой
+									статье.</a></p>
+						</blockquote>
+
+						<p>После выполнения действий по подключению шрифтов, необходимо указать значения для следующих
+							переменных:</p>
+						<p><span class="green">$fontFamily</span> &#8212; имя семейства шрифта по умолчанию. Указываем имя основного
+							шрифта в проекте.</p>
+
+						<pre><code>$fontFamily: " Montserrat";</code></pre>
+
+						<p><span class="green">$fontSize</span> &#8212; размер шрифта по умолчанию. Этой переменной присвоена одна
+							из
+							SCSS-функций шаблона, она выполняет перевод пикселей в REM. Соответственно, в эту функцию
+							следует передать значение размера шрифта по умолчанию в пикселях (только число без px).</p>
+
+						<pre><code>$fontSize: toRem(14);</code></pre>
+
+						<p><span class=" green">$mainColor</span> &#8212; цвет шрифта по умолчанию. Указываем цветовой код.</p>
+
+						<pre><code>$mainColor: #000;</code></pre>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2" id="adaptiv">Настройка адаптивной сетки</h2>
+					<div class="page__content--items">
+
+						<p>В ЧФ есть возможность настроить ограничивающий контейнер на работу как с отзывчивой адаптивной
+							версткой, так и с версткой по брейкпоинтам. </p>
+						<p>Перед началом работ, настраиваем следующие переменные:</p>
+						<p><span class="green">$minWidth</span> &#8212; минимальная ширина вьюпорта (экрана), поддерживаемая
+							проектом. Обычно это 320px, но, с отмиранием старых устройств, это значение можно менять на
+							любое нужное, указываем только число без px:</p>
+
+						<pre><code>$minWidth: 320;</code></pre>
+
+						<p><span class=" green">$maxWidth</span> &#8212; ширина всего макета (полотна), не путать с шириной
+							ограничивающего контейнера. Как правило, дизайнеры предоставляют макеты шириной 1920 или 1440
+							пикселей, но это значение может быть любым. Меряем макет и указываем только число без px:</p>
+
+						<pre><code>$maxWidth: 1920;</code></pre>
+
+						<p><span class="green">$maxWidthContainer</span> &#8212; ширина ограничивающего контейнера. Собственно, это
+							ширина контента в макете дизайна. Меряем макет и указываем только число без px:</p>
+
+						<pre><code>$maxWidthContainer: 1170;</code></pre>
+
+						<p>Если в макете нет ограничения у контента, то есть контент расположен на всю ширину полотна (с
+							отступами), то следует указать значение <span class=" green">0</span> (нуль):</p>
+
+						<pre><code>$maxWidthContainer: 0;</code></pre>
+
+						<p><span class=" green">$containerPadding</span> &#8212; общий отступ (сумма отступов слева и справа) у
+							ограничивающего контейнера. Указываем только число без px: </p>
+
+						<pre><code>$containerPadding: 30;</code></pre>
+
+						<p>Если отступов нет, либо вы хотите использовать адаптивное свойство, следует указать
+							<span class=" green">0</span> (ноль):
+						</p>
+
+						<pre><code>$containerPadding: 0;</code></pre>
+
+						<p><span class=" green">$containerWidth</span> &#8212; ширина срабатывания первого брейкпоинта. Собственно,
+							это сумма ширин ограничивающего контейнера и его отступов. Как правило, менять тут ничего не
+							нужно.
+						</p>
+
+						<pre><code>$containerWidth: $maxWidthContainer + $containerPadding;</code></pre>
+
+						<blockquote class="warning">
+							<p>Вышеуказанные переменные влияют и на функционал отзывчивого свойства, который описан в
+								отдельной статье</p>
+						</blockquote>
+
+
+					</div>
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Настройка брейкпоинтов</h2>
+					<div class="page__content--items">
+
+						<p>Переменным брейпоинтов присвоена одна из SCSS-функций шаблона <span class="green">em()</span>, она
+							выполняют перевод пикселей в EM.</p>
+						<p><span class=" green">$pc</span> &#8212; ПК, ноутбуки, некоторые планшеты в горизонтальном положении.
+							Обычно, тут указывается переменная <span class=" green">$containerWidth</span>:</p>
+
+						<pre><code>$pc: em($containerWidth);</code></pre>
+
+						<p><span class=" green">$tablet</span> &#8212; планшеты, некоторые телефоны в горизонтальном положении.
+							Обычно, значение равно 991.98px:</p>
+
+						<pre><code>$tablet: em(991.98);</code></pre>
+
+						<p><span class=" green">$mobile</span> &#8212; большие телефоны. Обычно, значение равно 767.98px: </p>
+
+						<pre><code>$mobile: em(767.98);</code></pre>
+
+						<p><span class=" green">$mobileSmall</span> &#8212; маленькие телефоны. Обычно, значение равно 479.98px:</p>
+
+						<pre><code>$mobileSmall: em(479.98);</code></pre>
+
+						<blockquote class="warning">
+							<p>Для быстрого вызова медиа запроса с нужным брейкпоинтом можно использовать <a
+									href="../../fls-page_2.html#snippets" target="_blank" class="link">сниппеты</a>
+								md1, md2, md3, md4. Или, для Mobile First, mmd1,
+								mmd2, mmd3, mmd4</p>
+						</blockquote>
+
+					</div>
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Настройка типа адаптива (поведения ограничивающего контейнера)</h2>
+					<div class="page__content--items">
+
+						<p><span class="green">$responsiveType</span> &#8212; настройка типа адаптива (поведения ограничивающего
+							контейнера):</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class=" green">1</span> &#8212; отзывчивость. У контейнера нет брейкпоинтов, он сужается
+									вместе с
+									браузером</li><br>
+								<li><span class=" green">2</span> &#8212; по брейкпоинтам. Контейнер меняет свою ширину по настроенным
+									брейкпоинтам</li>
+							</ul>
+						</div>
+
+						<pre><code>$responsiveType: 1;</code></pre>
+
+						<p>Ниже, в файле стилей <span class="green">scss/style.scss</span> указан селектор ограничивающего
+							контейнера
+							и его стили, значения которых во многом состоят из настроенных выше переменных.
+						</p>
+						<p>Стили ограничивающего контейнера будут применяться к любому элементу в классе которого есть
+							строка <span class="green">&#171;__container&#187;</span>. Для удобства можно использовать <a class="
+                    link" href="../../fls-page_2.html#snippets" target="_blank">сниппет</a>
+							<span class="green">cnt</span>
+						</p>
+						<pre><code>&lt;div class=" block__container"&gt; ... &lt;/div&gt;</code></pre>
+
+					</div>
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Подключение дополнительных файлов стилей</h2>
+					<div class="page__content--items">
+
+						<blockquote class="warning">
+							<p>В файл <span class="green">scss/style.scss</span> уже подключены и можно подключать прочие файлы
+								стилей. Порядок подключения имеет значение!</p>
+						</blockquote>
+						<p><span class=" green">@use &#171;sass:math&#187;;</span> &#8212; подключает SASS-модуль математических
+							вычислений. Теперь мы можем использовать деление с помощью <span class="green">math.div(число,
+								число)</span>.
+						</p>
+						<p><span class="green">@import &#171;base/mixins&#187;;</span> &#8212; подключение используемых в ЧФ
+							миксинов. Файл scss/base/mixins.scss.</p>
+						<p><span class=" green">@import &#171;base/null&#187;;</span> &#8212; подключение обнуляющих стилей. Файл
+							scss/base/null.scss.</p>
+						<p><span class="green">@import &#171;base&#187;;</span> &#8212; подключение общего файла базовых стилей
+							модулей ЧФ, SASS-шаблонов (заготовок) и вспомогательных классов. Файл <span
+								class="green">scss/base.scss</span>.
+							Для
+							подключения/отключения конкретных стилей смотри scss/base.scss.</p>
+						<p><span class=" green">@import &#171;common&#187;; </span>&#8212; подключение файла стилей общих элементов
+							конкретного проекта. Файл <span class="green">scss/common.scss</span> (изначально пуст).</p>
+						<p><span class="green">@import &#171;header&#187;;</span> , <span class=" green">@import
+								&#171;footer&#187;;</span>
+							&#8212; подключение стилей отдельных блоков (изначально <span class="green">scss/header.scss</span> и
+							<span class="green">scss/footer.scss</span> ).
+							Вы можете дополнять список подключением своих файлов
+						</p>
+						<p><span class="green">@import &#171;home&#187;;</span> &#8212; подключение стилей отдельных страниц
+							(изначально <span class="green">scss/home.scss</span>). Вы можете дополнять список подключением своих
+							файлов</p>
+
+					</div>
+					<!--! Статья 6 -->
+					<h2 class="page__subtitle" id="h-items_6">Селекторы и стили</h2>
+					<div class="page__content--items">
+
+						<p>Изначально в файле стилей <span class=" green">scss/style.scss</span> есть ряд SCSS-селекторов:</p>
+
+						<p><span class="green">body {}</span> &#8212; стили основного тега <span class="green">&lt;body&gt;</span>
+							часть
+							из которых описана в
+							файле обнуления <span class="green">scss/base/null.scss</span>. Также добавлена подготовка для появления
+							у
+							тега
+							&lt;html&gt; двух классов:</p>
+						<div class="page__block--list">
+							<ul>
+								<li><span class=" green">lock </span>&#8212; блокировка скролла. Для этого уже написаны
+									соответствующие
+									CSS-стили</li>
+								<li><span class="green">loaded</span> &#8212; сайт загружен. По этому классу мы можем влиять на
+									<span class="green">&lt;body&gt;</span> для отображения контента после полной загрузки данных
+								</li>
+							</ul>
+
+							<p><span class=" green">wrapper {}</span> &#8212; обертка всего контента на странице. Для неё написаны
+								стили
+								прижатия подвала к низу страницы, важный параметр <span class="green">overflow: hidden;</span> который
+								не
+								даст
+								появиться
+								горизонтальному скроллу страницы, а также решение проблемы для слайдеров внутри дочерних
+								flex-элементов.
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+	</div>
+
+	<div class="page__footer">
+
+		<div class="page__footer_left">
+
+			<p>Предыдущий пост: <br>
+				<a href="fls-page_4.html" class="link">&lt;= Работа со шрифтами. Локальные и иконочные
+					шрифты. Подключение
+					из Google Fonts</a>
+			</p>
+		</div>
+
+		<div class="page__footer_right">
+
+			<p>Следующий пост: <br>
+				<a class="link" href="fls-page_6.html"> SCSS-Миксин «Отзывчивое (адаптивное) свойство» =></a>
+			</p>
+		</div>
+	</div>
+
+	<hr class="page__hr">
+
+
+
+	</div>
+
+	<div class="return">
+		<div class="return__container">
+
+			<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+			<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="footer__container">
+
+			<!-- Кнопка вверх -->
+			<!-- https://itchief.ru/javascript/btn-up -->
+			<div class="btn-up btn-up_hide"></div>
+
+
+		</div>
+
+	</footer>
+	</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

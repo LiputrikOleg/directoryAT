@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 4</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Виды отношений между элементами</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#c-items_1" class="con-menu">Селекторы атрибутов и их возможные варианты</a>
+							<a href="#c-items_2" class="con-menu">Виды отношений между элементами</a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1">Селекторы атрибутов и их возможные варианты</h2>
+
+					<div class="page__content--items">
+
+						<h4 class="gray"> Основные виды:</h4>
+						<div class="page__block--list--list">
+							<ul>
+								<li>селектор элемента (например: <code class="green">div</code>);</li>
+								<li>селектор класса (например: <code class="green">.center</code>);</li>
+								<li>селектор идентификатора (например: <code class="green">#footer</code>);</li>
+								<li>селектор <code class="green">* </code>(выбор всех элементов);</li>
+								<li>cелекторы атрибутов (например: <code class="green">[href*="youtube"]</code>);</li>
+								<li>селекторы псевдоклассов (например:<code class="green"> p:first-of-type</code>)</li>
+							</ul>
+						</div>
+
+						<pre class="pre"><code class="css">p {
+  text-align: center;
+  font-size: 20px;
+}</code></pre>
+						<p> где: <code class="green">p</code> – это селектор, <code class="green">text-align</code> и <code
+								class="green">font-size</code> – это свойства, а
+							<code class="green">center</code> и <code class="green">20px</code> – значения.
+						</p>
+						<hr class="page__hr">
+
+						<h4 class="gray">Селекторы атрибутов</h4>
+						<p>Селекторы атрибутов предназначены для выбора элементов в зависимости от указанного атрибута элемента или
+							его
+							значения. Различают следующие виды атрибутов:</p>
+						<div class="page__block--list">
+							<ul>
+								<li><code class="green">[атрибут]</code></li>
+								<li><code class="green">[атрибут=значение]</code></li>
+								<li><code class="green">[атрибут^=value]</code></li>
+								<li><code class="green">[атрибут|=value]</code></li>
+								<li><code class="green">[атрибут$=value]</code></li>
+								<li><code class="green">[атрибут*=value]</code></li>
+								<li><code class="green">[атрибут~=value]</code></li>
+							</ul>
+						</div>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Селектор: <span class="green">[атрибут]</span></h4>
+						<p> Выбор всех элементов в HTML документе, имеющих указанный <b>атрибут</b>.
+							Например, установить красный цвет фона для всех элементов, имеющих атрибут <code
+								class="green">target</code>.
+						</p>
+						<pre
+							class="pre"><code class="html">&lt;a href=&quot;#&quot; target=&quot;_blank&quot;&gt;Ссылка&lt;/a&gt;</code></pre>
+						<pre class="pre"><code class="css">[target] {
+<ba></ba>ckground-color: red;
+}</code></pre>
+
+						<hr class="page__hr">
+
+
+						<h4 class="gray">Селектор: <span class="green">[атрибут=значение]</span></h4>
+						<p>Выбор всех элементов, имеющих <code class="green">атрибут="значение"</code>.
+							Например, установить зелёный фон для всех элементов с<code class="green"> rel="nofollow"</code>.</p>
+						<pre
+							class="pre"><code class="html">&lt;a href=&quot;#&quot; rel=&quot;nofollow&quot;&gt;Ссылка&lt;/a&gt;</code></pre>
+						<pre class="pre"><code class="css">[rel="nofollow"] {
+ background-color: green;
+}</code></pre>
+
+						<hr class="page__hr">
+
+
+						<h4 class="gray">Селектор: <span class="green">[атрибут^=value]</span></h4>
+						<p>Выбор всех элементов, имеющих<b> атрибут</b>, значение которого начинается с <code
+								class="green">value</code>.
+							Например,
+							установить желтый цвет фона для всех элементов, имеющих атрибут <code class="green">class</code>, значение
+							которого начинается
+							с <code class="green">color</code>.</p>
+						<pre class="pre"><code class="html">&lt;a class=&quot;color&quot; href=&quot;#&quot;&gt;Ссылка&lt;/a&gt;
+    &lt;a class=&quot;color_test&quot; href=&quot;#&quot;&gt;Ссылка&lt;/a&gt;</code></pre>
+						<pre class="pre"><code class="css"> [class^="color"] {
+b ackground-color: yellow;
+}</code></pre>
+
+						<hr class="page__hr">
+
+
+						<h4 class="gray">Селектор: <span class="green">[атрибут|=value]</span></h4>
+						<p> Выбор всех элементов, имеющих <b>атрибут</b>, значение которого равно <code class="green">value</code>
+							или
+							начинается
+							с<code class="green"> value</code> следующим образом <code class="green">value-*</code> (<code
+								class="green">value</code> с обязательным дефисом, после
+							которого идёт остальное содержимое значения). Например, установить оранжевый цвет фона для всех элементов,
+							имеющих атрибут <code class="green">class</code>, значение которого равно <code class="green">test</code>
+							или
+							<code class="green">test-*</code>.
+						</p>
+
+						<pre class="pre"><code class="html">&lt;p class=&quot;test &quot;&gt;...&lt;/p&gt;
+&lt;p class=&quot;test-wizard&quot;&gt;...&lt;/p&gt;</code></pre>
+						<pre class="pre"><code class="css"> [class|="test"] {
+  background-color: orange;
+}</code></pre>
+
+						<hr class="page__hr">
+
+
+						<h4 class="gray">Селектор: <span class="green">[атрибут$=value]</span></h4>
+						<p>Выбор всех элементов, имеющих <b>атрибут</b>, значение которого заканчивается на <code
+								class="green">value</code>. Например,
+							установить желтый цвет фона для всех элементов, имеющих атрибут <code class="green">class</code>, значение
+							которого
+							заканчивается на <code class="green">color</code>.</p>
+						<pre class="pre"><code class="html">&lt;a class=&quot;color&quot; href=&quot;#&quot;&gt;Ссылка&lt;/a&gt;
+&lt;a class=&quot;test_color&quot; href=&quot;#&quot;&gt;Ссылка&lt;/a&gt;</code></pre>
+						<pre class="pre"><code class="css">[class$="color"] {
+  background-color: yellow;
+}</code></pre>
+
+						<hr class="page__hr">
+
+
+						<h4 class="gray">Селектор: <span class="green">[атрибут*=value]</span></h4>
+
+						<p> Выбор всех элементов, имеющих <b>атрибут</b>, значение которого содержит подстроку <code
+								class="gray">value</code>.
+							Например, установить зелёный цвет фона для всех элементов, у которых атрибут <code
+								class="gray">href </code>содержит
+							подстроку <code class="green">"youtube"</code>.</p>
+						<pre
+							class="pre"><code class="html">&lt;a href=&quot;https://www.youtube.com/watch?v=SE-MKaTcXUI&quot;&gt;Ссылка&lt;/a&gt;</code></pre>
+						<pre class="pre"><code class="css">[href*="youtube"] {
+  background-color: green;
+}</code></pre>
+
+						<hr class="page__hr">
+
+
+						<h4 class="gray">Селектор: <span class="green">[атрибут~=value]</span></h4>
+						<p>Выбор всех элементов, имеющих <b>атрибут</b>, значение которого содержит <code class="green">value</code>
+							как
+							одно из
+							значений через пробел. Например, установить коричневый цвет фона для всех элементов, у которых атрибут
+							<code class="green">class</code> содержит <code class="green">text</code> как одно из значений через
+							пробел.
+						</p>
+						<pre class="pre"><code class="html">&lt;p class=&quot;text&quot;&gt;...&lt;/p&gt;
+&lt;p class=&quot;hot-news text football&quot;&gt;...&lt;/p&gt;</code></pre>
+						<pre class="pre"><code class="css">[class~="text"] {
+  background-color: brown;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Примеры</h4>
+						<pre class="pre"><code class="html">&lt;ul&gt;
+  &lt;li title=&quot;list1&quot;&gt;Пункт 1&lt;/li&gt;
+  &lt;li title=&quot;2list&quot;&gt;Пункт 2&lt;/li&gt;
+  &lt;li title=&quot;li-st&quot;&gt;Пункт 3&lt;/li&gt;
+  &lt;li title=&quot;list&quot;&gt;Пункт 4&lt;/li&gt;
+  &lt;li title=&quot;mylist5&quot;&gt;Пункт 5&lt;/li&gt;
+  &lt;li title=&quot;big list&quot;&gt;Пункт 6&lt;/li&gt;
+  &lt;li title=&quot;list smoll&quot;&gt;Пункт 7&lt;/li&gt;
+  &lt;li title=&quot;my list 8&quot;&gt;Пункт 8&lt;/li&gt;
+  &lt;li title=&quot;list-9&quot;&gt;Пункт 9&lt;/li&gt;
+  &lt;li title=&quot;10-list&quot;&gt;Пункт 10&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+						<p><code class="green">[title] {color:red;} </code> - Все пункты с атрибутом <code
+								class="green">[title]</code>
+							приобрели красный цвет</p>
+						<p><code class="green">[title="list"] {color:red;}</code> - Селектор атрибута со значением <code
+								class="green">"list" </code>- красный 4</p>
+						<p><code class="green">[title$="list"] {color:red;}</code> - Если атрибут заканчивается значением <code
+								class="green">"list"</code> - красные
+							2, 4, 6, 10 </p>
+						<p><code class="green">[title^="list"] {color:red;}</code> - Если атрибут начинается со значения <code
+								class="green">"list"</code> - красные
+							1, 4, 7, 9</p>
+						<p><code class="green">[title*="list"] {color:red;}</code> - Перекрашиваются все, у которых есть значение
+							<code class="green">"list"</code> -
+							т.е все кроме 3
+						</p>
+						<p><code class="green">[title~="list"] {color:red;}</code> - Перекрашиваюся все, у которых значение идет
+							отдельным
+							словом -
+							красные 4, 6, 7, 8</p>
+						<p><code class="green">[title|="list"] {color:red;}</code> - Перекрашиваюся все, у которых значение идет
+							одним
+							словом
+							<code class="green">"list"</code> или <code class="green">"list-....."</code> - красные 4, 9
+						</p>
+
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="c-items_2">Виды отношений между элементами</h2>
+
+
+					<div class="page__content--items">
+
+						<p>Каждый элемент на веб-странице может быть связан с другим элементом с помощью одного из следующих
+							отношений:
+						</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="gray">Родительский элемент, прямой предок</span> - элемент который содержит один или
+									несколько вложенных в него
+									элементов. По отношению к этим вложенным в него элементам он является для них родителем;</li>
+								<li><span class="gray">Дочерний элемент, прямой потомок, ребёнок, дитя</span> - элемент, который вложен
+									в
+									родительский элемент и по
+									отношению к нему является дочерним элементом, т.е. его ребёнком;</li>
+								<li><span class="gray">Соседний элемент, сиблинг (брат или сестра)</span> – элементы, у которых один
+									общий
+									родитель. Такие элементы по
+									отношению друг к другу являются сиблингами (соседями).</li>
+							</ul>
+						</div>
+
+						<p>Рассмотрим следующий пример:</p>
+						<pre class="pre"><code class="html">&lt;div&gt;
+  &lt;h1&gt;&lt;/h1&gt;
+  &lt;p&gt;
+    &lt;strong&gt;&lt;/strong&gt;
+    &lt;em&gt;&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+						<p>Данный код можно представить в виде следующей схемы:</p>
+						<p>
+							<picture>
+								<source srcset="img/c/css_structure_elements.webp" type="image/webp"><img class="img-thumbnail"
+									src="img/c/css_structure_elements.png" alt="Схема расположения элементов"
+									title="Схема расположения элементов" />
+							</picture>
+						</p>
+
+						<p>В вышеприведённом примере выберем элемент <code class="green">p</code> и рассмотрим, как он связан с
+							другими
+							элементами в
+							коде:</p>
+						<div class="page__block--list">
+							<ul>
+								<li>Родительский элемент – <code class="green">div</code>;</li>
+								<li>Соседний элемент – <code class="green">h1</code>;</li>
+								<li>Прямые потомки, дети – элементы <code class="green">strong</code>, <code class="green">em</code>.
+							</ul>
+						</div>
+
+						<h4 class="gray">Элемент1 Элемент2</h4>
+						<p>В этом селекторе <code class="green">элемент1</code> и <code class="green">элемент2</code> связаны между
+							собой
+							отношением "предок потомок".
+							Т.е. он используется для выбора <code class="green">элементов2</code>, которые расположены внутри <code
+								class="green">элемента1</code> в
+							HTML документе. Другими словами, он выбирает все <code class="green">элементы2</code>, которые являются
+							потомками
+							<code class="green">элемента1</code>.
+						</p>
+						<p>Например выбрать и установит стиль каждому элементу <code class="green">p</code>, который является
+							потомком
+							элемента
+							<code class="green">div</code>:
+						</p>
+
+						<pre class="pre"><code class="css">div p &#123;
+  color:red;
+&#125;</code></pre>
+
+						<pre class="pre"><code class="html">&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;Текст 1&lt;/p&gt; &lt;= Является прямым потомком элемента div
+    &lt;p&gt;Текст 2&lt;/p&gt; &lt;= Является прямым потомком элемента div
+  &lt;/div&gt;
+  &lt;p&gt;Текст 3&lt;/p&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      <b>&lt;p&gt;Текст 4&lt;/p&gt;</b> &lt;= Является потомком элемента div
+      &lt;div&gt;Содержимое контейнера&lt;/div&gt;
+    &lt;/section&gt;
+    &lt;p&gt;текст 5&lt;/p&gt; &lt;= Является прямым потомком элемента div
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Элемент1 > Элемент2</h4>
+						<p>В этом селекторе <code class="green">элемент1</code> и <code class="green">элемент2</code> связаны между
+							собой
+							отношением <code class="green">"родитель >
+								ребёнок"</code>. Т.е. он используется для выбора <code class="green">элементов2</code>, которые являются детьми
+							<code class="green">элемента1</code>. Другими словами, он выбирает все <code
+								class="green">элементы2</code>,
+							которые имеют в качестве
+							непосредственного родителя <code class="green">элемент1</code>.
+						</p>
+						<p>Например выбрать и установит стиль каждому элементу <code class="green">p</code>, у которого родитель
+							является
+							элементом
+							<code class="green">div</code>:
+						</p>
+						<pre class="pre"><code class="css">div > p &#123;
+  color:red;
+&#125;</code></pre>
+						<pre class="pre"><code class="html">&lt;body&gt;
+  &lt;div&gt;
+      &lt;p&gt;Текст 1&lt;/p&gt; &lt;= Является прямым потомком элемента div
+      &lt;p&gt;Текст 2&lt;/p&gt; &lt;= Является прямым потомком элемента div
+  &lt;/div&gt;
+  &lt;p&gt;Текст 3&lt;/p&gt;
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;p&gt;Текст 4&lt;/p&gt;
+      &lt;div&gt;Содержимое контейнера&lt;/div&gt;
+    &lt;/section&gt;
+    &lt;p&gt;текст 5&lt;/p&gt; &lt;= Является прямым потомком элемента div
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Элемент1 + Элемент2</h4>
+						<p>Селектор <code class="green">Элемент1 + Элемент2</code> предназначен для выбора <code
+								class="gray">элементов2</code>, которые расположены
+							сразу же после <code class="green">элемента1</code>, и являются они по отношению друг к другу соседями.
+							Другими
+							словами,
+							данный селектор используется для выбора <code class="green">элемента2</code>, который расположен сразу же
+							после
+							<code class="green">элемента1</code>, и при этом они должны иметь одного и того же родителя в HTML
+							документе.
+						</p>
+						<p>Например выбрать и установит стиль каждому элементу <code class="green">p</code>, который расположен
+							сразу
+							же
+							после элемента
+							<code class="green">div</code>. Причём выбрать нужно только те элементы <code>p</code>, которые находятся
+							на
+							том
+							же уровне
+							вложенности, что и элементы <code>div</code>, т.е. они должны являться по отношению друг к другу соседями:
+						</p>
+
+						<pre class="pre"><code class="css">div + p &#123;
+  color:red;
+&#125;</code></pre>
+
+						<pre class="pre"><code class="html">&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;Текст 1&lt;/p&gt;
+    &lt;p&gt;Текст 2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;Текст 3&lt;/p&gt; &lt;= Данный элемент расположен сразу же после элемента div и у них общий родитель body, т.е. данные элементы по отношению друг к другу являются соседями
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;p&gt;Текст 4&lt;/p&gt;
+      &lt;div&gt;Содержимое контейнера&lt;/div&gt;
+    &lt;/section&gt;
+    &lt;p&gt;текст 5&lt;/p&gt; 
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Элемент1 ~ Элемент2</h4>
+						<p>Селектор <code>Элемент1 ~ Элемент2</code> предназначен для выбора <code class="green">элементов2</code>,
+							которые
+							расположены
+							после <code class="green">элемента1</code>, и являются они по отношению друг к другу соседями. Другими
+							словами,
+							данный
+							селектор используется для выбора <code class="green">элементов2</code>, которые расположены после <code
+								class="gray">элемента1</code>, и
+							при этом они должны иметь одного и того же родителя в HTML документе.</p>
+
+						<p>Например выбрать и установит стиль каждому элементу <code class="green">p</code>, который расположен
+							после
+							элемента
+							<code class="green">div</code>. Причём выбрать нужно только те элементы <code class="green">p</code>,
+							которые
+							находятся на том же уровне
+							вложенности, что и элементы <code class="green">div</code>, т.е. они должны являться по отношению друг к
+							другу
+							соседями:
+						</p>
+
+						<pre class="pre"><code class="css">div ~ p &#123;
+  color:red;
+&#125;</code></pre>
+
+						<pre class="pre"><code class="html">&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;Текст 1&lt;/p&gt;
+    &lt;p&gt;Текст 2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;Текст 3-1&lt;/p&gt; &lt;= Данный элемент расположен после элемента div и он по отношению к div является соседом
+  &lt;p&gt;Текст 3-2&lt;/p&gt; &lt;= Данный элемент расположен после элемента div и он по отношению к div является соседом
+  &lt;div&gt;
+    &lt;section&gt;
+      &lt;p&gt;Текст 4&lt;/p&gt;
+      &lt;div&gt;Содержимое контейнера&lt;/div&gt;
+    &lt;/section&gt;
+    &lt;p&gt;текст 5&lt;/p&gt; 
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+					</div> <!-- page__content--items 3-->
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

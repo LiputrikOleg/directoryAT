@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 5</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Псевдоклассы и Псевдоэлементы</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#c-items_1" class="con-menu">:link <br> :visited <br> :active <br> :hover <br> :focus </a>
+							<a href="#c-items_2" class="con-menu">:root <br> :empty <br> :target <br>:lang(язык) <br>
+								:not(selector)</a>
+							<a href="#c-items_3" class="con-menu">:enabled <br> :disabled <br> :checked</a>
+							<a href="#c-items_4" class="con-menu">:first-child <br> :first-of-type <br> :last-child <br> :last-of-type
+								<br>
+								:only-child <br> :only-of-type </a>
+							<a href="#c-items_5" class="con-menu"> :nth-child(n) <br> :nth-last-child(n) <br> :nth-of-type(n) <br>
+								:nth-last-of-type(n) </a>
+							<a href="#c-items_6" class="con-menu"> ::first-letter <br> ::first-line <br> ::after <br> ::before <br>
+								::selection</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1">Псевдоклассы &nbsp;&nbsp; :link &nbsp;&nbsp; :visited &nbsp;&nbsp;
+						:active
+						&nbsp;&nbsp; :hover &nbsp;&nbsp; :focus </h2>
+
+					<div class="page__content--items">
+
+						<p><code class="green">:link</code> - Выбор всех непосещеных ссылок</p>
+						<p><code class="green">:visited</code> - Выбор всех посещенных ссылок</p>
+						<p><code class="green">:active</code> - Выбор элемента, при нажатии на него</p>
+						<p><code class="green">:hover</code> - Выбор элемента, при поднесении к нему курсора</p>
+						<p><code class="green">:focus</code> - Предназначен для выбора элемента, который находится в фокусе. Он
+							предназначен для элементов, которые принимают события клавиатуры или других устройств ввода.</p>
+					</div> <!--  /.item_1-->
+
+
+
+					<h2 class="page__subtitle" id="c-items_2">Псевдоклассы &nbsp;&nbsp; :root &nbsp;&nbsp; :empty &nbsp;&nbsp;
+						:target
+						&nbsp;&nbsp;:lang(язык) &nbsp;&nbsp;
+						:not(selector)</h2>
+
+					<div class="page__content--items">
+
+						<p><code class="green">:root</code> - Предназначен для выбора корневого элемента HTML документа, т.е.
+							элемента
+							<code class="green">&lt;html&gt;</code>. В отличие от селектора <code class="green">html {...}</code>
+							данный
+							псевдокласс имеет более высокий
+							приоритет:
+						</p>
+						<p>Например, установить желтый цвет фона страницы.</p>
+						<pre class="pre"><code class="css">/*Из-за того, что псевдокласс :root имеет более высокий приоритет, цвет заднего фона документа HTML будет жёлтым.*/
+:root {background-color: yellow;}
+html {  background-color: green;}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:empty</code> - Предназначен для выбора пустых элементов, т.е. элементов, которые не
+							содержат другие элементы или какой-либо текст.</p>
+						<p>Например, установить красный цвет фона и размер для пустых элементов<code
+								class="green"> &lt;p&gt;</code>.
+						</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;Заголовок&lt;/h1&gt;
+  &lt;p&gt;&lt;/p&gt;       &lt;=
+  &lt;p&gt;Текст&lt;/p&gt;
+  &lt;p&gt;&lt;span&gt;Проба&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:empty {
+  width: 50px;
+  height: 10px;
+  background: red; /*Для наглядности*/
+}</code></pre>
+						<div class="page__primer">
+							<div>
+								<h3>Заголовок</h3>
+								<p></p>
+								<p>Текст</p>
+								<p><span>Проба</span></p>
+							</div>
+							<style>
+								p:empty {
+									width: 50px;
+									height: 10px;
+									background: rgba(255, 0, 0, 0.52);
+								}
+							</style>
+						</div>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:target</code> - Предназначен для выбора элемента с идентификатором (например:
+							<code class="green">part1</code>), который указан в URL после символа <code class="green">#</code>.
+						</p>
+						<p>Например, установить красный цвет текста и размер шрифта для элемента идентификатор которого указан в URL
+							после
+							символа <code class="green">#</code>.</p>
+						<pre class="pre"><code class="html">&lt;p id="part1"&gt;...&lt;/p&gt;
+&lt;p id="part2"&gt;...&lt;/p&gt;</code></pre>
+						<pre class="pre"><code class="css">:target {
+  color: red;
+  font-size: 24px;
+}</code></pre>
+
+						<p>Если URL страницы <code class="green">"http://test.org/article#part1"</code>, то будет выбран элемент
+							<code class="green">&lt;p&gt;</code>,
+							имеющий идентификатор <code class="green">id="part1"</code>. Если URL страницы <code
+								class="green">"http://test.org/article#part2"</code>,
+							то будет выбран элемент <code class="green">&lt;p&gt;</code>, имеющий идентификатор <code
+								class="green">id="part2"</code>.</p>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:lang()</code> - Используется для выбора элементов с языковым атрибутом, которые
+							имеют
+							указанное значение.</p>
+						<p>Например, установить желтый цвет фона для всех элементов <code class="green">&lt;p&gt;</code>, у которых
+							атрибут
+							<code class="green">lang</code> содержит значение "<code class="green">ru</code>".
+						</p>
+						<pre class="pre"><code class="html">&lt;p lang="ru"&gt;...&lt;/p&gt;</code></pre>
+						<pre class="pre"><code class="css">p:lang(ru) {
+  background-color: yellow;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:not(selector)</code> - Предназначен для выбора всех элементов, которые не попадают
+							под
+							действие указанного селектора.</p>
+						<p>Например, выбрать все элементы на веб-странице, кроме <code class="green">&lt;div&gt;</code></p>
+						<pre class="pre"><code class="css">*:not(div) {
+  color: green;
+}</code></pre>
+						<p>Например, выбрать все элементы <code class="green"> &lt;div&gt;</code> за исключением того, который имеет
+							<code class="green">id="footer"</code>.
+						</p>
+						<pre class="pre"><code class="css">div:not(#footer) {
+  padding: 15px;
+}</code></pre>
+
+
+					</div> <!-- page__content--items -->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="c-items_3">Псевдоклассы &nbsp;&nbsp; :enabled &nbsp;&nbsp; :disabled
+						&nbsp;&nbsp;
+						:checked</h2>
+
+					<div class="page__content--items">
+
+						<p><code class="green">:enabled</code> - Предназначен для выбора элементов формы, которые доступны для
+							управления, т.е. они могут отвечать на действия пользователей.</p>
+						<p>Например, установить желтый цвет фона для элементов <code class="green">&lt;input&gt;</code>, которые
+							доступны
+							для
+							управления.</p>
+						<pre class="pre"><code class="html">&lt;input type="text" value="Введите ФИО:"&gt;</code></pre>
+						<pre class="pre"><code class="css">input:enabled {
+  background-color: yellow;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:disabled</code> - Предназначен для выбора элементов формы, которые недоступны для
+							управления, т.е. они не могут отвечать на действия пользователей.</p>
+						<p>Например, установить желтый цвет фона для элементов <code class="green">&lt;input&gt;</code>, которые не
+							доступны для
+							управления.</p>
+						<pre
+							class="pre"><code class="html">&lt;input type="text" disabled="disabled" value="Введите возраст:"&gt;</code></pre>
+						<pre class="pre"><code class="css">input:disabled {
+  background-color: yellow;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:checked</code> - Предназначен для выбора элементов <code class="green">radio</code>
+							(<code class="green">&lt;input type="radio"&gt;</code>),<code class="green"> checkbox </code>(<code
+								class="green">&lt;input type="checkbox"&gt;</code>) и
+							<code class="green">option</code>, которые находятся во включенном положении.
+						</p>
+						<p>Например, выбрать элементы, которые находятся во включенном положении, т.е. <code
+								class="green">checked</code>.
+						</p>
+						<pre class="pre"><code class="html">&lt;input type="checkbox" checked="checked" value="Yes"&gt;</code></pre>
+						<pre class="pre"><code class="css">:checked {
+  height: 30px;
+  width: 30px;
+} 
+или
+input[type=radio]:checked {
+  border: 1px solid black;
+}</code></pre>
+
+					</div> <!-- page__content--items 3-->
+
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="c-items_4">Псевдоклассы&nbsp;&nbsp; :first-child &nbsp;&nbsp; :first-of-type
+						&nbsp;&nbsp; :last-child &nbsp;&nbsp;
+						:last-of-type &nbsp;&nbsp; :only-child &nbsp;&nbsp; :only-of-type</h2>
+
+					<div class="page__content--items">
+
+						<p><code class="green">:first-child</code> - применяется для выбора указанных элементов, <b>если они
+								являются
+								первыми дочерними элементами своего родителя</b>.</p>
+						<p>Например, выбрать каждый элемент <code class="green">&lt;p&gt;</code>, который является первым дочерним
+							элементом своего
+							родителя</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;...&lt;/p&gt;  &lt;=
+    &lt;p&gt;...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;    &lt;=
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:first-child {
+  background-color: green;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:first-of-type</code> - применяется для выбора указанных элементов, <b>если они
+								являются
+								первыми дочерними элементами данного типа (тега) своего родителя</b>. В отличие от псевдокласса
+							<code class="green">:first-child</code>, данный псевдокласс <code class="green">:first-of-type</code>
+							учитывает
+							только элементы с указанным
+							тегом.
+						</p>
+						<p>Например, выбрать каждый элемент <code class="green">&lt;p&gt;</code>, который является первым дочерним
+							элементом данного
+							типа своего родителя</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;    &lt;=
+  &lt;div&gt;
+    &lt;p&gt;&hellip;&lt;/p&gt;    &lt;=
+    &lt;p&gt;...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;    &lt;=
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:first-of-type {
+  background-color: green;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:last-child</code> - Применяется для выбора указанных элементов, <b>если они являются
+								последними дочерними элементами своего родителя</b>.</p>
+						<p>Например, выбрать каждый элемент <code class="green">&lt;p&gt;</code>, который является последним
+							дочерним
+							элементом своего
+							родителя.</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;&hellip;&lt;/p&gt;
+    &lt;p&gt;...&lt;/p&gt;  &lt;=
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">
+  p:last-child {
+  background-color: yellow;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:last-of-type</code> - применяется для выбора указанных элементов, <b>если они
+								являются
+								последними дочерними элементами данного типа (тега) своего родителя</b>. В отличие от псведокласса
+							<code class="green">:last-child</code>, данный псевдокласс <code class="green">:last-of-type</code>
+							учитывает
+							только элементы с указанным
+							тегом.
+						</p>
+						<p>Например, выбрать каждый элемент <code class="green">&lt;p&gt;</code>, который является последним
+							дочерним
+							элементом данного
+							типа своего родителя.</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;    &lt;=
+  &lt;div&gt;
+    &lt;p&gt;&hellip;&lt;/p&gt;
+    &lt;p&gt;...&lt;/p&gt;  &lt;=
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;    &lt;=
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:last-of-type {
+  background-color: green;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:only-child</code> - Применяется для выбора указанных элементов, <b>если они являются
+								единственными дочерними элементами своего родителя</b>.</p>
+						<p>Например, выбрать каждый элемент <code class="green">&lt;p&gt;</code>, который является единственным
+							дочерним
+							элементом
+							своего родителя.</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;&hellip;&lt;/p&gt;    &lt;=
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:only-child {
+  background-color: yellow;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:only-of-type</code> - Применяется для выбора указанных элементов, <b>если они
+								являются
+								единственными дочерними элементами данного типа (тега) своего родителя.</b> В отличие от псевдокласса
+							<code class="green">:only-child</code>, данный псевдокласс <code class="green">:only-of-type</code>
+							учитывает
+							только элементы с указанным
+							тегом.
+						</p>
+						<p>Например, выбрать каждый элемент<code class="green">&lt;p&gt;</code>, который является единственным
+							дочерним
+							элементом
+							данного типа своего родителя.</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;    &lt;=
+  &lt;div&gt;
+    &lt;p&gt;&hellip;&lt;/p&gt;    &lt;=
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:only-of-type {
+  background-color: yellow;
+}</code></pre>
+						<p>Например, давайте выберем все <code class="green">ul</code>, которые содержат одинокие <code
+								class="green">li</code>.
+							Вы могли бы написать <code class="green">ul li</code>, но этот способ выберет все элементы <code
+								class="green">li</code>. Единственный
+							способ - использовать <code class="green">only-of-type</code>.
+						</p>
+						<pre class="pre"><code class="css">ul > li:only-of-type {
+  font-weight: bold;
+}</code></pre>
+
+					</div> <!--  /.item_4-->
+
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="c-items_5">Псевдоклассы &nbsp;&nbsp; :nth-child(n) &nbsp;&nbsp;
+						:nth-last-child(n)
+						&nbsp;&nbsp; :nth-of-type(n)
+						&nbsp;&nbsp; :nth-last-of-type(n)</h2>
+
+					<div class="page__content--items">
+
+						<p><code class="green">:nth-child(n)</code> - Применяется для выбора указанных элементов, <b>если они
+								являются
+								n-ыми дочерними элементами своего родителя</b>. Отсчёт элементов начинается с 1.</p>
+						<p>Например, выбрать каждый элемент <code class="green">&lt;p&gt;</code>, который является вторым дочерним
+							элементом своего
+							родителя.</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt; &lt;=
+  &lt;div&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;p&gt;...&lt;/p&gt; &lt;=
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:nth-child(2) {
+  background-color: green;
+}</code></pre>
+						<p>В псевдоклассе <code class="green">:nth-child(n)</code> вместо <code class="green">n</code> можно
+							использовать
+							ключевые слова
+							<code class="green">odd</code> и <code class="green">even</code>, которые предназначены <b>для выбора
+								дочерних
+								элементов, которые имеют
+								соответственно чётные или нечётные индексы</b> (индексы дочерних элементов начинаются с 1).
+						</p>
+						<p>Например, установить различные цвета для четных и нечетных дочерних элементов <code
+								class="green">&lt;p&gt;</code>.</p>
+						<pre class="pre"><code class="html">&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;    &lt;=красный
+  &lt;p&gt;...&lt;/p&gt;    &lt;=зелёный
+  &lt;p&gt;...&lt;/p&gt;    &lt;=красный
+  &lt;p&gt;...&lt;/p&gt;    &lt;=зелёный
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:nth-child(odd) {
+  color: red;
+}
+p:nth-child(even) {
+  color green;
+}</code></pre>
+						<p>Кроме этого в псевдоклассе <code class="green">:nth-child</code> можно вместо <code
+								class="green">n</code>
+							использовать формулу
+							<code class="green">an + b</code>, где <code class="green">a</code> и <code class="green">b</code> – это
+							числа,
+							задаваемые пользователем. А <code class="green">n</code>
+							– это счётчик, который принимает значения:<code class="green"> 0, 1, 2, 3, ....</code>
+						</p>
+						<p>Например, выбрать дочерние элементы <code class="green">&lt;p&gt;</code>, индексы которых кратны <code
+								class="green">3</code>.</p>
+						<pre class="pre"><code class="css">p:nth-child(3n) {
+  color: red;
+}</code></pre>
+						<p>Например, выбрать дочерние элементы <code class="green">&lt;p&gt;</code>, индексы которых равны
+							<code class="green">1, 4, 7, 10, ....</code>
+						</p>
+						<pre class="pre"><code class="css">p:nth-child(3n+1) {
+  color: red;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:nth-last-child(n)</code> - аналогичен классу <code
+								class="green">:nth-child(n)</code>
+							с
+							разницей в
+							том, что <b>отсчёт дочерних элементов ведётся с конца</b>. Также в псевдоклассе <code
+								class="green">:nth-last-child(n)</code>
+							вместо <code class="green">n</code> можно использовать <code class="green">odd</code>, <code
+								class="green">even</code> или формулу <code class="green">an + b</code>.</p>
+						<p>Что, если у Вас есть большой неупорядоченный список и Вам нужно, к примеру, выбрать третий элемент с
+							конца.
+							Вместо того, чтобы писать <code class="green">li:nth-child(397)</code>, Вы можете воспользоваться
+							псевдо-классом
+							<code class="green">nth-last-child.</code>
+						</p>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:nth-of-type(n)</code> - Псевдокласс <code class="green">:nth-of-type(n)</code>
+							применяется для выбора
+							указанных элементов, <b>если они являются <code class="green">n</code>-ыми дочерними элементами данного
+								типа
+								(тега) своего
+								родителя</b>. В отличие от псведокласса <code class="green">:nth-child(n)</code>, псевдокласс <code
+								class="green">:nth-of-type(n)</code>
+							учитывает только элементы с указанным тегом. Кроме этого, данный псевдокласс <code
+								class="green">:nth-of-type(n)</code> также
+							позволяет использовать ключевые слова <code class="green">odd</code>, <code class="green">even</code> и
+							формулу
+							<code class="green">an+b</code>.
+						</p>
+						<p>Например, выбрать каждый элемент <code class="green">&lt;p&gt;</code>, который является вторым дочерним
+							элементом данного
+							типа своего родителя.</p>
+						<pre class="pre"><code class="html">&lt;!-- Элементы, которые будут выбраны селектором отмечены знаком &lt;= --&gt;
+&lt;div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;p&gt;...&lt;/p&gt;  &lt;=
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;h3&gt;...&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">p:nth-of-type(2) {
+  background-color: green;
+}</code></pre>
+						<p>Иногда бывают ситуации, когда вместо того, чтобы выбирать определенных потомков, нужно сделать выбор по
+							типу
+							элемента.</p>
+						<p>Представьте, что на странице есть пять неупорядоченных списков. Если Вам нужно применить стили только к
+							третьему списку, но у него нет уникального идентификатора и иных "зацепок", то можно воспользоваться
+							псевдо-классом <code class="green">nth-of-type(n)</code>. В коде ниже показан способ придания стиля только
+							третьему
+							неупорядоченному списку.</p>
+						<pre class="pre"><code class="css">ul:nth-of-type(3) {
+   border: 1px solid black;
+}</code></pre>
+
+						<hr class="page__hr">
+
+						<p><code class="green">:nth-last-of-type(n)</code> - Псевдокласс <code
+								class="green">:nth-last-of-type(n)</code>
+							аналогичен
+							классу <code class="green">:nth-of-type(n)</code> с разницей в том, <b>что отсчёт дочерних элементов
+								данного
+								типа (тега)
+								ведётся с конца.</b></p>
+
+						<h4 class="gray">Пример:</h4>
+
+						<p>Чтобы лучше это понять, скопируйте в свой редактор следующий код:</p>
+						<pre class="pre"><code class="html">&lt;div&gt;
+   &lt;p&gt;Здесь параграф.&lt;/p&gt;
+   &lt;ul&gt;
+      &lt;li&gt;Элемент 1.&lt;/li&gt;
+      &lt;li&gt;Элемент 2.&lt;/li&gt;
+   &lt;/ul&gt;
+
+   &lt;ul&gt;
+      &lt;li&gt;Элемент 3.&lt;/li&gt;
+      &lt;li&gt;Элемент 4.&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+						<p>Сейчас, не читая дальше, попробуйте придать стиль только "элементу 2". Когда догадаетесь (либо
+							сдадитесь),
+							читайте дальше.</p>
+						<p class="gray">Решение 1</p>
+						<p>Есть много способов решить данную задачу. Рассмотри лишь некоторые из них. Начнем с использования
+							<code class="green">first-of-type:</code>
+						</p>
+						<pre class="pre"><code class="css">ul:first-of-type > li:nth-child(2) {
+font-weight: bold;}</code></pre>
+						<p>Данный код гласит: "Найди первый неупорядоченный список на странице, затем найди только его прямых
+							потомков,
+							являющихся элементами <code class="green">li</code>. После этого выбери только второй по порядку элемент
+							<code class="green">li</code>."
+						</p>
+						<p class="gray">Решение 2</p>
+						<p>Другой вариант - воспользоваться смежным селектором:</p>
+						<pre class="pre"><code class="css">p + ul li:last-child {
+   font-weight: bold;
+}</code></pre>
+						<p>Здесь мы находим <code class="green">ul</code>, следующий непосредственно за тэгом параграфа, после чего
+							находим самый
+							последний его дочерний элемент.</p>
+						<p class="gray">Решение 3</i></p>
+						<p>Можно еще немного поиграть с селекторами и поступить таким образом</p>
+						<pre class="pre"><code class="css">ul:first-of-type li:nth-last-child(1) {
+   font-weight: bold;
+}</code></pre>
+						<p>Сейчас мы уже получаем первый элемент <code class="green">ul </code>на странице, затем ищем самый первый
+							элемент
+							<code class="green">li</code>, но начиная с конца.
+						</p>
+
+					</div> <!-- page__content--items 3-->
+
+
+					<!--! Статья 6 -->
+					<h2 class="page__subtitle" id="c-items_6">Псевдоэлементы &nbsp;&nbsp; ::first-letter &nbsp;&nbsp; ::first-line
+						&nbsp;&nbsp; ::after &nbsp;&nbsp; ::before &nbsp;&nbsp; ::selection</h2>
+
+					<div class="page__content--items">
+
+						<p><code class="green">::first-letter</code> - предназначен для задания стиля <b>первому символу</b> в
+							тексте
+							элемента. В
+							основном он используется для увеличения размера этого символа посредством применения к нему свойств CSS и
+							соответствующих значений.</p>
+						<p><code class="green">::first-line</code> - позволяет установить стиль<b> для первой строки текста блочного
+								элемента</b>.</p>
+						<p><code class="green">::after и ::before</code> - предназначены для добавления контента с помощью CSS
+							свойства
+							<code class="green">content </code>до и после содержимого элемента. Кроме свойства контент, Вы также
+							можете
+							добавить различные
+							CSS свойства, которые будут применены к данному контенту, т.е. к контенту, который появляется до или после
+							содержимого элемента.
+						</p>
+						<p><code class="green">::selection</code> - Позволяет задавать стили выделенному тексту</p>
+
+
+					</div> <!-- page__content--items 5-->
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

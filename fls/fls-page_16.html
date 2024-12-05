@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 16</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль &#171;Ленивая подгрузка&#187; (Lazy Loading)</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение функционала</a>
+							<a href="#h-items_2" class="con-menu">Работа функционала</a>
+							<a href="#h-items_3" class="con-menu">Расположение и дополнительные данные</a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 0 -->
+
+					<div class="page__content--items">
+						<p>Модуль &#171;Ленивая подгрузка&#187; позволяет подгружать изображения, а также содержимое тегов
+							<span class="green">iframe, video, audio </span>только при до скролливании к элементу. Это существенно
+							повышает
+							скорость
+							загрузки страницы.
+						</p>
+					</div>
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+					<div class="page__content--items">
+
+						<p><span class="green">[HTML]</span> Для подключения картинки с ленивой подгрузкой, в нужном месте следует
+							вызвать <a class="link" href="../all/snippet.html" target="_blank">сниппет</a><span class="green">
+								imgl</span>,
+							что
+							выведет тег <span class="green">&lt;img&gt;</span> но вместо
+							атрибута <span class="green">src</span> будет атрибут <span class="green">data-src.</span> </p>
+						<p>При выводе других тегов (<span class="green">iframe,
+								video, audio</span>) также следует заменить <span class="green">src </span>на <span
+								class="green">data-src</span>. </p>
+						<pre><code><span class="green">&lt;img data-src="img/cover.jpg" alt=""></span></code></pre>
+
+						<blockquote class="warning">
+							<p>Во время режима продакшн, система распознает <span class="green">data-src</span> и изменит для
+								подключаемого
+								webp-файла
+								атрибут на <span class="green">data-srcset</span></p>
+						</blockquote>
+
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">import
+								&#8216;./files/scroll/lazyload.js&#8217;;</span>
+						</p>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Работа функционала</h2>
+					<div class="page__content--items">
+
+						<p>В момент доскроливания до объекта с атрибутом <span class="green">data-src</span> либо <span
+								class="green">data-srcset</span> модуль подгрузит данные
+							(переместит подключение в атрибут <span class="green">src/srcset</span>), а также добавит к объекту класс
+							<span class="green">_lazy-loaded</span> и атрибут <span class="green">data-ll-status</span> со значением
+							<span class="green">loaded</span>
+						</p>
+						<pre><code>&lt;img data-src="img/cover.jpg" alt="" loading="lazy" src="img/cover.jpg" 
+  data-ll-status="loaded" class="_lazy-loaded"></code></pre>
+
+					</div>
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+
+						<p>Модуль работает на основе плагина <span class="green">vanilla-lazyload.js. </span> Подключение и
+							настройки
+							плагина находится в <span class="green">js/files/scroll/lazyload.js</span>. Для более тонких настроек
+							читайте <a class="link" href="https://github.com/verlok/vanilla-lazyload" target="_blank">полную
+								документацию плагина</a>.</p>
+
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_15.html" class="link">&lt;= Модуль «Спойлеры»</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_17.html">Модуль слайдера «Swiper» =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+
+			</div> <!-- page__container -->
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

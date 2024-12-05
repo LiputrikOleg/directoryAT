@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Страница 38</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <main class="page">
+            <div class="page__container">
+
+                <h1 class="page__title">Подключение дополнительных модулей (Эксперимент)</h1>
+
+
+                <h2 class="page__subtitle">Подключение без интернета</h2>
+                <div class="page__content--items">
+                    <h3 class="gray">На примере подключения подсветки кода</h3>
+
+                    <p> <span class="green">[HTML]</span> Пишем необходимый код или пользуемся сниппетом, если он есть.</p>
+                    <p>Скачиваем или копируем скрипт (например <a class="link" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js">скрипт </a>).</p>
+                    <p> <span class="green">[JS]</span> В папке <span class="green">src/js/files</span> создаем файл <span class="gray">highlight.js</span>.</p>
+                    <p>В него помещаем содержимое выше указанного скрипта. Просто содержимое, без всяких тегов <span class="green">&lt;script&gt; &lt;/script&gt;</span></p>
+                    <p>Перед содержимом скрипта прописываем:</p>
+                    <pre class="pre"><code class="js">import { flsHighlight } from "./highlight.js";</code></pre>
+                    <p>Точно такую же запись прописываем в файле <span class="green">src/js/files/script.js</span></p>
+                    <p class="warning">Возможно нужно будет просто раскомментировать данную строку</p>
+                    <pre class="pre"><code class="js">// Подключение подсветки кода
+import { flsHighlight } from "./highlight.js";</code></pre>
+                    <p>Возвращаемся в файл <span class="green">src/js/files/highlight.js</span> и после кода скрипта инициируем
+                        скрипт</p>
+                    <pre class="pre"><code class="js">hljs.highlightAll();</code></pre>
+                    <p>без всяких тегов <span class="green">&lt;script&gt; &lt;/script&gt;</span></p>
+
+                    <hr class="page__hr">
+                    <p><span class="green">[SCSS]</span> В папке <span class="green">src/scss/libs/ </span> создаем файл со стилями</p>
+                    <p> в файле <span class="green">src/scss/
+                            style.scss</span> подключим необходимую строку:</p>
+                    <pre><code>// Цветовая схема кода
+// &#64;import "libs/highlight/dark.scss";
+// &#64;import "libs/highlight/light.scss";
+    </code></pre>
+                    <p>Другой вариант: <br> В папке <span class="green">src/scss/base/</span> создаем файл со стилями</p>
+                    <p>Теперь в файле <span class="green">src/scss/base.sccs</span> пропишем </p>
+                    <pre class="pre"><code class="scss">// Стили этого модуля
+@import "base/файл без расширения";
+( например: @import "base/btn-up";)
+</code></pre>
+
+
+
+                </div>
+
+                <div class="page__footer">
+
+                    <div class="page__footer_left">
+
+                        <p>Предыдущий пост: <br>
+                            <a href="fls-page_38.html" class="link">&lt;= Цветовая кодировка кода</a>
+                        </p>
+                    </div>
+
+                    <div class="page__footer_right">
+
+                        <p>Следующий пост: <br>
+                            <a class="link" href="fls-page_39.html">Обновление =></a>
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="page__hr">
+            </div>
+
+            <div class="return">
+                <div class="return__container">
+
+                    <p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+                    <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer__container">
+
+                    <!-- Кнопка вверх -->
+                    <!-- https://itchief.ru/javascript/btn-up -->
+                    <div class="btn-up btn-up_hide"></div>
+
+
+                </div>
+
+            </footer>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+    <!-- ! Кнопка "Вверх" -->
+    <script>
+        const btnUp = {
+            el: document.querySelector('.btn-up'),
+            scrolling: false,
+            show() {
+                if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.remove('btn-up_hide');
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            hide() {
+                if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.add('btn-up_hide');
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            addEventListener() {
+                // при прокрутке окна (window)
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop;
+                    if (this.scrolling && scrollY > 0) {
+                        return;
+                    }
+                    this.scrolling = false;
+                    // если пользователь прокрутил страницу более чем на 150px
+                    if (scrollY > 150) {
+                        // сделаем кнопку .btn-up видимой
+                        this.show();
+                    } else {
+                        // иначе скроем кнопку .btn-up
+                        this.hide();
+                    }
+                });
+                // при нажатии на кнопку .btn-up
+                document.querySelector('.btn-up').onclick = () => {
+                    this.scrolling = true;
+                    this.hide();
+                    // переместиться в верхнюю часть страницы
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        btnUp.addEventListener();
+
+    </script>
+</body>
+
+</html>

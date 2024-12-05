@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 18</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Работа с SVG-спрайтами </h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Создание SVG-спрайта</a>
+							<a href="#h-items_2" class="con-menu">Использование SVG-спрайта</a>
+
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Создание SVG-спрайта</h2>
+					<div class="page__content--items">
+						<p>В шаблоне «Чертоги Фрилансера» v3.0.0 есть возможность автоматически создавать SVG-спрайты.</p>
+						<p>Для этого следует скопировать отдельные SVG иконки в папку <span class="green">src/svgicons</span> (если
+							такой папки нет,
+							нужно её создать). Далее запускаем команду в терминале <span class="gray">npm run sprite</span></p>
+
+						<p class="warning">Создавать SVG-спрайт следует<span class="green"> до </span>вызова команды <span
+								class="gray">npm
+								run dev</span></p>
+
+						<p>После выполнения команды отдельные SVG иконки соберутся в единый файл (спрайт)
+							<span class="green">simg/icons/icons.svg</span>
+						</p>
+
+						<p>Если набор отдельных иконок в папке <span class="green">src/svgicons</span> изменился, следует повторить
+							команду <span class="gray">npm
+								run sprite</span></p>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Использование SVG-спрайта</h2>
+					<div class="page__content--items">
+						<p>Каждой иконке в общем файле (спрайте) будет присвоен уникальный ID состоящий из строки
+							<span class="green">svg-имя-файла-иконки. </span>Например, если имя файла отдельной иконки было <span
+								class="green">list.svg </span>то
+							ID будет <span class="green">svg-list</span>.
+							Следовательно, вывести необходимую иконку в нужном месте можно с помощью кода:
+						</p>
+
+						<pre><code>&lt;svg&gt;
+  &lt;use xlink:href="img/icons/icons.svg#svg-list"&gt;&lt;/use&gt;
+&lt;/svg&gt;</code></pre>
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_17.html" class="link">&lt;= Модуль слайдера «Swiper»</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_19.html">Работа с шаблонизатором PUG =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

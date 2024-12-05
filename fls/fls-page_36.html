@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 36</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль адаптивных изображений «IBG»</h1>
+
+				<div class="page__content">
+
+					<div class="page__content--items">
+
+						<p>Для работы модуля адаптивных изображений “IBG” необходимо добавить класс <span class="green">ibg</span>
+							непосредственно к
+							изображению, или воспользоваться снипетом <span class="green">ibg</span> :</p>
+
+						<pre><code class="html">&lt;img class="some-block__image ibg" src="" alt="Image"></code></pre><br>
+
+						<p>Далее, для настройки нужных соотношений сторон изображения необходимо добавить свойство <span
+								class="green">aspect-ratio</span> к конкретному
+							изображению, в качестве значения указать ширину и высоту через слэш.</p>
+
+						<p>К примеру если размеры изображения в макете 260px ширина и 180px высота то пишем:</p>
+
+						<pre><code class="css">.some-block__image {
+  aspect-ratio: 260 / 180;
+}</code></pre><br>
+
+						<p>По умолчанию на изображение действует алгоритм масштабирования <span class="green">cover</span>, чтобы
+							изменить <span class="green">contain</span> добавьте модификатор <span class="green"> .ibg–contain</span>.
+						</p>
+
+						<p>Также, если нужно изменить позиционирование изображения в отличие от center добавьте соответствующий
+							модификатор<span class="green">
+								.ibg–top, .ibg–left, .ibg–bottom, .ibg–right</span></p>
+
+						<p class="warning"><span class="green">Примечание</span> . В большинстве случаев изображение не требует
+							дополнительной HTML
+							обертки, за
+							исключением ситуаций, когда оно является FLEX-элементом и есть необходимость в определенном поведении.</p>
+
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_35.html" class="link">&lt;= Модуль “звездный рейтинг”</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_37.html">Модуль “До/После” =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

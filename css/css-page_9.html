@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 9</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Анимация</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#c-items_1" class="con-menu">Анимация</a>
+							<a href="#c-items_2" class="con-menu">Анатомия анимации</a>
+							<a href="#c-items_3" class="con-menu">Светофор</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1">Анимация</h2>
+
+					<div class="page__content--items">
+
+						<p> Анимация CSS3 поддерживает покадровую анимацию, которая позволяет создавать сложные анимации объекта.
+						</p>
+						<p>Достигается она при помощи свойства <code class="green">animation</code> и правила <code
+								class="green">@keyframen</code>
+						</p>
+
+						<div class="warning">
+
+							<p><span class="red">Важно:</span> При помощи свойства мы вызываем анимацию, а в правиле мы его задаем и
+								описываем как оно должно работать.
+							</p>
+						</div>
+
+						<p>У <code class="green">animation</code> 2 обязательных параметра - имя анимации (любое, хоть ёклмн, но на
+							латинице) и ее продолжительность.</p>
+						<p> Мы можем задавать анимацию <code class="green">@keyframen</code> двумя способами.</p>
+						<p><b>Первый</b> это простая анимация <code class="green">from/to</code> т.е от/до</p>
+						<pre class="pre"><code class="html">&lt;div class="animate"&gt; Пример animation&lt;/div&gt;</code></pre>
+
+						<div class="animate"> Пример animation</div>
+						<pre class="pre"><code class="css">.animate {
+  background: #ccc;
+  border: 1px solid #bbb;
+  padding: 5px 20px;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #444;
+}
+.animate:hover {
+  animation:garmoshka 2s;
+}
+@keyframes garmoshka{
+  from {width: 200px;}
+  to {width: 400px;
+    border-radius: 20px;
+    transform:rotate(3deg);
+  }
+}</code></pre>
+
+
+						<p><b>Второй</b> - покадровая анимация, которую мы задаем при помощи процентов<code> 0-100%</code></p>
+
+						<pre class="pre"><code class="html">&lt;div class="animate2"&gt; 0% animation 100% &lt;/div&gt;</code></pre>
+
+						<div class="animate2"> 0% animation 100% </div>
+						<pre class="pre"><code class="css">.animate2 {
+  background: #ccc;
+  border: 1px solid #bbb;
+  padding: 5px 20px;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #444;
+}
+.animate2:hover {
+  
+  animation:dance 20s;
+}
+@keyframes dance{
+  0% {}
+  25% {
+    width: 500px;
+    border-right: 20px;
+  }
+  50% {
+    width: 200px;
+  }
+  75% {
+    border-right: 0;
+  }
+  100% {
+    width: 300px;
+    border-radius: 20px;
+    transform:rotate(3deg);
+  }
+}</code></pre>
+
+						<h4 class="gray"> Несколько советов</h4>
+
+						<p>1. Чтобы в конце анимации не было прыжка делайте последний слайд 100% такой же, как и оригинальное
+							состояние
+							тега</p>
+
+						<p>2. А чтобы вернуть оригинальное состояние - можно просто указать пустые фигурные скобки
+							<code>100% {}</code>
+							.
+						</p>
+
+						<p>3. Можно удалять одинаковые свойства, которые находятся в промужеточных кадрах.
+						</p>
+						<p> 4. Анимация не должна двигать другие элементы сайта. Поэтому готовте для нее плацдарм.</p>
+
+						<p> 5. Если вы хотите двигать объекты - используйте позиционирование.</p>
+
+						<p> 6. Если вы используете позиционирование, все свойства, которые вы будите указывать должны уже быть
+							заданы
+							вашему блоку.
+						</p>
+
+
+						<h4 class="gray">Мы едем едем едем:</h4>
+						<pre class="pre"><code class="html">&lt;div class="pusk"&gt;
+&lt;div class="animate3"&gt; &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<div class="pusk">
+							<div class="animate3"> </div>
+						</div>
+
+						<pre class="pre"><code class="css">.animate3 {
+  background: #aaa;
+  border: 1px solid #999;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.pusk {
+  width: 500px;
+  height: 200px;
+  border: 1px solid #444;
+  background:#efeddd;}
+.pusk:hover .animate3 {
+  animation:edem 8s;
+}
+@keyframes edem{
+  0% {}
+  25% {
+    left: 478px;
+    top: 0;
+  }
+  50% {
+    top: 178px; 
+    left: 478px;
+  }
+  75% {top: 178px;
+    left: 0;
+  }
+  100% {}
+}</code></pre>
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="c-items_2">Анатомия анимации</h2>
+
+					<div class="page__content--items">
+
+						<p>Свойство <code class="green">animation</code> имеет много различных настроек для анимации объектов.
+						</p>
+						<p><b>А именно:</b></p>
+						<div class="page__block--list">
+							<ul>
+								<li><code class="green">animation-name</code> - задает имя для анимации и является обязательным
+									атрибутом.
+								</li>
+								<li><code class="green">animation-duration</code> - задает время анимации и тоже является обязательным
+									атрибутом.</li>
+								<li><code class="green">animation-timing-function</code> - кривая Безье, которая задает стиль анимации.
+								</li>
+								<li>
+									<code class="green">animation-delay</code> - задает время задержки анимации.
+								</li>
+								<li>
+									<code class="green">animation-iteration-count</code> - счетчик, задает количество повторов анимации
+									(используем целые числа.
+									Если хотим чтобы анимация была "безконечной", вместо числа ставим - <code
+										class="green">infinite</code>).
+								</li>
+								<li><code class="green">animation-direction</code> - указывает как должна выполняться анимация
+									<ul class="">
+										<li><code class="green">normal</code> - анимация работает от начала и до конца ("по умолчанию").
+										</li>
+										<li><code class="green">reverse</code> - анимация работает от конца в начало.</li>
+										<li><code class="green">alternate</code> - анимация работает от начала до конца, и обратно в
+											начало.</li>
+										<li><code class="green">alternate-reverse</code> - анимация работает от конца до начала, и обратно
+											в
+											конец.
+										</li>
+										<li class="warning"> <span class="red">Важно:</span> <code class="green">alternate</code>
+											и
+											<code class="green">alternate-reverse</code> работают только тогда, когда количество
+											повторов анимации больше 1 (одного)!
+										</li>
+									</ul>
+								</li>
+								<li><code class="green">animation-fill-mode</code> - определяет как будет вести себя элемент до и после
+									анимации.
+									<ul class="">
+										<li><code class="green">none</code> - после анимации элемент "возвращается на круги своя".</li>
+										<li><code class="green">forwards</code> - после анимации элемент "застывает" в крайнем кадре.
+										</li>
+										<li><code class="green"> backwards</code> - анимация начинает работать до начала анимации.
+										</li>
+										<li><code class="green"> both</code> - начинает работать сразу и "застывает" в крайнем кадре.
+										</li>
+									</ul>
+								</li>
+								<li> <code class="green">animation-play-state</code> - отвечает за паузу.
+									<ul class="">
+										<li><code class="green">running</code> - анимация работает</li>
+										<li><code class="green">paused </code>- пауза</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<h4 class="gray">Примеры</h4>
+						<pre class="pre"><code class="html">&lt;div class="pusk2"&gt;
+  &lt;div class="animate4"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+						<div class="pusk2">
+							<div class="animate4"></div>
+						</div>
+
+						<pre class="pre"><code class="css">.animate4 {
+  background: #999;
+  border: 1px solid #777;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.pusk2 {
+  width: 500px;
+  height: 22px;
+  border: 1px solid #444;
+  background: #ccc;
+}
+.pusk2:hover .animate4 {
+  animation:test 2s ease-in 0.2s 2 alternate forwards ;
+}
+keyframes test{
+  0% {
+    left:0;
+  }
+  100% {
+    left: 478px;
+  }
+}</code></pre>
+						<pre class="pre"><code class="html">&lt;div class="pusk3"&gt;
+  &lt;div class="animate5"&gt;&lt;/div&gt;
+&lt;/div&gt; </code></pre>
+
+						<div class="pusk3">
+							<div class="animate5"></div>
+						</div>
+						<pre class="pre"><code class="css">.animate5 {
+  background: #999;
+  border: 1px solid #777;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  position: relative;
+  left: 0;
+  top: 0;		
+  animation:test 2s ease-in 2s infinite alternate;
+}
+.pusk3 {
+  width: 500px;
+  height: 22px;
+  border: 1px solid #444;
+  background: #ccc;
+}
+.pusk3:hover .animate5 {
+  animation-play-state:paused;
+}
+@keyframes test{
+  0% {
+    left:0;
+  }
+  100% {
+    left: 478px;
+  }
+}</code></pre>
+
+						<div class="warning">
+							<p class="red">Важно </p>
+							<p>1. Чтобы анимация правильно работала необходимо соблюдать последовательность применения атрибутов. Если
+								какой-то атрибут не нужен, просто пропускаем его.</p>
+							<p> 2. Помним об "обязательных" атрибутах: имя и время (<code>name and duration</code>).
+							</p>
+						</div>
+
+
+					</div> <!-- page__content--items 2-->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="c-items_3">Светофор</h2>
+
+					<div class="page__content--items">
+
+						<p><b> Для просмотра нужно обновить страницу (F5)</b></p>
+						<p>Время работы 15сек.</p>
+						<pre class="pre"><code class="html"> &lt;div class="svetof"&gt;
+  &lt;div class="svet-r"&gt;&lt;/div&gt;
+  &lt;div class="svet-y"&gt;&lt;/div&gt;
+  &lt;div class="svet-g"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+						<div class="svetof">
+							<div class="svet-r"></div>
+							<div class="svet-y"></div>
+							<div class="svet-g"></div>
+						</div>
+
+						<pre class="pre"><code class="css">.svetof {
+  width: 100px;
+  height: 280px;
+  background: #444;
+  border: 1px solid #333;
+  border-radius: 25px;
+  margin: auto;
+}
+
+.svet_r {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(255, 40, 40, 0.4) 10px, rgba(166, 0, 0, 0.4));
+  margin: 10px;
+  animation: sr 2s ease-in 3;
+}
+
+@keyframes sr {
+  0% {
+    background: rgba(255, 0, 0, 1);
+  }
+
+  100% {
+    background: rgba(255, 0, 0, 0.4);
+  }
+}
+
+.svet_y {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(255, 255, 0, 0.4) 10px, rgba(255, 80, 0, 0.4));
+  margin: 10px;
+  animation: sy 6s ease-out 6s;
+}
+
+@keyframes sy {
+  0% {
+    background: rgba(255, 255, 0, 0.4);
+  }
+
+  100% {
+    background: rgba(255, 255, 0, 1);
+  }
+}
+
+.svet_g {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(0, 255, 0, 0.4) 10px, rgba(0, 145, 0, 0.4));
+  margin: 10px;
+  animation: sg 2s ease-out 12s forwards;
+}
+
+@keyframes sg {
+  0% {
+    background: rgba(0, 255, 0, 0.4);
+  }
+
+  100% {
+    background: rgba(0, 255, 0, 1);
+  }
+}</code></pre>
+
+
+					</div> <!-- page__content--items 3-->
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

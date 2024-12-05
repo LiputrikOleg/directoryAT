@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 34</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Палитра цветов</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Для чего нужна цветовая палитра?</a>
+							<a href="#h-items_2" class="con-menu">Подключение</a>
+							<a href="#h-items_3" class="con-menu">Использование</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Для чего нужна цветовая палитра?</h2>
+					<div class="page__content--items">
+						<p>Для чего нужна цветовая палитра? Цветовая палитра через переменные CSS используется для удобного
+							управления
+							цветами
+							в веб-разработке.</p>
+						<p>Цветовая палитра через переменные CSS используется для удобного управления цветами в веб-разработке.</p>
+						<p>Обычно цвета используются многократно в разных частях сайта и изменение цветовой схемы может потребовать
+							значительного количества изменений кода</p>
+						<p>Использование переменных CSS позволяет определить цвета в одном месте (например в <span
+								class="green">colors-palette.scss</span>), а затем
+							использовать эти переменные в разных частях кода, где требуется использовать определенный цвет.</p>
+						<p>Если необходимо изменить цветовую схему, достаточно изменить значение переменной в разделе <span
+								class="green">colors palette</span> и это
+							изменение будет автоматически применено ко всему сайту.</p>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Подключение</h2>
+					<div class="page__content--items">
+						<p>В файле <span class="green">style.scss</span> прокомментировать строку <span class="green">@import
+								«base/colors-palette»;</span></p>
+					</div>
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Использование</h2>
+					<div class="page__content--items">
+						<p>В файле <span class="green">src/scss/base/colors-palette.scss</span> заполните переменные
+							соответствующими
+							цветами проекта.
+							Добавьте новые переменные при необходимости. Удалите неиспользуемые переменные.
+						</p>
+						<p>Используйте переменные в своем коде</p>
+						<h4 class="gray">Дополнительное удобство</h4>
+						<p>Установите плагины
+							<a href="https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize" class="link"
+								target="_blank">colorize</a> и
+							<a href="https://marketplace.visualstudio.com/items?itemName=vunguyentuan.vscode-css-variables"
+								class="link" target="_blank">CSS Variable Autocomplete</a> для удобной работы с цветовой палитрой
+						</p>
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">Colorize </span> – подсвечивает цвета в переменных</li>
+								<li><span class="green">CSS Variable Autocomplete</span> – автоматически заполняет переменные
+									объявленные в
+									файле
+									colors-palette.scss</li>
+							</ul>
+						</div>
+
+						<h4 class="gray">Как задать:</h4>
+						<p>В файле <span class="green">src/scss/base/colors-palette.scss</span></p>
+						<pre><code>:root {
+--fon: 5e5373#;  // Основной фон
+--fon-r: #c22d63;  // Красный фон
+--fon-g: #32b5a4;  // Зеленый  фон
+--text-w: #ffffff;  // Белый текст
+--text-y: #ebe691;  // Желтый текст
+}</code></pre>
+						<h4 class="gray">Как вызвать</h4>
+						<pre><code class="css">div {
+  background: var(--fon);
+  color: var(--text-w);
+}</code></pre>
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_33.html" class="link">&lt;= Модуль Isotope (masonry-сетка)</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_35.html">Модуль “звездный рейтинг” =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Шпаргалка по WordPress</title>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <!-- <style>body{opacity: 0;}</style> -->
+  <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <h1 class="header__title">Редакторы кода</h1>
+      </div>
+    </header>
+
+    <!--  Меню для " HTML " -->
+    <div class="submenu__container">
+      <div class="submenu">
+
+        <div class="submenu__content">
+
+          <h2 class="submenu__link"><a href="vscode.html">VS Code</a>
+          </h2>
+
+          <h2 class="submenu__link"><a href="stcode.html">Sublime Text 3</a></h2>
+
+          <h2 class="submenu__link"><a href="wp-page_3.html">Особенности для helpside.ru</a></h2>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__container">
+
+        <!-- Кнопка вверх -->
+        <!-- https://itchief.ru/javascript/btn-up -->
+        <div class="btn-up btn-up_hide"></div>
+
+
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+  <!-- ! Кнопка "Вверх" -->
+  <script>
+    const btnUp = {
+      el: document.querySelector('.btn-up'),
+      scrolling: false,
+      show() {
+        if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+          this.el.classList.remove('btn-up_hide');
+          this.el.classList.add('btn-up_hiding');
+          window.setTimeout(() => {
+            this.el.classList.remove('btn-up_hiding');
+          }, 300);
+        }
+      },
+      hide() {
+        if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+          this.el.classList.add('btn-up_hiding');
+          window.setTimeout(() => {
+            this.el.classList.add('btn-up_hide');
+            this.el.classList.remove('btn-up_hiding');
+          }, 300);
+        }
+      },
+      addEventListener() {
+        // при прокрутке окна (window)
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          if (this.scrolling && scrollY > 0) {
+            return;
+          }
+          this.scrolling = false;
+          // если пользователь прокрутил страницу более чем на 150px
+          if (scrollY > 150) {
+            // сделаем кнопку .btn-up видимой
+            this.show();
+          } else {
+            // иначе скроем кнопку .btn-up
+            this.hide();
+          }
+        });
+        // при нажатии на кнопку .btn-up
+        document.querySelector('.btn-up').onclick = () => {
+          this.scrolling = true;
+          this.hide();
+          // переместиться в верхнюю часть страницы
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+
+    btnUp.addEventListener();
+  </script>
+</body>
+
+</html>

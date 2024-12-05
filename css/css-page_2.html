@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 2</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Списки и Таблицы</h1>
+
+				<style>
+					.dotted,
+					.dashed,
+					.solid,
+					.groove,
+					.ridge,
+					.inset,
+					.outset,
+					.double {
+						border: 5px #999;
+						margin-bottom: 20px;
+					}
+
+					.dotted {
+						border-style: dotted;
+					}
+
+					.dashed {
+						border-style: dashed;
+					}
+
+					.solid {
+						border-style: solid;
+					}
+
+					.groove {
+						border-style: groove;
+					}
+
+					.ridge {
+						border-style: ridge;
+					}
+
+					.inset {
+						border-style: inset;
+					}
+
+					.outset {
+						border-style: outset;
+					}
+
+					.double {
+						border-style: double;
+					}
+
+					.border_h3 {
+						text-align: center;
+						font-size: 20px;
+						padding: 5px 10px;
+					}
+				</style>
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#c-items_1" class="con-menu">Списки</a>
+							<a href="#c-items_2" class="con-menu">Границы</a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1">Списки</h2>
+
+					<div class="page__content--items">
+
+
+						<h4 class="gray">Нумерованный список</h4>
+						<pre class="pre"><code class="html">&lt;ol&gt;
+  &lt;li&gt;Элемент нумерованного списка.&lt;/li&gt;
+  &lt;li&gt;Элемент нумерованного списка.&lt;/li&gt;
+  &lt;li&gt;Элемент нумерованного списка.&lt;/li&gt;
+&lt;/ol&gt; </code></pre>
+						<p>
+							Для задания маркеров мы можем использовать свойство <code class="green">list-style</code>.
+						</p>
+
+						<div class="grid__list ">
+
+							<div class="grid__list_items">
+								<p class="grid__list_title">Список</p>
+								<ol id="playground-property_2" style="list-style-type: decimal; margin: 0 20px;">
+									<li>Один</li>
+									<li>Два</li>
+									<li>Три</li>
+									<li>Четыре</li>
+									<li>Пять</li>
+								</ol>
+							</div>
+
+							<div class="grid__list_items">
+								<p class="grid__list_title">CSS</p>
+								<code>ol {list-style: <b class="green" id="playground-code-value_2">decimal</b>;}</code>
+							</div>
+
+							<div id="playground-value_2" class="grid__list_items">
+								<p class="grid__list_title">list-style-type</p>
+
+								<label><input type="radio" name="value" value="armenian"><span class="green"> armenian</span> -
+									Армянские
+									цифры</label><br>
+								<label><input type="radio" name="value" value="decimal" checked><span class="green">
+										decimal</span> - Арабские
+									цифры.(По
+									умолчанию)</label><br>
+								<label><input type="radio" name="value" value="decimal-leading-zero"><span class="green">
+										decimal-leading-zero</span> - Арабские
+									цифры впереди стоящий ноль (01-09)</label><br>
+								<label><input type="radio" name="value" value="georgian"><span class="green"> georgian</span> -
+									Грузинские
+									цифры</label><br>
+								<label><input type="radio" name="value" value="lower-alpha"><span class="green">
+										lower-alpha</span> -
+									Заглавные латинские буквы
+									(аналогично <b>lower-latin</b>)</label><br>
+								<label><input type="radio" name="value" value="lower-greek"><span class="green">
+										lower-greek</span> - Строчные
+									греческие
+									буквы</label><br>
+								<label><input type="radio" name="value" value="lower-roman"><span class="green">
+										lower-roman</span> -
+									Маленькие римские
+									цифры</label><br>
+								<label><input type="radio" name="value" value="upper-alpha"><span class="green">
+										upper-alpha</span> -
+									Заглавные латинские буквы
+									(аналогично <b>upper-latin</b>)</label><br>
+								<label><input type="radio" name="value" value="upper-roman"><span class="green">
+										upper-roman</span> - Большие
+									римские
+									цифры</label><br>
+								<label><input type="radio" name="value" value="none"><span class="green"> none</span> - отменяет
+									все значения
+									(убирает
+									маркеры).</label>
+							</div>
+						</div>
+
+
+						<hr class="page__hr">
+						<h4 class="gray">Маркерованный список</h4>
+						<pre class="pre"><code class="html">&lt;ul&gt;
+  &lt;li&gt;Элемент нумерованного списка.&lt;/li&gt;
+  &lt;li&gt;Элемент нумерованного списка.&lt;/li&gt;
+  &lt;li&gt;Элемент нумерованного списка.&lt;/li&gt;
+&lt;ul&gt; </code></pre>
+
+						<ul style="padding-left:20px;">
+							<li style="list-style: circle;"><code class="green">list-style: circle</code> - маркер как круг.
+							</li>
+							<li style="list-style: disc;"><code class="green">list-style: disc</code> - маркер как точка. (По
+								умолчанию, но обычно в файле reset стили отключают)</li>
+							<li style="list-style: square;"><code class="green">list-style: square</code> - маркер как квадрат.
+							</li>
+						</ul>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Список определений</h4>
+
+						<pre class="pre"><code class="html">&lt;dl&gt;
+  &lt;dt&gt;Чекушка&lt;/dt&gt;
+  &lt;dd&gt;Используется многими продвинутыми товариСЧами для быстрого удаления жажды (спрайт-отдыхает).&lt;/dd&gt;
+  &lt;dt&gt;Флян&lt;/dt&gt;
+  &lt;dd&gt;Используется теми же товариСЧами, если чекушка не спасла от жажды.&lt;/dd&gt;
+  &lt;dt&gt;Банка&lt;/dt&gt;
+  &lt;dd&gt;Используется в крайнем случае, при затяжных праздниках&lt;/dd&gt;
+&lt;dl&gt;  </code></pre>
+						<div class="page__primer">
+							<dl>
+								<dt>Чекушка</dt>
+								<dd>Используется многими продвинутыми товариСЧами для быстрого удаления жажды (спрайт-отдыхает).</dd>
+								<dt>Флян</dt>
+								<dd>Используется теми же товариСЧами, если чекушка не спасла от жажды.</dd>
+								<dt>Банка</dt>
+								<dd>Используется в крайнем случае, при затяжных праздниках</dd>
+							</dl>
+						</div>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Позиция маркера</h4>
+
+						<p>Для задания позиции маркера, мы можем использовать свойство <span
+								class="green">list-style-position</span>
+						</p>
+
+						<p>Для задания маркера, как картинки, мы можем использовать свойство <span
+								class="green">list-style-image</span>
+						</p>
+
+						<p><b>Примеры позиционирования маркеров-картинок:</b></p>
+						<div class="page__block--list">
+							<ul>
+								<li style="list-style-position: inside ;"><code
+										class="green">style="list-style-position: inside ;"</code> -
+									Это значение указывает что маркер будет использоваться внутри нашего списка. И будет являться частью
+									текста.
+								</li>
+								<li style="list-style-position: outside ;"><code
+										class="green">style="list-style-position: outside ;"</code>
+									-
+									Это значение указывает, что маркер будет использоваться снаружи нашего списка. И уже не будет являться
+									его
+									частью.</li>
+								<li style="list-style-image: url('../../images/star_full.png');"><code
+										class="green">style="list-style-image: url('../../images/star_full.png');"</code> - Вставка
+									картинки.
+								</li>
+							</ul>
+						</div>
+
+						<hr class="page__hr">
+
+						<p>Вложенные списки, другие варианты стилизации смотри на этом <a
+								href="https://webref.ru/course/html-tutorial/list" class="link" target="_blank">сайте</a></p>
+
+
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="c-items_2">Границы</h2>
+
+
+					<div class="page__content--items">
+
+						<div class="grid__border">
+							<div class="items">
+								<div id="playground-property" class="" style="padding: 10px; border: 5px #c8eaf5; border-style: solid">
+									Винни-Пух был
+									всегда не прочь немного подкрепиться, в особенности часов в одиннадцать утра, потому что в это время
+									завтрак
+									уже давно окончился, а обед ещё и не думал начинаться. И, конечно, он страшно обрадовался, увидев, что
+									Кролик
+									достаёт чашки и тарелки.</div>
+							</div>
+							<div class="items_2">
+								<div class="item">
+									<code>div {
+										border-style: <span id="playground-code-value" class="green">none</span>;
+										}</code>
+								</div>
+								<div id="playground-value" class="item">
+									<label><input type="radio" name="val" value="none">none</label><br>
+									<label><input type="radio" name="val" value="hidden">hidden</label><br>
+									<label><input type="radio" name="val" value="dotted">dotted</label><br>
+									<label><input type="radio" name="val" value="dashed">dashed</label><br>
+									<label><input type="radio" name="val" value="solid" checked>solid</label><br>
+									<label><input type="radio" name="val" value="double">double</label><br>
+									<label><input type="radio" name="val" value="groove">groove</label><br>
+									<label><input type="radio" name="val" value="ridge">ridge</label><br>
+									<label><input type="radio" name="val" value="inset">inset</label><br>
+									<label><input type="radio" name="val" value="outset">outset</label>
+								</div>
+							</div>
+						</div>
+
+
+
+						<p><code class="green">hidden</code> - Имеет тот же эффект, что и none за исключением применения
+							<code class="green">border-style</code> к
+							ячейкам таблицы, у которой значение свойства <code class="green">border-collapse</code> установлено как
+							<code class="green">collapse</code>.
+							В этом случае вокруг ячейки граница не будет отображаться вообще.
+						</p>
+
+						<p>Разрешается использовать одно, два, три или четыре значения, разделяя их между собой пробелом. Эффект
+							зависит
+							от количества и указан ниже:</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li>Число значений 1 - Стиль границы будет задан для всех сторон элемента.</li>
+								<li>Число значений 2 - Первое значение устанавливает стиль верхней и нижней границ, второе — левой и
+									правой.
+								</li>
+								<li>Число значений 3 - Первое значение задаёт стиль верхней границы, второе — одновременно левой и
+									правой
+									границ, а третье — нижней границы.</li>
+								<li>Число значений 4 - Поочередно устанавливается стиль верхней, правой, нижней и левой границ.
+								</li>
+							</ul>
+						</div>
+
+						<div class="items" id="item_1">
+							<div class="dotted">
+								<h3 class="border_h3">dotted</h3>
+							</div>
+
+							<div class="dashed">
+								<h3 class="border_h3">dashed</h3>
+							</div>
+							<div class="solid">
+								<h3 class="border_h3">solid</h3>
+							</div>
+							<div class="double">
+								<h3 class="border_h3">double</h3>
+							</div>
+							<div class="groove">
+								<h3 class="border_h3">groove</h3>
+							</div>
+							<div class="ridge">
+								<h3 class="border_h3">ridge</h3>
+							</div>
+							<div class="inset">
+								<h3 class="border_h3">inset</h3>
+							</div>
+							<div class="outset">
+								<h3 class="border_h3">outset</h3>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div> <!-- page__content--items 2-->
+
+
+			</div> <!-- page__content -->
+
+
+	</div> <!-- page__container -->
+
+	</main>
+	<div class="return">
+		<div class="return__container">
+
+			<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+			<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="footer__container">
+
+			<!-- Кнопка вверх -->
+			<!-- https://itchief.ru/javascript/btn-up -->
+			<div class="btn-up btn-up_hide"></div>
+
+
+		</div>
+
+	</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

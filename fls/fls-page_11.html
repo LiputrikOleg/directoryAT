@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 11</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title ">Модуль добавления классов к шапке при прокрутке страницы</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение функционала</a>
+							<a href="#h-items_2" class="con-menu">Использование функционала </a>
+							<a href="#h-items_3" class="con-menu">Расположение и дополнительные данные</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+					<div class="page__content--items">
+
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">flsScroll.headerScroll();</span>
+						</p>
+
+						<p>Функционал позволяет добавлять класс к тегу <span class="green">header</span> с классом <span
+								class="green">header</span> при прокрутке страницы вниз,
+							а также другой класс при остановке прокрутки. Таким образом, можно добиться эффекта когда при
+							самом скролле вниз шапка не видна, но стоит остановить скролл, как шапка плавно появляется
+							вверху страницы (становится фиксированной). При обратной прокрутке вверх шапка так же остается
+							видна. </p>
+						<p>Класс <span class="green">_header-scroll</span> добавляется к шапке при скролле вниз (через указанное
+							кол-во пикселей). <br>При остановке скролла добавляется класс <span class="green">_header-show</span>.
+						</p>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Использование функционала </h2>
+					<div class="page__content--items">
+
+						<p><span class="green">[HTML]</span> К тегу <span class="gren">header</span>, добавляем HTML-атрибут <span
+								class="green">data-scroll</span>,
+							в
+							значении атрибута указываем через какое кол-во прокрученных вниз пикселей нам необходимо
+							добавить класс к <span class="green">header</span> (обычно по высоте шапки, по умолчанию 1px).</p>
+						<pre><code>&lt;header data-scroll="120" class="header"&gt;
+    ...
+    &lt;/header&gt;</code></pre><br>
+						<p>Теперь как только пользователь прокрутит вниз указанные выше 120px к <span class="green">header</span>
+							добавится
+							технический класс <span class="green">_header-scroll</span>. Этот класс будет присутствовать до тех пор,
+							пока пользователь не вернется на самый вверх (не доходя 120px). </p>
+						<p>Результат работы:</p>
+
+						<pre><code>&lt;header data-scroll="120" class="header _header-scroll"&gt;
+    ...
+    &lt;/header&gt;</code></pre><br>
+
+						<p>[<span class="green">HTML]</span> Далее к тегу <span class="green">header</span>, добавляем еще один
+							HTML-атрибут
+							<span class="green">data-scroll-show</span>. Как только пользователь остановит прокрутку к тегу <span
+								class="green">header</span>,
+							через определенное время, добавится еще один технический класс <span class="green">_header-show</span>.
+							Этот класс исчезает только в моменте прокрутке вниз. При прокрутке вверх класс не исчезает.
+						</p>
+						<p>Результат работы: </p>
+
+						<pre><code>&lt;header data-scroll="120" data-scroll-show class="header _header-scroll _header-show"&gt;
+    ...
+    &lt;/header&gt;</code></pre><br>
+						<p>Время задержки добавления класса <span class="green">_header-show</span> можно менять. Для это следует
+							указать значение атрибута <span class="green">data-scroll-show</span> в миллисекундах (по умолчанию 500)
+						</p>
+						<pre><code>&lt;header data-scroll="120" data-scroll-show="1000" class="header _header-scroll _header-show"&gt;
+    ...
+    &lt;/header&gt;</code></pre><br>
+
+						<p>[<span class="green">SCSS]</span> Теперь осталось отредактировать свойства этих подключенных классов в
+							scss. Например:</p>
+
+						<div class="page__block--pic">
+							<picture>
+								<source srcset="../../img/fls-img/11.webp" type="image/webp"><img width="874" height="auto"
+									src="../../img/fls-img/11.jpg" alt="image" class="img-links">
+							</picture>
+						</div>
+
+					</div>
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+						<p>Функционал находится в <span class="green">js/files/scroll/scroll.js</span>. Название функции<span
+								class="green">
+								headerScroll()</span></p>
+
+						<p><a href="../modules/header-show.html" class="link" target="_blank">Результат</a> модуля по
+							умолчанию.</p>
+					</div>
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_10.html" class="link">&lt;= Модуль «Прокрутка к нужному блоку». Плавная навигация
+								по странице.</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_12.html">Модуль «Наблюдатель» за появлением элементов при
+								прокрутке страницы (скролле) =></a>
+						</p>
+					</div>
+
+
+				</div>
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

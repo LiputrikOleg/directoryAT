@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 7</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Вставка спецсимвола - угловые и фигурные скобки</h1>
+
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1"></h2>
+
+					<div class="page__content--items">
+
+						<p>Чтобы каждый раз не вставлять спецсимволы при записи HTML - угловые кавычки, а для CSS - фигурные скобки
+							применим такой ход: пропишем для тега или свойству свой класс.</p>
+						<pre class="pre"><code class="css">.st { quotes: &quot;&lt;&quot; &quot;&gt;&quot;;}
+.st:before {content: open-quote;}
+.st:after {content: close-quote;}
+
+.ss { quotes: "{" "}";}
+.ss:before {content: open-quote;}
+.ss:after {content: close-quote;}</code></pre>
+						<p>Теперь для тега прописываем </p>
+						<pre
+							class="pre"><code class="html">Для создания абзаца в HTML применяется тег&lt;span class=&quot;st&quot;&gt;  р &lt;/span&gt;</code></pre>
+						<div class="page__primer">
+							<p>Для создания абзаца в HTML применяется тег <span class="st">р</span></p>
+						</div>
+						<br>
+						<p>Теперь для свойства прописываем </p>
+						<pre
+							class="pre"><code class="html">Для тега &lt;span class=&quot;st&quot;&gt;span&lt;/span&gt; прописываем свойство &lt;span class="ss"&gt;content: open-quote; &lt;/span&gt; </code></pre>
+
+
+						<div class="page__primer">
+							<p>Для тега <span class="st">span</span> прописываем свойство <span class="ss">content: open-quote;</span>
+							</p>
+						</div>
+
+					</div> <!-- page__content--items 1-->
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

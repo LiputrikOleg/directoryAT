@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Страница 7</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <main class="page">
+            <div class="page__container">
+
+                <h1 class="page__title">Модуль меню «бургер»</h1>
+
+
+
+                <!-- Оглавление  -->
+
+                <div data-spollers class="spollers">
+                    <details class="spollers__item">
+                        <summary class="spollers__title spollers__title--bg">Оглавление</summary>
+                        <div class="spollers__body spollers__body--menu">
+                            <a href="#h-items_1" class="con-menu">Подключение модуля</a>
+                            <a href="#h-items_2" class="con-menu">Расположение и дополнительные данные</a>
+
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Контейнер  со статьями -->
+                <div class="page__content">
+
+
+                    <!--! Статья 1 -->
+                    <h2 class="page__subtitle" id="h-items_1">Подключение модуля</h2>
+                    <div class="page__content--items">
+
+                        <p>Функционал реагирует на клик по кнопке меню &#171;бургера&#187; (элемент с классом <span class="green">icon-menu</span>).
+                            При этом к тегу <span class="green">html</span> добавляется класс <span class="green">menu-open</span>, а
+                            также
+                            срабатывает
+                            блокировка прокрутки страницы (функция <span class="green">bodyLockToggle()</span>). При повторном клике
+                            происходят обратные действия.</p>
+
+                        <div class="page__block--list">
+                            <h4 class="gray">Подключение модуля</h4>
+                            <ol>
+                                <li><span class="green">[HTML]</span> Вызывать сниппет menu, отредактировать под задачу. Важно чтобы
+                                    кнопка бургера оставалась с классом <span class="green">icon-menu</span></li>
+                                <li><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать
+                                    строку
+                                    <span class="green">flsFunctions.menuInit(); </span>
+                                </li>
+                                <li><span class="green">[SCSS]</span> В файле <span class="green">scss/base.scss</span> прокомментировать
+                                    строку<span class="green"> @import “base/menu”;</span>
+                                    Корректировать стили меню и иконки бургера в файле
+                                    <span class="green">scss/base/menu.scss</span>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                    <!--! Статья 2 -->
+                    <h2 class="page__subtitle" id="h-items_2">Расположение и дополнительные данные</h2>
+                    <div class="page__content--items">
+
+                        <p>Функционал находится в <span class="green">js/files/functions.js</span>. <br> Название функции
+                            <span class="green">menuInit()</span>, <br> дополнительные функции <span class="green">menuOpen()</span> и
+                            <br>
+                            <span class="green">menuClose()</span> для открытия/закрытия меню из произвольного кода
+                            <br> <br> Все функции
+                            импортируемые.
+                        </p>
+
+                        <p class="warning">В HTML- коде в качестве бургера используется кнопка <span class="green">&lt;button&gt;</span>. Если в проекте используется еще хотя бы одна кнопка, то нужно быть поаккуратней со стилизацией, вероятней всего будут какие нибудь накладки. Проще <span class="green">&lt;button&gt;</span> поменять на <span class="green">&lt;div&gt;</span>, убрав <span class="green"> type="button"</span></p>
+
+
+                        <p>
+                            <a href="../modules/burger_Q.html" class="link">&lt;= Burger на jQuvery</a>
+                        </p>
+                        <p>
+                            <a href="../modules/burger_J.html" class="link">&lt;= Burger на JavaScript</a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="page__footer">
+
+                    <div class="page__footer_left">
+
+                        <p>Предыдущий пост: <br>
+                            <a href="fls-page_6.html" class="link">&lt;= SCSS-Миксин «Отзывчивое (адаптивное) свойство»</a>
+                        </p>
+                    </div>
+
+                    <div class="page__footer_right">
+
+                        <p>Следующий пост: <br>
+                            <a class="link" href="fls-page_8.html">Модуль «Popup». Всплывающие (модальные) окна =></a>
+                        </p>
+                    </div>
+                </div>
+                <hr class="page__hr">
+
+            </div>
+
+            <div class="return">
+                <div class="return__container">
+
+                    <p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+                    <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer__container">
+
+                    <!-- Кнопка вверх -->
+                    <!-- https://itchief.ru/javascript/btn-up -->
+                    <div class="btn-up btn-up_hide"></div>
+
+
+                </div>
+
+            </footer>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+    <!-- ! Кнопка "Вверх" -->
+    <script>
+        const btnUp = {
+            el: document.querySelector('.btn-up'),
+            scrolling: false,
+            show() {
+                if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.remove('btn-up_hide');
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            hide() {
+                if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.add('btn-up_hide');
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            addEventListener() {
+                // при прокрутке окна (window)
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop;
+                    if (this.scrolling && scrollY > 0) {
+                        return;
+                    }
+                    this.scrolling = false;
+                    // если пользователь прокрутил страницу более чем на 150px
+                    if (scrollY > 150) {
+                        // сделаем кнопку .btn-up видимой
+                        this.show();
+                    } else {
+                        // иначе скроем кнопку .btn-up
+                        this.hide();
+                    }
+                });
+                // при нажатии на кнопку .btn-up
+                document.querySelector('.btn-up').onclick = () => {
+                    this.scrolling = true;
+                    this.hide();
+                    // переместиться в верхнюю часть страницы
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        btnUp.addEventListener();
+
+    </script>
+</body>
+
+</html>

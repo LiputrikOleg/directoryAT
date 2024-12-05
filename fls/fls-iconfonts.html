@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Иконочный шрифт</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container ">
+				<h1 class="page__title">Иконочные шрифты</h1>
+
+				<div class="page__content">
+					<div class="page__content--items">
+						<h4 class="gray">Подключение через интернет</h4>
+						<p>Подключение через интернет смотри на видео, но не всегда этот вариант приемлен.</p>
+						<h4 class="gray">С сайта</h4>
+						<p>Сайт <a class="link" target="_blank" href="https://fontawesome.com">fontawesome.com</a></p>
+						<p>Скачиваем по <a class="link" target="_blank" href="https://fontawesome.com/download">ссылке </a></p>
+						<p>Выбираем 5 или 6 версии.</p>
+						<p>Кнопка <span class="green">"Free for Web"</span> - качаем архив, распаковываем </p>
+						<p>Можно скачать из архива <a class="link" target="_blank"
+								href="../../arhive/html/fontawesome-free-5.5.0-web.zip">5 версия</a> или <a class="link" target="_blank"
+								href="../../arhive/html/fontawesome-free-6.5.1-web.zip">6 версия</a></p>
+						<div class="page__block--list">
+							<p style="font-size: 20px;">Папка CSS:</p>
+							<ol class="">
+								<li>Если нужны все иконки подключаем файл <span class="green">all.css</span></li>
+								<li>Если нужны иконки какой либо категории, то 2 файла:
+									<ul class="">
+										<li> 2.1 Файл категории и <span class="green">fontawesome.css</span></li>
+										или
+										<li>2.2 Их минимизированные версии</li>
+									</ul>
+								</li>
+								<li>Либо копируем в CSS-файл своего проекта и переименовываем в <span class="green">iconfonts.css</span>
+								</li>
+								<li>Подключаем файл <span class="green">iconfonts.css</span> до основного файла стилей</li>
+							</ol>
+						</div>
+						<p>Также копируем папку <span class="green">"webfonts"</span> в свой проект</p>
+						<p></p>
+						<p>Для того, чтобы иконочный шрифт не менял шрифт текста, идущего с этой иконкой добавляем
+							псевдоэлементы <span class="green">::before</span> в конце файла стилей
+							<span class="green">iconfonts.css</span> ( в
+							4 местах - для классов иконки)
+						</p>
+						<div class="page__block--pic">
+							<img src="../../img/fls-img/icon.JPG" alt="Image" class="img-links">
+						</div>
+						<p>Если по почему-то пришлось поменять имя папки <span class="green">"webfonts"</span>, то в тех же строках
+							меняем и путь к
+							файлу.</p>
+						<p>В файле стилей уже указаны эффекты для иконок. для их подключения смотри видео с 6:20.</p>
+						<h3 class="gray">Создание собственного иконочного шрифта из SVG-файлов</h3>
+						<h4 class="gray">Из архива</h4>
+						<p>Выбираем необходимые иконки из скаченного архива.</p>
+						<p>Папка <span class="green">"svgs"</span> ==> Нужная категория ==> иконка(и). </p>
+						<p>Скопируем их в папку проекта <span class="green">"iconsfont"</span>.</p>
+						<h4 class="gray">Платные иконки</h4>
+						<p>Выбираем платную иконку, кликаем по ней, в открывшимся окне выбираем любую миниатюру (размер не имеет
+							значения) ==> "Просмотреть код элемента"
+							==> копируем тег <span class="green">svg</span>.</p>
+						<p>В папке проектка создаем новый файл <span class="green">.txt </span>и вставляем туда код. </p>
+						<p>Сохраняем в папку <span class="green">iconfonts</span> c любым именем и расширением<span class="green">
+								.svg</span>. Обычно имя берут с сайта
+							иконок.</p>
+						<h4 class="gray">Иконки с макета</h4>
+						<p>Кликаем иконку и cохраняем в папку <span class="green">iconfonts</span> c раширением <span
+								class="green">.svg</span>.</p>
+						<p>Для того, чтобы не выскакивала ошибка при загрузкке НУЖНО: </p>
+						<div class="page__block--list">
+							<ol class="page__ol">
+								<li>В Figme кликнуть по иконке.</li>
+								<li>Нажать комбинацию клавиш Chift + Ctrl +O.</li>
+								<li>Выбрать расширение ( svg ).</li>
+								<li>Экспортировать в папку назначения.</li>
+								<li>Загрузить на IcoMoon.</li>
+								<li>Если выскакивает окошко с ошибкой,
+									перейти по ссылке посмотреть решение проблемы.</li>
+							</ol>
+						</div>
+						<p>Переходим на сайт <a class="link" href="https://icomoon.io">IcoMoon</a>.</p>
+						<p>Кликаем на фиолетовую кнопку "IcoMoonApp".</p>
+						<p>Menu (слева бергер) ==> New Empty Set.</p>
+						<p>Untitled Set ==> справа бургер-menu ==> Import To Set ==> Выбираем все иконки.</p>
+						<p>Делаем иконки черно-белыми - клик на набор цветов ==> корзина.</p>
+						<p><em>Меню слева от поиска:</em></p>
+						<div class="page__block--list">
+							<ol class="page__ol">
+								<li>Стрелка - выбираем иконки, которые добавим в шрифт.</li>
+								<li>Корзина - удаляем ненужные.</li>
+								<li>Перекрестье - перетаскивание иконок ( зачем? ).</li>
+								<li>Карандаш - редактирование.</li>
+							</ol>
+						</div>
+						<p>Выделяем иконки и кликаем (внизу справа) Generate Font.</p>
+						<p>Появятся иконки. т.к.их имена преобразуются в классы при верстке есть смысл их сейчас уменьшить -
+							отредактировать.</p>
+						<p>После редактирования нажимаем шестеренку (внизу справа за загрузкой).</p>
+						<p>1. Название шрифта, под которым сохранятся иконки.</p>
+						<p>2. Префикс, который будет добавлятся к классу иконок.</p>
+						<p> Настройки можно менять при неоходимости, но лучше оставить по-умолчанию.</p>
+						<p>"Download"</p>
+						<p>Скачивается архив.</p>
+						<p>Папку <span class="green">"fonts"</span> и файл <span class="green">"style.css"</span> переносим в
+							проект. </p>
+						<p>Файл <span class="green">"style.css"</span> переименовываем в <span class="green">"iconsfont.css"</span>
+							и переносим в папку CSS. </p>
+						<p>
+						<p>Подключаем файл <span class="green">iconfonts.css</span> до основного файла стилей.</p>
+						<p>Возможно, будет необходимо в этом файле изменить путь подключения папки <span class="green">fonts</span>.
+						</p>
+						<p>Также добавляем псевдоэлемент <span class="green">::before </span> 14:20.</p>
+						<h4 class="gray">Подключение в HTML</h4>
+						<p>Просто добавляем класс иконки.</p>
+						<pre
+							class=""><code class="html">&lt;a href="#" class="link _icon-jack"&gt;Фрилансер по жизни&lt;/a&gt;</code></pre>
+						<h4 class="gray">В Gulp-сборке</h4>
+						<p>В папке <span class="green">src</span> создаем папку <span class="green">iconfonts</span> и
+							загружаем
+							туда иконки с макета с расширением
+							<span class="green">.svg</span>.
+						</p>
+						<p>В папке <span class="green">src</span> создаем папку <span class="green">fonts</span> и загружаем
+							туда из
+							скаченого архива
+							<span class="green">icomoon-v1.0.zip ==></span> папки <span class="green">fonts</span> ==> файл
+							<span class="green">icons.ttf</span>.
+						</p>
+						<p>Из файла <span class="green">style.css</span> архива выбираем стили с классами иконок.</p>
+						<div class="page__block_image">
+							<div class="page__block--pic"><img src="../../img/fls-img/icon_2.JPG" alt="Image" class="img-links">
+
+
+							</div>
+							<p>И переносим их в src ==> scss ==> fonts ==> icons.scss ниже расположенной там записи.</p>
+							<p>Возможно потребуется изменить font-family в самом верху файла.</p>
+							<p>Gulp сделает необходимую работу и нам остается в файле src ==> scss ==> style.scss расскомменировать
+								строчку:</p>
+							<pre class=""><code class="css">@import "fonts/icons";</code></pre>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="return">
+					<div class="return__container">
+
+						<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+						<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="footer__container">
+
+						<!-- Кнопка вверх -->
+						<!-- https://itchief.ru/javascript/btn-up -->
+						<div class="btn-up btn-up_hide"></div>
+
+
+					</div>
+
+				</footer>
+		</main>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>
+
+<body>

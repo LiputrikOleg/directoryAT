@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 17</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="/../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль слайдера &#171;Swiper&#187;</h1>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 0 -->
+
+					<div class="page__content--items">
+
+
+						<p>В шаблоне <a class="link" href="https://www.patreon.com/posts/startovyi-v3-59380989"
+								target="_blank">&#171;Чертоги
+								Фрилансера&#187; v3.0.0</a>, далее ЧФ, есть подготовка к работе со <a class="link"
+								href="https://swiperjs.com/" target="_blank">слайдером Swiper</a>.
+						</p>
+						<p><span class="green">[HTML]</span> Существует два сниппета для построения HTML-структуры слайдера:</p>
+
+						<div class="page__block--list">
+							<ol>
+								<li><span class="green">swiper</span> &#8212; строит минимальную структуру с уже добавленными классами
+									слайдера (для более опытных)</li>
+								<li><span class="green">swiperfull</span> &#8212; строит полную структуру слайдера с добавлением всех
+									возможных элементов управления (кнопки &#171;влево/вправо&#187;, скролл, пагинация (булеты))
+									с уже добавленными классами слайдера. Весь код сопровождается комментариями (для новичков).
+								</li>
+							</ol>
+						</div>
+
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">import
+								&#171;./files/sliders.js&#187;;</span>
+						</p>
+						<p>В файле <span class="green">js/files/sliders.js</span> выполняется подключение самого слайдера
+							&#171;Swiper&#187; из NPM пакета (подключено по умолчанию)</p>
+
+						<pre><code>import Swiper, { Navigation } from 'swiper';</code></pre><br>
+
+						<p>При необходимости, можно подключить больше нужных модулей:</p>
+
+						<pre><code>import Swiper, { Navigation, Pagination, Lazy, Autoplay } from 'swiper';</code></pre><br>
+
+						<p>Полный список модулей &#8212; <a href="https://swiperjs.com/swiper-api#using-js-modules" target="_blank"
+								class="link">тут</a> </p>
+						<p>Также, ниже по коду, есть пример-подготовка для создания конкретного слайдера (функция
+							<span class="green">initSliders();</span>) Тут мы создаем и настраиваем нужные нам слайдеры, не забываем
+							указывать модули для конкретного слайдера:
+						</p>
+
+						<pre><code>new Swiper('.swiper', {
+modules: &#91;Navigation, Autoplay],
+...
+})</code></pre><br>
+
+						<blockquote class="blockquote">
+							<p>Информацию по настройке смотри в <a class="link" href="https://swiperjs.com/swiper-api" data-type="URL"
+									data-id="https://swiperjs.com/swiper-api" target="_blank">документации</a> на сайте
+								слайдера.</p>
+						</blockquote>
+						<p>Инициализация слайдера(ов) <span class="green">initSliders();</span> происходит после полной загрузки
+							страницы ниже по коду:</p>
+
+						<pre><code>window.addEventListener("load", function (e) {
+// Запуск инициализации слайдеров
+initSliders();
+});</code></pre><br>
+
+						<p><span class="green">[SCSS]</span> По умолчанию, в файле <span class="green">js/files/sliders.js</span>
+							подключены
+							базовые, минимально необходимые для работы, стили слайдера<span class="green"> import
+								&#171;../../scss/base/swiper.scss&#187;;</span> (для более опытных). Также есть возможность
+							подключить (расскоментировав строку) полные стили слайдера из файла
+							<span class="green">scss/libs/swiper.scss</span> или из пакета <span class="green">import
+								&#8216;swiper/css&#8217;;</span> (для начинающих)
+						</p>
+
+
+						<div class="page__block-video">
+							<video width="500" height="281" src="../../video/fls/swiper.mp4" controls="" preload="metadata"
+								poster="../../video/html/poster.jpg" width="100%">
+
+							</video>
+						</div>
+
+						<p><a href="..//swiper/index.html" class="link" target="_blank">Результат</a> модуля по
+							умолчанию.</p>
+
+					</div>
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_16.html" class="link">&lt;= Модуль «Ленивая подгрузка» (Lazy Loading)</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_18.html">Работа с SVG-спрайтами =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+			</div> <!-- page__container -->
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

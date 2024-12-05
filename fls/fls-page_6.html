@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 6</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="name__container">
+
+				<h1 class=" page__title">SCSS-Миксин &#171;Отзывчивое (адаптивное) свойство&#187;</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Использование миксина</a>
+							<a href="#h-items_2" class="con-menu">Алгоритм работы миксина</a>
+							<a href="#h-items_3" class="con-menu">Дополнительные настройки и режимы работы</a>
+							<a href="#h-items_4" class="con-menu">Расположение и видеоматериалы</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Использование миксина</h2>
+					<div class="page__content--items">
+
+						<p>С помощью SCSS-миксина &#171;Отзывчивое (адаптивное) свойство&#187; можно отзывчиво (в
+							зависимости ширины экрана) изменять значение того или иного CSS-свойства от начального значения,
+							на определенной ширине экрана, до конечного значения на другой ширине экрана. Можно указывать
+							произвольные промежутки ширин. Также, существует несколько режимов поведения миксина вне
+							указанных промежутках.</p>
+
+						<blockquote class="warning">
+							<p>Миксин представлен в двух реализациях &#8212; <span class="green">clamp()</span> и <span
+									class="green">calc()</span>. Сlamp работает быстрее, но
+								если возникают проблемы с поддержкой браузерами миксин автоматически переключится на <span
+									class="green">calc()</span>.
+							</p><cite>Принудительно использовать <span class="green">calc()</span> можно изменив код миксина в файле
+								scss/base/mixins.scss</cite>
+						</blockquote><br>
+
+						<p>Чтобы работать с миксином в нужно селекторе можно вызвать сниппет <span class="green">av</span>:</p>
+						<p><em>Базовый режим работы миксина:</em></p>
+						<pre><code>@include adaptiveValue("свойство", начальное значение, конечное значение);</code></pre><br>
+						<p>Где:</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">свойство </span>&#8212; CSS-свойство, значение которого нужно адаптировать.
+									Можно
+									указать любое свойство значение которого указывается в цифрах.</li>
+								<li><span class="green">начальное значение</span> &#8212; стартовое значение свойства в пикселях, пишем
+									число без px. Обычно указывается по макету.</li>
+								<li><span class="green">конечное значение</span> &#8212; финальное значение свойства в пикселях, пишем
+									число без px. Значение, к которому мы хотим прийти на меньших ширинах экрана.</li>
+							</ul>
+						</div>
+
+						<p><em>Примеры:</em></p>
+						<pre><code>@include adaptiveValue("font-size", 50, 20);
+@include adaptiveValue("padding-top", 80, 10);
+...</code></pre>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Алгоритм работы миксина</h2>
+					<div class="page__content--items">
+
+						<p>Миксин работает на основе значений переменных <span class="green">$minWidth</span>,
+							<span class="green">$maxWidth</span>, <span class="green">$maxWidthContainer</span>,
+							<span class="green">$containerPadding</span> и <span class="green">$containerWidth</span> расположеных в
+							блоке <a class="link"
+								href="osnovnoj-fajl-stilej-style-scss-nastrojka-adaptivnoj-setki-i-prochee.html#adaptiv"
+								target="_blank">&#171;Настройка адаптивной сетки&#187;</a> файла
+							<span class="green">scss/style.scss</span>
+						</p>
+						<p>В итоге, по умолчанию, миксин будет работать следующим образом:</p>
+						<p>Если <span class="green">$maxWidthContainer</span> больше нуля, то значения свойства будут меняться в
+							промежутке ширин от <span class="green">$containerWidth</span> до <span class="green">$minWidth</span>. То
+							есть, по
+							всей ширине ограничивающего контейнера.</p>
+						<p>При этом, если ширина экрана больше чем <span class="green">$containerWidth</span>, то значение свойства
+							будет равно <span class="green">начальному значению.</span> Если ширина экрана меньше чем
+							<span class="green">$minWidth</span>, то значение свойства будет равно <span class="green">конечному
+								значению</span>.
+						</p>
+						<p>Если <span class="green">$maxWidthContainer</span> равен нулю, то значения свойства будут меняться в
+							промежутке ширин от <span class="green">$maxWidth</span> до <span class="green">$minWidth</span>.
+							То есть, по всей ширине экрана (вьюпорта).</p>
+
+					</div>
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Дополнительные настройки и режимы работы</h2>
+					<div class="page__content--items">
+
+						<p>Миксин позволяет указать свой промежуток ширины внутри которого будет адаптироваться значение
+							свойства. </p>
+						<pre><code>@include adaptiveValue("свойство", начальное значение, конечное значение, ширина от, ширина до); </code></pre>
+						<br>
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">ширина от</span> &#8212; стартовая ширина меньше которой начнется адаптация,
+									пишем
+									число без px.</li>
+								<li><span class="green">ширина до</span> &#8212; конечная ширина до которой будет адаптироваться
+									значение
+									свойства, пишем число без px.</li>
+							</ul>
+						</div>
+						<p><em>Пример:</em></p>
+						<pre><code>@include adaptiveValue("font-size", 50, 20, 800, 480);</code></pre><br>
+						<p>При этом, работать миксин будет только в этом промежутке, а за его пределами значение свойства
+							будет по умолчанию либо наследоваться от предков. </p>
+						<p>То есть, <span class="green">font-size</span> из примера получит значение <span class="green">50px</span>
+							только на
+							ширине <span class="green">800px</span> и будет адаптироваться до <span class="green">20px</span> до
+							ширины
+							<span class="green">480px</span>. За пределами этого промежутка свойство унаследует значение по умолчанию.
+						</p>
+						<p>Это поведение миксина мы тоже можем настроить указав режим работы.</p>
+						<pre><code>@include adaptiveValue("свойство", начальное значение, конечное значение, ширина от, ширина до, режим работы); </code></pre>
+
+
+						<p class="warning">Новый вариант, не факт, что будет работать!!!</p>
+						<div class="">
+							<p><span class="green">режим работы</span> &#8212; может принимать числовые значения <span
+									class="green">0\не
+									указано</span>,
+								<span class="green">1</span>,
+								<span class="green">2</span> или <span class="green">3</span>:
+							</p>
+
+							<div class="page__block--list">
+								<ul>
+									<li><span class="green">0\не указано</span> &#8212; Если ширина экрана больше чем <span
+											class="green">ширина
+											от</span>, то
+										значение свойства будет равно <span class="green">начальному значению</span>. Если ширина экрана
+										меньше
+										чем <span class="green">ширина до</span>, то значение свойства будет равно <span
+											class="green">конечному
+											значению</span>.</li>
+									<li><span class="green">1</span> &#8212; Миксин будет работать
+										<span class="green">только</span> между
+										<span class="green">минимальной</span> и
+										<span class="green">максимальной</span> шириной экрана, либо
+										<span class="green">только в указанных промежутках</span>, если они заданы. За пределами этих ширин,
+										значения свойства
+										будут
+										по умолчанию, либо наследоваться от предков.
+									</li>
+									<li><span class="green">2</span> &#8212; Если ширина экрана больше чем <span class="green">ширина
+											от</span>, то
+										значение свойства будет равно <span class="green">начальному значению</span>. Если ширина экрана
+										меньше
+										чем <span class="green">ширина до</span>, то значение свойства будет по умолчанию либо наследоваться
+										от
+										предков.</li>
+									<li><span class="green">3</span> &#8212; Если ширина экрана больше чем <span class="green">ширина
+											от</span>, то
+										значение свойства будет по умолчанию либо наследоваться от предков. Если ширина экрана меньше
+										чем <span class="green">ширина до</span>, то значение свойства будет равно <span
+											class="green">конечному
+											значению</span>.</li>
+								</ul>
+							</div>
+						</div>
+
+						<p class="warning">Старый вариант</p>
+
+						<p><span class="green">режим работы</span> &#8212; может принимать числовые значения <span
+								class="green">1</span>,
+							<span class="green">2</span> или <span class="green">3</span>:
+						</p>
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">1</span> &#8212; Если ширина экрана больше чем <span class="green">ширина
+										от</span>, то
+									значение свойства будет равно <span class="green">начальному значению</span>. Если ширина экрана
+									меньше
+									чем <span class="green">ширина до</span>, то значение свойства будет равно <span
+										class="green">конечному
+										значению</span>.</li>
+								<li><span class="green">2</span> &#8212; Если ширина экрана больше чем <span class="green">ширина
+										от</span>, то
+									значение свойства будет равно <span class="green">начальному значению</span>. Если ширина экрана
+									меньше
+									чем <span class="green">ширина до</span>, то значение свойства будет по умолчанию либо наследоваться
+									от
+									предков.</li>
+								<li><span class="green">3</span> &#8212; Если ширина экрана больше чем <span class="green">ширина
+										от</span>, то
+									значение свойства будет по умолчанию либо наследоваться от предков. Если ширина экрана меньше
+									чем <span class="green">ширина до</span>, то значение свойства будет равно <span
+										class="green">конечному
+										значению</span>.</li>
+							</ul>
+						</div>
+
+						<p><em>Пример:</em></p>
+						<pre><code>@include adaptiveValue("font-size", 50, 20, 800, 480, 1);</code></pre><br>
+						<p>Также мы можем использовать несколько вызовов миксина с разными промежутками:</p>
+						<pre><code>@include adaptiveValue("font-size", 50, 20, 800, 480, 2);
+@include adaptiveValue("font-size", 20, 10, 480, 320);</code></pre><br>
+						<p>В примере произойдет следующее: значение font-size будет 50px, в промежутке ширин экрана от
+							800px до 480px, он будет отзывчиво адаптироваться от 50px до 20px. А в промежутке от 480px до
+							320px отзывчиво адаптироваться от 20px до 10px.</p>
+
+					</div>
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Расположение и видеоматериалы</h2>
+					<div class="page__content--items">
+
+						<p>Миксин <span class="green">adaptiveValue</span> находится в файле <span
+								class="green">scss/base/mixins.scss</span>
+						</p>
+
+						<iframe width="500" height="281" margin-right="20px" src="https://www.youtube.com/embed/HJZP5QsrpXs"
+							title="Адаптивный шрифт. Пример реализации отзывчивого (резинового) шрифта на CSS + SCSS миксин"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe>
+						<p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+						<div class="page__block-video">
+							<video width="500" height="281" src="../../video/fls/adaptivFont.mp4" controls="" preload="metadata"
+								poster="../../video/html/poster.jpg" width="100%">
+
+							</video>
+						</div>
+
+						<hr class="page__hr">
+						<iframe width="500" height="281" src="https://www.youtube.com/embed/eaOAY0vIB4U"
+							title="Адаптивное (отзывчивое) CSS свойство. Как быстро адаптировать элементы." frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe>
+
+
+						<p>При отсутствии интернета можно просмотреть видео из архива</p>
+
+						<div class="page__block-video">
+							<video width="500" height="281" src="../../video/fls/adaptivSvoistvo.mp4" controls="" preload="metadata"
+								poster="../../video/html/poster.jpg" width="100%">
+
+							</video>
+						</div>
+
+
+
+
+
+
+
+
+
+					</div>
+
+				</div>
+
+
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_5.html" class="link">&lt;= STYLE.SCSS — настройка адаптивной сетки, шрифтов, подключение
+								дочерних файлов</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_7.html"> Модуль меню «бургер» =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

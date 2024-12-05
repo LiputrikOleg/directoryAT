@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CSS Page 8</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Трансформация</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#c-items_1" class="con-menu">transition</a>
+							<a href="#c-items_2" class="con-menu">transform</a>
+							<a href="#c-items_3" class="con-menu">Примеры</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="c-items_1">transition</h2>
+
+					<div class="page__content--items">
+
+						<p>Универсальное свойство, которое позволяет одновременно задать значения:
+
+						<div class="page__block--list">
+							<ul>
+								<li><code class="green">transition-property</code></li>
+								<li><code class="green">transition-duration></code></li>
+								<li><code class="green">transition-timing-function</code></li>
+								<li><code class="green">transition-delay</code></li>
+							</ul>
+						</div>
+
+						<p> Устанавливает эффект перехода между двумя состояниями элемента, они могут быть определены с помощью
+							псевдокласса
+							<code class="green">:hover</code> или <code class="green">:active</code>, а также динамически через
+							<code class="green">JavaScript</code>.
+						</p>
+						<hr class="page__hr">
+
+
+						<h4><code class="green">transition-property</code> </h4>
+						<p>
+							- указывает стили, к которым применяется
+							анимация
+						</p>
+
+						<div class="page__block--list">
+							<ul class="">
+								<li>Если указано <code class="green">transition-property:</code><code class="green">all</code>, -
+									то
+									применяются все
+									указанные в <code class="green">.trans:hover</code> <code
+										class="green">{width: 550px; color: #fff;}</code> стили.
+								</li>
+
+								<li>Если указано <code class="green">transition-property:</code><code class="green">width</code>,
+									- то
+									свойство
+									применяется только к высоте.</li>
+
+								</li>
+							</ul>
+
+							<hr class="page__hr">
+
+							<h4><code class="green">transition-duration</code> </h4>
+							<p>
+								- указывает время проигрывания анимации в
+								секундах.
+								Может принимать дробные значения (2.2s).</p>
+							<div class="page__block--list">
+								<ul>
+									<li>По умолчанию значение равно 0s, это означает, что никакой анимации нет, переход происходит
+										мгновенно.
+										Можно указать несколько значений, перечисляя их через запятую. Каждое значение применяется к
+										свойствам,
+										заданным через <code class="green">transition-property</code>.</li>
+								</ul>
+							</div>
+							<hr class="page__hr">
+
+							<h4><code class="green">transition-timing-function</code> </h4>
+							<p>
+								- указывает тип анимации.</p>
+							<div class="page__block--list">
+								<ul>
+
+									<li><code class="green"><b></b></code>
+										<ul>
+											<li><code class="green">ease</code> - ( По умолчанию) Анимация начинается медленно, затем
+												ускоряется и к
+												концу
+												движения опять замедляется. Аналогично <code class="green">cubic-bezier(0.25,0.1,0.25,1)</code>.
+											</li>
+											<li><code class="green">ease-in</code> - Анимация медленно начинается, к концу ускоряется.
+												Аналогично
+												<code class="green">cubic-bezier(0.42,0,1,1)</code>.
+											</li>
+											<li><code class="green">ease-out</code> - Анимация начинается быстро, к концу замедляется.
+												Аналогично
+												<code class="green">cubic-bezier(0,0,0.58,1)</code>.
+											</li>
+											<li><code class="green">ease-in-out</code> - Анимация начинается и заканчивается медленно.
+												Аналогично
+												<code class="green">cubic-bezier(0.42,0,0.58,1)</code>.
+											</li>
+											<li><code class="green">linear</code> - Одинаковая скорость от начала и до конца.</li>
+											<li><code class="green">step-start</code> - Как таковой анимации нет. Стилевые свойства сразу
+												же
+												принимают
+												конечное значение.</li>
+											<li><code class="green">step-end</code> - Как таковой анимации нет. Стилевые свойства
+												находятся в
+												начальном
+												значении заданное время, затем сразу же принимают конечное значение.</li>
+											<li><code class="green">steps</code> - Ступенчатая функция, имеющая заданное число шагов
+												<code class="green">steps(5)</code>
+											</li>
+											<li><code class="green"> cubic-bezier</code> - Задаёт функцию движения в виде кривой Безье.
+											</li>
+										</ul>
+									</li>
+									<li><code class="green"><b>transition-delay</b></code> - указывает время задержки перед анимацией
+										также
+										в
+										секундах. <br>Значение 0s запускает анимацию сразу же. <br>Отрицательное значение также включает
+										анимацию
+										без
+										задержек, но может привести к изменению вида начала анимации. <br>Допустимо указывать несколько
+										значений,
+										перечисляя их через запятую. <br>Каждое значение будет применяться к свойству, заданному в
+										параметрах
+										<code class="green">transition-property</code>.
+									</li>
+								</ul>
+
+							</div>
+
+							<hr class="page__hr">
+
+							<h4 class="gray">Все примеры объединены в один блок</h4>
+
+							<div class="sbor">
+								<div class="mbez" style="transition: width 3s ease;">transition: width 3s ease;</div>
+								<div class="mbez" style="transition: width 3s linear;">transition: width 3s linear;</div>
+								<div class="mbez" style="transition: width 3s ease-in;">transition: width 3s ease-in;</div>
+								<div class="mbez" style="transition: width 3s ease-out;">transition: width 3s ease-out;</div>
+								<div class="mbez" style="transition: width 3s ease-in-out;">transition: width 3s ease-in-out;</div>
+								<div class="mbez" style="transition: width 3s step-start;">transition: width 3s step-start;</div>
+								<div class="mbez" style="transition: width 3s step-end;">transition: width 3s step-end;</div>
+								<div class="mbez" style="transition: width 3s steps(5);">transition: width 3s steps(5);</div>
+								<div class="mbez" style="transition: width 3s cubic-bezier(.05, .98, .94, .06);">cubic-bezier(.05,
+									.98,
+									.94,
+									.06);</div>
+								<div class="mbez" style="transition: width 3s cubic-bezier(.1, .78, .25, .24);">cubic-bezier(.1, .78,
+									.25,
+									.24);
+								</div>
+								<div class="mbez" style="transition: width 3s cubic-bezier(.27, 2.64, .55, -0.91);">cubic-bezier(.27,
+									2.64,
+									.55,
+									-0.91);</div>
+								<div class="mbez" style="transition: width 3s cubic-bezier(.17, -0.29, .96, -0.52);">cubic-bezier(.17,
+									-0.29,
+									.96, -0.52);</div>
+								<div class="mbez" style="transition: width 3s cubic-bezier(0, 1.45, 1, 1.45);">cubic-bezier(0, 1.45,
+									1,
+									1.45);
+								</div>
+							</div>
+
+							<br>
+							<p>В приведенных выше примерах при наведении мыши происходит анимация. Если мышь убираем анимация как бы
+								происходит
+								обратно, но она имеет тот же вид, который был задан.</p>
+							<p>Для того, чтобы вид анимации при наведении и уборки мыши отличался нужно сделать следующее: (смотри
+								комментарии)
+							</p>
+							<pre class="pre"><code class="css">.mbez2 {
+width: 250px;
+background: #e4ac03;
+border: 1px solid #b78a02;
+padding: 5px 10px;
+font-size: 14px;
+font-style: italic;
+cursor: pointer;
+transition:width 3s steps(5);   /*стиль после уборки мыши*/
+}
+.mbez2:hover {
+width: 550px;
+transition:width 3s steps(100); }   /*стиль при наведении*/ </code></pre>
+
+							<div class="mbez2">Обратная анимация</div>
+							<br>
+							<p>Более подробно о кривой Бизье можно посмотреть на сайте <a href="http://cubic-bezier.com" class="link"
+									target="_blank">http://cubic-bezier.com</a></p>
+
+
+						</div>
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="c-items_2">transform</h2>
+
+					<div class="page__content--items">
+
+						<p><code class="green">transform</code> позволяет трансформировать наши блоки, а именно: переворачивать,
+							растягивать, отодвигать, масштабировать и наклонять..</p>
+
+						<h3 class="gray">Функции трансформации</h3>
+
+						<table class="table table-all table__tr">
+							<caption>Таблица 1. Функции трансформации</caption>
+							<tr>
+								<th class="table-info">Функция</th>
+								<th class="table-info">Назначение</th>
+								<th class="table-info">Код</th>
+								<th class="table-info">Пример</th>
+							</tr>
+							<tr>
+								<td>rotate()</td>
+								<td>Поворачивает элемент в двумерном пространстве на заданный угол относительно точки
+									трансформации,
+									задаваемой свойством <code class="green">transform-origin</code></td>
+								<td>
+									<pre><code class="css">transform:rotate(360deg);
+transform-origin:left center;</code></pre>
+								</td>
+								<td>
+									<div class="tf1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nostrum
+										perferendis.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>rotateX()</td>
+								<td>Поворачивает элемент на заданный угол относительно оси X.</td>
+								<td>
+									<pre><code class="css">transform: rotateX(360deg);</code></pre>
+								</td>
+								<td>
+									<div class="tf2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nostrum
+										perferendis.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>rotateY()</td>
+								<td> Поворачивает элемент на заданный угол относительно оси Y</td>
+								<td>
+									<pre><code class="css">transform: rotateY(360deg);</code></pre>
+								</td>
+								<td>
+									<div class="tf3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nostrum
+										perferendis.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>rotateZ()</td>
+								<td> Поворачивает элемент на заданный угол относительно оси Z</td>
+								<td>
+									<pre><code class="css">transform: rotateZ(360deg)</code></pre>
+								</td>
+								<td>
+									<div class="tf4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nostrum
+										perferendis.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>rotate3D()</td>
+								<td>Поворачивает элемент в трёхмерном пространстве.</td>
+								<td>
+									<pre><code class="css">transform: rotate3D(2, 8, 3, 97.5deg)</code></pre>
+								</td>
+								<td>
+									<div class="tf5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nostrum
+										perferendis.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>scale()</td>
+								<td>Масштабирует элемент в двумерном пространстве по горизонтали и вертикали или одновременно в
+									двух
+									направлениях. Изменение масштаба может происходить как в большую, так и в меньшую сторону.</td>
+								<td>
+									<pre><code class="css"> /*Увеличение масштаба в 1,5 раза.*/
+transform: scale(1.5)
+/*Уменьшение масштаба в 2 раза.*/
+transform: scale(0.5)
+/*Зеркальное отражение по горизонтали и вертикали*/
+transform: scale(-1) 
+/*Зеркальное отражение по горизонтали.*/
+transform: scale(-1, 1)	
+/*Зеркальное отражение по вертикали.*/
+transform: scale(1, -1)</code></pre>
+								</td>
+								<td>
+									<div class="tf6" style="font-size:14px; padding-top:8px;">1.5</div>
+									<div class="tf16" style="font-size:14px; padding-top:8px;">0.5</div>
+									<div class="tf17" style="font-size:14px; padding-top:8px;">-1</div>
+									<div class="tf18" style="font-size:14px; padding-top:8px;">-1, 1</div>
+									<div class="tf19" style="font-size:14px; padding-top:8px;">1, -1</div>
+								</td>
+							</tr>
+							<tr>
+								<td>scaleX()</td>
+								<td>Масштабирует элемент по горизонтали.</td>
+								<td>
+									<pre><code class="css">/*Увеличение масштаба по горизонтали в 1,2раза.*/
+transform: scaleX(1.2)
+/*Уменьшение масштаба по горизонтали в два раза.*/
+transform: scaleX(0.5)
+/*Зеркальное отражение по горизонтали.*/
+transform: scaleX(-1)
+/*Зеркальное отражение и уменьшение
+масштаба по горизонтали.*/
+transform: scaleX(-0.5)</code></pre>
+								</td>
+								<td>
+									<div class="tf7" style="font-size:14px; padding-top:8px;">1.2</div>
+									<div class="tf20" style="font-size:14px; padding-top:8px;">0.5</div>
+									<div class="tf21" style="font-size:14px; padding-top:8px;">-1</div>
+									<div class="tf22" style="font-size:14px; padding-top:8px;">-0.5</div>
+								</td>
+							</tr>
+							<tr>
+								<td>scaleY()</td>
+								<td>Масштабирует элемент по вертикали.</td>
+								<td>
+									<pre><code class="css">/*Увеличение масштаба по вертикали в 1,2раза.*/
+transform: scaleY(1.2)
+/*Уменьшение масштаба по вертикали в два раза.*/
+transform: scaleY(0.5)
+/*Зеркальное отражение по вертикали.*/
+transform: scaleY(-1)
+/*Зеркальное отражение и уменьшение
+масштаба по вертикали.*/
+transform: scaleY(-0.5)</code></pre>
+								</td>
+								<td>
+									<div class="tf8" style="font-size:14px; padding-top:8px;">1.2</div>
+									<div class="tf23" style="font-size:14px; padding-top:8px;">0.5</div>
+									<div class="tf24" style="font-size:14px; padding-top:8px;">-1</div>
+									<div class="tf25" style="font-size:14px; padding-top:8px;">-0.5</div>
+								</td>
+							</tr>
+							<tr>
+								<td>scaleZ()</td>
+								<td>Масштабирует элемент по оси Z. Эффект будет заметен только при использовании перспективы,
+									поворота
+									элемента по осям X или Y, а также при смещении элемента по оси Z.</td>
+								<td>
+									<pre><code class="css">/* "Вдавливание блока" */
+transform: scaleZ(0,1);
+/* Разворот на обратную сторону +
+разворот по оси Х */
+transform: scaleZ(-1) scaleX(-1);</code></pre>
+								</td>
+								<td>
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-scaleZ_1 example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-scaleZ_2 example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>scale3D()</td>
+								<td>Масштабирует элемент в трехмерном пространстве.</td>
+								<td>
+									<pre><code class="css">transform: scale3d(0.5, 1, 1.7);
+transform: scale3d(-1.4, 0.4, 0.7);</code></pre>
+								</td>
+								<td>
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-scale3D_1 example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-scale3D_2 example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>skew()</td>
+								<td>Первое значение - Задаёт угол наклона по горизонтали. Положительное значение наклоняет влево,
+									отрицательное вправо.
+									Второе значение - Задаёт угол наклона по вертикали. Положительное значение наклоняет вниз,
+									отрицательное
+									вверх.
+									Одно значение задаёт наклон элемента только по горизонтали. Два значения задают наклон элемента
+									по
+									горизонтали и вертикали независимо. Значение 0 оставляет элемент без искажений.</td>
+								<td>
+									<pre><code class="css">/*Наклон влево на 10°.*/
+transform: skew(10deg, 0)
+/*Наклон вправо на 10°.*/
+transform: skew(-10deg, 0) 
+/*Наклон вниз на 10°.*/
+transform: skew(0, 10deg) 
+/*Наклон вверх на 10°.*/
+transform: skew(0, -10deg)
+/*Наклон влево и вниз на 10°.*/
+transform: skew(10deg, 10deg)</code></pre>
+								</td>
+								<td>
+									<div class="tf11" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf26" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf27" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf28" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf29" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+								</td>
+							</tr>
+							<tr>
+								<td>skewX()</td>
+								<td>Наклоняет элемент на заданный угол по горизонтали. В качестве значения принимается угол
+									наклона.
+									Положительное значение наклоняет влево, отрицательное вправо. Значение 0 оставляет элемент без
+									искажений.
+								</td>
+								<td>
+									<pre><code class="css">/*Наклон влево на 20°.*/
+transform: skewX(20deg)
+/*Наклон вправо на 20°.*/
+transform: skewX(-20deg)</code></pre>
+								</td>
+								<td>
+									<div class="tf12" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf30" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+								</td>
+							</tr>
+							<tr>
+								<td>skewY()</td>
+								<td>Наклоняет элемент на заданный угол по вертикали. В качестве значения принимается угол наклона.
+									Положительное значение наклоняет вниз, отрицательное вверх. Значение 0 оставляет элемент без
+									искажений.</td>
+								<td>
+									<pre><code class="css">/*Наклон вниз на 20°.*/
+transform: skewY(20deg)
+/*Наклон вверх на 20°.*/
+transform: skewY(-20deg)</code></pre>
+								</td>
+								<td>
+									<div class="tf13" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf31" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+								</td>
+							</tr>
+							<tr>
+								<td> translate()</td>
+								<td> По вертикали - положительное значение сдвигает вверх, отрицательное вниз. По горизонтали -
+									положительное
+									значение сдвигает вправо, отрицательное влево.
+									Одно значение сдвигает элемент только по горизонтали, два значения сдвигают элемент по
+									горизонтали
+									и
+									вертикали независимо.</td>
+								<td>
+									<pre><code class="css">/*Вниз Вправо*/
+transform: translate(20px, 30px)
+/*Вниз  Влево*/
+transform: translate(-20px, 30px)
+/*Вверх Вправо*/
+transform: translate(20px, -30px)
+/*Вверх Влево*/
+transform: translate(-20px, -30px)</code></pre>
+								</td>
+								<td>
+									<div class="tf14" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf32" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf33" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf34" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+
+								</td>
+							</tr>
+							<tr>
+								<td>translateX()</td>
+								<td> Сдвигает элемент по горизонтали на указанное значение. Положительное значение сдвигает вправо,
+									отрицательное влево.</td>
+								<td>
+									<pre><code class="css">transform: translateX(20px);
+transform: translateX(-20px);</code></pre>
+								</td>
+								<td>
+									<div class="tf15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nostrum
+										perferendis.
+									</div>
+									<div class="tf35">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nostrum
+										perferendis.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>translateY()</td>
+								<td>Сдвигает элемент по вертикали на указанное значение. Положительное значение сдвигает вниз,
+									отрицательное
+									вверх.</td>
+								<td>
+									<pre><code class="css">transform: translateY(20px);
+transform: translateY(-20px);</code></pre>
+								</td>
+								<td>
+									<div class="tf36" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+									<div class="tf37" style=" margin-bottom:10px;">Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit.
+										Cum, nostrum perferendis.</div>
+								</td>
+							</tr>
+							<tr>
+								<td>translateZ()</td>
+								<td>Сдвигает элемент по оси Z на указанное значение. Положительное значение сдвигает вперёд,
+									отрицательное
+									назад.
+								</td>
+								<td>
+									<pre><code class="css">/*Движение вперед*/
+transform: translateZ(20px);
+/*Движение назад*/
+transform: translateZ(-20px);</code></pre>
+								</td>
+								<td>
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-tranlateZ_1 example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-tranlateZ_2 example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+
+								</td>
+							</tr>
+							<tr>
+								<td> translate3d</td>
+								<td>Сдвигает элемент на заданное значение в трёхмерном пространстве.</td>
+								<td>
+									<pre><code class="css">transform: translate3d(5px, -40px, -75px);</code></pre>
+								</td>
+								<td>
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-tranlate3D example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>matrix</td>
+								<td>Задаёт двумерную матрицу преобразований</td>
+								<td>
+									<pre><code class="css">matrix(1, 2, -1, 1, 80, 80)</code></pre>
+								</td>
+								<td>
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-matrix example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>matrix3d</td>
+								<td>Задаёт трёхмерную матрицу преобразований.</td>
+								<td>
+									<pre><code class="css">transform: rotate3d(1, 1, 1, 30deg)
+matrix3d(1,0,0,0,0,1,6,0,0,0,1,0,50,100,0,1.1);</code></pre>
+								</td>
+								<td>
+									<div class="transition-3d">
+										<section class="example">
+											<div class="tr-matrix3D example-element">
+												<div class="face front">1</div>
+												<div class="face back">2</div>
+												<div class="face right">3</div>
+												<div class="face left">4</div>
+												<div class="face top">5</div>
+												<div class="face bottom">6</div>
+											</div>
+										</section>
+									</div>
+								</td>
+							</tr>
+						</table>
+
+					</div> <!-- page__content--items 2-->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="c-items_3">Примеры</h2>
+
+					<div class="page__content--items">
+
+						<div class="travs-flex">
+							<div class="trans">
+								<div class="trf trans-one"></div>
+								<div class="trf trans-two"></div>
+								<div class="trf trans-tree"></div>
+								<div class="trf trans-fier"></div>
+							</div>
+
+							<pre class="pre"><code class="html">&lt;div class="trans"&gt;
+  &lt;div class="trf trans-one"&gt;&lt;/div&gt;
+  &lt;div class="trf trans-two"&gt;&lt;/div&gt;
+  &lt;div class="trf trans-tree"&gt;&lt;/div&gt;
+  &lt;div class="trf trans-fier"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+						</div>
+						<pre class="pre"><code class="css">.trf {
+  width: 70px;
+  height: 30px;
+  background: #777;
+  border: 1px solid #000;
+  border-radius: 5px;
+  transition: all .8s;
+}
+
+.trans_one:hover {
+  width: 350px;
+  background: #5D6ADE;
+}
+
+.trans_two:hover {
+  transform: translateX(-25px);
+  background: #DE2332;
+}
+
+.trans_tree:hover {
+  background: #4A912D;
+  transform: rotate(45deg);
+}
+
+.trans_fier:hover {
+  background: #91008A;
+  transform: rotate(-90deg) translate(-5px, -40px);}</code></pre>
+
+
+						<div class="travs-flex">
+							<div class="trans">
+								<div class="trans_2">
+									<div class="trf trans_1"></div>
+									<div class="trf trans_2"></div>
+									<div class="trf trans_3"></div>
+									<div class="trf trans_4"></div>
+								</div>
+							</div>
+
+							<pre class="pre"><code class="html">&lt;div class="trans"&gt;
+  &lt;div class="trans_2"&gt;
+    &lt;div class="trf trans_1"&gt;&lt;/div&gt;
+    &lt;div class="trf trans_2"&gt;&lt;/div&gt;
+    &lt;div class="trf trans_3"&gt;&lt;/div&gt;
+    &lt;div class="trf trans_4"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+						</div>
+						<pre class="pre"><code class="css">.trf {
+  width: 70px;
+  height: 30px;
+  background: #777;
+  border: 1px solid #000;
+  border-radius: 5px;
+  transition: all .8s;
+}
+
+.trans_2:hover>.trans_1 {
+  width: 350px;
+  background: #5D6ADE;
+  transform: translateX(70px);
+}
+
+.trans_2:hover>.trans_2 {
+  width: 350px;
+  background: #DE2332;
+  transition-delay: .3s;
+  transform: translateX(70px);
+}
+
+.trans_2:hover>.trans_3 {
+  width: 350px;
+  background: #4A912D;
+  transition-delay: .6s;
+  transform: translateX(70px);
+}
+
+.trans_2:hover>.trans_4 {
+  width: 350px;
+  background: #91008A;
+  transition-delay: .9s;
+  transform: translateX(70px);
+}</code></pre>
+
+					</div> <!-- page__content--items 3-->
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../css/css-menu.html" class="link">К меню " CSS "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

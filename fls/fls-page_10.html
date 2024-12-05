@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 10</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+				<h1 class=" page__title">Модуль &#171;Прокрутка к нужному блоку&#187;. Плавная навигация по
+					странице.</h1>
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение функционала</a>
+							<a href="#h-items_2" class="con-menu">Использование функционала</a>
+							<a href="#h-items_3" class="con-menu">Добавление класса к текущему пункту навигации</a>
+							<a href="#h-items_4" class="con-menu">Прокрутка к нужному блоку по хешу (при открытии страницы)</a>
+							<a href="#h-items_5" class="con-menu">Добавление функционала, плавная прокрутка на iOS</a>
+							<a href="#h-items_5" class="con-menu">Расположение и дополнительные данные</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+					<div class="page__content--items">
+
+						<p>В данном модуле реализован плавный скролл после клика по ссылке (кнопке) до нужного блока на
+							странице. Если в адресе страницы будет передан хеш и блок с таким селектором будет найден на
+							странице, прокрутка к блоку произойдет автоматически. Также, модуль позволяет построить
+							навигацию по странице с добавлением класса текущему пункту навигации (пункту меню) при скролле к
+							определенному блоку.</p>
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">flsScroll.pageNavigation();</span>
+						</p>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Использование функционала</h2>
+					<div class="page__content--items">
+
+						<p><span class="green">[HTML]</span> К элементам навигации (пунктам меню), либо к произвольному объекту,
+							добавляем HTML-атрибут <span class="green">data-goto</span> а в качестве значения указываем CSS селектор
+							блока до которого нужно прокрутить: </p>
+
+						<pre><code>&lt;a href="#" data-goto=".имя класса блока" class="link"&gt;Пункт навигации&lt;/a&gt;
+    или
+&lt;a href="#" data-goto="#id блока" class="link"&gt;Пункт навигации&lt;/a&gt;</code></pre><br>
+						<p>Если нужно чтобы скролл учитывал шапку (не докручивал на высоту шапки, используется при
+							фиксированных шапках) нужно добавить к объекту навигации атрибут
+							<span class="green">data-goto-header</span>:
+						</p>
+
+						<pre><code>&lt;a href="#" data-goto-header data-goto=".имя класса блока" class="link"&gt;Пункт навигации&lt;/a&gt;</code></pre>
+						<br>
+
+						<p>Если нужно чтобы скролл не докручивал до блока на указанную высоту необходимо добавить к объекту
+							навигации атрибут <span class="green">data-goto-top</span> а в качестве значения указать число &#8212;
+							необходимую высоту:</p>
+
+						<pre><code>&lt;a href="#" data-goto-top="30" data-goto="#id блока" class="link"&gt;Пункт навигации&lt;/a&gt;</code></pre>
+						<br>
+
+						<p> <span class="green">data-goto-top</span> можно совмещать с <span class="green">data-goto-header</span>,
+							тогда
+							значение <span class="green">data-goto-top</span> добавится к высоте шапки.</p>
+
+					</div>
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Добавление класса к текущему пункту навигации</h2>
+					<div class="page__content--items">
+
+						<p>Для включения функционала добавления класса подключаем модуль наблюдатель:</p>
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span> раскомментировать строку
+							<span class="green">import
+								&#8216;./libs/watcher.js&#8217;</span><br>
+							<span class="green">[HTML]</span> Для блоков к которым
+							прокручивается страница добавляем атрибут <span class="green">data-watch </span>со значением
+							<span class="green">navigator</span>:
+						</p>
+
+						<pre><code>&lt;a href="#" data-goto=".some-section" class="link"&gt;Пункт навигации&lt;/a&gt;
+    ...
+&lt;section data-watch="navigator" class="some-section"&gt;&lt;/section&gt;</code></pre><br>
+
+						<p>После этого, при прокрутке к облоку (объекту) навигации, к соответствующему пункту навигации
+							будет добавлен класс <span class="green">_navigator-active</span></p>
+
+					</div>
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Прокрутка к нужному блоку по хешу (при открытии страницы)</h2>
+					<div class="page__content--items">
+
+						<p>Для того чтобы прокрутить страницу к нужному блоке при открытии страницы необходимо добавить к
+							адресу хеш содержащий <span class="green">имя класса нужного блока</span>.</p>
+						<p><em>Пример адресной строки и нужного блока:</em></p>
+						<pre><code>https:&#47;&#47;template.fls.guru/index.html#some-section</code></pre>
+						<pre><code>&lt;section class="some-section">
+    ...
+&lt;/section></code></pre>
+
+					</div>
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Добавление функционала, плавная прокрутка на iOS</h2>
+					<div class="page__content--items">
+
+						<p>По умолчанию, прокрутка выполняется методом scrollTo() с параметром behavior: &#171;smooth&#187;
+							без применения дополнительных плагинов. Но это ограничивает функционал этого модуля &#8212;
+							нельзя указать скорость прокрутки, а также могут возникнуть проблемы в <a class="link"
+								href="https://caniuse.com/?search=scrollTo" target="_blank">некоторых версия браузеров на iOS</a>. Для
+							решения всех проблем, можно
+							подключить дополнительный плагин SmoothScroll, сделать это можно в файле
+							<span class="green">js/files/scroll/gotoblock.js</span> раскомментировав строку <span class="green">import
+								SmoothScroll from &#8216;smooth-scroll&#8217;;</span> дальнейшее переключение прокрутки на
+							плагин произойдет автоматически.
+						</p>
+						<p>При работе с плагином появляется возможность указать скорость прокрутки, для этого элементу
+							навигации нужно добавить атрибут <span class="green">data-goto-speed</span> и указать число означающее
+							количество миллисекунд за которые совершится прокрутка (1000 = 1 секунда), по умолчанию 500.</p>
+						<pre><code>&lt;a href="#" data-goto-speed="1000" data-goto=".some-section" class="link"&gt;Пункт навигации&lt;/a&gt;</code></pre>
+
+					</div>
+
+					<h2 class="page__subtitle" id="h-items_6">Расположение и дополнительные данные</h2>
+					<div class="page__content--items">
+
+						<p>Функционал находится в <span class="green">js/files/scroll/scroll.js</span>. Название функции
+							<span class="green">pageNavigation()</span>. Вспомогательный модуль прокрутки <span
+								class="gls__green">gotoblock</span>
+							находится в <span class="green">js/files/scroll/gotoblock.js</span>. Модуль наблюдатель находится в файле
+							<span class="green">js/libs/watcher.js</span>.
+						</p>
+						<p>Если в момент клика на пункт навигации было открыто меню &#171;бургер&#187;, то оно закроется
+							автоматически.</p>
+
+						<p><a href="../modules/navigator.html" class="link" target="_blank">Результат</a> модуля по
+							умолчанию.</p>
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_9.html" class="link">&lt;= Модуль «Динамический адаптив»</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_11.html">Модуль добавления классов к шапке при прокрутке =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+
+
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

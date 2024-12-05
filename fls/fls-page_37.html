@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 37</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль “До/После” </h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение</a>
+							<a href="#h-items_2" class="con-menu">Использование</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение</h2>
+					<div class="page__content--items">
+						<p>Модуль “До/После” – это вывод 2-х изображений, с возможностью, перетаскивая разделяющую, линию отобразить
+							одно
+							или
+							другое изображение.</p>
+
+						<p><span class="green">[HTML]</span> В нужном месте вызвать <span class="green">ba </span>( классы можно
+							заменить на нужные). Или вручную
+							создать структуру с соответствующими дата-атрибутами</p>
+
+						<pre><code>&lt;div data-ba class="before-after">
+  &lt;div data-ba-before class="before-after__item">&lt;/div>
+  &lt;div data-ba-after class="before-after__item">&lt;/div>
+  &lt;div data-ba-arrow class="before-after__arrow">&lt;/div>
+&lt;/div></code></pre><br>
+
+						<p><span class="green">[JS]</span> В файле js/app.js раскомментировать строку <span class="green">import
+								&#8216;./libs/beforeafter.js&#8217;; </span>Это же действие подключит файл столов
+							<span class="green">scss/base/beforeafter.scss</span> , содержащий, необходимые для работы модуля, базовые
+							стили.
+						</p>
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Использование</h2>
+					<div class="page__content--items">
+						<p>С помощью тега IMG добавьте изображения в соответствующие HTML-элементы, добавьте необходимую стилизацию
+							для
+							разделяющей линии</p>
+
+						<pre><code class="html">&lt;div data-ba class="before-after">
+  &lt;div data-ba-before class="before-after__item">
+    &lt;img src="img/before.jpg" alt="Before">
+  &lt;/div>
+  &lt;div data-ba-after class="before-after__item">
+    &lt;img src="img/before.jpg" alt="After">
+  &lt;/div>
+  &lt;div data-ba-arrow class="before-after__arrow">&lt;/div>
+&lt;/div></code></pre><br>
+
+						<pre><code class="css">.before-after__arrow{
+  background-color: green;
+  width: toRem(5);
+}</code></pre>
+					</div>
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_36.html" class="link">&lt;= Модуль адаптивных изображений «IBG»</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_38.html">Цветовая кодировка кода =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

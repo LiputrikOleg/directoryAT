@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 25</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Модуль формы "Количество"</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Подключение модуля</a>
+							<a href="#h-items_2" class="con-menu">Дополнительные параметры</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Подключение модуля</h2>
+					<div class="page__content--items">
+						<p>Модуль представляет собой готовый блок для выбора количества (например товара в интернет-магазине).</p>
+
+						<p>
+							<span class="green">[HTML] </span>В нужном месте вызвать сниппет
+							<span class="green">quantity</span> Будет построена структура модуля с кнопками и полем ввода. Классы и
+							структуру можно менять
+							под свои нужды. В атрибуте
+							<span class="green">value </span>указываем начальное значение количества.
+						</p>
+						<pre><code class="html">&lt;div data-quantity class="quantity"&gt;
+&lt;button data-quantity-plus type="button" class="quantity__button quantity__button_plus"&gt;&lt;/button&gt;
+&lt;div class="quantity__input"&gt;
+  &lt;input data-quantity-value type="text" name="" value="1"&gt;
+&lt;/div&gt;
+&lt;button data-quantity-minus type="button" class="quantity__button quantity__button_minus"&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre><br>
+						<p>
+							<span class="green">[SCSS]</span> (не обязательно) Если вы хотите сразу посмотреть на работу блока и
+							оставили
+							классы
+							предложенные сниппетом, вы можете раскомментировать строку
+							<span class="green">@import «quantity»;</span> в файле
+							<span class="green">src/scss/base/forms/forms.scss</span> — это подключит базовые стили, их можно
+							отредактировать под свои
+							нужды.
+						</p>
+						<p><span class="green">[JS]</span> В файле <span class="green">js/app.js</span>раскоментировать строку
+							<span class="green">flsForms.formQuantity();</span>
+						</p>
+
+					</div>
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Дополнительные параметры</h2>
+					<div class="page__content--items">
+						<p>К элементу &lt;INPUT&gt; можно добавить дополнительные настройки:</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">data-quantity-max=’число’</span> установит максимальное значение поля</li>
+								<li><span class="green">data-quantity-min=’число’</span> установит минимальное значение поля</li>
+							</ul>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_24.html" class="link">&lt;= Модуль «Календарь» (js-datepicker)</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_26.html">Отправка письма на почту (PHPMailer) =></a>
+						</p>
+					</div>
+				</div>
+				<hr class="page__hr">
+
+
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Страница 22</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>body{opacity: 0;}../../</style> -->
+    <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <main class="page">
+            <div class="page__container">
+                <h1 class="page__title">Модуль " Галерея "</h1>
+
+                <!-- Оглавление  -->
+
+                <div data-spollers class="spollers">
+                    <details class="spollers__item">
+                        <summary class="spollers__title spollers__title--bg">Оглавление</summary>
+                        <div class="spollers__body spollers__body--menu">
+                            <a href="#h-items_1" class="con-menu">Подключение функционала</a>
+                            <a href="#h-items_2" class="con-menu">Расположение и дополнительные данные</a>
+                            <a href="#h-items_3" class="con-menu">Подключение базового набора функционала</a>
+                            <a href="#h-items_4" class="con-menu">Подключаемые плагины</a>
+                            <a href="#h-items_5" class="con-menu">Подключаемые эффекты смены слайдов</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="page__content--items">
+                    <p>Функционал подключает галерею <a href="https://www.lightgalleryjs.com/" class="link"
+                            target="_blank">(LightGallery)</a> . При клике на превью картинки полное изображение
+                        открывается с
+                        возможностью
+                        слайд-шоу. Можно создавать как встроенные, так и лайтбокс-галереи ( в правом углу располагается
+                        ряд кнопок
+                        (настраиваемое) для расширенных функций). Например: «Закрыть слайд-шоу», «Загрузка изображения»
+                        и пр.
+                        Галерея,
+                        поддерживает как простые изображения, так и видео или фреймы.</p>
+                    <p>Для работы галереи необходимы изображения (видео файлы) в двух форматах: миниатюры – изображения
+                        небольшого
+                        размера
+                        которые используются для предварительного просмотра и изображения полного размера – необходимые
+                        для
+                        детального
+                        просмотра.</p>
+                </div>
+
+
+                <h2 class="page__subtitle" id="h-items_1">Подключение функционала</h2>
+
+                <div class="page__content--items">
+                    <p><span class="green">[JS] </span> в файле
+                        <span class="green">js/app.js</span> расскоментировать строку
+                        <span class="green">import «./files/gallery.js»;</span>
+                    </p>
+                    <pre><code>&lt;div data-gallery class="gallery"&gt;
+....
+&lt;/div&gt;</code></pre><br>
+                    <p>Сам объект галереи состоят из такой конструкции (тег для изображения полного размера и внутри тег
+                        для
+                        превью).
+                        Например, можно использовать такую разметку:</p>
+                    <pre><code class="html">&lt;div data-gallery class="gallery"&gt;
+  &lt;a href="img-full-1.jpg" class="gallery__image"&gt;
+    &lt;img alt="Превью" src="img-thumb-1.jpg" class="gallery__preview"&gt;
+  &lt;/a&gt;
+  &lt;a href="img-full-2.jpg" class="gallery__image"&gt;
+    &lt;img alt="Превью" src="img-thumb-2.jpg" class="gallery__preview"&gt;
+  &lt;/a&gt;
+  ...
+&lt;/div&gt;</code></pre>
+                </div>
+
+
+                <h2 class="page__subtitle" id="h-items_2">Расположение и дополнительные данные</h2>
+
+                <div class="page__content--items">
+                    <p>Функционал находится в <span class="green">js/files/gallery.js</span></p>
+                    <p>Подробная документация по работе с самим плагином на сайте галереи <a
+                            href="https://www.lightgalleryjs.com/docs/" class="link"
+                            target="_blank">https://www.lightgalleryjs.com/docs/</a></p>
+                </div>
+
+
+                <h2 class="page__subtitle" id="h-items_3">Подключение базового набора функционала</h2>
+
+                <div class="page__content--items">
+                    <p>Как было сказано выше, основной файл для работы и настройки располжен <span
+                            class="green">js/files/gallery.js</span></p>
+                    <pre class="pre"><code class="javascript">/*
+Документация по работе в шаблоне: https://www.lightgalleryjs.com/docs/
+Документация плагина: https://www.lightgalleryjs.com/docs/
+Сниппет(HTML):
+*/
+
+// Подключение функционала "Чертоги Фрилансера"
+import { isMobile, FLS } from "./functions.js";
+// Подключение списка активных модулей
+import { flsModules } from "./modules.js";
+
+// Подключение базового набора функционала
+import lightGallery from 'lightgallery';
+
+// Плагины
+// lgZoom, lgRotate, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager,  lgShare, lgThumbnail, lgVideo, lgMediumZoom
+// import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.min.js'
+// import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js'
+// import lgRotate from 'lightgallery/plugins/rotate/lg-rotate.min.js'
+// import lgAutoplay from 'lightgallery/plugins/autoplay/lg-autoplay.min.js'
+// import lgPager from 'lightgallery/plugins/pager/lg-pager.min.js'
+// import lgComment from 'lightgallery/plugins/comment/lg-comment.min.js'
+// import lgFullscreen from 'lightgallery/plugins/fullscreen/lg-fullscreen.min.js'
+// import lgShare from 'lightgallery/plugins/share/lg-share.min.js'
+// import lgMediumZoom from 'lightgallery/plugins/mediumzoom/lg-medium-zoom.min.js'
+// import lgVideo from 'lightgallery/plugins/video/lg-video.min.js'
+
+
+// Базовые стили
+import '@scss/libs/gallery/lightgallery.scss';
+// Стили дополнений
+// import '@scss/libs/gallery/lg-thumbnail.scss';
+// import '@scss/libs/gallery/lg-zoom.scss';
+// import '@scss/libs/gallery/lg-rotate.scss';
+// import '@scss/libs/gallery/lg-autoplay.scss';
+// import '@scss/libs/gallery/lg-pager.scss';
+// import '@scss/libs/gallery/lg-comments.scss';
+// import '@scss/libs/gallery/lg-fullscreen.scss';
+// import '@scss/libs/gallery/lg-share.scss';
+// import '@scss/libs/gallery/lg-medium-zoom.scss';
+// import '@scss/libs/gallery/lg-video.scss';
+
+// import '@scss/libs/gallery/lg-relative-caption.scss';
+
+// Все стили
+// import '@scss/libs/gallery/lightgallery-bundle.scss';
+
+// Запуск
+const galleries = document.querySelectorAll('[data-gallery]');
+if (galleries.length) {
+	let galleyItems = [];
+	galleries.forEach(gallery => {
+		galleyItems.push({
+			gallery,
+			galleryClass: lightGallery(gallery, {
+				// plugins: [lgThumbnail, lgZoom, lgRotate, lgAutoplay, lgPager, lgComment, lgFullscreen, lgShare, lgVideo],
+				licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+				speed: 500,
+			})
+		})
+	});
+	// Добавляем в объект модулей
+	flsModules.gallery = galleyItems;
+}</code></pre>
+                    <p>То, что не закоментировано позволяет:</p>
+                    <div class="page__block--list">
+                        <ol>
+                            <li>Просматривать увеличеные изображения в режиме слайд-шоу</li>
+                            <li>Управление:
+                                <ul class="page__block--ul">
+                                    <li>Стрелками</li>
+                                    <li>Перетаскиванием мышью</li>
+                                    <li>Стрелками клавиатуры</li>
+
+                                </ul>
+                            </li>
+
+                            <li>Переключение на превью.
+                                <ul class="page__block--ul">
+                                    <li>При перетаскивании мышью изображения вверх или вниз</li>
+                                    <li>Клик на крестик</li>
+                                    <li>Кнопка <kbd>Esc</kbd></li>
+
+                                </ul>
+                            </li>
+                            <li>Возможность скачать изображение</li>
+                            <li>Выводится "номер слайда / количество слайдов"</li>
+                            <li>Вывод названия слайда, которое указано в атрибуте <span class="green">alt</span>
+                                <pre class="pre"><code class="html">...
+&lt;img alt="Превью" src="img-thumb-1.jpg" class="gallery__preview"&gt;
+...</code></pre>
+                            </li>
+                            <li class="warning">Все это сохраняется при подключении дополнительных плагинов</li>
+                        </ol>
+                    </div>
+                    <p></p>
+
+                </div>
+
+
+                <h2 class="page__subtitle" id="h-items_4">Подключаемые плагины</h2>
+
+                <div class="page__content--items">
+                    <p>Для того, чтобы подключить любой из плагинов нужно:</p>
+                    <div class="page__block--list">
+                        <ol>
+                            <li>Раскомментировать необходимый JS.</li>
+
+                            <li>Раскомментировать аналогичный SCSS.</li>
+                            <li>Либо общий для всех
+                                <pre
+                                    class="pre"><code class="">import '@scss/libs/gallery/lightgallery-bundle.scss';</code></pre>
+                            </li>
+                            <li>Указать какой ( какие ) плагины подключены.</li>
+                            <pre
+                                class="pre"><code> plugins: [lgThumbnail, lgZoom, lgRotate, lgAutoplay, lgPager, lgComment, lgFullscreen, lgShare, lgVideo],</code></pre>
+                            <li class="warning">Здесь указывать только те плагины, которые подключены выше. Иначе не
+                                будет работать </li>
+                        </ol>
+                    </div>
+                    <h4 class="gray">Плагины</h4>
+
+                    <div class="page__block--list">
+                        <ol>
+                            <li><span class="green">lgThumbnail</span> &#8212; Галерея с миниатюрами.</li>
+                            <li><span class="green">lgZoom</span> &#8212; "Лупа" увеличение на малом экране</li>
+                            <li><span class="green">lgRotate</span> &#8212; Вращение в 2 стороны + перевороты по Х и по
+                                Y</li>
+                            <li><span class="green">lgAutoplay</span> &#8212; АвтоСмена, иконка "play / pause"</li>
+                            <li><span class="green">lgPager</span> &#8212; Пагинация</li>
+                            <li><span class="green">lgComment </span> &#8212; ??????</li>
+                            <li><span class="green">lgFullscreen</span> &#8212; Разворот изображения на весь экран, даже
+                                окно браузера скрывается.</li>
+                            <li><span class="green">lgShare</span> &#8212; Обмен в соцсетях</li>
+                            <li><span class="green">lgMediumZoom</span> &#8212; Маштабирование ( лупа+ лупа- , просто
+                                увеличить-уменьшить конкретное изображение. БОЛЬШЕ НИЧЕГО НЕ РАБОТАЕТ, или я на
+                                разобрался)</li>
+                            <li><span class="green">lgVideo</span> &#8212; Не запустилось, проблемы не только здесь.
+                            </li>
+                            <li><span class="green">lgHash</span> &#8212; позволяет создавать уникальные URL-адреса для
+                                каждого изображения галереи. Вы также можете указать пользовательские имена для каждого
+                                слайда. Если у вас есть несколько галерей на странице, вам необходимо указать уникальный
+                                идентификатор для каждой галереи с помощью настройки galleryId.
+
+                            </li>
+
+                        </ol>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+                <h2 class="page__subtitle" id="h-items_5">Подключаемые эффекты смены слайдов</h2>
+
+                <div class="page__content--items">
+
+                    <p>Таких эффектов множество.</p>
+                    <p>Файл <span class="green">src/scss/libs/gallery/lg-transitions.scss</span></p>
+
+                    <pre class="pre"><code class="css">@import 'lg-variables';
+@import 'lg-mixins';
+
+@import './transitions/lg-zoom-in';
+@import './transitions/lg-lollipop-rev';
+@import './transitions/lg-slide-skew-ver-cross';
+@import './transitions/lg-lollipop';
+@import './transitions/lg-slide-skew-ver-rev';
+@import './transitions/lg-rotate-rev';
+@import './transitions/lg-slide-skew-ver';
+@import './transitions/lg-rotate';
+@import './transitions/lg-slide-skew';
+@import './transitions/lg-scale-up';
+@import './transitions/lg-slide-vertical-growth';
+@import './transitions/lg-slide-circular-vertical';
+@import './transitions/lg-slide-vertical';
+@import './transitions/lg-slide-circular';
+@import './transitions/lg-soft-zoom';
+@import './transitions/lg-slide-skew-cross-rev';
+@import './transitions/lg-tube';
+@import './transitions/lg-slide-skew-cross';
+@import './transitions/lg-zoom-in-big';
+@import './transitions/lg-slide-skew-only-rev';
+@import './transitions/lg-zoom-in-out';
+@import './transitions/lg-slide-skew-only-y-rev';
+@import './transitions/lg-slide-skew-only-y';
+@import './transitions/lg-zoom-out-big';
+@import './transitions/lg-slide-skew-only';
+@import './transitions/lg-zoom-out-in';
+@import './transitions/lg-slide-skew-rev';
+@import './transitions/lg-zoom-out';
+@import './transitions/lg-slide-skew-ver-cross-rev';</code></pre>
+
+                    <p class="warning">НО, один нюанс: Если в <span class="green">_gallery.js</span> подключать любой из
+                        выбранных эффектов - работать не будет - файл не видит миксины из файла <span
+                            class="green">src/scss/libs/gallery/_lg-mixins.scss</span>
+                    </p>
+                    <p>Поэтому порядок такой:</p>
+                    <p>в файле <span class="green">src/js/files/gallery.js</span> прописываем подключение сразу всех
+                        эффектов</p>
+                    <pre class="pre"><code class="js">import '@scss/libs/gallery/lg-transitions.scss';</code></pre>
+                    <p>И указываем какой эффект нужно применить</p>
+                    <pre class="pre"><code class="js">icenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+speed: 500,
+// подключение нужного эффекта
+mode: 'lg-lollipop',
+</code></pre>
+                    <p>Теперь файл <span class="green">src/js/files/gallery.js</span> выглядит так:</p>
+
+                    <pre class="pre"><code class="javascript">
+/*
+Документация по работе в шаблоне: https://www.lightgalleryjs.com/docs/
+Документация плагина: https://www.lightgalleryjs.com/docs/
+Сниппет(HTML):
+*/
+
+// Подключение функционала "Чертоги Фрилансера"
+import { isMobile, FLS } from "./functions.js";
+// Подключение списка активных модулей
+import { flsModules } from "./modules.js";
+
+// Подключение базового набора функционала
+import lightGallery from 'lightgallery';
+
+// Плагины
+// lgZoom, lgRotate, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager,  lgShare, lgThumbnail, lgVideo, lgMediumZoom
+import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.min.js'
+import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js'
+import lgRotate from 'lightgallery/plugins/rotate/lg-rotate.min.js'
+import lgAutoplay from 'lightgallery/plugins/autoplay/lg-autoplay.min.js'
+import lgPager from 'lightgallery/plugins/pager/lg-pager.min.js'
+import lgFullscreen from 'lightgallery/plugins/fullscreen/lg-fullscreen.min.js'
+import lgShare from 'lightgallery/plugins/share/lg-share.min.js'
+// import lgMediumZoom from 'lightgallery/plugins/mediumzoom/lg-medium-zoom.min.js'
+// import lgVideo from 'lightgallery/plugins/video/lg-video.min.js'
+// import lgComment from 'lightgallery/plugins/comment/lg-comment.min.js'
+
+// Базовые стили 
+import '@scss/libs/gallery/lightgallery.scss';
+// Стили дополнений
+// import '@scss/libs/gallery/lg-thumbnail.scss';
+// import '@scss/libs/gallery/lg-zoom.scss';
+// import '@scss/libs/gallery/lg-rotate.scss';
+// import '@scss/libs/gallery/lg-autoplay.scss';
+// import '@scss/libs/gallery/lg-pager.scss';
+// import '@scss/libs/gallery/lg-comments.scss';
+// import '@scss/libs/gallery/lg-fullscreen.scss';
+// import '@scss/libs/gallery/lg-share.scss';
+// import '@scss/libs/gallery/lg-medium-zoom.scss';
+// import '@scss/libs/gallery/lg-video.scss';
+
+import '@scss/libs/gallery/lg-transitions.scss';
+
+// import '@scss/libs/gallery/lg-relative-caption.scss';
+
+// Все стили
+import '@scss/libs/gallery/lightgallery-bundle.scss';
+
+// Запуск
+const galleries = document.querySelectorAll('[data-gallery]');
+if (galleries.length) {
+	let galleyItems = [];
+	galleries.forEach(gallery => {
+		galleyItems.push({
+			gallery,
+			galleryClass: lightGallery(gallery, {
+				plugins: [lgThumbnail, lgZoom, lgRotate, lgAutoplay, lgPager, lgShare, lgFullscreen],
+
+				licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+				speed: 500,
+				mode: 'lg-lollipop',
+
+
+
+			})
+		})
+	});
+
+	// Добавляем в объект модулей
+	flsModules.gallery = galleyItems;
+}</code></pre>
+                    <p class="warning">Особенности: При подключении эффектов сдвиг мышью сохраняется как и был, а при
+                        клике на стрелки на экране или на клавиатуре действует указанный эффект.
+                        Действия верхних иконок сохраняются.</p>
+                    <p class="warning">И еще: (На всех эффектах не проверял, но думаю будет действовать). При смене
+                        слайда сначала пропадает действующий слайд со своим эффектом, а затем со своим эффектом
+                        появляется следующий. НО, если переключать слайды в обратную сторону, проявляется как бы эффект
+                        "обратной сьемки".</p>
+
+
+                    <p><a href="../modules/gallery.html" class="link" target="_blank">Результат</a> модуля по
+                        умолчанию.</p>
+
+                </div>
+
+
+
+
+                <div class="page__footer">
+
+                    <div class="page__footer_left">
+
+                        <p>Предыдущий пост: <br>
+                            <a href="fls-page_21.html" class="link">&lt;= Модуль кастомизации элемента SELECT</a>
+                        </p>
+                    </div>
+
+                    <div class="page__footer_right">
+
+                        <p>Следующий пост: <br>
+                            <a class="link" href="fls-page_23.html">Модуль анимации (параллакс) объектов при движении
+                                мыши =></a>
+                        </p>
+                    </div>
+                </div>
+                <hr class="page__hr">
+            </div>
+
+            <div class="return">
+                <div class="return__container">
+
+                    <p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+                    <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer__container">
+
+                    <!-- Кнопка вверх -->
+                    <!-- https://itchief.ru/javascript/btn-up -->
+                    <div class="btn-up btn-up_hide"></div>
+
+
+                </div>
+
+            </footer>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+    <!-- ! Кнопка "Вверх" -->
+    <script>
+        const btnUp = {
+            el: document.querySelector('.btn-up'),
+            scrolling: false,
+            show() {
+                if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.remove('btn-up_hide');
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            hide() {
+                if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                    this.el.classList.add('btn-up_hiding');
+                    window.setTimeout(() => {
+                        this.el.classList.add('btn-up_hide');
+                        this.el.classList.remove('btn-up_hiding');
+                    }, 300);
+                }
+            },
+            addEventListener() {
+                // при прокрутке окна (window)
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop;
+                    if (this.scrolling && scrollY > 0) {
+                        return;
+                    }
+                    this.scrolling = false;
+                    // если пользователь прокрутил страницу более чем на 150px
+                    if (scrollY > 150) {
+                        // сделаем кнопку .btn-up видимой
+                        this.show();
+                    } else {
+                        // иначе скроем кнопку .btn-up
+                        this.hide();
+                    }
+                });
+                // при нажатии на кнопку .btn-up
+                document.querySelector('.btn-up').onclick = () => {
+                    this.scrolling = true;
+                    this.hide();
+                    // переместиться в верхнюю часть страницы
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        btnUp.addEventListener();
+
+    </script>
+</body>
+
+</html>

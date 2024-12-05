@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Страница 3</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Архитектура шаблона. Файлы и папки</h1>
+				<div class="page__content">
+					<div class="page__content--items">
+
+
+						<p>Разархивировав скачанный шаблон, в корне вы обнаружите следующие файлы и папки:</p>
+
+						<div class="page__block--list">
+							<ol>
+								<li>Файл <span class="green">package.json</span> &#8212; файл содержащий команды запуска сборщиков,
+									информацию об установленных плагинах и их версиях (можно редактировать при необходимости). А
+									также прочую информацию о об авторе и версии шаблона. </li>
+								<li>Файл <span class="green">gulpfile.js</span> &#8212; главный файл сборщика GULP. Содержит подключения
+									различных задач и сценарии их выполнения (можно редактировать при необходимости)</li>
+								<li>Файл <span class="green">snnipets.txt</span> &#8212; файл со сниппетами которые используются при
+									работе с шаблоном. Как их добавить в свой редактор <a class="link" href="fls-page_2.html#snippets"
+										target="_blank">описано тут</a>
+								</li>
+								<li>Файл <span class="green">README.txt</span> &#8212; краткая информация по работе с шаблоном</li>
+								<li>Файл <span class="green">cover.jpg</span> &#8212; обложка ЧФ</li>
+								<li>Папка <span class="green">config</span> &#8212; содержит папки и файлы для настройки работы
+									сборщиков,
+									а также файлы с отдельными задачами.
+								<li>Папка <span class="green">src</span> &#8212; содержит исходные файлы и папки проекта.
+							</ol>
+						</div>
+
+						<h3 class="gray">Содержимое папки config:</h3>
+
+						<div class="page__block--list">
+							<ol>
+								<li>Файл <span class="green">gulp-settings.js</span> &#8212; содержит настройку путей к файлам и папкам
+									для работы GULP, а также настройку FTP соединения для выгрузки результата на сервер</li>
+								<li>Файл <span class="green">gulp-plugins.js</span> &#8212; вспомогательный файл, содержит подключение и
+									экспорт списка общих плагинов для задач GULP</li>
+								<li>Файл <span class="green">webpack.dev.js</span> &#8212; содержит конфигурацию работы WEBPACK в режиме
+									разработчика</li>
+								<li>Файл <span class="green">webpack.prod.js</span> &#8212; содержит конфигурацию работы WEBPACK в
+									режиме
+									продакшн</li>
+								<li>Папка <span class="green">gulp-tasks</span> &#8212; содержит файлы отдельных задач GULP</li>
+							</ol>
+						</div>
+
+						<h3 class="gray">Содержимое папки src: </h3>
+						<div class="page__block--list">
+							<ol>
+								<li>Файл <span class="green">favicon.ico</span> &#8212; иконка сайта</li>
+								<li>Файл <span class="green">index.html</span> &#8212; индексная страница-содержание, она не обновляется
+									автоматически при редактировании (при желании удалить)</li>
+								<li>Файл <span class="green">home.html</span> &#8212; главная страница сайта (при желании переименовать
+									в
+									index.html)</li>
+								<li>Папка <span class="green">files</span> (пустая) &#8212; все файлы из этой папки будут скопированы в
+									папку с результатом (dist/files)</li>
+								<li>Папка <span class="green">fonts</span> (пустая) &#8212; используется для <a class="link"
+										href="fls-page_4.html" target="_blank">подключения
+										локальных и иконочных шрифтов</a></li>
+								<li>Папка <span class="green">svgicons</span> (пустая) &#8212; используется для создания SVG спрайта
+								</li>
+								<li>Папка <span class="green">html </span>&#8212; содержит .HTM файлы, которые подключаются в HTML файлы
+									страниц (например в home.html). Тут можно создавать свои подключаемые файлы</li>
+								<li>Папка <span class="green">scss</span> &#8212; содержит файлы и папки стилей сайта</li>
+								<li>Папка <span class="green">js </span>&#8212; содержит файлы и папки скриптов сайта</li>
+								<li>Папка <span class="green">img</span> &#8212; тут хранятся картинки проекта. Изначально, только
+									кавер-фото шаблона</li>
+							</ol>
+						</div>
+
+						<h3 class="gray">Содержимое папки src/html: </h3>
+						<p>Файлы из этой папки предназначены для подключения в HTML-файлы страниц.</p>
+						<div class="page__block--list">
+							<ol>
+								<li>Файл <span class="green">_header.htm</span> &#8212; подготовка для создания шапки сайта. Содержит
+									тег
+									&lt;header&gt; и ограничивающий контейнер. Изначально подключен в home.html</li>
+								<li>Файл <span class="green">_footer.htm</span> &#8212; подготовка для создания подвала сайта. Содержит
+									тег &lt;footer&gt; и ограничивающий контейнер. Изначально подключен в home.html</li>
+								<li>Файл <span class="green">_head.htm</span> &#8212; содержит тег &lt;head&gt; внутри которого указаны
+									метатеги, подключена иконка сайта, файл стилей а также тег &lt;title&gt; с
+									переменной-заголовком. Изначально подключен в home.html</li>
+								<li>Файл <span class="green">_js.htm</span> &#8212; предназначен для подключения общих js-файлов.
+									Содержит
+									подключение основного файла js/app.min.js из результата. Изначально подключен в home.html
+								</li>
+								<li>Файл <span class="green">_popup.htm</span> &#8212; подготовка для создания попапов. Содержит
+									шаблонный, закомментированный HTML-код. Изначально подключен в home.html. </li>
+								<li>Файл <span class="green">_pagging.htm</span> &#8212; подготовка для создания блока постраничной
+									навигации. Содержит шаблонный HTML-код.</li>
+							</ol>
+						</div>
+
+						<h3 class="gray">Содержимое папки src/scss: </h3>
+						<div class="page__block--list">
+							<ol>
+								<li>Файл <span class="green">style.scss</span> &#8212; основной файл стилей. Содержит различные
+									настройки
+									и подключения других файлов. <a href="fls-page_5.html" target="_blank"
+										class="link">Подробнее&#8230;</a>
+								</li>
+								<li>Файл <span class="green">home.scss</span> &#8212; файл стилей главной страницы. Изначально пуст и
+									подключен в style.scss</li>
+								<li>Файл <span class="green">header.scss</span> &#8212; файл стилей шапки сайта. Содержит
+									закомментированный код <a class="link" href="fls-page_7.html" target="_blank">кнопки
+										меню-бургера</a>. Изначально подключен в style.scss</li>
+								<li>Файл <span class="green">footer.scss</span> &#8212; файл стилей подвала сайта. Изначально пуст и
+									подключен в style.scss</li>
+								<li>Файл <span class="green">common.scss</span> &#8212; файл стилей для общих, переиспользуемых блоков
+									конкретного проекта. Изначально пуст и подключен в style.scss</li>
+								<li>Файл <span class="green">base.scss</span> &#8212; файл базовых стилей шаблона ЧФ. Содержит полезные
+									SCSS-шаблоны и закомментированные подключения файлов с базовыми стилями различных модулей.
+								</li>
+								<li>Папка <span class="green">libs</span> &#8212; содержит файлы полных (заводских) стилей различных
+									модулей и плагинов</li>
+								<li>Папка <span class="green">fonts</span> &#8212; содержит файл(ы) стилей связанных со шрифтами.
+									Содержит
+									файл icons.scss для подключения иконочного шрифта. Также, <a class="link" href="fls-page_4.html"
+										target="_blank">в
+										процессе подключения локальных шрифтов</a>, тут появляется файл fonts.scss</li>
+								<li>Папка <span class="green">base</span> &#8212; содержит вспомогательные файлы стилей ЧФ, а также
+									файлы
+									с базовыми стилями различных моделей. Для удобства, файлы модулей одной группы (например
+									элементы форм) собраны в отдельные подпапки. Тут же находится файл с обнуляющими стилями
+									<span class="green">null.scss</span>
+								</li>
+							</ol>
+						</div>
+
+						<h3 class="gray"> Содержимое папки src/js:</h3>
+						<div class="page__block--list">
+							<ol>
+								<li>Файл <span class="green">app.js</span> &#8212; основной файл скриптов. Служит для подключения
+									необходимого в проекте функционала и прочих настройек.</li>
+								<li>Папка <span class="green">libs</span> &#8212; содержит файлы готовых дополнений, как правило, не
+									предусмотренных для редактирования.</li>
+								<li>Папка <span class="green">files</span> &#8212; содержит файлы различных модулей и прочего
+									функционала.
+								</li>
+							</ol>
+						</div>
+
+						<h3 class="gray">Содержимое папки src/js/files:</h3>
+						<div class="page__block--list">
+							<ol>
+								<li>Файл <span class="green">script.js</span> &#8212; предназначен для написания своего кода для
+									проекта.
+									Изначально импортирован в app.js</li>
+								<li>Файл <span class="green">functions.js</span> &#8212; содержит мелкие модули и различный
+									вспомогательный функционал. Изначально импортирован в app.js, но модули закомментированны
+								</li>
+								<li>Файл <span class="green">gallery.js</span> &#8212; содержит подключение плагина и стилей галереи.
+									Изначально импортирован в app.js, закомментированн. При необходимости, в него можно вносить
+									изменения</li>
+								<li>Файл <span class="green">sliders.js</span> &#8212; содержит подключение плагина и стилей слайдера,
+									функционал для автоматического добавления классов, код для создания конкретных слайдеров.
+									Изначально импортирован в app.js, закомментированн.</li>
+								<li>Файл <span class="green">tippy.js</span> &#8212; содержит подключение плагина и стилей плагина
+									подсказок. Изначально импортирован в app.js, закомментированн.</li>
+								<li>Файл <span class="green">map.js</span> (в работе) &#8212; содержит шаблонный код для реализации
+									функционала карт.</li>
+								<li>Файл <span class="green">modules.js</span> &#8212; вспомогательный файл для работы ЧФ.</li>
+								<li>Папка <span class="green">forms</span> &#8212; содержит файлы модулей для работы с формами</li>
+								<li>Папка <span class="green">scroll</span> &#8212; содержит модули для работы с прокруткой сайта</li>
+							</ol>
+						</div>
+
+
+					</div>
+				</div>
+
+				<div class="page__footer">
+
+					<div class="page__footer_left">
+
+						<p>Предыдущий пост: <br>
+							<a href="fls-page_2.html" class="link">&lt;= Установка и запуск шаблона. Подготовка к работе</a>
+						</p>
+					</div>
+
+					<div class="page__footer_right">
+
+						<p>Следующий пост: <br>
+							<a class="link" href="fls-page_4.html"> Работа со шрифтами. Локальные и иконочные шрифты. Подключение из
+								Google Fonts =></a>
+						</p>
+					</div>
+				</div>
+
+				<hr class="page__hr">
+			</div>
+
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../fls/fls-menu.html" class="link">К меню "Чертоги фрилансера"</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>
